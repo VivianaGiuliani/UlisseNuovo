@@ -27,7 +27,7 @@ public class Articoli {
     public static void main(String[] args) {
     	
         JFrame window = new JFrame();
-        window.setSize(1230, 800);
+        window.setSize(1300, 800);
         window.setTitle("Articoli");
         window.setResizable(false);
 
@@ -56,34 +56,26 @@ public class Articoli {
         artxforn_button.setBounds(780, 10, 100, 40);
         window.add(artxforn_button);
 
-        JButton prima_riga_button = new JButton("");
-        prima_riga_button.setBounds(885, 10, 40, 40);
-        window.add(prima_riga_button);
+        JButton ordine_barcode_button = new JButton("Ordine barcode");
+        ordine_barcode_button.setBounds(1020, 250, 130, 40);
+        window.add(ordine_barcode_button);
 
-        JButton ultima_riga_button = new JButton("");
-        ultima_riga_button.setBounds(925, 10, 40, 40);
-        window.add(ultima_riga_button);
+        JButton ordine_barcode_decresc_button = new JButton("Ordine barcode decresc.");
+        ordine_barcode_decresc_button.setBounds(1020, 300, 200, 40);
+        window.add(ordine_barcode_decresc_button);
 
-        JButton trova_riga_button = new JButton("");
-        trova_riga_button.setBounds(965, 10, 40, 40);
+        JButton trova_riga_button = new JButton("Trova");
+        trova_riga_button.setBounds(1020, 350, 100, 40);
         window.add(trova_riga_button);
-
-        JButton filtra_rowset_button = new JButton("");
-        filtra_rowset_button.setBounds(1005, 10, 40, 40);
-        window.add(filtra_rowset_button);
-
-        JButton abbandona_button = new JButton("");
-        abbandona_button.setBounds(1045, 10, 40, 40);
-        window.add(abbandona_button);
+        
+        JTextArea trova_riga_textbox = new JTextArea();
+        trova_riga_textbox.setBounds(1130, 350, 120, 40);
+        window.add(trova_riga_textbox);
 
         JButton tabella_categorie_button = new JButton("Tabella Categorie");
         tabella_categorie_button.setBounds(10, 60, 150, 40);
         window.add(tabella_categorie_button);
-
-        JButton refresh_categorie_button = new JButton("Refresh Categorie");
-        refresh_categorie_button.setBounds(170, 60, 150, 40);
-        window.add(refresh_categorie_button);
-
+        
         JButton tabella_fornitori_button = new JButton("Tabella Fornitori");
         tabella_fornitori_button.setBounds(330, 60, 150, 40);
         window.add(tabella_fornitori_button);
@@ -319,14 +311,93 @@ public class Articoli {
         
         tabella_categorie_button.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-            	
-            	new TabellaCategorie();
-            	
-            	
+            	TabellaCategorie t = new TabellaCategorie();
             }
-            });
+         });
            
+        aumento_prezzi_button.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+            	AumentoPrezzi a = new AumentoPrezzi();
+            }
+        });
         
+        modifica_sconto1_button.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+            	ModificaSconto1 m = new ModificaSconto1();
+            }
+        });
+        
+        modifica_sconto2_button.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+            	ModificaSconto2 m = new ModificaSconto2();
+            }
+        });
+        
+        ordine_barcode_button.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+            	model.setRowCount(0);
+            	ArrayList<Articolo> articoli = articoliDaDb();
+            	for(int i=0; i < articoli.size(); i++) {
+            		model.addRow(new Object[] {articoli.get(i).getBarcode(), articoli.get(i).getFornitore(), articoli.get(i).getCod_for(), 
+            				articoli.get(i).getGiacenza(), articoli.get(i).getDescrizione(), articoli.get(i).getPeso(), articoli.get(i).getCaratura(), 
+                			articoli.get(i).getPr_unit(), articoli.get(i).getTot_giac(), articoli.get(i).getSconto1(), articoli.get(i).getSconto2(),
+                			articoli.get(i).getCosto(), articoli.get(i).getFv()});
+            	}
+            }
+        });
+        
+        ordine_barcode_decresc_button.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+            	int row = model.getRowCount();
+            	table.getSelectionModel().setSelectionInterval(row-1, row-1);
+            	table.scrollRectToVisible(table.getCellRect(row-1, row-1, false));
+
+
+            }
+        });
+       
+        trova_riga_button.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+            	model.setRowCount(0);
+            	Articolo articolo = articoliDaDbTab(trova_riga_textbox.getText());
+            	model.addRow(new Object[] {articolo.getBarcode(), articolo.getFornitore(), articolo.getCod_for(), 
+            			articolo.getGiacenza(), articolo.getDescrizione(), articolo.getPeso(), articolo.getCaratura(), 
+            			articolo.getPr_unit(), articolo.getTot_giac(), articolo.getSconto1(), articolo.getSconto2(),
+            			articolo.getCosto(), articolo.getFv()});
+            }
+        });
+        
+        converti_VF_button.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+            	convertiVF();
+            	model.setRowCount(0);
+            	ArrayList<Articolo> articoli = articoliDaDb();
+            	for(int i=0; i < articoli.size(); i++) {
+            		model.addRow(new Object[] {articoli.get(i).getBarcode(), articoli.get(i).getFornitore(), articoli.get(i).getCod_for(), 
+            				articoli.get(i).getGiacenza(), articoli.get(i).getDescrizione(), articoli.get(i).getPeso(), articoli.get(i).getCaratura(), 
+                			articoli.get(i).getPr_unit(), articoli.get(i).getTot_giac(), articoli.get(i).getSconto1(), articoli.get(i).getSconto2(),
+                			articoli.get(i).getCosto(), articoli.get(i).getFv()});
+            	}
+            }
+        });
+        
+        artxforn_button.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+            	ArtXForn a = new ArtXForn();
+            }
+        });
+        
+        tabella_fornitori_button.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+            	TabellaFornitori t = new TabellaFornitori();
+            }
+        });
+        
+        sconto_fascia_button.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+            	ScontoFascia s = new ScontoFascia();
+            }
+        });
         
         
         window.setLayout(null);
@@ -701,6 +772,65 @@ public class Articoli {
 		
     }
     
+    public static Articolo articoliDaDbTab(String barcode){
+    	Statement st = null;
+        ResultSet rs = null;
+        PreparedStatement pstmt = null;
+    	Connection con  = Database.connect();
+    	Articolo articolo = new Articolo(); 
+    	System.out.println("barcode " + barcode);
+    	try { 
+            pstmt = con.prepareStatement("SELECT * FROM sys.articoli WHERE barcode = ?;");
+
+            pstmt.setString(1, barcode);
+            rs = pstmt.executeQuery();
+            System.out.println("query eseguita articoli da db");
+            while (rs.next()) {
+            	
+            	articolo.setBarcode(rs.getString("barcode"));
+            	articolo.setFornitore(rs.getString("cfor"));
+            	articolo.setCod_for(rs.getLong("codfor"));
+            	articolo.setGiacenza(rs.getInt("giacenza")); 
+            	articolo.setDescrizione(rs.getString("descrizione"));
+            	articolo.setPeso(rs.getDouble("peso"));
+            	articolo.setCaratura(rs.getDouble("caratura"));
+            	articolo.setPr_unit(rs.getInt("pr_unit"));
+            	articolo.setTot_giac(rs.getInt("tot_giacenza"));
+            	articolo.setSconto1(rs.getInt("sc_1"));
+            	articolo.setSconto2(rs.getInt("sc_2")); 
+            	articolo.setCosto(rs.getDouble("costo")); 
+            	articolo.setFv(rs.getString("fv"));
+            	articolo.setCod_categoria(rs.getInt("cod_categoria"));
+            
+            }
+            
+            
+        } catch (SQLException ex) {
+        	ex.printStackTrace();
+
+        } finally {
+            try {
+                if (rs != null) {
+                    rs.close();
+                }
+                if (st != null) {
+                    st.close();
+                }
+                if (con != null) {
+                    con.close();
+                }
+                if(pstmt != null) {
+                	pstmt.close();
+                }
+
+            } catch (SQLException ex) {
+               ex.printStackTrace();
+            }
+        }
+		return articolo;
+		
+    }
+    
     public static void eliminaRigaDb(String value) {
     	String SQL = "DELETE FROM sys.articoli WHERE barcode = ? ";
     	PreparedStatement pstmt = null;
@@ -731,5 +861,35 @@ public class Articoli {
             }
         }
     	
+    }
+    
+    public static void convertiVF(){
+		PreparedStatement st = null;
+    	Connection con  = Database.connect();
+    	try {
+            st = con.prepareStatement("UPDATE sys.articoli SET fv = ? WHERE fv = ?;");
+            st.setString(1, "F");
+            st.setString(2, "V");
+            st.executeUpdate();
+            con.close();
+            
+        } catch (SQLException ex) {
+        	ex.printStackTrace();
+
+        } finally {
+            try {
+               
+                if (st != null) {
+                    st.close();
+                }
+                if (con != null) {
+                    con.close();
+                }
+
+            } catch (SQLException ex) {
+               ex.printStackTrace();
+            }
+        }
+		
     }
 }

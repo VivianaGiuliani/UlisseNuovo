@@ -21,7 +21,7 @@ import Classi.Database;
 import Oggetti.Articolo;
 
 public class AumentoPrezzi {
-	public static void main (String [] args) {
+	public AumentoPrezzi() {
 		JFrame window = new JFrame();
         window.setSize(800, 900);
         window.setTitle("Aumento prezzi");

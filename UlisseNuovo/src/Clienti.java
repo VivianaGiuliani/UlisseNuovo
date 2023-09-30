@@ -1,5 +1,6 @@
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableModel;
 
 import Classi.Database;
 import Oggetti.Articolo;
@@ -18,7 +19,7 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class Clienti {
-    public static void main(String[] args) {
+    public Clienti() {
         JFrame window = new JFrame();
         window.setSize(1100, 900);
         window.setTitle("Clienti");
@@ -42,15 +43,6 @@ public class Clienti {
         nome_textbox.setBounds(120, 40, 200, 40);
         window.add(nome_textbox);
 
-        JLabel card_code_label = new JLabel("Card Code");
-        card_code_label.setFont(new Font("Courier", Font.PLAIN, 10));
-        card_code_label.setBounds(330, 20, 70, 20);
-        window.add(card_code_label);
-
-        JTextArea card_code_textbox = new JTextArea(); 
-        card_code_textbox.setBounds(330, 40, 100, 40);
-        window.add(card_code_textbox);
-
         JLabel codice_barre_label = new JLabel("Codice a Barre");
         codice_barre_label.setFont(new Font("Courier", Font.PLAIN, 10));
         codice_barre_label.setBounds(440, 20, 90, 20);
@@ -69,9 +61,9 @@ public class Clienti {
         punti_textbox.setBounds(540, 40, 100, 40);
         window.add(punti_textbox);
 
-        JButton aggiungi_10_tessere_button = new JButton("Aggiungi 10 tessere");
-        aggiungi_10_tessere_button.setBounds(800, 10, 200, 30);
-        window.add(aggiungi_10_tessere_button);
+        JButton modifica_button = new JButton("Modifica");
+        modifica_button.setBounds(800, 10, 200, 30);
+        window.add(modifica_button);
 
         JLabel ordinamento_label = new JLabel("Ordinamento");
         ordinamento_label.setFont(new Font("Courier", Font.PLAIN, 10));
@@ -82,9 +74,9 @@ public class Clienti {
         alfabetico_button.setBounds(730, 65, 100, 40);
         window.add(alfabetico_button);
         
-        JButton n_tessera_button = new JButton("N°Tessera");
-        n_tessera_button.setBounds(840, 65, 100, 40);
-        window.add(n_tessera_button);
+        JButton email_button = new JButton("Email");
+        email_button.setBounds(840, 65, 100, 40);
+        window.add(email_button);
 
         JButton naturale_button = new JButton("Naturale");
         naturale_button.setBounds(950, 65, 100, 40);
@@ -173,7 +165,7 @@ public class Clienti {
         scrollPane.setBounds(0, 0, 1050, 600);
 
         String[] columnNames = {"Titolo", "Nome", "Indirizzo", "CAP", "Città",
-        		"Provincia", "Telefono", "Email", "Note", "Codice carta", "Codice a barre", "Punti", "Ultimo Acquisto", "Possesso Email"};
+        		"Provincia", "Telefono", "Email", "Note", "Codice a barre", "Punti", "Ultimo Acquisto", "Possesso Email"};
         
         DefaultTableModel model = new DefaultTableModel(columnNames, 0);
         JTable table = new JTable(model);
@@ -191,7 +183,7 @@ public class Clienti {
     	for(int i=0; i < clienti.size(); i++) {
     		model.addRow(new Object[] {clienti.get(i).getTitolo(), clienti.get(i).getNome(), clienti.get(i).getIndirizzo(), 
     				clienti.get(i).getCap(), clienti.get(i).getCitta(), clienti.get(i).getProvincia(), clienti.get(i).getTelefono(), 
-    				clienti.get(i).getEmail(), clienti.get(i).getNote(),  clienti.get(i).getCodiceCarta(), clienti.get(i).getCodiceBarre(),
+    				clienti.get(i).getEmail(), clienti.get(i).getNote(), clienti.get(i).getCodiceBarre(),
     				clienti.get(i).getPunti(), clienti.get(i).getUltimo_acquisto(),clienti.get(i).getPossesso_email()});
     	}
     	
@@ -208,13 +200,13 @@ public class Clienti {
                 
             	Cliente cliente = new Cliente(titolo_textbox.getText(), nome_textbox.getText(), indirizzo_textbox.getText(), cap_textbox.getText(), 
             			citta_textbox.getText(), provincia_textbox.getText(), telefono_textbox.getText(), email_textbox.getText(), note_textbox.getText(), codice_barre_textbox.getText(),
-            			card_code_textbox.getText(), Integer.parseInt(punti_textbox.getText()), dataUltimoAcquisto, null);
+            			Integer.parseInt(punti_textbox.getText()), dataUltimoAcquisto, null);
           
             	
             	
             	model.addRow(new Object[] {cliente.getTitolo(), cliente.getNome(), cliente.getIndirizzo(), 
             			cliente.getCap(), cliente.getCitta(), cliente.getProvincia(), cliente.getTelefono(), 
-            			cliente.getEmail(), cliente.getNote(), cliente.getCodiceCarta(), cliente.getCodiceBarre(), 
+            			cliente.getEmail(), cliente.getNote(), cliente.getCodiceBarre(), 
             			cliente.getPunti(), cliente.getUltimo_acquisto(),cliente.getPossesso_email()});
             	System.out.println(cliente.toString());
             	inserisciClienteDb(cliente);
@@ -229,7 +221,6 @@ public class Clienti {
             	telefono_textbox.setText(null);
             	note_textbox.setText(null);
             	codice_barre_textbox.setText(null);
-            	card_code_textbox.setText(null);
             	punti_textbox.setText(null);
             }
         });
@@ -244,7 +235,60 @@ public class Clienti {
             	
             }
         });
+    	
+    	alfabetico_button.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+            	model.setRowCount(0);
+            	ArrayList<Cliente> clienti = clientiAlfabeticoDaDb();
+            	for(int i=0; i < clienti.size(); i++) {
+            		model.addRow(new Object[] {clienti.get(i).getTitolo(), clienti.get(i).getNome(), clienti.get(i).getIndirizzo(), 
+            				clienti.get(i).getCap(), clienti.get(i).getCitta(), clienti.get(i).getProvincia(), clienti.get(i).getTelefono(), 
+            				clienti.get(i).getEmail(), clienti.get(i).getNote(), clienti.get(i).getCodiceBarre(),
+            				clienti.get(i).getPunti(), clienti.get(i).getUltimo_acquisto(),clienti.get(i).getPossesso_email()});
+            	}
+            }
+    	});
+    	
+    	email_button.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+            	model.setRowCount(0);
+            	ArrayList<Cliente> clienti = clientiEmailDaDb();
+            	for(int i=0; i < clienti.size(); i++) {
+            		model.addRow(new Object[] {clienti.get(i).getTitolo(), clienti.get(i).getNome(), clienti.get(i).getIndirizzo(), 
+            				clienti.get(i).getCap(), clienti.get(i).getCitta(), clienti.get(i).getProvincia(), clienti.get(i).getTelefono(), 
+            				clienti.get(i).getEmail(), clienti.get(i).getNote(), clienti.get(i).getCodiceBarre(),
+            				clienti.get(i).getPunti(), clienti.get(i).getUltimo_acquisto(),clienti.get(i).getPossesso_email()});
+            	}
+            }
+    	});
+    	
+    	naturale_button.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+            	model.setRowCount(0);
+            	ArrayList<Cliente> clienti = clientiDaDb();
+            	for(int i=0; i < clienti.size(); i++) {
+            		model.addRow(new Object[] {clienti.get(i).getTitolo(), clienti.get(i).getNome(), clienti.get(i).getIndirizzo(), 
+            				clienti.get(i).getCap(), clienti.get(i).getCitta(), clienti.get(i).getProvincia(), clienti.get(i).getTelefono(), 
+            				clienti.get(i).getEmail(), clienti.get(i).getNote(), clienti.get(i).getCodiceBarre(),
+            				clienti.get(i).getPunti(), clienti.get(i).getUltimo_acquisto(),clienti.get(i).getPossesso_email()});
+            	}
+            }
+        });
+    	
+    	trova_button.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+            	Cliente cliente = clienteDaDb(codice_barre_textbox.getText());
+            	model.setRowCount(0);
+            	model.addRow(new Object[] {cliente.getTitolo(), cliente.getNome(), cliente.getIndirizzo(), 
+        				cliente.getCap(), cliente.getCitta(), cliente.getProvincia(), cliente.getTelefono(), 
+        				cliente.getEmail(), cliente.getNote(), cliente.getCodiceBarre(),
+        				cliente.getPunti(), cliente.getUltimo_acquisto(),cliente.getPossesso_email()});
+            	codice_barre_textbox.setText("");
+            }
+    	});
+    	
     }
+    
     public static void eliminaRigaDb(String value) {
     	String SQL = "DELETE FROM sys.clienti WHERE CodiceBarre = ? ";
     	PreparedStatement pstmt = null;
@@ -291,7 +335,6 @@ public class Clienti {
     	String telefono = cliente.getTelefono();
     	String email = cliente.getEmail();
     	String note = cliente.getNote();
-    	String codiceCarta = cliente.getCodiceCarta();
     	String codiceBarre = cliente.getCodiceBarre();
     	int punti = cliente.getPunti();
     	Date ultimo_acquisto = cliente.getUltimo_acquisto();
@@ -300,8 +343,8 @@ public class Clienti {
     	
     	try { 
     		PreparedStatement pstmt = con.prepareStatement("INSERT INTO sys.clienti (Titolo, Nome, Indirizzo, Cap, "
-    				+ "Citta, Provincia, Telefono, Email, Note, CardCode, CodiceBarre, Punti, UltimoAcquisto, PossessoEmail) VALUE \r\n"
-    				+ "        (?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
+    				+ "Citta, Provincia, Telefono, Email, Note, CodiceBarre, Punti, UltimoAcquisto, PossessoEmail) VALUE \r\n"
+    				+ "        (?,?,?,?,?,?,?,?,?,?,?,?,?)");
     		pstmt.setString(1, titolo );
     		pstmt.setString(2, nome);
     		pstmt.setString(3, indirizzo);
@@ -311,16 +354,14 @@ public class Clienti {
     		pstmt.setString(7, telefono);
     		pstmt.setString(8, email);
     		pstmt.setString(9, note);
-    		pstmt.setString(10, codiceCarta);
-    		pstmt.setString(11, codiceBarre);
-    		pstmt.setInt(12, punti);
-    		pstmt.setDate(13, java.sql.Date.valueOf(java.time.LocalDate.now()));
-    		if(email != null) {
-    			pstmt.setString(14, "SI");
+    		pstmt.setString(10, codiceBarre);
+    		pstmt.setInt(11, punti);
+    		pstmt.setDate(12, java.sql.Date.valueOf(java.time.LocalDate.now()));
+    		if(email.equals(null)) {
+    			pstmt.setString(13, "✓");
     		}else {
-    			pstmt.setString(14, "NO");
+    			pstmt.setString(13, "");
     		}
-    		
     		
     		pstmt.executeUpdate(); 
             
@@ -345,6 +386,62 @@ public class Clienti {
             }
         }
     }
+    public static Cliente clienteDaDb(String tessera){
+    	Statement st = null;
+        ResultSet rs = null;
+        PreparedStatement pstmt = null;
+    	Connection con  = Database.connect();
+    	Cliente cliente = new Cliente(); 
+    	System.out.println("tessera " + tessera);
+    	try { 
+            pstmt = con.prepareStatement("SELECT * FROM sys.clienti WHERE CodiceBarre = ?;");
+
+            pstmt.setString(1, tessera);
+            rs = pstmt.executeQuery();
+            
+            while (rs.next()) {
+            	
+            	cliente.setTitolo(rs.getString("Titolo"));
+            	cliente.setNome(rs.getString("Nome"));
+            	cliente.setIndirizzo(rs.getString("Indirizzo"));
+            	cliente.setCap(rs.getString("Cap")); 
+            	cliente.setCitta(rs.getString("Citta"));
+            	cliente.setProvincia(rs.getString("Provincia"));
+            	cliente.setTelefono(rs.getString("Telefono"));
+            	cliente.setEmail(rs.getString("Email"));
+            	cliente.setNote(rs.getString("Note"));
+            	cliente.setCodiceBarre(rs.getString("CodiceBarre"));
+            	cliente.setPunti(rs.getInt("Punti")); 
+            	cliente.setUltimo_acquisto(rs.getDate("UltimoAcquisto"));
+            	cliente.setPossesso_email(rs.getString("PossessoEmail"));
+            	
+            }
+            
+        } catch (SQLException ex) {
+        	ex.printStackTrace();
+
+        } finally {
+            try {
+                if (rs != null) {
+                    rs.close();
+                }
+                if (st != null) {
+                    st.close();
+                }
+                if (con != null) {
+                    con.close();
+                }
+                if(pstmt != null) {
+                	pstmt.close();
+                }
+
+            } catch (SQLException ex) {
+               ex.printStackTrace();
+            }
+        }
+		return cliente;
+		
+    }
     
     public static ArrayList<Cliente> clientiDaDb(){
     	Statement st = null;
@@ -368,7 +465,110 @@ public class Clienti {
             	cliente.setEmail(rs.getString("Email"));
             	cliente.setNote(rs.getString("Note"));
             	cliente.setCodiceBarre(rs.getString("CodiceBarre"));
-            	cliente.setCodiceCarta(rs.getString("CardCode")); 
+            	cliente.setPunti(rs.getInt("Punti")); 
+            	cliente.setUltimo_acquisto(rs.getDate("UltimoAcquisto"));
+            	cliente.setPossesso_email(rs.getString("PossessoEmail"));
+            	clienti.add(cliente);
+            }
+            
+            
+        } catch (SQLException ex) {
+        	ex.printStackTrace();
+
+        } finally {
+            try {
+                if (rs != null) {
+                    rs.close();
+                }
+                if (st != null) {
+                    st.close();
+                }
+                if (con != null) {
+                    con.close();
+                }
+
+            } catch (SQLException ex) {
+               ex.printStackTrace();
+            }
+        }
+		return clienti;
+		
+    }
+    
+    public static ArrayList<Cliente> clientiAlfabeticoDaDb(){
+    	Statement st = null;
+        ResultSet rs = null;
+    	Connection con  = Database.connect();
+    	ArrayList<Cliente> clienti = new ArrayList<Cliente>(); 
+    	try {
+            st = con.createStatement();
+            rs = st.executeQuery("SELECT * FROM sys.clienti ORDER BY Nome ASC;");                 
+            System.out.println("query eseguita articoli da db");
+            while (rs.next()) {
+            	Cliente cliente = new Cliente();
+            	
+            	cliente.setTitolo(rs.getString("Titolo"));
+            	cliente.setNome(rs.getString("Nome"));
+            	cliente.setIndirizzo(rs.getString("Indirizzo"));
+            	cliente.setCap(rs.getString("Cap")); 
+            	cliente.setCitta(rs.getString("Citta"));
+            	cliente.setProvincia(rs.getString("Provincia"));
+            	cliente.setTelefono(rs.getString("Telefono"));
+            	cliente.setEmail(rs.getString("Email"));
+            	cliente.setNote(rs.getString("Note"));
+            	cliente.setCodiceBarre(rs.getString("CodiceBarre"));
+            	cliente.setPunti(rs.getInt("Punti")); 
+            	cliente.setUltimo_acquisto(rs.getDate("UltimoAcquisto"));
+            	cliente.setPossesso_email(rs.getString("PossessoEmail"));
+            	clienti.add(cliente);
+            }
+            
+            
+        } catch (SQLException ex) {
+        	ex.printStackTrace();
+
+        } finally {
+            try {
+                if (rs != null) {
+                    rs.close();
+                }
+                if (st != null) {
+                    st.close();
+                }
+                if (con != null) {
+                    con.close();
+                }
+
+            } catch (SQLException ex) {
+               ex.printStackTrace();
+            }
+        }
+		return clienti;
+		
+    }
+    
+    public static ArrayList<Cliente> clientiEmailDaDb(){
+    	Statement st = null;
+        ResultSet rs = null;
+    	Connection con  = Database.connect();
+    	ArrayList<Cliente> clienti = new ArrayList<Cliente>(); 
+    	try {
+            st = con.createStatement();
+            rs = st.executeQuery("SELECT * FROM sys.clienti ORDER BY Email ASC;");                 
+            System.out.println("query eseguita articoli da db");
+            while (rs.next()) {
+            	Cliente cliente = new Cliente();
+            	
+            	cliente.setTitolo(rs.getString("Titolo"));
+            	cliente.setNome(rs.getString("Nome"));
+            	cliente.setIndirizzo(rs.getString("Indirizzo"));
+            	cliente.setCap(rs.getString("Cap")); 
+            	cliente.setCitta(rs.getString("Citta"));
+            	cliente.setProvincia(rs.getString("Provincia"));
+            	cliente.setTelefono(rs.getString("Telefono"));
+            	cliente.setEmail(rs.getString("Email"));
+            	cliente.setNote(rs.getString("Note"));
+            	cliente.setCodiceBarre(rs.getString("CodiceBarre"));
             	cliente.setPunti(rs.getInt("Punti")); 
             	cliente.setUltimo_acquisto(rs.getDate("UltimoAcquisto"));
             	cliente.setPossesso_email(rs.getString("PossessoEmail"));
@@ -436,7 +636,7 @@ public class Clienti {
                 }
             }
     	}else {
-    		String newCodiceBarre = "900" + "0000";
+    		String newCodiceBarre = "950" + "0000";
     		codiceBarre = Integer.parseInt(newCodiceBarre);
     	}
     	

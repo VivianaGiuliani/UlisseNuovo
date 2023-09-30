@@ -15,7 +15,6 @@ public class Cliente {
 	private String email;
 	private String note;
 	private String codiceBarre;
-	private String codiceCarta;
 	private int punti;
 	private Date ultimo_acquisto;
 	private String possesso_email;
@@ -23,7 +22,7 @@ public class Cliente {
 	public Cliente() {}
 
 	public Cliente(String titolo, String nome, String indirizzo, String cap, String citta, String provincia,
-			String telefono, String email, String note, String codiceBarre, String codiceCarta, int punti,
+			String telefono, String email, String note, String codiceBarre, int punti,
 			Date dataUltimoAcquisto, String possesso_email) {
 		super();
 		this.titolo = titolo;
@@ -36,7 +35,6 @@ public class Cliente {
 		this.email = email;
 		this.note = note;
 		this.codiceBarre = codiceBarre;
-		this.codiceCarta = codiceCarta;
 		this.punti = punti;
 		this.ultimo_acquisto = dataUltimoAcquisto;
 		this.possesso_email = possesso_email;
@@ -122,14 +120,6 @@ public class Cliente {
 		this.codiceBarre = codiceBarre;
 	}
 
-	public String getCodiceCarta() {
-		return codiceCarta;
-	}
-
-	public void setCodiceCarta(String codiceCarta) {
-		this.codiceCarta = codiceCarta;
-	}
-
 	public int getPunti() {
 		return punti;
 	}
@@ -159,7 +149,7 @@ public class Cliente {
 	public String toString() {
 		return "Cliente [titolo=" + titolo + ", nome=" + nome + ", indirizzo=" + indirizzo + ", cap=" + cap + ", citta="
 				+ citta + ", provincia=" + provincia + ", telefono=" + telefono + ", email=" + email + ", note=" + note
-				+ ", codiceBarre=" + codiceBarre + ", codiceCarta=" + codiceCarta + ", punti=" + punti
+				+ ", codiceBarre=" + codiceBarre +  ", punti=" + punti
 				+ ", ultimo_acquisto=" + ultimo_acquisto + ", possesso_email=" + possesso_email + "]";
 	}
 	

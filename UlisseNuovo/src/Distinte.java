@@ -20,6 +20,7 @@ import Classi.Database;
 import Oggetti.Articolo;
 import Oggetti.Categoria;
 import Oggetti.Cliente;
+import Oggetti.Vendita;
 
 public class Distinte {
 	 public static void main(String[] args) {
@@ -158,11 +159,6 @@ public class Distinte {
 		nome_cliente_textbox.setBounds(135, 370, 150, 40);
 		nome_cliente_textbox.setVisible(true);
 		window.add(nome_cliente_textbox);
-        
-		JButton ok_button = new JButton("OK");
-		ok_button.setBounds(290, 370, 70, 20);
-		ok_button.setVisible(true);
-		window.add(ok_button);
 		
 		JButton usa_punti_button = new JButton("Usa punti");
 		usa_punti_button.setBounds(365, 370, 100, 20);
@@ -305,75 +301,35 @@ public class Distinte {
         totale_saldo_textbox.setVisible(true);
 		window.add(totale_saldo_textbox);
 		
-		JLabel richiama_label = new JLabel("Richiama");
-		richiama_label.setFont(new Font("Courier", Font.PLAIN, 15));
-		richiama_label.setBounds(10, 520, 110, 20);
-        window.add(richiama_label);
-		
-        JTextArea richiama_textbox = new JTextArea();
-        richiama_textbox.setBounds(10, 540, 140, 40);
-        richiama_textbox.setVisible(true);
-		window.add(richiama_textbox);
-		
-		JButton cliente_button = new JButton("Cliente");
-		cliente_button.setBounds(155, 520, 130, 40);
-		cliente_button.setVisible(true);
-		window.add(cliente_button);
-		
-		String[] scelta_cliente = {};
-        JComboBox<String> scelta_cliente_combobox = new JComboBox<>(scelta_cliente);
-        scelta_cliente_combobox.setBounds(155, 560, 130, 20);
-        window.add(scelta_cliente_combobox);
-        
-        JLabel cons_label = new JLabel("Cons");
-        cons_label.setFont(new Font("Courier", Font.PLAIN, 15));
-        cons_label.setBounds(290, 520, 110, 20);
-        window.add(cons_label);
-		
-        JTextArea cons_textbox = new JTextArea();
-        cons_textbox.setBounds(290, 540, 140, 40);
-        cons_textbox.setVisible(true);
-		window.add(cons_textbox);
-		
-		JButton contanti_button = new JButton("Contanti");
+		JCheckBox contanti_button = new JCheckBox("Contanti");
 		contanti_button.setBounds(440, 538, 150, 20);
 		contanti_button.setVisible(true);
 		window.add(contanti_button);
 		
-		JButton dati_aggiuntivi_button = new JButton("Dati aggiuntivi");
-		dati_aggiuntivi_button.setBounds(440, 562, 150, 20);
-		dati_aggiuntivi_button.setVisible(true);
-		window.add(dati_aggiuntivi_button);
+		JCheckBox carte_button = new JCheckBox("Carte");
+		carte_button.setBounds(595, 538, 150, 20);
+		carte_button.setVisible(true);
+		window.add(carte_button);
 		
-		JButton resto_button = new JButton("Resto");
-		resto_button.setBounds(595, 538, 150, 20);
-		resto_button.setVisible(true);
-		window.add(resto_button);
+		JCheckBox bonifico_button = new JCheckBox("Bonifico");
+		bonifico_button.setBounds(750, 538, 150, 20);
+		bonifico_button.setVisible(true);
+		window.add(bonifico_button);
+		
+		JButton totale_pagamenti_button = new JButton("Totale pagamenti");
+		totale_pagamenti_button.setBounds(905, 538, 150, 20);
+		totale_pagamenti_button.setVisible(true);
+		window.add(totale_pagamenti_button);
 		
 		JButton ristampa_distinta_button = new JButton("Ristampa distinta");
 		ristampa_distinta_button.setBounds(595, 562, 150, 20);
 		ristampa_distinta_button.setVisible(true);
 		window.add(ristampa_distinta_button);
 		
-		JButton saldo_button = new JButton("Saldo");
-		saldo_button.setBounds(750, 538, 150, 20);
-		saldo_button.setVisible(true);
-		window.add(saldo_button);
-		
-		JButton consegna_saldo_button = new JButton("Consegna + Saldo");
-		consegna_saldo_button.setBounds(750, 562, 150, 20);
-		consegna_saldo_button.setVisible(true);
-		window.add(consegna_saldo_button);
-		
 		JButton nuova_vendita_button = new JButton("Nuova vendita");
 		nuova_vendita_button.setBounds(10, 600, 130, 40);
 		nuova_vendita_button.setVisible(true);
 		window.add(nuova_vendita_button);
-		
-		JButton carica_acconto_button = new JButton("Carica acconto");
-		carica_acconto_button.setBounds(145, 600, 130, 40);
-		carica_acconto_button.setVisible(true);
-		window.add(carica_acconto_button);
 		
 		JButton nuovo_carico_button = new JButton("Nuovo carico");
 		nuovo_carico_button.setBounds(280, 600, 130, 40);
@@ -587,7 +543,6 @@ public class Distinte {
 		});
 		usa_punti_button.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-            	
             	Cliente cliente = clienteDaDb(tessera_cliente_textbox.getText());
             	int puntiPrec = cliente.getPunti();
             	if((cliente.getPunti() - 25)>=0 ) {
@@ -605,8 +560,10 @@ public class Distinte {
 		memorizza_e_stampa_vendita_button.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
             	String [] barcodeTabella = new String[table.getRowCount()];
+            	int [] quantitaTabella = new int [table.getRowCount()];
             	for (int i = 0; i < table.getRowCount(); i++) {
             		barcodeTabella[i] = (String) table.getModel().getValueAt(i, 0);
+            		quantitaTabella[i] = Integer.parseInt( (String) table.getModel().getValueAt(i, 2));
                 }
             	int numeroVendita = Integer.parseInt(numero_textbox.getText());
             	String tesseraCliente = tessera_cliente_textbox.getText();
@@ -617,16 +574,97 @@ public class Distinte {
             	int totale_scontato = Integer.parseInt(totale_scontato_textbox.getText());
             	int acconto = Integer.parseInt(acconto_textbox.getText());
             	int totale_saldo = Integer.parseInt(totale_saldo_textbox.getText());
+            	ArrayList<Articolo> articoli = new ArrayList<Articolo>();
+            	for(int i = 0; i < barcodeTabella.length; i ++) {
+            		Articolo articolo = articoliDaDbTab(barcodeTabella[i]);
+            		articoli.add(articolo);
+            	}
+            	String metodoPagamento = "";
+            	if(contanti_button.isSelected()) {
+            		metodoPagamento = "CON";
+            	}else if(carte_button.isSelected()) {
+            		metodoPagamento = "CAR";
+            	}else if(bonifico_button.isSelected()) {
+            		metodoPagamento = "BON";
+            	}
             	
-            	inserisciVendita(numeroVendita, data, totale_merce, sconto, merce_scontata, totale_scontato, acconto, totale_saldo);
+            	inserisciVendita(numeroVendita, data, totale_merce, sconto, merce_scontata, totale_scontato, acconto, totale_saldo, metodoPagamento);
             	inserisciDistinta(barcodeTabella, numeroVendita, tesseraCliente);
+            	quantitaDopoVendita(articoli, quantitaTabella);
+            }
+		});
+		
+		clienti_button.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+            	Clienti c = new Clienti();
+            }
+		});
+		
+		parizale_giornaliero_button.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+            	ArrayList<Vendita> vendite = parzialeGiornaliero(java.sql.Date.valueOf(java.time.LocalDate.now()));
+            	int totaleScontato = 0;
+            	for(int i = 0; i < vendite.size(); i++) {
+            		totaleScontato = totaleScontato + vendite.get(i).getTotaleSaldo();
+            	}
+            	ParzialeGiornaliero p = new ParzialeGiornaliero(totaleScontato);
+            }
+		});
+		
+		totale_pagamenti_button.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+            	ArrayList<Vendita> vendite = parzialeGiornaliero(java.sql.Date.valueOf(java.time.LocalDate.now()));
+            	int totale_contanti = 0;
+            	int totale_carte = 0;
+            	int totale_bonifici = 0;
+            	for(int i = 0; i < vendite.size(); i++) {
+            		if(vendite.get(i).getMetodoPagamento().equals("CON")) {
+            			totale_contanti = totale_contanti + vendite.get(i).getTotaleScontato();
+            		}else if(vendite.get(i).getMetodoPagamento().equals("CAR")) {
+            			totale_carte = totale_carte + vendite.get(i).getTotaleScontato();
+            		}else if(vendite.get(i).getMetodoPagamento().equals("BON")) {
+            			totale_bonifici = totale_bonifici + vendite.get(i).getTotaleScontato();
+            		}
+            	}
+            	TotalePagamenti t = new TotalePagamenti(totale_contanti, totale_carte, totale_bonifici, java.sql.Date.valueOf(java.time.LocalDate.now()));
             }
 		});
 		
 		window.setLayout(null);
         window.setVisible(true);
     }
-	 
+	 public static void quantitaDopoVendita(ArrayList<Articolo> articoli, int [] quantitaTabella){
+			PreparedStatement st = null;
+	    	Connection con  = Database.connect();
+	    	
+	    	try {
+	    		for(int i = 0; i < articoli.size(); i++) {
+	    			st = con.prepareStatement("UPDATE sys.articoli SET giacenza = ? WHERE barcode = ?;");
+		            int giacenza = articoli.get(i).getGiacenza() - quantitaTabella[i];
+		            st.setInt(1, giacenza);
+		            st.setString(2, articoli.get(i).getBarcode());
+		            st.executeUpdate();
+	    		}
+	            
+	        } catch (SQLException ex) {
+	        	ex.printStackTrace();
+
+	        } finally {
+	            try {
+	               
+	                if (st != null) {
+	                    st.close();
+	                }
+	                if (con != null) {
+	                    con.close();
+	                }
+
+	            } catch (SQLException ex) {
+	               ex.printStackTrace();
+	            }
+	        }
+			
+	    }
 	 
 	 public static double totaleScontato(ArrayList<Articolo> articoli) {
 		 double totale = articoli.get(0).getGiacenza()*articoli.get(0).getPr_unit();
@@ -720,8 +758,8 @@ public class Distinte {
 	    	try { 
 	            pstmt = con.prepareStatement("SELECT * FROM sys.articoli WHERE barcode = ?;");
 
-             pstmt.setString(1, barcode);
-             rs = pstmt.executeQuery();
+	            pstmt.setString(1, barcode);
+	            rs = pstmt.executeQuery();
 	            System.out.println("query eseguita articoli da db");
 	            while (rs.next()) {
 	            	
@@ -830,7 +868,6 @@ public class Distinte {
 	            	cliente.setEmail(rs.getString("Email"));
 	            	cliente.setNote(rs.getString("Note"));
 	            	cliente.setCodiceBarre(rs.getString("CodiceBarre"));
-	            	cliente.setCodiceCarta(rs.getString("CardCode")); 
 	            	cliente.setPunti(rs.getInt("Punti")); 
 	            	cliente.setUltimo_acquisto(rs.getDate("UltimoAcquisto"));
 	            	cliente.setPossesso_email(rs.getString("PossessoEmail"));
@@ -863,14 +900,66 @@ public class Distinte {
 			
 	    }
 	 
-	 public static void updatePunti(String codiceCarta, int puntiAggiornati){
+	 public static ArrayList<Vendita> parzialeGiornaliero(java.sql.Date date){
+	    	Statement st = null;
+	        ResultSet rs = null;
+	        PreparedStatement pstmt = null;
+	    	Connection con  = Database.connect();
+	    	ArrayList<Vendita> vendite = new ArrayList<Vendita>();
+	    	try { 
+	            pstmt = con.prepareStatement("SELECT * FROM sys.vendite WHERE Data = ?;");
+
+	            pstmt.setDate(1, date);
+	            rs = pstmt.executeQuery();
+	            
+	            while (rs.next()) {
+	            	Vendita vendita = new Vendita();
+	            	vendita.setNumeroVendita(rs.getInt("NumeroVendita"));
+	            	vendita.setData(rs.getDate("Data"));
+	            	vendita.setTotaleMerce(rs.getInt("TotaleMerce"));
+	            	vendita.setSconto(rs.getDouble("Sconto"));
+	            	vendita.setMerceScontata(rs.getDouble("MerceScontata"));
+	            	vendita.setTotaleScontato(rs.getInt("TotaleScontato"));
+	            	vendita.setAcconto(rs.getInt("Acconto"));
+	            	vendita.setTotaleSaldo(rs.getInt("TotaleSaldo"));
+	            	vendita.setMetodoPagamento(rs.getString("MetodoPagamento"));
+	            	vendite.add(vendita);		
+	            }
+	            
+	        } catch (SQLException ex) {
+	        	ex.printStackTrace();
+
+	        } finally {
+	            try {
+	                if (rs != null) {
+	                    rs.close();
+	                }
+	                if (st != null) {
+	                    st.close();
+	                }
+	                if (con != null) {
+	                    con.close();
+	                }
+	                if(pstmt != null) {
+	                	pstmt.close();
+	                }
+
+	            } catch (SQLException ex) {
+	               ex.printStackTrace();
+	            }
+	        }
+			return vendite;
+			
+	    }
+	 
+	 public static void updatePunti(String codiceBarre, int puntiAggiornati){
 			PreparedStatement st = null;
 	    	Connection con  = Database.connect();
 	    	
 	    	try {
-	            st = con.prepareStatement("UPDATE sys.clienti SET Punti = ? WHERE CardCode = ?;");
+	            st = con.prepareStatement("UPDATE sys.clienti SET Punti = ? WHERE CodiceBarre = ?;");
 	            st.setInt(1, puntiAggiornati);
-	            st.setString(2, codiceCarta);
+	            st.setString(2, codiceBarre);
 	            st.executeUpdate();
 	            con.close();
 	            
@@ -895,6 +984,8 @@ public class Distinte {
 	        }
 			
 	    }
+	 
+	
 	 
 	 public static int calcoloNumeroVendita(int result) {
 	    	Statement st = null;
@@ -1023,14 +1114,14 @@ public class Distinte {
 			
 		}
 	 
-	 public static void inserisciVendita(int numeroVendita, String data, int totale_merce, double sconto, double merce_scontata, int totale_scontato, int acconto, int totale_saldo) {
+	 public static void inserisciVendita(int numeroVendita, String data, int totale_merce, double sconto, double merce_scontata, int totale_scontato, int acconto, int totale_saldo, String metodoPagamento) {
 		 	Statement st = null;
 		 	PreparedStatement pstmt = null;
 			Connection con  = Database.connect();
 			
 			try { 
-					pstmt = con.prepareStatement("INSERT INTO sys.vendite (NumeroVendita, Data, TotaleMerce, Sconto, MerceScontata, TotaleScontato, Acconto, TotaleSaldo) VALUE \r\n"
-							+ "        (?,?,?,?,?,?,?,?)");
+					pstmt = con.prepareStatement("INSERT INTO sys.vendite (NumeroVendita, Data, TotaleMerce, Sconto, MerceScontata, TotaleScontato, Acconto, TotaleSaldo, MetodoPagamento) VALUE \r\n"
+							+ "        (?,?,?,?,?,?,?,?,?)");
 					pstmt.setInt(1, numeroVendita);
 					pstmt.setString(2, data);
 					pstmt.setInt(3, totale_merce);
@@ -1039,6 +1130,7 @@ public class Distinte {
 					pstmt.setInt(6, totale_scontato);
 					pstmt.setInt(7, acconto);
 					pstmt.setInt(8, totale_saldo);
+					pstmt.setString(9, metodoPagamento);
 					
 					pstmt.executeUpdate(); 
 				

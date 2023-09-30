@@ -22,7 +22,7 @@ import Oggetti.Articolo;
 import Oggetti.Categoria;
 
 public class TabellaCategorie {
-public static void main(String[] args) {
+public static void main (String [] args) {
     	
         JFrame window = new JFrame();
         window.setSize(600, 700);
@@ -74,21 +74,29 @@ public static void main(String[] args) {
         window.add(tablePanel);
         
         ArrayList<Categoria> categorie = categorieDaDb();
+        ArrayList<Articolo> articoli = articoliDaDb();
     	System.out.println("Categorie:" + categorie);
-    	for(int i=0; i < categorie.size(); i++) {
+    	
+    	
+    	for(int i = 0; i < categorie.size(); i++) {
+    		ArrayList<Articolo> articoliCategoria = articoliCategoriaDaDb(categorie.get(i).getPk());
+    		int tot_giac = 0;
+    		for(int j = 0; j < articoliCategoria.size(); j++) {
+    			tot_giac = tot_giac + articoliCategoria.get(j).getGiacenza();
+    		}
+    		categorie.get(i).setMin_giac(tot_giac);
     		model.addRow(new Object[] {categorie.get(i).getPk(), categorie.get(i).getCategoria(), categorie.get(i).getMin_giac()});
     	}
 
     	inserisci_categoria_button.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
             	Categoria categoria = new Categoria(Integer.parseInt(tipologia_textbox.getText()), nome_textbox.getText(), 0);
-          
-            	
-            	
+
             	model.addRow(new Object[] {categoria.getPk(), categoria.getCategoria(), categoria.getMin_giac()});
             	System.out.println(categoria.toString());
             	
             	inserisciCategoriaDb(categoria);
+            	
             	
             }
         });
@@ -108,6 +116,118 @@ public static void main(String[] args) {
         window.setLayout(null);
         window.setVisible(true);
 	}
+
+public static ArrayList<Articolo> articoliCategoriaDaDb(int categoria){
+	Statement st = null;
+    ResultSet rs = null;
+    PreparedStatement pstmt = null;
+	Connection con  = Database.connect();
+	ArrayList<Articolo> articoli = new ArrayList<Articolo>(); 
+	
+	try { 
+        pstmt = con.prepareStatement("SELECT * FROM sys.articoli WHERE cod_categoria = ?;");
+
+        pstmt.setInt(1, categoria);
+        rs = pstmt.executeQuery();
+        while (rs.next()) {
+        	Articolo articolo = new Articolo();
+        	
+        	articolo.setBarcode(rs.getString("barcode"));
+        	articolo.setFornitore(rs.getString("cfor"));
+        	articolo.setCod_for(rs.getLong("codfor"));
+        	articolo.setGiacenza(rs.getInt("giacenza")); 
+        	articolo.setDescrizione(rs.getString("descrizione"));
+        	articolo.setPeso(rs.getDouble("peso"));
+        	articolo.setCaratura(rs.getDouble("caratura"));
+        	articolo.setPr_unit(rs.getInt("pr_unit"));
+        	articolo.setTot_giac(rs.getInt("tot_giacenza"));
+        	articolo.setSconto1(rs.getInt("sc_1"));
+        	articolo.setSconto2(rs.getInt("sc_2")); 
+        	articolo.setCosto(rs.getDouble("costo")); 
+        	articolo.setFv(rs.getString("fv"));
+        	articolo.setCod_categoria(rs.getInt("cod_categoria"));
+        	articoli.add(articolo);
+        }
+        
+        
+    } catch (SQLException ex) {
+    	ex.printStackTrace();
+
+    } finally {
+        try {
+            if (rs != null) {
+                rs.close();
+            }
+            if (st != null) {
+                st.close();
+            }
+            if (con != null) {
+                con.close();
+            }
+            if(pstmt != null) {
+            	pstmt.close();
+            }
+
+        } catch (SQLException ex) {
+           ex.printStackTrace();
+        }
+    }
+	return articoli;
+	
+}
+
+
+public static ArrayList<Articolo> articoliDaDb(){
+	Statement st = null;
+    ResultSet rs = null;
+	Connection con  = Database.connect();
+	ArrayList<Articolo> articoli = new ArrayList<Articolo>(); 
+	try {
+        st = con.createStatement();
+        rs = st.executeQuery("SELECT * FROM sys.articoli ORDER BY barcode ASC;");                 
+        System.out.println("query eseguita articoli da db");
+        while (rs.next()) {
+        	Articolo articolo = new Articolo();
+        	
+        	articolo.setBarcode(rs.getString("barcode"));
+        	articolo.setFornitore(rs.getString("cfor"));
+        	articolo.setCod_for(rs.getLong("codfor"));
+        	articolo.setGiacenza(rs.getInt("giacenza")); 
+        	articolo.setDescrizione(rs.getString("descrizione"));
+        	articolo.setPeso(rs.getDouble("peso"));
+        	articolo.setCaratura(rs.getDouble("caratura"));
+        	articolo.setPr_unit(rs.getInt("pr_unit"));
+        	articolo.setTot_giac(rs.getInt("tot_giacenza"));
+        	articolo.setSconto1(rs.getInt("sc_1"));
+        	articolo.setSconto2(rs.getInt("sc_2")); 
+        	articolo.setCosto(rs.getDouble("costo")); 
+        	articolo.setFv(rs.getString("fv"));
+        	articoli.add(articolo);
+        }
+        
+        
+    } catch (SQLException ex) {
+    	ex.printStackTrace();
+
+    } finally {
+        try {
+            if (rs != null) {
+                rs.close();
+            }
+            if (st != null) {
+                st.close();
+            }
+            if (con != null) {
+                con.close();
+            }
+
+        } catch (SQLException ex) {
+           ex.printStackTrace();
+        }
+    }
+	return articoli;
+	
+}
 
 public static ArrayList<Categoria> categorieDaDb(){
 	Statement st = null;

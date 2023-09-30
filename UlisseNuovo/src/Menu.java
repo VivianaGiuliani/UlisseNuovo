@@ -2,51 +2,48 @@ import javax.swing.*;
 import java.awt.*;
 
 public class Menu extends JFrame {
-    public Menu() {
-        setTitle("Ulisse");
-        setSize(1400, 800);
-        setResizable(false);
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
-        // Create a main panel
-        JPanel mainPanel = new JPanel();
-        mainPanel.setLayout(null);
-        add(mainPanel);
-
-        // Button labels organized in rows and a column
-        String[][] buttonLabels = {
-                {"Distinte", "Etichette", "Inventario"},
-                {"Clienti", "Fornitori", "Articoli", "Tab.Punti"},
-                {"Saldi Categ.", "Saldi Macrocat", "Totale incisioni", "Totale magazzino", "Scadenze"},
-                {"Elimina cloni", "Stampa art.", "Ordina art.", "Azzeramento", "Stampa mov.", "Ristampa etich.", "Argenteria", "Elimina cloni", "Elimina privati"},
-                {"St.t.Nuova", "Costi pulitura", "Costi trattamento"},
-                {"Rip.arg.pubblico", "Rip.arg.negozi", "Rip.cons.neg", "Rip.oref.pubblico", "Rip.oref.negozi"},
-                {"Anagrafica aziende", "Emissione DDT", "Crea listini arg.", "Schede costi", "Listino Argenteria", "Listino Oralux", "Magazzino Oralux", "Ordinamento costi", "Ordini"},
-                {"Cambia anno", "Pulizia Archivi"}
-        };
-
-        int x_pos = 30;
-        int y_pos = 80;
-        int buttonWidth = 150;
-        int buttonHeight = 50;
-
-        // Create and place buttons
-        for (int i = 0; i < buttonLabels.length; i++) {
-            for (int j = 0; j < buttonLabels[i].length; j++) {
-                JButton button = new JButton(buttonLabels[i][j]);
-                button.setBounds(x_pos, y_pos, buttonWidth, buttonHeight);
-                mainPanel.add(button);
-                x_pos += 150;
-            }
-            y_pos += 50;
-            x_pos = 30;
-        }
-    }
-
-    public static void main(String[] args) {
-        SwingUtilities.invokeLater(() -> {
-        	Menu gui = new Menu();
-            gui.setVisible(true);
-        });
+	public static void main(String[] args) {
+        JFrame window = new JFrame();
+        window.setSize(1400, 800);
+        window.setTitle("Ulisse");
+        window.setResizable(false);
+        
+        JLabel applicazioni_label = new JLabel("Applicazioni");
+        applicazioni_label.setFont(new Font("Courier", Font.PLAIN, 15));
+        applicazioni_label.setBounds(10, 15, 200, 30);
+        window.add(applicazioni_label);
+        
+        JButton distinte_button = new JButton("Distinte");
+        distinte_button.setBounds(10, 50, 130, 40);
+        distinte_button.setVisible(true);
+		window.add(distinte_button);
+		
+		JButton etichette_button = new JButton("Distinte");
+		etichette_button.setBounds(150, 50, 130, 40);
+		etichette_button.setVisible(true);
+		window.add(etichette_button);
+		
+		JButton inventario_button = new JButton("Distinte");
+		inventario_button.setBounds(290, 50, 130, 40);
+		inventario_button.setVisible(true);
+		window.add(inventario_button);
+        
+		JLabel archivi_label = new JLabel("Archivi");
+		archivi_label.setFont(new Font("Courier", Font.PLAIN, 15));
+		archivi_label.setBounds(10, 100, 200, 30);
+        window.add(archivi_label);
+        
+        JButton clienti_button = new JButton("Clienti");
+        clienti_button.setBounds(10, 135, 130, 40);
+        clienti_button.setVisible(true);
+		window.add(clienti_button);
+		
+		JButton fornitori_button = new JButton("Fornitori");
+		fornitori_button.setBounds(150, 135, 130, 40);
+		fornitori_button.setVisible(true);
+		window.add(fornitori_button);
+		
+		window.setLayout(null);
+        window.setVisible(true);
     }
 }
