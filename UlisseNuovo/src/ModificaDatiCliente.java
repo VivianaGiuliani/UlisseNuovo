@@ -145,6 +145,7 @@ public class ModificaDatiCliente {
 		modifica_button.setBounds(800, 160, 200, 40);
 		modifica_button.setVisible(true);
 		window.add(modifica_button);
+		window.add(tablePanel);
 		
 		codice_barre_textbox.addKeyListener(new java.awt.event.KeyAdapter() {
 			  public void keyPressed (java.awt.event.KeyEvent evt){
@@ -222,7 +223,7 @@ public class ModificaDatiCliente {
         
         window.setLayout(null);
         window.setVisible(true);
-        window.add(tablePanel);
+        
 	}
 	
 	public static void aggiornaCliente(Cliente cliente){

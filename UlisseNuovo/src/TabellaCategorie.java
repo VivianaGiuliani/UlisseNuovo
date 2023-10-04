@@ -22,7 +22,7 @@ import Oggetti.Articolo;
 import Oggetti.Categoria;
 
 public class TabellaCategorie {
-public static void main (String [] args) {
+public TabellaCategorie() {
     	
         JFrame window = new JFrame();
         window.setSize(600, 700);

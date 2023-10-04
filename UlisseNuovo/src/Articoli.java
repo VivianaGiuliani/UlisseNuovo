@@ -24,7 +24,7 @@ import Oggetti.Articolo;
 
 
 public class Articoli {
-    public static void main(String[] args) {
+    public Articoli() {
     	
         JFrame window = new JFrame();
         window.setSize(1300, 800);

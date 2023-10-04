@@ -1,136 +1,155 @@
 import javax.swing.*;
+
+import Classi.Database;
+
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
 
-public class TotaleMagazzino extends JFrame {
-
-    private JTextField totGiacFissoTextField;
-    private JTextField totGiacVarTextField;
-    private JTextField totGiacTextField;
-    private JTextField totCostoFissoTextField;
-    private JTextField totCostoVarTextField;
-    private JTextField totCostoTextField;
+public class TotaleMagazzino {
 
     public TotaleMagazzino() {
-        initUI();
-    }
-
-    private void initUI() {
-        setSize(500, 400);
-        setTitle("Totale Magazzino");
-        setResizable(false);
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setLayout(null);
-
+    	JFrame window = new JFrame();
+		window.setSize(500, 400);
+		window.setTitle("Totale Magazzino");
+		window.setResizable(false);
+		
         JLabel titoloLabel = new JLabel("Totale Magazzino");
         titoloLabel.setFont(new Font("Courier", Font.PLAIN, 15));
         titoloLabel.setBounds(150, 10, 200, 20);
-        add(titoloLabel);
+        window.add(titoloLabel);
 
         JLabel totGiacFissoLabel = new JLabel("Totale Giacenza Fisso");
         totGiacFissoLabel.setFont(new Font("Courier", Font.PLAIN, 12));
         totGiacFissoLabel.setBounds(10, 50, 200, 20);
-        add(totGiacFissoLabel);
+        window.add(totGiacFissoLabel);
 
-        totGiacFissoTextField = new JTextField();
+        JTextField totGiacFissoTextField = new JTextField();
         totGiacFissoTextField.setBounds(300, 50, 150, 30);
-        add(totGiacFissoTextField);
+        window.add(totGiacFissoTextField);
 
         JLabel totGiacVarLabel = new JLabel("Totale Giacenza Variabile");
         totGiacVarLabel.setFont(new Font("Courier", Font.PLAIN, 12));
         totGiacVarLabel.setBounds(10, 90, 200, 20);
-        add(totGiacVarLabel);
+        window.add(totGiacVarLabel);
 
-        totGiacVarTextField = new JTextField();
+        JTextField totGiacVarTextField = new JTextField();
         totGiacVarTextField.setBounds(300, 90, 150, 30);
-        add(totGiacVarTextField);
+        window.add(totGiacVarTextField);
 
         JLabel totGiacLabel = new JLabel("Totale Giacenza");
         totGiacLabel.setFont(new Font("Courier", Font.PLAIN, 12));
         totGiacLabel.setBounds(10, 130, 200, 20);
-        add(totGiacLabel);
+        window.add(totGiacLabel);
 
-        totGiacTextField = new JTextField();
+        JTextField totGiacTextField = new JTextField();
         totGiacTextField.setBounds(300, 130, 150, 30);
-        add(totGiacTextField);
+        window.add(totGiacTextField);
 
         JLabel totCostoFissoLabel = new JLabel("Totale Costo Fisso");
         totCostoFissoLabel.setFont(new Font("Courier", Font.PLAIN, 12));
         totCostoFissoLabel.setBounds(10, 170, 200, 20);
-        add(totCostoFissoLabel);
+        window.add(totCostoFissoLabel);
 
-        totCostoFissoTextField = new JTextField();
+        JTextField totCostoFissoTextField = new JTextField();
         totCostoFissoTextField.setBounds(300, 170, 150, 30);
-        add(totCostoFissoTextField);
+        window.add(totCostoFissoTextField);
 
         JLabel totCostoVarLabel = new JLabel("Totale Costo Variabile");
         totCostoVarLabel.setFont(new Font("Courier", Font.PLAIN, 12));
         totCostoVarLabel.setBounds(10, 210, 200, 20);
-        add(totCostoVarLabel);
+        window.add(totCostoVarLabel);
 
-        totCostoVarTextField = new JTextField();
+        JTextField totCostoVarTextField = new JTextField();
         totCostoVarTextField.setBounds(300, 210, 150, 30);
-        add(totCostoVarTextField);
+        window.add(totCostoVarTextField);
 
         JLabel totCostoLabel = new JLabel("Totale Costo");
         totCostoLabel.setFont(new Font("Courier", Font.PLAIN, 12));
         totCostoLabel.setBounds(10, 250, 200, 20);
-        add(totCostoLabel);
+        window.add(totCostoLabel);
 
-        totCostoTextField = new JTextField();
+        JTextField totCostoTextField = new JTextField();
         totCostoTextField.setBounds(300, 250, 150, 30);
-        add(totCostoTextField);
-
-        JButton aggiornaButton = new JButton("Aggiorna");
-        aggiornaButton.setBounds(10, 300, 150, 35);
-        add(aggiornaButton);
+        window.add(totCostoTextField);
 
         JButton stampaSaldiButton = new JButton("Stampa Saldi");
-        stampaSaldiButton.setBounds(170, 300, 150, 35);
-        add(stampaSaldiButton);
+        stampaSaldiButton.setBounds(10, 300, 150, 35);
+        window.add(stampaSaldiButton);
 
         JButton stampaDettaglioButton = new JButton("Stampa Dettaglio");
-        stampaDettaglioButton.setBounds(330, 300, 150, 35);
-        add(stampaDettaglioButton);
-
-        // ActionListener for the "Aggiorna" button
-        aggiornaButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                // Perform the update operation for the warehouse totals
-                // For example, you can fetch data from a database and update the text fields
-
-                // For now, we will just show a dialog with a message
-                JOptionPane.showMessageDialog(null, "Totale Magazzino Aggiornato!");
-            }
-        });
-
-        // ActionListener for the "Stampa Saldi" button
-        stampaSaldiButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                // Perform the operation to print the warehouse balances
-                // For now, we will just show a dialog with a message
-                JOptionPane.showMessageDialog(null, "Stampa Saldi");
-            }
-        });
-
-        // ActionListener for the "Stampa Dettaglio" button
-        stampaDettaglioButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                // Perform the operation to print the warehouse details
-                // For now, we will just show a dialog with a message
-                JOptionPane.showMessageDialog(null, "Stampa Dettaglio");
-            }
-        });
+        stampaDettaglioButton.setBounds(170, 300, 150, 35);
+        window.add(stampaDettaglioButton);
+        
+        ArrayList<Integer> valoriF = valoriArticoliDaDb("F");
+        int valoreF = 0;
+        for(int i = 0; i < valoriF.size(); i++) {
+        	valoreF = valoreF + valoriF.get(i);
+        }
+        totGiacFissoTextField.setText(String.valueOf(valoreF));
+        
+        ArrayList<Integer> valoriV = valoriArticoliDaDb("V");
+        int valoreV = 0;
+        for(int i = 0; i < valoriV.size(); i++) {
+        	valoreV = valoreV + valoriV.get(i);
+        }
+        totGiacVarTextField.setText(String.valueOf(valoreV));
+        int tot_giac = valoreF + valoreV;
+        totGiacTextField.setText(String.valueOf(tot_giac));
+        
+        window.setLayout(null);
+        window.setVisible(true);
     }
 
-    public static void main(String[] args) {
-        SwingUtilities.invokeLater(() -> {
-            TotaleMagazzino ex = new TotaleMagazzino();
-            ex.setVisible(true);
-        });
-    }
+    public static ArrayList<Integer> valoriArticoliDaDb(String fv){
+   		Statement st = null;
+        ResultSet rs = null;
+        PreparedStatement pstmt = null;
+   		Connection con  = Database.connect();
+   		ArrayList<Integer> valori = new ArrayList<Integer>();
+   		
+   		try { 
+           pstmt = con.prepareStatement("SELECT giacenza, pr_unit FROM sys.articoli WHERE fv = ?;");
+           
+           pstmt.setString(1, fv);
+           rs = pstmt.executeQuery();
+           System.out.println("query eseguita articoli da db");
+           while (rs.next()) {
+        	   int valore = rs.getInt("giacenza") * rs.getInt("pr_unit");
+        	   System.out.println("Valore: " + valore);
+        	   valori.add(valore); 
+           }
+           
+           
+       } catch (SQLException ex) {
+       	ex.printStackTrace();
+
+       } finally {
+           try {
+               if (rs != null) {
+                   rs.close();
+               }
+               if (st != null) {
+                   st.close();
+               }
+               if (con != null) {
+                   con.close();
+               }
+               if(pstmt != null) {
+               	pstmt.close();
+               }
+
+           } catch (SQLException ex) {
+              ex.printStackTrace();
+           }
+       }
+		return valori;
+		
+   }
 }

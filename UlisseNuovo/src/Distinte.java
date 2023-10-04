@@ -23,12 +23,11 @@ import Oggetti.Cliente;
 import Oggetti.Vendita;
 
 public class Distinte {
-	 public static void main(String[] args) {
+	 public Distinte() {
 		JFrame window = new JFrame();
 		window.setSize(1250, 800);
 		window.setTitle("Distinte");
 		window.setResizable(false);
-		window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         JButton aggiungi_valori_button = new JButton("Aggiungi riga - Trasferisci valori");
         aggiungi_valori_button.setBounds(10, 10, 300, 30);

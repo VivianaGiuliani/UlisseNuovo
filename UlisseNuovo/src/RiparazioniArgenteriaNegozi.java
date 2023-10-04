@@ -1,123 +1,182 @@
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
+
+import Classi.Database;
+import Oggetti.Articolo;
+import Oggetti.CostoPulitura;
+
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
 
-public class RiparazioniArgenteriaNegozi extends JFrame {
+public class RiparazioniArgenteriaNegozi {
+    public static void main (String [] args) {
+    	JFrame window = new JFrame();
+		window.setSize(1220, 680);
+		window.setTitle("Riparazioni Argenteria Negozi");
+		window.setResizable(false);
 
-    public RiparazioniArgenteriaNegozi() {
-        initUI();
-    }
-
-    private void initUI() {
-        setSize(1170, 700);
-        setTitle("Riparazioni Argenteria Negozi");
-        setResizable(false);
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setLayout(null);
-
-        JLabel listinoPrezziNegoziLabel = new JLabel("Listino Prezzi Riparazioni Argenteria Negozi");
-        listinoPrezziNegoziLabel.setFont(new Font("Courier", Font.PLAIN, 20));
-        listinoPrezziNegoziLabel.setBounds(30, 8, 500, 30);
-        add(listinoPrezziNegoziLabel);
-
-        JButton stampaListinoButton = new JButton("Stampa Listino");
-        stampaListinoButton.setPreferredSize(new Dimension(150, 40));
-        stampaListinoButton.setBounds(900, 8, 150, 40);
-        add(stampaListinoButton);
-
-        JButton inizioButton = new JButton("|<");
-        inizioButton.setPreferredSize(new Dimension(60, 40));
-        inizioButton.setBounds(30, 60, 60, 40);
-        add(inizioButton);
-
-        JButton indietroButton = new JButton("<");
-        indietroButton.setPreferredSize(new Dimension(60, 40));
-        indietroButton.setBounds(85, 60, 60, 40);
-        add(indietroButton);
-
-        JButton avantiButton = new JButton(">");
-        avantiButton.setPreferredSize(new Dimension(60, 40));
-        avantiButton.setBounds(140, 60, 60, 40);
-        add(avantiButton);
-
-        JButton fineButton = new JButton(">|");
-        fineButton.setPreferredSize(new Dimension(60, 40));
-        fineButton.setBounds(195, 60, 60, 40);
-        add(fineButton);
-
-        JButton aggiungiRigaButton = new JButton("AR");
-        aggiungiRigaButton.setPreferredSize(new Dimension(60, 40));
-        aggiungiRigaButton.setBounds(270, 60, 60, 40);
-        add(aggiungiRigaButton);
-
-        JButton eliminaRigaButton = new JButton("ER");
-        eliminaRigaButton.setPreferredSize(new Dimension(60, 40));
-        eliminaRigaButton.setBounds(325, 60, 60, 40);
-        add(eliminaRigaButton);
-
-        JButton salvaRigaButton = new JButton("SR");
-        salvaRigaButton.setPreferredSize(new Dimension(60, 40));
-        salvaRigaButton.setBounds(380, 60, 60, 40);
-        add(salvaRigaButton);
-
-        JButton abbandonaRigaButton = new JButton("ABR");
-        abbandonaRigaButton.setPreferredSize(new Dimension(60, 40));
-        abbandonaRigaButton.setBounds(435, 60, 60, 40);
-        add(abbandonaRigaButton);
-
-        JButton filtraRowsetButton = new JButton("FR");
-        filtraRowsetButton.setPreferredSize(new Dimension(60, 40));
-        filtraRowsetButton.setBounds(490, 60, 60, 40);
-        add(filtraRowsetButton);
-
-        JButton trovaRigaButton = new JButton("TR");
-        trovaRigaButton.setPreferredSize(new Dimension(60, 40));
-        trovaRigaButton.setBounds(545, 60, 60, 40);
-        add(trovaRigaButton);
-
-        JButton ordinePerCodiceButton = new JButton("Ordine per codice");
-        ordinePerCodiceButton.setPreferredSize(new Dimension(150, 40));
-        ordinePerCodiceButton.setBounds(670, 60, 150, 40);
-        add(ordinePerCodiceButton);
-
-        JButton ordineNaturaleButton = new JButton("Ordine naturale");
-        ordineNaturaleButton.setPreferredSize(new Dimension(150, 40));
-        ordineNaturaleButton.setBounds(820, 60, 150, 40);
-        add(ordineNaturaleButton);
-
-        JButton aggiornaButton = new JButton("Aggiorna");
-        aggiornaButton.setPreferredSize(new Dimension(150, 40));
-        aggiornaButton.setBounds(970, 60, 150, 40);
-        add(aggiornaButton);
-
-        JPanel tabellaFrame = new JPanel();
-        tabellaFrame.setLayout(new BorderLayout());
-        tabellaFrame.setBounds(30, 120, 1100, 500);
-        add(tabellaFrame);
+        JLabel listinoCostoPulituraLabel = new JLabel("Listino Prezzi ai Negozi Riparazioni Argenteria");
+        listinoCostoPulituraLabel.setFont(new Font("Courier", Font.BOLD, 20));
+        listinoCostoPulituraLabel.setBounds(30, 10, 500, 30);
+        window.add(listinoCostoPulituraLabel);
+        
+        JButton ordine_codice_button = new JButton("Ordine per codice");
+        ordine_codice_button.setBounds(10, 50, 150, 40);
+        window.add(ordine_codice_button);
+        
+        JButton ordine_naturale_button = new JButton("Ordine naturale");
+        ordine_naturale_button.setBounds(170, 50, 150, 40);
+        window.add(ordine_naturale_button);
+        
+        JButton stampa_button = new JButton("Stampa");
+        stampa_button.setBounds(330, 50, 150, 40);
+        window.add(stampa_button);
+        
+        JPanel tablePanel = new JPanel();
+        tablePanel.setLayout(null);
+        tablePanel.setBounds(10, 110, 1140, 450);
 
         JScrollPane scrollPane = new JScrollPane();
-        tabellaFrame.add(scrollPane);
+        scrollPane.setBounds(0, 0, 1140, 450);
 
-        JTable tabella = new JTable(new DefaultTableModel(
-                new Object[][]{},
-                new String[]{"Codice", "Descrizione", "Pulitura", "Trattamento"}
-        ));
+        String[] columnNames = {"Codice", "Descrizione", "Pulitura", "Trattamento"};
 
-        tabella.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
-        tabella.getColumnModel().getColumn(0).setPreferredWidth(100);
-        tabella.getColumnModel().getColumn(1).setPreferredWidth(780);
-        tabella.getColumnModel().getColumn(2).setPreferredWidth(100);
-        tabella.getColumnModel().getColumn(3).setPreferredWidth(100);
+        DefaultTableModel model = new DefaultTableModel(columnNames, 0);
+        JTable table = new JTable(model);
+        table.setAutoResizeMode(JTable.WIDTH);
+        
+        scrollPane.setViewportView(table);
+        tablePanel.add(scrollPane);
+        window.add(tablePanel);
+        
 
-        scrollPane.setViewportView(tabella);
+        ArrayList<CostoPulitura> costiPulitura = costiPulituraDaDb();
+    	
+    	for(int i=0; i < costiPulitura.size(); i++) {
+    		model.addRow(new Object[] {costiPulitura.get(i).getCodice(), costiPulitura.get(i).getDescrizione(), costiPulitura.get(i).getPulitura(), 
+    				costiPulitura.get(i).getTrattamento()});
+    	}
+    	
+    	ordine_codice_button.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+            	ArrayList<CostoPulitura> costiPulitura = costiPulituraDaDb();
+            	model.setRowCount(0);
+            	for(int i=0; i < costiPulitura.size(); i++) {
+            		model.addRow(new Object[] {costiPulitura.get(i).getCodice(), costiPulitura.get(i).getDescrizione(), costiPulitura.get(i).getPulitura(), 
+            				costiPulitura.get(i).getTrattamento()});
+            	}
+            }
+    	});
+    	
+    	ordine_naturale_button.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+            	ArrayList<CostoPulitura> costiPulitura = costiPulituraAlfabeticoDaDb();
+            	model.setRowCount(0);
+            	for(int i=0; i < costiPulitura.size(); i++) {
+            		model.addRow(new Object[] {costiPulitura.get(i).getCodice(), costiPulitura.get(i).getDescrizione(), costiPulitura.get(i).getPulitura(), 
+            				costiPulitura.get(i).getTrattamento()});
+            	}
+            }
+    	});
+        
+        window.setLayout(null);
+        window.setVisible(true);
     }
+    
+    public static ArrayList<CostoPulitura> costiPulituraDaDb(){
+    	Statement st = null;
+        ResultSet rs = null;
+    	Connection con  = Database.connect();
+    	ArrayList<CostoPulitura> costiPulitura = new ArrayList<CostoPulitura>(); 
+    	try {
+            st = con.createStatement();
+            rs = st.executeQuery("SELECT * FROM sys.costi_pulitura ORDER BY codice ASC;");                 
+            
+            while (rs.next()) {
+            	CostoPulitura costoPulitura = new CostoPulitura();
+            	
+            	costoPulitura.setCodice(rs.getString("codice"));
+            	costoPulitura.setDescrizione(rs.getString("descrizione"));
+            	costoPulitura.setPulitura(Math.floor((rs.getDouble("pulitura")*2)));
+            	costoPulitura.setTrattamento(Math.floor((rs.getDouble("trattamento")*2))); 
+            	
+            	costiPulitura.add(costoPulitura);
+            }
+            
+            
+        } catch (SQLException ex) {
+        	ex.printStackTrace();
 
-    public static void main(String[] args) {
-        SwingUtilities.invokeLater(() -> {
-            RiparazioniArgenteriaNegozi ex = new RiparazioniArgenteriaNegozi();
-            ex.setVisible(true);
-        });
+        } finally {
+            try {
+                if (rs != null) {
+                    rs.close();
+                }
+                if (st != null) {
+                    st.close();
+                }
+                if (con != null) {
+                    con.close();
+                }
+
+            } catch (SQLException ex) {
+               ex.printStackTrace();
+            }
+        }
+		return costiPulitura;
+		
     }
+    
+    public static ArrayList<CostoPulitura> costiPulituraAlfabeticoDaDb(){
+    	Statement st = null;
+        ResultSet rs = null;
+    	Connection con  = Database.connect();
+    	ArrayList<CostoPulitura> costiPulitura = new ArrayList<CostoPulitura>(); 
+    	try {
+            st = con.createStatement();
+            rs = st.executeQuery("SELECT * FROM sys.costi_pulitura ORDER BY descrizione ASC;");                 
+            
+            while (rs.next()) {
+            	CostoPulitura costoPulitura = new CostoPulitura();
+            	
+            	costoPulitura.setCodice(rs.getString("codice"));
+            	costoPulitura.setDescrizione(rs.getString("descrizione"));
+            	costoPulitura.setPulitura(Math.floor((rs.getDouble("pulitura")*2)));
+            	costoPulitura.setTrattamento(Math.floor((rs.getDouble("trattamento")*2))); 
+            	
+            	costiPulitura.add(costoPulitura);
+            }
+            
+            
+        } catch (SQLException ex) {
+        	ex.printStackTrace();
+
+        } finally {
+            try {
+                if (rs != null) {
+                    rs.close();
+                }
+                if (st != null) {
+                    st.close();
+                }
+                if (con != null) {
+                    con.close();
+                }
+
+            } catch (SQLException ex) {
+               ex.printStackTrace();
+            }
+        }
+		return costiPulitura;
+		
+    }
+    
+
 }

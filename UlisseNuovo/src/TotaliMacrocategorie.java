@@ -1,87 +1,231 @@
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
+
+import Classi.Database;
+
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
 
-public class TotaliMacrocategorie extends JFrame {
-
-    private JTextField daCatTextField;
-    private JTextField aCatTextField;
-    private JTable table;
-
-    public TotaliMacrocategorie() {
-        initUI();
-    }
-
-    private void initUI() {
-        setSize(500, 550);
-        setTitle("Totali Macrocategorie");
-        setResizable(false);
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setLayout(null);
+public class TotaliMacrocategorie  {
+    public TotaliMacrocategorie(){
+    	JFrame window = new JFrame();
+		window.setSize(700, 700);
+		window.setTitle("Totali Macrocategorie");
+		window.setResizable(false);
 
         JLabel titoloLabel = new JLabel("Totali Macrocategorie");
         titoloLabel.setFont(new Font("Courier", Font.PLAIN, 15));
         titoloLabel.setBounds(10, 10, 200, 20);
-        add(titoloLabel);
+        window.add(titoloLabel);
 
         JLabel daCatLabel = new JLabel("Da Cat.");
         daCatLabel.setFont(new Font("Courier", Font.PLAIN, 12));
         daCatLabel.setBounds(10, 40, 200, 20);
-        add(daCatLabel);
+        window.add(daCatLabel);
 
-        daCatTextField = new JTextField();
+        JTextField daCatTextField = new JTextField();
         daCatTextField.setBounds(10, 70, 150, 30);
-        add(daCatTextField);
+        window.add(daCatTextField);
 
         JLabel aCatLabel = new JLabel("A Cat.");
         aCatLabel.setFont(new Font("Courier", Font.PLAIN, 12));
         aCatLabel.setBounds(180, 40, 200, 20);
-        add(aCatLabel);
+        window.add(aCatLabel);
 
-        aCatTextField = new JTextField();
+        JTextField aCatTextField = new JTextField();
         aCatTextField.setBounds(180, 70, 150, 30);
-        add(aCatTextField);
+        window.add(aCatTextField);
 
         JButton elaborazioneButton = new JButton("Elaborazione");
         elaborazioneButton.setBounds(330, 68, 150, 35);
-        add(elaborazioneButton);
+        window.add(elaborazioneButton);
 
-        // Table
-        String[] columns = {"Macro_Cat", "Valore_Tot", "Peso_Tot", "Quant_Tot"};
-        Object[][] data = new Object[0][columns.length];
-        DefaultTableModel model = new DefaultTableModel(data, columns);
+        JPanel tablePanel = new JPanel();
+        tablePanel.setLayout(null);
+        tablePanel.setBounds(10, 140, 650, 500);
 
-        table = new JTable(model);
-        table.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
-
-        JScrollPane scrollPane = new JScrollPane(table);
-        scrollPane.setBounds(10, 130, 460, 350);
-        add(scrollPane);
-
-        // ActionListener for the "Elaborazione" button
+        JScrollPane scrollPane = new JScrollPane();
+        scrollPane.setBounds(0, 0, 650, 500);
+        String[] columnNames = {"Macro_Cat", "Valore_Tot", "Peso_Tot", "Quant_Tot"};
+        DefaultTableModel model = new DefaultTableModel(columnNames, 0);
+        JTable table = new JTable(model);
+        table.setAutoResizeMode(JTable.WIDTH);
+        
+        scrollPane.setViewportView(table);
+        tablePanel.add(scrollPane);
+        window.add(tablePanel);
         elaborazioneButton.addActionListener(new ActionListener() {
-            @Override
             public void actionPerformed(ActionEvent e) {
-                String daCatValue = daCatTextField.getText();
-                String aCatValue = aCatTextField.getText();
-
-                // Perform the "Elaborazione" action here
-                // For now, we will just display a message in the table
-                Object[] newRow = {"Category 1", "100", "10", "5"};
-                model.addRow(newRow);
-
-                // After processing the data, you can update the table with the results
-                // For example, you can fetch data from a database based on the input values
+            	int partenza = Integer.parseInt(daCatTextField.getText());
+                int arrivo = Integer.parseInt(aCatTextField.getText());
+                for(int i = partenza; i <= arrivo; i++) {
+                	ArrayList<Integer> valori = valoriArticoliDaDb(String.valueOf(i));
+                	System.out.println(valori);
+                	ArrayList<Double> pesi = pesiArticoliDaDb(String.valueOf(i));
+                	ArrayList<Integer> giacenze = giacenzeArticoliDaDb(String.valueOf(i));
+                	int valore = 0;
+                	double peso = 0.0;
+                	int tot_giacenze = 0;
+                	for(int j = 0; j < valori.size(); j++) {
+                		valore = valore + valori.get(j);
+                	}
+                	
+                	for(int x = 0; x < pesi.size(); x++) {
+                		peso = peso + pesi.get(x);
+                	}
+                	for(int k = 0; k < giacenze.size(); k++) {
+                		tot_giacenze = tot_giacenze + giacenze.get(k);
+                	}
+                	model.addRow(new Object[] {String.valueOf(i), valore, peso, tot_giacenze});
+                }
             }
         });
-    }
+        
 
-    public static void main(String[] args) {
-        SwingUtilities.invokeLater(() -> {
-            TotaliMacrocategorie ex = new TotaliMacrocategorie();
-            ex.setVisible(true);
-        });
+        window.setLayout(null);
+        window.setVisible(true);
+      
     }
+    
+    public static ArrayList<Integer> valoriArticoliDaDb(String categoria){
+   		Statement st = null;
+        ResultSet rs = null;
+        PreparedStatement pstmt = null;
+   		Connection con  = Database.connect();
+   		ArrayList<Integer> valori = new ArrayList<Integer>();
+   		String numero = categoria+"%";
+   		System.out.println(numero);
+   		try { 
+           pstmt = con.prepareStatement("SELECT giacenza, pr_unit FROM sys.articoli WHERE cod_categoria LIKE ?;");
+           
+           pstmt.setString(1, numero);
+           rs = pstmt.executeQuery();
+           System.out.println("query eseguita articoli da db");
+           while (rs.next()) {
+        	   int valore = rs.getInt("giacenza") * rs.getInt("pr_unit");
+        	   System.out.println("Valore: " + valore);
+        	   valori.add(valore); 
+           }
+           
+           
+       } catch (SQLException ex) {
+       	ex.printStackTrace();
+
+       } finally {
+           try {
+               if (rs != null) {
+                   rs.close();
+               }
+               if (st != null) {
+                   st.close();
+               }
+               if (con != null) {
+                   con.close();
+               }
+               if(pstmt != null) {
+               	pstmt.close();
+               }
+
+           } catch (SQLException ex) {
+              ex.printStackTrace();
+           }
+       }
+		return valori;
+		
+   }
+    
+    public static ArrayList<Double> pesiArticoliDaDb(String categoria){
+   		Statement st = null;
+        ResultSet rs = null;
+        PreparedStatement pstmt = null;
+   		Connection con  = Database.connect();
+   		ArrayList<Double> pesi = new ArrayList<Double>();
+   		String numero = categoria+"%";
+   		try { 
+           pstmt = con.prepareStatement("SELECT peso FROM sys.articoli WHERE cod_categoria LIKE ?;");
+           
+           pstmt.setString(1, numero);
+           rs = pstmt.executeQuery();
+           System.out.println("query eseguita articoli da db");
+           while (rs.next()) {
+        	   pesi.add(rs.getDouble("peso"));
+           }
+           
+           
+       } catch (SQLException ex) {
+       	ex.printStackTrace();
+
+       } finally {
+           try {
+               if (rs != null) {
+                   rs.close();
+               }
+               if (st != null) {
+                   st.close();
+               }
+               if (con != null) {
+                   con.close();
+               }
+               if(pstmt != null) {
+               	pstmt.close();
+               }
+
+           } catch (SQLException ex) {
+              ex.printStackTrace();
+           }
+       }
+		return pesi;
+		
+   }
+    
+    public static ArrayList<Integer> giacenzeArticoliDaDb(String categoria){
+   		Statement st = null;
+        ResultSet rs = null;
+        PreparedStatement pstmt = null;
+   		Connection con  = Database.connect();
+   		ArrayList<Integer> giacenze = new ArrayList<Integer>();
+   		String numero = categoria+"%";
+   		try { 
+           pstmt = con.prepareStatement("SELECT giacenza FROM sys.articoli WHERE cod_categoria LIKE ?;");
+           
+           pstmt.setString(1, numero);
+           rs = pstmt.executeQuery();
+           System.out.println("query eseguita articoli da db");
+           while (rs.next()) {
+        	   giacenze.add(rs.getInt("giacenza"));
+           }
+           
+           
+       } catch (SQLException ex) {
+       	ex.printStackTrace();
+
+       } finally {
+           try {
+               if (rs != null) {
+                   rs.close();
+               }
+               if (st != null) {
+                   st.close();
+               }
+               if (con != null) {
+                   con.close();
+               }
+               if(pstmt != null) {
+               	pstmt.close();
+               }
+
+           } catch (SQLException ex) {
+              ex.printStackTrace();
+           }
+       }
+		return giacenze;
+		
+   }
 }
