@@ -1,4 +1,5 @@
 import javax.swing.*;
+
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -20,10 +21,12 @@ import Classi.Database;
 import Oggetti.Articolo;
 import Oggetti.Categoria;
 import Oggetti.Cliente;
+import Oggetti.StampaDistintaDatiFissi;
+import Oggetti.StampaDistintaDatiVendita;
 import Oggetti.Vendita;
 
 public class Distinte {
-	 public Distinte() {
+	 public static void main (String [] args) {
 		JFrame window = new JFrame();
 		window.setSize(1250, 800);
 		window.setTitle("Distinte");
@@ -590,6 +593,10 @@ public class Distinte {
             	inserisciVendita(numeroVendita, data, totale_merce, sconto, merce_scontata, totale_scontato, acconto, totale_saldo, metodoPagamento);
             	inserisciDistinta(barcodeTabella, numeroVendita, tesseraCliente);
             	quantitaDopoVendita(articoli, quantitaTabella);
+            	
+            	Object [] array = prendiTuttiDati(numeroVendita, Integer.parseInt(quantita_textbox.getText()), totale_merce, sconto, 
+            			merce_scontata, Integer.parseInt(punti_scal_textbox.getText()), Integer.parseInt(val_buono_textbox.getText()));
+            	inserisciDatiStampaVendita(array);
             }
 		});
 		
@@ -686,6 +693,97 @@ public class Distinte {
          System.out.println("Tot scontato2 " + totaleScontato2);
          return totaleScontato2;
 	 }
+	 
+	 public static Object[] prendiTuttiDati(int numeroVendita, int quantita, double totale_merce, double sconto, 
+			 double merce_scontata, int punti_scal, int val_buono){
+	    	Statement st = null;
+	        ResultSet rs = null;
+	        PreparedStatement pstmt = null;
+	    	Connection con  = Database.connect();
+	    	Object [] array = new Object[2];
+	    	ArrayList<StampaDistintaDatiVendita> dati = new ArrayList<StampaDistintaDatiVendita>(); 
+	    	StampaDistintaDatiFissi sf = new StampaDistintaDatiFissi();
+	    	int punti_guadagnati = 0;
+	    	double totale_scontato = 0.0;
+	    	try { 
+	            pstmt = con.prepareStatement("select * from sys.articoli join sys.distinte on sys.articoli.barcode = sys.distinte.BarcodeArticolo join sys.clienti on sys.clienti.CodiceBarre = sys.distinte.CardCodeCliente join sys.vendite on sys.distinte.CodiceVendita = sys.vendite.NumeroVendita where sys.distinte.CodiceVendita = ?;");
+
+             pstmt.setInt(1, numeroVendita);
+             rs = pstmt.executeQuery();
+	            System.out.println("query eseguita dati da db");
+	            while (rs.next()) {
+	            	StampaDistintaDatiVendita dato = new StampaDistintaDatiVendita();
+	            	
+	            	dato.setNumero_vendita(rs.getInt("CodiceVendita"));
+	            	dato.setQuantita(quantita);
+	            	dato.setBarcode(rs.getString("barcode"));
+	            	dato.setDescrizione(rs.getString("descrizione"));
+	            	dato.setPeso(rs.getDouble("peso"));
+	            	dato.setCaratura(rs.getDouble("caratura"));
+	            	dato.setTotale_riga(rs.getDouble(quantita*(rs.getInt("pr_unit"))));
+	            	dato.setSc_1(rs.getInt("sc_1"));
+	            	dato.setSc_2(rs.getInt("sc_2"));
+	            	dato.setScontato(rs.getDouble("TotaleScontato"));
+	            	
+	            	dati.add(dato);
+	            }
+	            
+	            
+	            sf.setPunti_precedenti(rs.getInt("Punti"));
+	            for(int i = 0; i < dati.size(); i++) {
+	            	totale_scontato = totale_scontato + dati.get(i).getScontato();
+	            }
+	            punti_guadagnati = (int) (totale_scontato /10);
+	            sf.setPunti_guadagnati(punti_guadagnati);
+	            sf.setPunti_totali(sf.getPunti_precedenti() + punti_guadagnati);
+	            sf.setPunti_usati(punti_scal);
+	            sf.setPunti_disponibili(sf.getPunti_totali() - punti_scal);
+	            if(rs.getString("Titolo").equals("Sig.")) {
+	            	sf.setDa_titolo_cliente("mo");
+	            }else {
+	            	sf.setDa_titolo_cliente("ma");
+	            }
+	            sf.setTitolo_cliente(rs.getString("Titolo"));
+	            sf.setNome_cliente(rs.getString("Nome"));
+	            sf.setCodice_cliente(rs.getString("CodiceBarre"));
+	            sf.setEmail_cliente(rs.getString("Email"));
+	            
+	            
+	            sf.setTotale_merce(totale_merce);
+	            sf.setSconto(sconto);
+	            sf.setMerce_scontata(merce_scontata);
+	            sf.setValore_buono(val_buono);
+	            sf.setTotale_scontato(totale_scontato);
+	            
+	            
+	        } catch (SQLException ex) {
+	        	ex.printStackTrace();
+
+	        } finally {
+	            try {
+	                if (rs != null) {
+	                    rs.close();
+	                }
+	                if (st != null) {
+	                    st.close();
+	                }
+	                if (con != null) {
+	                    con.close();
+	                }
+	                if(pstmt != null) {
+	                	pstmt.close();
+	                }
+
+	            } catch (SQLException ex) {
+	               ex.printStackTrace();
+	            }
+	        }
+	    	
+	    	array[0] = dati;
+	    	array[1] = sf;
+			return array;
+			
+	    }
 	 
 	 public static ArrayList<Articolo> articoliDaDb(String barcode){
 	    	Statement st = null;
@@ -1156,4 +1254,72 @@ public class Distinte {
 		        }
 		    }
 	 }
+	 
+	 public static void inserisciDatiStampaVendita(Object[]array) {
+			Statement st = null;
+		    ResultSet rs = null;
+			Connection con  = Database.connect();
+			@SuppressWarnings("unchecked")
+			ArrayList<StampaDistintaDatiVendita> dati = (ArrayList<StampaDistintaDatiVendita>) array[0]; 
+	    	StampaDistintaDatiFissi sf = (StampaDistintaDatiFissi) array[1];
+			
+			try { 
+				for(int i = 0; i < dati.size(); i++) {
+					PreparedStatement pstmt = con.prepareStatement("INSERT INTO sys.stampa_distinta (numero_vendita, quantità, barcode, descrizione, peso, caratura, totale_riga, sc_1, sc_2, scontato, "
+							+ "totale_merce, sconto, merce_scontata, valore_buono, totale_scontato, punti_precedenti, punti_guadagnati, punti_totali, punti_usati"
+							+ "punti_disponibili, da_titolo_cliente, titolo_cliente, nome_cliente, codice_cliente, email_cliente) VALUE \r\n"
+							+ "        (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
+					pstmt.setInt(1, dati.get(i).getNumero_vendita());
+					pstmt.setInt(2, dati.get(i).getQuantita());
+					pstmt.setString(3, dati.get(i).getBarcode());
+					pstmt.setString(4, dati.get(i).getDescrizione());
+					pstmt.setDouble(5, dati.get(i).getPeso());
+					pstmt.setDouble(6, dati.get(i).getCaratura());
+					pstmt.setDouble(7, dati.get(i).getTotale_riga());
+					pstmt.setInt(8, dati.get(i).getSc_1());
+					pstmt.setInt(9, dati.get(i).getSc_2());
+					pstmt.setDouble(10, dati.get(i).getScontato());
+					pstmt.setDouble(11, sf.getTotale_merce());
+					pstmt.setDouble(12, sf.getSconto());
+					pstmt.setDouble(13, sf.getMerce_scontata());
+					pstmt.setDouble(14, sf.getValore_buono());
+					pstmt.setDouble(15, sf.getTotale_scontato());
+					pstmt.setInt(16, sf.getPunti_precedenti());
+					pstmt.setInt(17, sf.getPunti_guadagnati());
+					pstmt.setInt(18, sf.getPunti_totali());
+					pstmt.setInt(19, sf.getPunti_usati());
+					pstmt.setInt(20, sf.getPunti_disponibili());
+					pstmt.setString(21, sf.getDa_titolo_cliente());
+					pstmt.setString(22, sf.getTitolo_cliente());
+					pstmt.setString(23, sf.getNome_cliente());
+					pstmt.setString(24, sf.getCodice_cliente());
+					pstmt.setString(25, sf.getEmail_cliente());
+					
+					pstmt.executeUpdate(); 
+				}
+				
+		        
+		        
+		    }  catch (SQLException ex) {
+		    	ex.printStackTrace();
+
+		    } finally {
+		        try {
+		            if (rs != null) {
+		                rs.close();
+		            }
+		            if (st != null) {
+		                st.close();
+		            }
+		            if (con != null) {
+		                con.close();
+		            }
+
+		        } catch (SQLException ex) {
+		           ex.printStackTrace();
+		        }
+		    }
+			
+			
+		}
 }
