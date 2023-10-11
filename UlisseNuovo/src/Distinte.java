@@ -613,7 +613,7 @@ public class Distinte {
             	
             	Report r = new Report();
             	try {
-					r.generaReport(arrayCompleto);
+					r.generaReport(numeroVendita);
 				} catch (JRException e1) {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
