@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.20.6.final utlizzo versione della libreria JasperReports6.20.6-5c96b6aa8a39ac1dc6b6bea4b81168e16dd39231  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="riparazioniOreficeriaNegozi" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="75b92dec-8851-4f5f-b4ef-5ac753dca9f8">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Ulisse.jrdax"/>
+	<style name="Table_TH" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table_CH" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<subDataset name="Dataset1" uuid="127c1fe2-65dc-4e4b-bbbc-f2bde873eba4">
+		<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Ulisse.jrdax"/>
+		<queryString language="SQL">
+			<![CDATA[select * from sys.riparazioni_oreficeria;]]>
+		</queryString>
+		<field name="codice" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="codice"/>
+			<property name="com.jaspersoft.studio.field.label" value="codice"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="riparazioni_oreficeria"/>
+		</field>
+		<field name="descrizione" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="descrizione"/>
+			<property name="com.jaspersoft.studio.field.label" value="descrizione"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="riparazioni_oreficeria"/>
+		</field>
+		<field name="prezzo" class="java.lang.Double">
+			<property name="com.jaspersoft.studio.field.name" value="prezzo"/>
+			<property name="com.jaspersoft.studio.field.label" value="prezzo"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="riparazioni_oreficeria"/>
+		</field>
+	</subDataset>
+	<queryString language="SQL">
+		<![CDATA[select * from sys.riparazioni_oreficeria;]]>
+	</queryString>
+	<field name="codice" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="codice"/>
+		<property name="com.jaspersoft.studio.field.label" value="codice"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="riparazioni_oreficeria"/>
+	</field>
+	<field name="descrizione" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="descrizione"/>
+		<property name="com.jaspersoft.studio.field.label" value="descrizione"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="riparazioni_oreficeria"/>
+	</field>
+	<field name="prezzo" class="java.lang.Double">
+		<property name="com.jaspersoft.studio.field.name" value="prezzo"/>
+		<property name="com.jaspersoft.studio.field.label" value="prezzo"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="riparazioni_oreficeria"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="28" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<staticText>
+				<reportElement x="0" y="0" width="555" height="28" uuid="8d82526b-613b-4d6a-a309-15c31e9d791d"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="18"/>
+				</textElement>
+				<text><![CDATA[Listino Riparazioni Oreficeria Ai Negozi 2024]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="90" splitType="Stretch">
+			<componentElement>
+				<reportElement x="0" y="14" width="555" height="76" uuid="c2da3b69-0751-4562-80c9-f3d246ced24a">
+					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
+					<property name="com.jaspersoft.studio.table.style.table_header" value="Table_TH"/>
+					<property name="com.jaspersoft.studio.table.style.column_header" value="Table_CH"/>
+					<property name="com.jaspersoft.studio.table.style.detail" value="Table_TD"/>
+				</reportElement>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="Dataset1" uuid="ccf08f39-aab9-4402-a752-46c2a40aab87">
+						<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					</datasetRun>
+					<jr:column width="380" uuid="ced542ff-9b28-4f66-b950-48e5694f88a4">
+						<jr:columnHeader style="Table_CH" height="30">
+							<staticText>
+								<reportElement x="0" y="0" width="380" height="30" uuid="984bdd34-85c7-45b9-a5df-75a36099ff02"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<text><![CDATA[Descrizione]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="Table_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="380" height="30" uuid="f944a305-cbb2-4813-a6f3-868668c4fb6f"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<textFieldExpression><![CDATA[$F{descrizione}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="175" uuid="0a6738bb-1d7d-468d-8ce8-112f5a3a1c08">
+						<jr:columnHeader style="Table_CH" height="30">
+							<staticText>
+								<reportElement x="0" y="0" width="175" height="30" uuid="5b1229f4-5574-4931-91e7-5f9c6ef9fe1c"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<text><![CDATA[Prezzo]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="Table_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="175" height="30" uuid="8573762f-102a-4e15-b7e9-a9d5214c22da"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<textFieldExpression><![CDATA[$F{prezzo}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+				</jr:table>
+			</componentElement>
+		</band>
+	</pageHeader>
+</jasperReport>

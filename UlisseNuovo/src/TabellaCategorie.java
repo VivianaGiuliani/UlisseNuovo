@@ -1,4 +1,5 @@
 import java.awt.Font;
+import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.Connection;
@@ -8,6 +9,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -18,43 +20,71 @@ import javax.swing.JTextArea;
 import javax.swing.table.DefaultTableModel;
 
 import Classi.Database;
+import Classi.ReportCategorie;
+import Classi.ReportRiparazioniArgenteriaPubblico;
 import Oggetti.Articolo;
 import Oggetti.Categoria;
+import net.sf.jasperreports.engine.JRException;
 
 public class TabellaCategorie {
+	private JFrame window;
+	private ImageIcon imageSfondo;
+	private JLabel labelSfondo;
 public TabellaCategorie() {
     	
-        JFrame window = new JFrame();
+        window = new JFrame();
         window.setSize(600, 700);
         window.setTitle("Tabella Categorie");
         window.setResizable(false);
         
+        labelSfondo = new JLabel(imageSfondo);
+		labelSfondo.setSize(1400, 800);
+	        
+	    imageSfondo = new ImageIcon(this.getClass().getResource("/Images/background.png"));
+	    Image img = imageSfondo.getImage();
+	    Image imgScale = img.getScaledInstance(labelSfondo.getWidth(), labelSfondo.getHeight(), Image.SCALE_DEFAULT);
+	    ImageIcon scaledIcon = new ImageIcon(imgScale);
+	    labelSfondo.setIcon(scaledIcon);
+	       
+	    window.add(labelSfondo);
+        
         JButton inserisci_categoria_button = new JButton("Inserisci categoria");
         inserisci_categoria_button.setBounds(10, 20, 150, 40);
-        window.add(inserisci_categoria_button);
+        inserisci_categoria_button.setBackground(new java.awt.Color(132, 249, 58));
+        labelSfondo.add(inserisci_categoria_button);
      
 
         JButton elimina_categoria_button = new JButton("Elimina categoria");
         elimina_categoria_button.setBounds(170, 20, 150, 40);
-        window.add(elimina_categoria_button);
+        elimina_categoria_button.setBackground(new java.awt.Color(132, 249, 58));
+        labelSfondo.add(elimina_categoria_button);
+        
+        JButton stampa_categoria_button = new JButton("Stampa categorie");
+        stampa_categoria_button.setBounds(340, 20, 150, 40);
+        stampa_categoria_button.setBackground(new java.awt.Color(203, 203, 146));
+        labelSfondo.add(stampa_categoria_button);
         
         JLabel tipologia_label = new JLabel("Tipologia");
         tipologia_label.setFont(new Font("Courier", Font.PLAIN, 15));
         tipologia_label.setBounds(10, 70, 100, 20);
-        window.add(tipologia_label);
+        tipologia_label.setForeground(new java.awt.Color(255,255,255));
+        labelSfondo.add(tipologia_label);
 
         JTextArea tipologia_textbox = new JTextArea();
         tipologia_textbox.setBounds(10, 95, 100, 30);
-        window.add(tipologia_textbox);
+        tipologia_textbox.setBackground(new java.awt.Color(203, 203, 146));
+        labelSfondo.add(tipologia_textbox);
         
         JLabel nome_label = new JLabel("Nome");
         nome_label.setFont(new Font("Courier", Font.PLAIN, 15));
         nome_label.setBounds(120, 70, 100, 20);
-        window.add(nome_label);
+        nome_label.setForeground(new java.awt.Color(255,255,255));
+        labelSfondo.add(nome_label);
 
         JTextArea nome_textbox = new JTextArea();
         nome_textbox.setBounds(120, 95, 300, 30);
-        window.add(nome_textbox);
+        nome_textbox.setBackground(new java.awt.Color(203, 203, 146));
+        labelSfondo.add(nome_textbox);
 
         JPanel tablePanel = new JPanel();
         tablePanel.setLayout(null);
@@ -71,7 +101,7 @@ public TabellaCategorie() {
         
         scrollPane.setViewportView(table);
         tablePanel.add(scrollPane);
-        window.add(tablePanel);
+        labelSfondo.add(tablePanel);
         
         ArrayList<Categoria> categorie = categorieDaDb();
         ArrayList<Articolo> articoli = articoliDaDb();
@@ -112,6 +142,18 @@ public TabellaCategorie() {
             	
             }
         });
+    	
+    	stampa_categoria_button.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+            	ReportCategorie r = new ReportCategorie();
+            	try {
+					r.generaReport();
+				} catch (JRException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+            }
+    	});
     	
         window.setLayout(null);
         window.setVisible(true);

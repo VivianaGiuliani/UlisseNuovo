@@ -15,29 +15,43 @@ import java.util.ArrayList;
 import java.util.Vector;
 
 public class SaldiCategoria {
-
+	private JFrame window;
+	private ImageIcon imageSfondo;
+	private JLabel labelSfondo;
    public SaldiCategoria(){
-	   	JFrame window = new JFrame();
-		window.setSize(1000, 1000);
+	   	window = new JFrame();
+		window.setSize(1000, 700);
 		window.setTitle("Saldi Categoria");
 		window.setResizable(false);
 		
+		labelSfondo = new JLabel(imageSfondo);
+		labelSfondo.setSize(1400, 800);
+	        
+	    imageSfondo = new ImageIcon(this.getClass().getResource("/Images/background.png"));
+	    Image img = imageSfondo.getImage();
+	    Image imgScale = img.getScaledInstance(labelSfondo.getWidth(), labelSfondo.getHeight(), Image.SCALE_DEFAULT);
+	    ImageIcon scaledIcon = new ImageIcon(imgScale);
+	    labelSfondo.setIcon(scaledIcon);
+	       
+	    window.add(labelSfondo);
 
 		JLabel saldi_categoria_label = new JLabel("Saldi Categoria");
-		saldi_categoria_label.setFont(new Font("Courier", Font.PLAIN, 20));
+		saldi_categoria_label.setFont(new Font("Courier", Font.BOLD, 20));
 		saldi_categoria_label.setBounds(10, 20, 180, 40);
-        window.add(saldi_categoria_label);
+		saldi_categoria_label.setForeground(new java.awt.Color(255,255,255));
+        labelSfondo.add(saldi_categoria_label);
 
         JButton saldiCategoriaButton = new JButton("Stampa saldi categoria");
         saldiCategoriaButton.setBounds(10, 80, 200, 30);
-        window.add(saldiCategoriaButton);
+        saldiCategoriaButton.setBackground(new java.awt.Color(132, 249, 58));
+        labelSfondo.add(saldiCategoriaButton);
 
         JPanel tablePanel = new JPanel();
         tablePanel.setLayout(null);
-        tablePanel.setBounds(10, 140, 950, 750);
+        tablePanel.setBounds(10, 140, 950, 500);
 
         JScrollPane scrollPane = new JScrollPane();
-        scrollPane.setBounds(0, 0, 950, 750);
+        scrollPane.setBounds(0, 0, 950, 500);
 
         String[] columnNames = {"Tipologia", "Nome", "Valore", "Peso", "Quantità"};
 
@@ -47,7 +61,7 @@ public class SaldiCategoria {
         
         scrollPane.setViewportView(table);
         tablePanel.add(scrollPane);
-        window.add(tablePanel);
+        labelSfondo.add(tablePanel);
         ArrayList<Categoria> categorie = categorieDaDb();
         
         for(int i = 0; i < categorie.size(); i++) {

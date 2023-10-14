@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Created with Jaspersoft Studio version 6.20.6.final utlizzo versione della libreria JasperReports6.20.6-5c96b6aa8a39ac1dc6b6bea4b81168e16dd39231  -->
+<!-- Created with Jaspersoft Studio version 6.20.6.final using JasperReports Library version 6.20.6-5c96b6aa8a39ac1dc6b6bea4b81168e16dd39231  -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="finale1" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="1aa31d89-e918-47c7-8f50-e0a9661b6c07">
 	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Ulisse.jrdax"/>
@@ -304,9 +304,9 @@
 				<reportElement x="0" y="0" width="555" height="44" uuid="e164b5ee-ac7a-4f66-9fc6-f9f6d3c42ece"/>
 			</rectangle>
 			<staticText>
-				<reportElement x="6" y="3" width="77" height="21" uuid="e69139c1-51df-4d4c-bea3-dac1e90d206e"/>
-				<textElement>
-					<font size="12" isBold="true"/>
+				<reportElement x="6" y="3" width="99" height="21" uuid="e69139c1-51df-4d4c-bea3-dac1e90d206e"/>
+				<textElement markup="html">
+					<font fontName="Berlin Sans FB" size="16" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Giuliani S.r.l]]></text>
 			</staticText>
@@ -577,7 +577,7 @@
 			</staticText>
 			<image>
 				<reportElement x="5" y="185" width="16" height="16" uuid="3033f213-ab8a-4a8d-8391-aaa5387afa45"/>
-				<imageExpression><![CDATA["C:\\Users\\vivia\\Desktop\\instagram.jpg"]]></imageExpression>
+				<imageExpression><![CDATA["\\Images\\instagram.jpg"]]></imageExpression>
 			</image>
 			<staticText>
 				<reportElement x="14" y="245" width="142" height="13" uuid="ec51ce96-6fc9-45d3-a109-445da15b44d5"/>
@@ -602,7 +602,7 @@
 			</staticText>
 			<image>
 				<reportElement x="5" y="202" width="16" height="16" uuid="586850e5-9cac-4221-b78c-5980d643fa12"/>
-				<imageExpression><![CDATA["C:\\Users\\vivia\\Desktop\\facebook logo.png"]]></imageExpression>
+				<imageExpression><![CDATA["\\Images\\facebook logo.png"]]></imageExpression>
 			</image>
 			<staticText>
 				<reportElement x="25" y="199" width="67" height="20" uuid="394b049f-f81c-4b67-ad35-05ac89324ff5"/>
@@ -708,7 +708,7 @@
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
-				<textFieldExpression><![CDATA[$F{sconto}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[FLOOR($F{sconto})]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="460" y="53" width="94" height="16" uuid="1a9f4c92-e825-4caa-88b5-7db34d5e7b50">
