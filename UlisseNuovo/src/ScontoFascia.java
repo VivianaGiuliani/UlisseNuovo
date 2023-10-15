@@ -1,4 +1,5 @@
 import java.awt.Font;
+import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.Connection;
@@ -8,130 +9,168 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-import javax.swing.JTextArea;
+import javax.swing.JTextField;
 
 import Classi.Database;
 import Oggetti.Articolo;
 
 public class ScontoFascia {
+		private JFrame window;
+		private ImageIcon imageSfondo;
+		private JLabel labelSfondo;
 	public ScontoFascia() {
 		JFrame window = new JFrame();
         window.setSize(700, 370);
         window.setTitle("Sconto Fascia");
         window.setResizable(false);
         
+        labelSfondo = new JLabel(imageSfondo);
+		labelSfondo.setSize(1400, 800);
+	        
+	    imageSfondo = new ImageIcon(this.getClass().getResource("/Images/background.png"));
+	    Image img = imageSfondo.getImage();
+	    Image imgScale = img.getScaledInstance(labelSfondo.getWidth(), labelSfondo.getHeight(), Image.SCALE_DEFAULT);
+	    ImageIcon scaledIcon = new ImageIcon(imgScale);
+	    labelSfondo.setIcon(scaledIcon);
+	       
+	    window.add(labelSfondo);
+        
         JLabel sconto_fascia_label = new JLabel("Sconto fascia");
         sconto_fascia_label.setFont(new Font("Courier", Font.PLAIN, 20));
         sconto_fascia_label.setBounds(10, 10, 300, 20);
-        window.add(sconto_fascia_label);
+        sconto_fascia_label.setForeground(new java.awt.Color(255,255,255));
+        labelSfondo.add(sconto_fascia_label);
         
         JLabel fascia1da_label = new JLabel("Fascia 1 da: ");
         fascia1da_label.setFont(new Font("Courier", Font.PLAIN, 15));
         fascia1da_label.setBounds(10, 50, 100, 20);
-        window.add(fascia1da_label);
+        fascia1da_label.setForeground(new java.awt.Color(255,255,255));
+        labelSfondo.add(fascia1da_label);
 
-        JTextArea fascia1da_textbox = new JTextArea();
+        JTextField fascia1da_textbox = new JTextField();
         fascia1da_textbox.setBounds(120, 50, 100, 30);
-        window.add(fascia1da_textbox);
+        fascia1da_textbox.setBackground(new java.awt.Color(203, 203, 146));
+        labelSfondo.add(fascia1da_textbox);
         
         JLabel fascia1a_label = new JLabel("a: ");
         fascia1a_label.setFont(new Font("Courier", Font.PLAIN, 15));
         fascia1a_label.setBounds(250, 50, 30, 20);
-        window.add(fascia1a_label);
+        fascia1a_label.setForeground(new java.awt.Color(255,255,255));
+        labelSfondo.add(fascia1a_label);
 
-        JTextArea fascia1a_textbox = new JTextArea();
+        JTextField fascia1a_textbox = new JTextField();
         fascia1a_textbox.setBounds(290, 50, 100, 30);
-        window.add(fascia1a_textbox);
+        fascia1a_textbox.setBackground(new java.awt.Color(203, 203, 146));
+        labelSfondo.add(fascia1a_textbox);
         
         JLabel sconto_fascia1_label = new JLabel("Sconto:");
         sconto_fascia1_label.setFont(new Font("Courier", Font.PLAIN, 15));
         sconto_fascia1_label.setBounds(420, 50, 100, 20);
-        window.add(sconto_fascia1_label);
+        sconto_fascia1_label.setForeground(new java.awt.Color(255,255,255));
+        labelSfondo.add(sconto_fascia1_label);
 
-        JTextArea sconto_fascia1_textbox = new JTextArea();
+        JTextField sconto_fascia1_textbox = new JTextField();
         sconto_fascia1_textbox.setBounds(480, 50, 100, 30);
-        window.add(sconto_fascia1_textbox);
+        sconto_fascia1_textbox.setBackground(new java.awt.Color(203, 203, 146));
+        labelSfondo.add(sconto_fascia1_textbox);
         
         JLabel fascia2da_label = new JLabel("Fascia 2 da: ");
         fascia2da_label.setFont(new Font("Courier", Font.PLAIN, 15));
         fascia2da_label.setBounds(10, 100, 100, 20);
-        window.add(fascia2da_label);
+        fascia2da_label.setForeground(new java.awt.Color(255,255,255));
+        labelSfondo.add(fascia2da_label);
 
-        JTextArea fascia2da_textbox = new JTextArea();
+        JTextField fascia2da_textbox = new JTextField();
         fascia2da_textbox.setBounds(120, 100, 100, 30);
-        window.add(fascia2da_textbox);
+        fascia2da_textbox.setBackground(new java.awt.Color(203, 203, 146));
+        labelSfondo.add(fascia2da_textbox);
         
         JLabel fascia2a_label = new JLabel("a: ");
         fascia2a_label.setFont(new Font("Courier", Font.PLAIN, 15));
         fascia2a_label.setBounds(250, 100, 30, 20);
-        window.add(fascia2a_label);
+        fascia2a_label.setForeground(new java.awt.Color(255,255,255));
+        labelSfondo.add(fascia2a_label);
 
-        JTextArea fascia2a_textbox = new JTextArea();
+        JTextField fascia2a_textbox = new JTextField();
         fascia2a_textbox.setBounds(290, 100, 100, 30);
-        window.add(fascia2a_textbox);
+        fascia2a_textbox.setBackground(new java.awt.Color(203, 203, 146));
+        labelSfondo.add(fascia2a_textbox);
         
         JLabel sconto_fascia2_label = new JLabel("Sconto:");
         sconto_fascia2_label.setFont(new Font("Courier", Font.PLAIN, 15));
         sconto_fascia2_label.setBounds(420, 100, 100, 20);
-        window.add(sconto_fascia2_label);
+        sconto_fascia2_label.setForeground(new java.awt.Color(255,255,255));
+        labelSfondo.add(sconto_fascia2_label);
 
-        JTextArea sconto_fascia2_textbox = new JTextArea();
+        JTextField sconto_fascia2_textbox = new JTextField();
         sconto_fascia2_textbox.setBounds(480, 100, 100, 30);
-        window.add(sconto_fascia2_textbox);
+        sconto_fascia2_textbox.setBackground(new java.awt.Color(203, 203, 146));
+        labelSfondo.add(sconto_fascia2_textbox);
         
         JLabel fascia3da_label = new JLabel("Fascia 3 da: ");
         fascia3da_label.setFont(new Font("Courier", Font.PLAIN, 15));
         fascia3da_label.setBounds(10, 150, 100, 20);
-        window.add(fascia3da_label);
+        fascia3da_label.setForeground(new java.awt.Color(255,255,255));
+        labelSfondo.add(fascia3da_label);
 
-        JTextArea fascia3da_textbox = new JTextArea();
+        JTextField fascia3da_textbox = new JTextField();
         fascia3da_textbox.setBounds(120, 150, 100, 30);
-        window.add(fascia3da_textbox);
+        fascia3da_textbox.setBackground(new java.awt.Color(203, 203, 146));
+        labelSfondo.add(fascia3da_textbox);
         
         JLabel fascia3a_label = new JLabel("a: ");
         fascia3a_label.setFont(new Font("Courier", Font.PLAIN, 15));
         fascia3a_label.setBounds(250, 150, 30, 20);
-        window.add(fascia3a_label);
+        fascia3a_label.setForeground(new java.awt.Color(255,255,255));
+        labelSfondo.add(fascia3a_label);
 
-        JTextArea fascia3a_textbox = new JTextArea();
+        JTextField fascia3a_textbox = new JTextField();
         fascia3a_textbox.setBounds(290, 150, 100, 30);
-        window.add(fascia3a_textbox);
+        fascia3a_textbox.setBackground(new java.awt.Color(203, 203, 146));
+        labelSfondo.add(fascia3a_textbox);
         
         JLabel sconto_fascia3_label = new JLabel("Sconto:");
         sconto_fascia3_label.setFont(new Font("Courier", Font.PLAIN, 15));
         sconto_fascia3_label.setBounds(420, 150, 100, 20);
-        window.add(sconto_fascia3_label);
+        sconto_fascia3_label.setForeground(new java.awt.Color(255,255,255));
+        labelSfondo.add(sconto_fascia3_label);
 
-        JTextArea sconto_fascia3_textbox = new JTextArea();
+        JTextField sconto_fascia3_textbox = new JTextField();
         sconto_fascia3_textbox.setBounds(480, 150, 100, 30);
-        window.add(sconto_fascia3_textbox);
-        
+        sconto_fascia3_textbox.setBackground(new java.awt.Color(203, 203, 146));
+        labelSfondo.add(sconto_fascia3_textbox);
         
         JLabel fascia4da_label = new JLabel("Fascia 4 maggiore di: ");
         fascia4da_label.setFont(new Font("Courier", Font.PLAIN, 15));
         fascia4da_label.setBounds(10, 200, 300, 20);
-        window.add(fascia4da_label);
+        fascia4da_label.setForeground(new java.awt.Color(255,255,255));
+        labelSfondo.add(fascia4da_label);
 
-        JTextArea fascia4da_textbox = new JTextArea();
+        JTextField fascia4da_textbox = new JTextField();
         fascia4da_textbox.setBounds(170, 200, 100, 30);
-        window.add(fascia4da_textbox);
+        fascia4da_textbox.setBackground(new java.awt.Color(203, 203, 146));
+        labelSfondo.add(fascia4da_textbox);
         
         JLabel sconto_fascia4_label = new JLabel("Sconto:");
         sconto_fascia4_label.setFont(new Font("Courier", Font.PLAIN, 15));
         sconto_fascia4_label.setBounds(420, 200, 100, 20);
-        window.add(sconto_fascia4_label);
+        sconto_fascia4_label.setForeground(new java.awt.Color(255,255,255));
+        labelSfondo.add(sconto_fascia4_label);
 
-        JTextArea sconto_fascia4_textbox = new JTextArea();
+        JTextField sconto_fascia4_textbox = new JTextField();
         sconto_fascia4_textbox.setBounds(480, 200, 100, 30);
-        window.add(sconto_fascia4_textbox);
+        sconto_fascia4_textbox.setBackground(new java.awt.Color(203, 203, 146));
+        labelSfondo.add(sconto_fascia4_textbox);
         
         JButton applica_button = new JButton("Applica");
         applica_button.setBounds(10, 250, 670, 40);
         applica_button.setVisible(true);
-		window.add(applica_button);
+        applica_button.setBackground(new java.awt.Color(46, 255, 171));
+		labelSfondo.add(applica_button);
         
         window.setLayout(null);
         window.setVisible(true);

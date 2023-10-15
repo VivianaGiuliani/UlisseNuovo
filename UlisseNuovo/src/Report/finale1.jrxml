@@ -1,0 +1,807 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.20.6.final using JasperReports Library version 6.20.6-5c96b6aa8a39ac1dc6b6bea4b81168e16dd39231  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="finale1" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="1aa31d89-e918-47c7-8f50-e0a9661b6c07">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Ulisse.jrdax"/>
+	<style name="Table_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table_CH" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<subDataset name="Empty Dataset1" uuid="2f8f88b9-06de-40b4-9b02-3e8ebc26cd9c"/>
+	<subDataset name="Dataset1" uuid="c5377fd9-16e4-4a64-916b-8ddfcb3a8a50">
+		<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Ulisse.jrdax"/>
+		<property name="com.jaspersoft.studio.data.sql.SQLQueryDesigner.sash.w1" value="215"/>
+		<property name="com.jaspersoft.studio.data.sql.SQLQueryDesigner.sash.w2" value="774"/>
+		<parameter name="numeroVendita" class="java.lang.Integer"/>
+		<queryString language="SQL">
+			<![CDATA[SELECT * FROM sys.stampa_distinta where sys.stampa_distinta.numero_vendita = $P{numeroVendita}]]>
+		</queryString>
+		<field name="numero_vendita" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.name" value="numero_vendita"/>
+			<property name="com.jaspersoft.studio.field.label" value="numero_vendita"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="stampa_distinta"/>
+		</field>
+		<field name="quantita" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.name" value="quantita"/>
+			<property name="com.jaspersoft.studio.field.label" value="quantita"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="stampa_distinta"/>
+		</field>
+		<field name="barcode" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="barcode"/>
+			<property name="com.jaspersoft.studio.field.label" value="barcode"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="stampa_distinta"/>
+		</field>
+		<field name="descrizione" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="descrizione"/>
+			<property name="com.jaspersoft.studio.field.label" value="descrizione"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="stampa_distinta"/>
+		</field>
+		<field name="peso" class="java.lang.Double">
+			<property name="com.jaspersoft.studio.field.name" value="peso"/>
+			<property name="com.jaspersoft.studio.field.label" value="peso"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="stampa_distinta"/>
+		</field>
+		<field name="caratura" class="java.lang.Double">
+			<property name="com.jaspersoft.studio.field.name" value="caratura"/>
+			<property name="com.jaspersoft.studio.field.label" value="caratura"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="stampa_distinta"/>
+		</field>
+		<field name="totale_riga" class="java.lang.Double">
+			<property name="com.jaspersoft.studio.field.name" value="totale_riga"/>
+			<property name="com.jaspersoft.studio.field.label" value="totale_riga"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="stampa_distinta"/>
+		</field>
+		<field name="sc_1" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.name" value="sc_1"/>
+			<property name="com.jaspersoft.studio.field.label" value="sc_1"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="stampa_distinta"/>
+		</field>
+		<field name="sc_2" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.name" value="sc_2"/>
+			<property name="com.jaspersoft.studio.field.label" value="sc_2"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="stampa_distinta"/>
+		</field>
+		<field name="scontato" class="java.lang.Double">
+			<property name="com.jaspersoft.studio.field.name" value="scontato"/>
+			<property name="com.jaspersoft.studio.field.label" value="scontato"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="stampa_distinta"/>
+		</field>
+		<field name="totale_merce" class="java.lang.Double">
+			<property name="com.jaspersoft.studio.field.name" value="totale_merce"/>
+			<property name="com.jaspersoft.studio.field.label" value="totale_merce"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="stampa_distinta"/>
+		</field>
+		<field name="sconto" class="java.lang.Double">
+			<property name="com.jaspersoft.studio.field.name" value="sconto"/>
+			<property name="com.jaspersoft.studio.field.label" value="sconto"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="stampa_distinta"/>
+		</field>
+		<field name="merce_scontata" class="java.lang.Double">
+			<property name="com.jaspersoft.studio.field.name" value="merce_scontata"/>
+			<property name="com.jaspersoft.studio.field.label" value="merce_scontata"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="stampa_distinta"/>
+		</field>
+		<field name="valore_buono" class="java.lang.Double">
+			<property name="com.jaspersoft.studio.field.name" value="valore_buono"/>
+			<property name="com.jaspersoft.studio.field.label" value="valore_buono"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="stampa_distinta"/>
+		</field>
+		<field name="totale_scontato" class="java.lang.Double">
+			<property name="com.jaspersoft.studio.field.name" value="totale_scontato"/>
+			<property name="com.jaspersoft.studio.field.label" value="totale_scontato"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="stampa_distinta"/>
+		</field>
+		<field name="punti_precedenti" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.name" value="punti_precedenti"/>
+			<property name="com.jaspersoft.studio.field.label" value="punti_precedenti"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="stampa_distinta"/>
+		</field>
+		<field name="punti_guadagnati" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.name" value="punti_guadagnati"/>
+			<property name="com.jaspersoft.studio.field.label" value="punti_guadagnati"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="stampa_distinta"/>
+		</field>
+		<field name="punti_totali" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.name" value="punti_totali"/>
+			<property name="com.jaspersoft.studio.field.label" value="punti_totali"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="stampa_distinta"/>
+		</field>
+		<field name="punti_usati" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.name" value="punti_usati"/>
+			<property name="com.jaspersoft.studio.field.label" value="punti_usati"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="stampa_distinta"/>
+		</field>
+		<field name="punti_disponibili" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.name" value="punti_disponibili"/>
+			<property name="com.jaspersoft.studio.field.label" value="punti_disponibili"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="stampa_distinta"/>
+		</field>
+		<field name="da_titolo_cliente" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="da_titolo_cliente"/>
+			<property name="com.jaspersoft.studio.field.label" value="da_titolo_cliente"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="stampa_distinta"/>
+		</field>
+		<field name="titolo_cliente" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="titolo_cliente"/>
+			<property name="com.jaspersoft.studio.field.label" value="titolo_cliente"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="stampa_distinta"/>
+		</field>
+		<field name="nome_cliente" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="nome_cliente"/>
+			<property name="com.jaspersoft.studio.field.label" value="nome_cliente"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="stampa_distinta"/>
+		</field>
+		<field name="codice_carta_cliente" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="codice_carta_cliente"/>
+			<property name="com.jaspersoft.studio.field.label" value="codice_carta_cliente"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="stampa_distinta"/>
+		</field>
+		<field name="email_cliente" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="email_cliente"/>
+			<property name="com.jaspersoft.studio.field.label" value="email_cliente"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="stampa_distinta"/>
+		</field>
+	</subDataset>
+	<parameter name="numeroVendita" class="java.lang.Integer"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT * FROM sys.stampa_distinta where sys.stampa_distinta.numero_vendita = $P{numeroVendita}]]>
+	</queryString>
+	<field name="numero_vendita" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="numero_vendita"/>
+		<property name="com.jaspersoft.studio.field.label" value="numero_vendita"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="stampa_distinta"/>
+	</field>
+	<field name="quantita" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="quantita"/>
+		<property name="com.jaspersoft.studio.field.label" value="quantita"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="stampa_distinta"/>
+	</field>
+	<field name="barcode" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="barcode"/>
+		<property name="com.jaspersoft.studio.field.label" value="barcode"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="stampa_distinta"/>
+	</field>
+	<field name="descrizione" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="descrizione"/>
+		<property name="com.jaspersoft.studio.field.label" value="descrizione"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="stampa_distinta"/>
+	</field>
+	<field name="peso" class="java.lang.Double">
+		<property name="com.jaspersoft.studio.field.name" value="peso"/>
+		<property name="com.jaspersoft.studio.field.label" value="peso"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="stampa_distinta"/>
+	</field>
+	<field name="caratura" class="java.lang.Double">
+		<property name="com.jaspersoft.studio.field.name" value="caratura"/>
+		<property name="com.jaspersoft.studio.field.label" value="caratura"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="stampa_distinta"/>
+	</field>
+	<field name="totale_riga" class="java.lang.Double">
+		<property name="com.jaspersoft.studio.field.name" value="totale_riga"/>
+		<property name="com.jaspersoft.studio.field.label" value="totale_riga"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="stampa_distinta"/>
+	</field>
+	<field name="sc_1" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="sc_1"/>
+		<property name="com.jaspersoft.studio.field.label" value="sc_1"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="stampa_distinta"/>
+	</field>
+	<field name="sc_2" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="sc_2"/>
+		<property name="com.jaspersoft.studio.field.label" value="sc_2"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="stampa_distinta"/>
+	</field>
+	<field name="scontato" class="java.lang.Double">
+		<property name="com.jaspersoft.studio.field.name" value="scontato"/>
+		<property name="com.jaspersoft.studio.field.label" value="scontato"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="stampa_distinta"/>
+	</field>
+	<field name="totale_merce" class="java.lang.Double">
+		<property name="com.jaspersoft.studio.field.name" value="totale_merce"/>
+		<property name="com.jaspersoft.studio.field.label" value="totale_merce"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="stampa_distinta"/>
+	</field>
+	<field name="sconto" class="java.lang.Double">
+		<property name="com.jaspersoft.studio.field.name" value="sconto"/>
+		<property name="com.jaspersoft.studio.field.label" value="sconto"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="stampa_distinta"/>
+	</field>
+	<field name="merce_scontata" class="java.lang.Double">
+		<property name="com.jaspersoft.studio.field.name" value="merce_scontata"/>
+		<property name="com.jaspersoft.studio.field.label" value="merce_scontata"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="stampa_distinta"/>
+	</field>
+	<field name="valore_buono" class="java.lang.Double">
+		<property name="com.jaspersoft.studio.field.name" value="valore_buono"/>
+		<property name="com.jaspersoft.studio.field.label" value="valore_buono"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="stampa_distinta"/>
+	</field>
+	<field name="totale_scontato" class="java.lang.Double">
+		<property name="com.jaspersoft.studio.field.name" value="totale_scontato"/>
+		<property name="com.jaspersoft.studio.field.label" value="totale_scontato"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="stampa_distinta"/>
+	</field>
+	<field name="punti_precedenti" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="punti_precedenti"/>
+		<property name="com.jaspersoft.studio.field.label" value="punti_precedenti"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="stampa_distinta"/>
+	</field>
+	<field name="punti_guadagnati" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="punti_guadagnati"/>
+		<property name="com.jaspersoft.studio.field.label" value="punti_guadagnati"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="stampa_distinta"/>
+	</field>
+	<field name="punti_totali" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="punti_totali"/>
+		<property name="com.jaspersoft.studio.field.label" value="punti_totali"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="stampa_distinta"/>
+	</field>
+	<field name="punti_usati" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="punti_usati"/>
+		<property name="com.jaspersoft.studio.field.label" value="punti_usati"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="stampa_distinta"/>
+	</field>
+	<field name="punti_disponibili" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="punti_disponibili"/>
+		<property name="com.jaspersoft.studio.field.label" value="punti_disponibili"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="stampa_distinta"/>
+	</field>
+	<field name="da_titolo_cliente" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="da_titolo_cliente"/>
+		<property name="com.jaspersoft.studio.field.label" value="da_titolo_cliente"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="stampa_distinta"/>
+	</field>
+	<field name="titolo_cliente" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="titolo_cliente"/>
+		<property name="com.jaspersoft.studio.field.label" value="titolo_cliente"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="stampa_distinta"/>
+	</field>
+	<field name="nome_cliente" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="nome_cliente"/>
+		<property name="com.jaspersoft.studio.field.label" value="nome_cliente"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="stampa_distinta"/>
+	</field>
+	<field name="codice_carta_cliente" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="codice_carta_cliente"/>
+		<property name="com.jaspersoft.studio.field.label" value="codice_carta_cliente"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="stampa_distinta"/>
+	</field>
+	<field name="email_cliente" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="email_cliente"/>
+		<property name="com.jaspersoft.studio.field.label" value="email_cliente"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="stampa_distinta"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<rectangle radius="10">
+				<reportElement x="0" y="0" width="555" height="44" uuid="e164b5ee-ac7a-4f66-9fc6-f9f6d3c42ece"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="6" y="3" width="99" height="21" uuid="e69139c1-51df-4d4c-bea3-dac1e90d206e"/>
+				<textElement markup="html">
+					<font fontName="Berlin Sans FB" size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Giuliani S.r.l]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="6" y="25" width="233" height="20" uuid="fdf7bbd4-0850-415b-a44d-3bc523207dee"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Via Amendola, 20 - 20026 Novate Milanese (MI) Tel. 02-3564713]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="312" y="3" width="110" height="21" uuid="23b7d532-962e-4b34-a30a-53ac74d860f1"/>
+				<text><![CDATA[BUONO DI CONSEGNA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="385" y="24" width="51" height="20" uuid="e4b00b2a-f8a7-4b4a-8711-e3ca7e25898f"/>
+				<text><![CDATA[Distinta n°]]></text>
+			</staticText>
+			<rectangle radius="10">
+				<reportElement x="0" y="44" width="555" height="20" uuid="4e1ef50a-557e-46c2-8a70-88e7ab610c82"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="138" y="44" width="322" height="19" uuid="d29a5f06-ca02-4820-a78f-ce581415b8c1"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Per motivi fiscali, la merce venduta non potrà essere sostituita]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="436" y="26" width="100" height="15" uuid="53b3c9ab-ad81-450f-ad91-8df06fa9b96a"/>
+				<textFieldExpression><![CDATA[$F{numero_vendita}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="66">
+			<componentElement>
+				<reportElement x="0" y="0" width="555" height="65" uuid="80a02368-2602-4669-821c-ca2aad8062e5">
+					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.grid.JSSGridBagLayout"/>
+					<property name="com.jaspersoft.studio.table.style.table_header" value="Table_TH"/>
+					<property name="com.jaspersoft.studio.table.style.column_header" value="Table_CH"/>
+					<property name="com.jaspersoft.studio.table.style.detail" value="Table_TD"/>
+				</reportElement>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="Dataset1" uuid="17c705c8-9c0f-4ee3-84a9-6fa26e539b01">
+						<datasetParameter name="numeroVendita">
+							<datasetParameterExpression><![CDATA[$P{numeroVendita}]]></datasetParameterExpression>
+						</datasetParameter>
+						<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					</datasetRun>
+					<jr:column width="60" uuid="d2205950-8b79-48c1-bcf9-293a263d152a">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Colonna1"/>
+						<jr:columnHeader style="Table_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="60" height="30" uuid="e11f2bd4-fa4e-429d-9743-7886904a8b3d"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None"/>
+								<text><![CDATA[Quantità]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="Table_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="60" height="30" uuid="a9071f9a-14ea-41cd-b7ac-82e53b566d67"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<textFieldExpression><![CDATA[$F{quantita}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="70" uuid="bc83f524-a395-445d-8b80-2f37594a61c1">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Colonna2"/>
+						<jr:columnHeader style="Table_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="70" height="30" uuid="61e73dc3-b8f2-48e0-8d32-bd808325e4a2"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None"/>
+								<text><![CDATA[Barcode]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="Table_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="70" height="30" uuid="ae5157f4-6a40-4f5f-b769-b0db166e0c24"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<textFieldExpression><![CDATA[$F{barcode}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="130" uuid="2dc9f639-43f5-4fc8-8388-ee1fba985513">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Colonna3"/>
+						<jr:columnHeader style="Table_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="130" height="30" uuid="e2c5aaa7-b3f6-4d55-902d-8d9142175cf7"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None"/>
+								<text><![CDATA[Descrizione]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="Table_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="130" height="30" uuid="169cf288-1396-4678-857c-6159766b5ed3"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<textFieldExpression><![CDATA[$F{descrizione}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="40" uuid="1eb7e93a-938b-47c2-8ca6-72450fffbd3e">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Colonna4"/>
+						<jr:columnHeader style="Table_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="40" height="30" uuid="e0be6ade-d58b-4d50-b489-0f35513f02bd"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None"/>
+								<text><![CDATA[Peso]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="Table_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="40" height="30" uuid="cdeb1e0a-7a6a-4e5b-a3d7-95c979b57bd8"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<textFieldExpression><![CDATA[String.format("%.2f",(double)($F{peso}))]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="60" uuid="9195e79f-e42e-41c4-90c9-48af6c30a91c">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Colonna5"/>
+						<jr:columnHeader style="Table_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="60" height="30" uuid="d076a75f-4927-445f-89dc-9324ebcff553"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None"/>
+								<text><![CDATA[Caratura]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="Table_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="60" height="30" uuid="0fc4d0c7-2d68-40fb-ba7c-a36c37877fe2"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<textFieldExpression><![CDATA[String.format("%.2f",(double)($F{caratura}))]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="60" uuid="7e3f80c8-7c5a-4a36-94c1-58cdf94835fd">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Colonna6"/>
+						<jr:columnHeader style="Table_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="60" height="30" uuid="92c4829a-9bd3-4f55-b897-7c7422eafb21"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None"/>
+								<text><![CDATA[Totale_riga]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="Table_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="60" height="30" uuid="8c0bb65b-30ab-4320-9926-641b1bbaf17b"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<textFieldExpression><![CDATA[String.format("%.2f",(double)($F{totale_riga}))]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="40" uuid="82d734bc-e007-4e8b-89a7-34297d368df1">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Colonna7"/>
+						<jr:columnHeader style="Table_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="40" height="30" uuid="172977bf-fcf6-42af-91be-da7500eef0b3"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None"/>
+								<text><![CDATA[Sconto 1]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="Table_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="40" height="30" uuid="2d9d4773-096e-4f89-af6b-72b335424bec"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<textFieldExpression><![CDATA[$F{sc_1}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="40" uuid="54858299-821a-430e-be45-356286f0af13">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Colonna8"/>
+						<jr:columnHeader style="Table_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="40" height="30" uuid="2feaa5a5-262d-4d81-919b-2cf0e8f79f50"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None"/>
+								<text><![CDATA[Sconto 2]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="Table_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="40" height="30" uuid="6d06df65-c4cc-466d-8ef4-9b6689f08818"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<textFieldExpression><![CDATA[$F{sc_2}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="55" uuid="a68e1cd6-5b91-4d7e-96a1-ea0e3b44002f">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Colonna9"/>
+						<jr:columnHeader style="Table_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="55" height="30" uuid="74325400-8801-435a-95bd-32339b3ff029"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None"/>
+								<text><![CDATA[Scontato]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="Table_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="55" height="30" uuid="e63efff4-7d52-44c5-a85f-f6152f25dd2e"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<textFieldExpression><![CDATA[String.format("%.2f",(double)($F{scontato}))]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+				</jr:table>
+			</componentElement>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="309">
+			<rectangle>
+				<reportElement x="300" y="94" width="254" height="22" uuid="ede978d2-ddc1-46b6-aa27-86999c1fbe72">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+			</rectangle>
+			<rectangle radius="10">
+				<reportElement x="6" y="235" width="322" height="74" uuid="4f266301-d20a-4776-bf79-ca657ca5243f"/>
+			</rectangle>
+			<rectangle radius="10">
+				<reportElement x="-1" y="6" width="138" height="20" uuid="0aa03d82-3184-481b-a291-aef49fc5acfd"/>
+			</rectangle>
+			<rectangle radius="10">
+				<reportElement x="-1" y="26" width="138" height="20" uuid="1e3dcf70-48fb-4a0b-b156-ec7aa74ad6bd"/>
+			</rectangle>
+			<rectangle radius="10">
+				<reportElement x="-1" y="46" width="138" height="20" uuid="38ac7a5a-8144-49ba-9710-327aa708ca69"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="5" y="6" width="87" height="20" uuid="8c749ff4-b1cb-4a7a-9345-79c6e47bba7c"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Punti Precedenti]]></text>
+			</staticText>
+			<rectangle radius="10">
+				<reportElement x="-1" y="66" width="138" height="20" uuid="a36119fd-4c2d-4f9e-92d9-7ca31543bd23"/>
+			</rectangle>
+			<rectangle radius="10">
+				<reportElement x="-1" y="86" width="138" height="20" uuid="53a7e044-b92a-43b9-986d-f2b9884d2e48"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="5" y="26" width="87" height="20" uuid="7b17bb36-fe83-4010-9d1c-a0007cfefa1d"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Punti Guadagnati]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="5" y="46" width="61" height="20" uuid="67dc5d80-4025-4153-afb6-2d027b3962c6"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Punti Totali]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="5" y="66" width="61" height="20" uuid="25379eb0-1318-4680-bca9-2fb4cce3cf9d"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Punti Usati]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="5" y="86" width="83" height="20" uuid="53981f49-6383-471b-a032-c191b1a443a0"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Punti Disponibili]]></text>
+			</staticText>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="185" y="94" width="100" height="20" uuid="61f74434-d8a0-4b63-96e5-6d37dc24831b"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="181" y="94" width="29" height="20" uuid="9992d786-f96a-4cfd-8284-0cb27c6d1364"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Data]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="5" y="125" width="116" height="20" uuid="0be6b64e-61cc-4204-a9ae-e7c6a34f42d5"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Grazie e Arrivederci Gent.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="5" y="145" width="100" height="20" uuid="2098a28f-edde-4348-80e9-0add450a8a0a"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Carta Fedeltà N°]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="209" y="145" width="35" height="20" uuid="72fa3de1-0e59-401f-bcdf-9d3390532f7a"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[E-mail:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="5" y="165" width="359" height="20" uuid="02e16256-e568-409f-9f47-8617f16eb969"/>
+				<text><![CDATA[Visita il nostro sito dove puoi acquistare online i nostri prodotti: www.giuliani-srl.it]]></text>
+			</staticText>
+			<image>
+				<reportElement x="5" y="185" width="16" height="16" uuid="3033f213-ab8a-4a8d-8391-aaa5387afa45"/>
+				<imageExpression><![CDATA["\\Images\\instagram.jpg"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="14" y="245" width="142" height="13" uuid="ec51ce96-6fc9-45d3-a109-445da15b44d5"/>
+				<text><![CDATA[Regolamento Tessera Fedeltà:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="12" y="258" width="156" height="13" uuid="2c472f87-4683-4ff4-8109-d89d6bb6f452"/>
+				<text><![CDATA[Ogni 10,00 € di acquisto = 1 Punto]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="11" y="271" width="156" height="13" uuid="a402a732-1616-494c-983b-7a616564852f"/>
+				<text><![CDATA[Ogni 25 Punti = 10,00 € di sconto]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="11" y="284" width="306" height="13" uuid="e6ad3246-7ace-490f-ab88-44e83767c76e"/>
+				<text><![CDATA[ I punti accumulati restano validi effettuando un acquisto entro 5 anni]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="18" y="182" width="122" height="20" uuid="a34fc383-3ffd-4e5b-a405-aeee47649e22"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[giuliani_novate_milanese]]></text>
+			</staticText>
+			<image>
+				<reportElement x="5" y="202" width="16" height="16" uuid="586850e5-9cac-4221-b78c-5980d643fa12"/>
+				<imageExpression><![CDATA["\\Images\\facebook logo.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="25" y="199" width="67" height="20" uuid="394b049f-f81c-4b67-ad35-05ac89324ff5"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Giuliani S.r.l]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="316" y="95" width="124" height="20" uuid="bc9cf335-fd7e-4fa9-937e-39b7ade31c7b"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Totale Scontato]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="300" y="6" width="254" height="22" uuid="ae638d8e-9905-43e7-a21d-fc2ee0d66746">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+			</rectangle>
+			<rectangle>
+				<reportElement x="300" y="28" width="254" height="22" uuid="17791176-516c-48f5-b4c9-9c5baa90a6d2">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+			</rectangle>
+			<rectangle>
+				<reportElement x="300" y="50" width="254" height="22" uuid="7ed4e9e6-811a-428e-a4b7-602735155cde">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+			</rectangle>
+			<rectangle>
+				<reportElement x="300" y="72" width="254" height="22" uuid="fe6e2be5-1517-496a-b1b0-2f84d3893d3c">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+			</rectangle>
+			<staticText>
+				<reportElement x="342" y="6" width="78" height="22" uuid="df82ccee-e4bf-4e0a-b0de-04bc97473e11"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Totale Merce]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="343" y="28" width="46" height="22" uuid="01437b05-eb70-492e-ac4e-9b848f63dcf6"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Sconto]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="343" y="50" width="86" height="22" uuid="c4be9341-8ba5-4267-8ddd-8b8f92585340"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Merce Scontata]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="343" y="72" width="78" height="22" uuid="99efbc1e-27c2-46a6-baf2-f07de683b378"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Valore Buono]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="90" y="30" width="36" height="14" uuid="70202430-a0d5-4bbd-b13e-349124f12d50">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{punti_guadagnati}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="90" y="49" width="36" height="14" uuid="62cd1b02-06d5-431e-b456-0ad58d13d69d">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{punti_totali}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="88" y="69" width="36" height="14" uuid="a311fbe7-4beb-4dfa-91c0-d7636c912e19">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{punti_usati}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="88" y="89" width="36" height="14" uuid="a4e25144-b9b4-42b7-9d08-3f6569815d3c">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{punti_disponibili}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="455" y="9" width="94" height="16" uuid="ea5a2c6e-e4d1-47cf-92ce-2fab5319de93">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="d7b3653e-b0e6-4358-a7b0-c78bd23b2b16"/>
+				</reportElement>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[String.format("%.2f",(double)($F{totale_merce}))]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="455" y="31" width="94" height="16" uuid="b9ccceab-0b0b-4e36-b049-fa85bbc367f4">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="64899f83-fc3d-434c-8cdd-1538ccce8ee9"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[String.format("%.2f",(double)(FLOOR($F{sconto})))]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="455" y="53" width="94" height="16" uuid="1a9f4c92-e825-4caa-88b5-7db34d5e7b50">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="8272acd2-ab4c-4e58-8124-ff139dd083b6"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[String.format("%.2f",(double)($F{merce_scontata}))]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="455" y="75" width="94" height="16" uuid="a1cbc878-1455-4337-9759-7ec317cd82af">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="46deec92-0fb4-4831-9667-eb754b2889fc"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[String.format("%.2f",(double)($F{valore_buono}))]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="455" y="97" width="94" height="16" uuid="e142f926-5a4c-47a7-b08c-c6932cc5533c">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="f254102a-b76d-4140-8571-62057bd0882a"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[String.format("%.2f",(double)($F{totale_scontato}))]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="122" y="129" width="20" height="16" uuid="dbddd593-b89e-4ab6-82ef-1436e4e1d990">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="cf9ee3f2-4383-4bce-a18d-f3d6eb5d4f93"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{da_titolo_cliente}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="151" y="129" width="30" height="16" uuid="438da907-f059-462c-b5bf-3f3b870256d0">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="dddee287-fa57-4894-8b6c-37a3d53d050d"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{titolo_cliente}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="180" y="129" width="159" height="16" uuid="c6486ad9-3e4b-4c72-8d7a-acdc14eb6eb8">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="f96b0348-4b74-429d-a60f-76aa2679a26b"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{nome_cliente}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="83" y="149" width="117" height="16" uuid="653bb20b-36a0-4e3f-9cdc-c72d12da2d9c">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="37eda08a-d325-44b1-a8cf-1e26933d69fe"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{codice_carta_cliente}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="244" y="149" width="140" height="16" uuid="c86d290e-7274-4b95-afb6-c0cc426b0129">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="d9da88ee-1ffc-4af3-8357-1eb7aaff60de"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{email_cliente}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="90" y="9" width="36" height="14" uuid="e9142451-c81e-4b3f-94d2-23834c20cbc0">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{punti_precedenti}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

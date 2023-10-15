@@ -1,7 +1,5 @@
 import javax.swing.*;
 
-
-
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -21,194 +19,247 @@ import Classi.Database;
 import Classi.RecuperoCategorie;
 import Oggetti.Articolo;
 
-
-
 public class Articoli {
+	
+	private JFrame window;
+	private ImageIcon imageSfondo;
+	private JLabel labelSfondo;
+	
     public Articoli() {
     	
-        JFrame window = new JFrame();
-        window.setSize(1300, 800);
+        window = new JFrame();
+        window.setSize(1300, 650);
         window.setTitle("Articoli");
         window.setResizable(false);
 
+        labelSfondo = new JLabel(imageSfondo);
+		labelSfondo.setSize(1400, 800);
+	        
+	    imageSfondo = new ImageIcon(this.getClass().getResource("/Images/background.png"));
+	    Image img = imageSfondo.getImage();
+	    Image imgScale = img.getScaledInstance(labelSfondo.getWidth(), labelSfondo.getHeight(), Image.SCALE_DEFAULT);
+	    ImageIcon scaledIcon = new ImageIcon(imgScale);
+	    labelSfondo.setIcon(scaledIcon);
+	       
+	    window.add(labelSfondo);
+        
         JLabel gestione_articoli_label = new JLabel("Gestione Articoli");
-        gestione_articoli_label.setFont(new Font("Courier", Font.PLAIN, 15));
+        gestione_articoli_label.setFont(new Font("Courier", Font.BOLD, 20));
         gestione_articoli_label.setBounds(10, 15, 200, 30);
-        window.add(gestione_articoli_label);
+        gestione_articoli_label.setForeground(new java.awt.Color(255,255,255));
+        labelSfondo.add(gestione_articoli_label);
 
         JButton aumento_prezzi_button = new JButton("Aumento Prezzi");
         aumento_prezzi_button.setBounds(190, 10, 150, 40);
-        window.add(aumento_prezzi_button);
+        aumento_prezzi_button.setBackground(new java.awt.Color(193,255,57));
+        labelSfondo.add(aumento_prezzi_button);
 
         JButton modifica_sconto1_button = new JButton("Modifica sconto 1");
         modifica_sconto1_button.setBounds(345, 10, 150, 40);
-        window.add(modifica_sconto1_button);
+        modifica_sconto1_button.setBackground(new java.awt.Color(255,209,110));
+        labelSfondo.add(modifica_sconto1_button);
 
         JButton modifica_sconto2_button = new JButton("Modifica sconto 2");
         modifica_sconto2_button.setBounds(500, 10, 150, 40);
-        window.add(modifica_sconto2_button);
+        modifica_sconto2_button.setBackground(new java.awt.Color(255,209,110));
+        labelSfondo.add(modifica_sconto2_button);
 
         JButton sconto_fascia_button = new JButton("Sconto Fascia");
         sconto_fascia_button.setBounds(655, 10, 120, 40);
-        window.add(sconto_fascia_button);
+        sconto_fascia_button.setBackground(new java.awt.Color(231, 177, 181));
+        labelSfondo.add(sconto_fascia_button);
 
         JButton artxforn_button = new JButton("Art. X Forn");
         artxforn_button.setBounds(780, 10, 100, 40);
-        window.add(artxforn_button);
+        artxforn_button.setBackground(new java.awt.Color(145, 177, 181));
+        labelSfondo.add(artxforn_button);
 
         JButton ordine_barcode_button = new JButton("Ordine barcode");
         ordine_barcode_button.setBounds(1020, 250, 130, 40);
-        window.add(ordine_barcode_button);
+        ordine_barcode_button.setBackground(new java.awt.Color(145, 210, 135));
+        labelSfondo.add(ordine_barcode_button);
 
         JButton ordine_barcode_decresc_button = new JButton("Ordine barcode decresc.");
         ordine_barcode_decresc_button.setBounds(1020, 300, 200, 40);
-        window.add(ordine_barcode_decresc_button);
+        ordine_barcode_decresc_button.setBackground(new java.awt.Color(145, 210, 135));
+        labelSfondo.add(ordine_barcode_decresc_button);
 
         JButton trova_riga_button = new JButton("Trova");
         trova_riga_button.setBounds(1020, 350, 100, 40);
-        window.add(trova_riga_button);
+        trova_riga_button.setBackground(new java.awt.Color(241, 255, 135));
+        labelSfondo.add(trova_riga_button);
         
-        JTextArea trova_riga_textbox = new JTextArea();
+        JTextField trova_riga_textbox = new JTextField();
         trova_riga_textbox.setBounds(1130, 350, 120, 40);
-        window.add(trova_riga_textbox);
+        trova_riga_textbox.setBackground(new java.awt.Color(203, 203, 146));
+        labelSfondo.add(trova_riga_textbox);
 
         JButton tabella_categorie_button = new JButton("Tabella Categorie");
         tabella_categorie_button.setBounds(10, 60, 150, 40);
-        window.add(tabella_categorie_button);
+        tabella_categorie_button.setBackground(new java.awt.Color(142, 227, 233));
+        labelSfondo.add(tabella_categorie_button);
         
         JButton tabella_fornitori_button = new JButton("Tabella Fornitori");
-        tabella_fornitori_button.setBounds(330, 60, 150, 40);
-        window.add(tabella_fornitori_button);
+        tabella_fornitori_button.setBounds(170, 60, 150, 40);
+        tabella_fornitori_button.setBackground(new java.awt.Color(142, 227, 233));
+        labelSfondo.add(tabella_fornitori_button);
 
         JButton converti_VF_button = new JButton("Converti V/F");
-        converti_VF_button.setBounds(490, 60, 150, 40);
-        window.add(converti_VF_button);
+        converti_VF_button.setBounds(330, 60, 150, 40);
+        converti_VF_button.setBackground(new java.awt.Color(54, 150, 255));
+        labelSfondo.add(converti_VF_button);
 
         JCheckBox vedi_costo_button = new JCheckBox("Vedi Costo");
         vedi_costo_button.setBounds(855, 60, 150, 40);
-        window.add(vedi_costo_button);
+        vedi_costo_button.setOpaque(false);
+        vedi_costo_button.setContentAreaFilled(false);
+        vedi_costo_button.setBorderPainted(false);
+        vedi_costo_button.setFont(new Font("Courier", Font.BOLD, 15));
+        vedi_costo_button.setForeground(new java.awt.Color(255,255,255));
+        labelSfondo.add(vedi_costo_button);
         
         ArrayList<String> risultatoCategorie = categorieStr();
         String[] categorie_values = new String[risultatoCategorie.size()];
         categorie_values = risultatoCategorie.toArray(categorie_values);
         JComboBox<String> categorie_combobox = new JComboBox<>(categorie_values);
-        categorie_combobox.setBounds(10, 110, 150, 40);
-        window.add(categorie_combobox);
+        categorie_combobox.setBounds(10, 120, 150, 40);
+        labelSfondo.add(categorie_combobox);
 
         JLabel codice_calcolato_label = new JLabel("Codice Calcolato");
         codice_calcolato_label.setFont(new Font("Courier", Font.PLAIN, 15));
-        codice_calcolato_label.setBounds(220, 90, 150, 40);
-        window.add(codice_calcolato_label);
+        codice_calcolato_label.setBounds(170, 90, 150, 40);
+        codice_calcolato_label.setForeground(new java.awt.Color(255,255,255));
+        labelSfondo.add(codice_calcolato_label);
         
         int cliccatoPk = categorie_combobox.getSelectedIndex();
         ArrayList<Integer> risultatoPkCategorie = pkCategorie();
-        JLabel codice_calcolato_textbox = new JLabel();
+        JTextField codice_calcolato_textbox = new JTextField();
         codice_calcolato_textbox.setFont(new Font("Courier", Font.PLAIN, 15));
-        codice_calcolato_textbox.setBounds(200, 120, 150, 30);
-       
-        window.add(codice_calcolato_textbox);
+        codice_calcolato_textbox.setBounds(170, 120, 150, 40);
+        codice_calcolato_textbox.setBackground(new java.awt.Color(203, 203, 146));
+        labelSfondo.add(codice_calcolato_textbox);
 
         ArrayList<String> risultatoFornitori = fornitoriStr();
         String[] fornitori_values = new String[risultatoFornitori.size()];
         fornitori_values = risultatoFornitori.toArray(fornitori_values);
         JComboBox<String> fornitori_combobox = new JComboBox<>(fornitori_values);
-        fornitori_combobox.setBounds(360, 110, 150, 40);
-        window.add(fornitori_combobox);
+        fornitori_combobox.setBounds(330, 120, 150, 40);
+        labelSfondo.add(fornitori_combobox);
 
         
         JLabel cod_for_label = new JLabel("Cod.For");
         cod_for_label.setFont(new Font("Courier", Font.PLAIN, 15));
-        cod_for_label.setBounds(570, 100, 100, 20);
-        window.add(cod_for_label);
+        cod_for_label.setBounds(490, 100, 100, 20);
+        cod_for_label.setForeground(new java.awt.Color(255,255,255));
+        labelSfondo.add(cod_for_label);
 
         int cliccatoFornitore = fornitori_combobox.getSelectedIndex();
         ArrayList<Integer> risultatoIdFornitore = fornitoriId();
-        JLabel cod_for_textbox = new JLabel();
+        JTextField cod_for_textbox = new JTextField();
         cod_for_textbox.setFont(new Font("Courier", Font.PLAIN, 15));
-        cod_for_textbox.setBounds(520, 120, 160, 30);
+        cod_for_textbox.setBounds(490, 120, 160, 40);
         cod_for_textbox.setText(risultatoIdFornitore.get(cliccatoFornitore).toString());
-        window.add(cod_for_textbox);
+        cod_for_textbox.setBackground(new java.awt.Color(203, 203, 146));
+        labelSfondo.add(cod_for_textbox);
 
         JLabel descrizione_label = new JLabel("Descrizione");
         descrizione_label.setFont(new Font("Courier", Font.PLAIN, 15));
-        descrizione_label.setBounds(715, 100, 100, 20);
-        window.add(descrizione_label);
+        descrizione_label.setBounds(660, 100, 100, 20);
+        descrizione_label.setForeground(new java.awt.Color(255,255,255));
+        labelSfondo.add(descrizione_label);
 
-        JTextArea descrizione_textbox = new JTextArea();
-        descrizione_textbox.setBounds(712, 120, 370, 30);
-        window.add(descrizione_textbox);
+        JTextField descrizione_textbox = new JTextField();
+        descrizione_textbox.setBounds(660, 120, 370, 40);
+        descrizione_textbox.setBackground(new java.awt.Color(203, 203, 146));
+        labelSfondo.add(descrizione_textbox);
 
         JLabel peso_label = new JLabel("Peso");
         peso_label.setFont(new Font("Courier", Font.PLAIN, 15));
-        peso_label.setBounds(240, 170, 100, 20);
-        window.add(peso_label);
+        peso_label.setBounds(10, 170, 100, 20);
+        peso_label.setForeground(new java.awt.Color(255,255,255));
+        labelSfondo.add(peso_label);
 
-        JTextArea peso_textbox = new JTextArea();
-        peso_textbox.setBounds(240, 190, 100, 40);
-        window.add(peso_textbox);
+        JTextField peso_textbox = new JTextField();
+        peso_textbox.setBounds(10, 190, 100, 40);
+        peso_textbox.setBackground(new java.awt.Color(203, 203, 146));
+        labelSfondo.add(peso_textbox);
 
         JLabel caratura_label = new JLabel("Caratura");
         caratura_label.setFont(new Font("Courier", Font.PLAIN, 15));
-        caratura_label.setBounds(350, 170, 100, 20);
-        window.add(caratura_label);
+        caratura_label.setBounds(120, 170, 100, 20);
+        caratura_label.setForeground(new java.awt.Color(255,255,255));
+        labelSfondo.add(caratura_label);
 
-        JTextArea caratura_textbox = new JTextArea();
-        caratura_textbox.setBounds(350, 190, 100, 40);
-        window.add(caratura_textbox);
+        JTextField caratura_textbox = new JTextField();
+        caratura_textbox.setBounds(120, 190, 100, 40);
+        caratura_textbox.setBackground(new java.awt.Color(203, 203, 146));
+        labelSfondo.add(caratura_textbox);
 
         JLabel costo_label = new JLabel("Costo");
         costo_label.setFont(new Font("Courier", Font.PLAIN, 15));
-        costo_label.setBounds(460, 170, 100, 20);
-        window.add(costo_label);
+        costo_label.setBounds(230, 170, 100, 20);
+        costo_label.setForeground(new java.awt.Color(255,255,255));
+        labelSfondo.add(costo_label);
         
-        JTextArea costo_textbox = new JTextArea();
-        costo_textbox.setBounds(460, 190, 100, 40);
-        window.add(costo_textbox);
+        JTextField costo_textbox = new JTextField();
+        costo_textbox.setBounds(230, 190, 100, 40);
+        costo_textbox.setBackground(new java.awt.Color(203, 203, 146));
+        labelSfondo.add(costo_textbox);
 
         JLabel prezzo_label = new JLabel("Prezzo");
         prezzo_label.setFont(new Font("Courier", Font.PLAIN, 15));
-        prezzo_label.setBounds(570, 170, 100, 20);
-        window.add(prezzo_label);
+        prezzo_label.setBounds(340, 170, 100, 20);
+        prezzo_label.setForeground(new java.awt.Color(255,255,255));
+        labelSfondo.add(prezzo_label);
 
-        JTextArea prezzo_textbox = new JTextArea();
-        prezzo_textbox.setBounds(570, 190, 100, 40);
-        window.add(prezzo_textbox);
+        JTextField prezzo_textbox = new JTextField();
+        prezzo_textbox.setBounds(340, 190, 100, 40);
+        prezzo_textbox.setBackground(new java.awt.Color(203, 203, 146));
+        labelSfondo.add(prezzo_textbox);
 
         JLabel sconto1_label = new JLabel("Sconto 1");
         sconto1_label.setFont(new Font("Courier", Font.PLAIN, 15));
-        sconto1_label.setBounds(680, 170, 100, 20);
-        window.add(sconto1_label);
+        sconto1_label.setBounds(450, 170, 100, 20);
+        sconto1_label.setForeground(new java.awt.Color(255,255,255));
+        labelSfondo.add(sconto1_label);
 
-        JTextArea sconto1_textbox = new JTextArea();
-        sconto1_textbox.setBounds(680, 190, 100, 40);
-        window.add(sconto1_textbox);
+        JTextField sconto1_textbox = new JTextField();
+        sconto1_textbox.setBounds(450, 190, 100, 40);
+        sconto1_textbox.setBackground(new java.awt.Color(203, 203, 146));
+        labelSfondo.add(sconto1_textbox);
 
         JLabel sconto2_label = new JLabel("Sconto 2");
         sconto2_label.setFont(new Font("Courier", Font.PLAIN, 15));
-        sconto2_label.setBounds(790, 170, 100, 20);
-        window.add(sconto2_label);
+        sconto2_label.setBounds(560, 170, 100, 20);
+        sconto2_label.setForeground(new java.awt.Color(255,255,255));
+        labelSfondo.add(sconto2_label);
 
-        JTextArea sconto2_textbox = new JTextArea();
-        sconto2_textbox.setBounds(790, 190, 100, 40);
-        window.add(sconto2_textbox);
+        JTextField sconto2_textbox = new JTextField();
+        sconto2_textbox.setBounds(560, 190, 100, 40);
+        sconto2_textbox.setBackground(new java.awt.Color(203, 203, 146));
+        labelSfondo.add(sconto2_textbox);
 
         JLabel fv_label = new JLabel("F-V");
         fv_label.setFont(new Font("Courier", Font.PLAIN, 15));
-        fv_label.setBounds(900, 170, 100, 20);
-        window.add(fv_label);
+        fv_label.setBounds(670, 170, 100, 20);
+        fv_label.setForeground(new java.awt.Color(255,255,255));
+        labelSfondo.add(fv_label);
 
-        JTextArea fv_textbox = new JTextArea();
-        fv_textbox.setBounds(900, 190, 100, 40);
-        window.add(fv_textbox);
+        JTextField fv_textbox = new JTextField();
+        fv_textbox.setBounds(670, 190, 100, 40);
+        fv_textbox.setBackground(new java.awt.Color(203, 203, 146));
+        labelSfondo.add(fv_textbox);
 
         JButton inserisci_codice_button = new JButton("Inserisci articolo");
-        inserisci_codice_button.setBounds(10, 250, 130, 40);
-        window.add(inserisci_codice_button);
+        inserisci_codice_button.setBounds(10, 240, 130, 40);
+        inserisci_codice_button.setBackground(new java.awt.Color(250,255,133));
+        labelSfondo.add(inserisci_codice_button);
      
 
         JButton elimina_articolo_button = new JButton("Elimina articolo");
-        elimina_articolo_button.setBounds(150, 250, 130, 40);
-        window.add(elimina_articolo_button);
+        elimina_articolo_button.setBounds(150, 240, 130, 40);
+        elimina_articolo_button.setBackground(new java.awt.Color(250,255,133));
+        labelSfondo.add(elimina_articolo_button);
         
 
         JPanel tablePanel = new JPanel();
@@ -225,14 +276,14 @@ public class Articoli {
 
         DefaultTableModel model = new DefaultTableModel(columnNames, 0);
         JTable table = new JTable(model);
-        table.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
+        table.setAutoResizeMode(JTable.AUTO_RESIZE_ALL_COLUMNS);
         
         table.getColumnModel().getColumn(11).setMinWidth(0);
         table.getColumnModel().getColumn(11).setMaxWidth(0);
         
         scrollPane.setViewportView(table);
         tablePanel.add(scrollPane);
-        window.add(tablePanel);
+        labelSfondo.add(tablePanel);
         
         ArrayList<Articolo> articoli = articoliDaDb();
     	System.out.println("Articoli:" + articoli);

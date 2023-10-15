@@ -1,4 +1,5 @@
 import java.awt.Font;
+import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.Connection;
@@ -8,6 +9,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
@@ -21,23 +23,38 @@ import Classi.Database;
 import Oggetti.Articolo;
 
 public class ArtXForn {
+		private JFrame window;
+		private ImageIcon imageSfondo;
+		private JLabel labelSfondo;
 	public ArtXForn(){
 		JFrame window = new JFrame();
         window.setSize(1050, 700);
         window.setTitle("Articoli x Fornitori");
         window.setResizable(false);
         
+        labelSfondo = new JLabel(imageSfondo);
+		labelSfondo.setSize(1400, 800);
+	        
+	    imageSfondo = new ImageIcon(this.getClass().getResource("/Images/background.png"));
+	    Image img = imageSfondo.getImage();
+	    Image imgScale = img.getScaledInstance(labelSfondo.getWidth(), labelSfondo.getHeight(), Image.SCALE_DEFAULT);
+	    ImageIcon scaledIcon = new ImageIcon(imgScale);
+	    labelSfondo.setIcon(scaledIcon);
+	       
+	    window.add(labelSfondo);
+        
         JLabel artxforn_label = new JLabel("Articoli x Fornitori");
         artxforn_label.setFont(new Font("Courier", Font.PLAIN, 20));
         artxforn_label.setBounds(10, 10, 300, 20);
-        window.add(artxforn_label);
+        artxforn_label.setForeground(new java.awt.Color(255,255,255));
+        labelSfondo.add(artxforn_label);
         
         ArrayList<String> risultatoFornitori = fornitoriStr();
         String[] fornitori_values = new String[risultatoFornitori.size()];
         fornitori_values = risultatoFornitori.toArray(fornitori_values);
         JComboBox<String> fornitori_combobox = new JComboBox<>(fornitori_values);
         fornitori_combobox.setBounds(10, 50, 150, 40);
-        window.add(fornitori_combobox);
+        labelSfondo.add(fornitori_combobox);
         
         JPanel tablePanel = new JPanel();
         tablePanel.setLayout(null);
@@ -57,11 +74,12 @@ public class ArtXForn {
         
         scrollPane.setViewportView(table);
         tablePanel.add(scrollPane);
-        window.add(tablePanel);
+        labelSfondo.add(tablePanel);
         
         JButton cerca_button = new JButton("Cerca");
         cerca_button.setBounds(200, 10, 150, 40);
-        window.add(cerca_button);
+        cerca_button.setBackground(new java.awt.Color(255,209,110));
+        labelSfondo.add(cerca_button);
         
         cerca_button.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {

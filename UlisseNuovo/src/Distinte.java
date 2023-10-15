@@ -1,4 +1,5 @@
 import java.awt.Font;
+import java.awt.Image;
 import java.awt.KeyboardFocusManager;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -7,10 +8,12 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
 import javax.swing.JFrame;
@@ -19,10 +22,11 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.JTextArea;
+import javax.swing.JTextArea;
 import javax.swing.table.DefaultTableModel;
 
 import Classi.Database;
-import Classi.Report;
+import Classi.ReportDistinte;
 import Oggetti.Articolo;
 import Oggetti.Cliente;
 import Oggetti.StampaDistintaDatiFissi;
@@ -31,347 +35,458 @@ import Oggetti.Vendita;
 import net.sf.jasperreports.engine.JRException;
 
 public class Distinte {
-	 public static void main (String [] args) {
-		JFrame window = new JFrame();
-		window.setSize(1250, 800);
+	private JFrame window;
+	private ImageIcon imageSfondo;
+	private JLabel labelSfondo;
+	public Distinte(){
+		SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+		
+		window = new JFrame();
+		window.setSize(1250, 750);
 		window.setTitle("Distinte");
 		window.setResizable(false);
+		
+		labelSfondo = new JLabel(imageSfondo);
+		labelSfondo.setSize(1400, 800);
+	        
+	    imageSfondo = new ImageIcon(this.getClass().getResource("/Images/background.png"));
+	    Image img = imageSfondo.getImage();
+	    Image imgScale = img.getScaledInstance(labelSfondo.getWidth(), labelSfondo.getHeight(), Image.SCALE_DEFAULT);
+	    ImageIcon scaledIcon = new ImageIcon(imgScale);
+	    labelSfondo.setIcon(scaledIcon);
+	       
+	    window.add(labelSfondo);
 
         JButton aggiungi_valori_button = new JButton("Aggiungi riga - Trasferisci valori");
-        aggiungi_valori_button.setBounds(10, 10, 300, 30);
-        window.add(aggiungi_valori_button);
+        aggiungi_valori_button.setBounds(10, 10, 1210, 30);
+        aggiungi_valori_button.setBackground(new java.awt.Color(132, 249, 58));
+        aggiungi_valori_button.setFont(new Font("Courier", Font.BOLD, 15));
+        labelSfondo.add(aggiungi_valori_button);
 
         JLabel barcode_label = new JLabel("Barcode");
-        barcode_label.setFont(new Font("Courier", Font.PLAIN, 10));
-        barcode_label.setBounds(10, 52, 50, 20);
-        window.add(barcode_label);
+        barcode_label.setFont(new Font("Courier", Font.PLAIN, 15));
+        barcode_label.setForeground(new java.awt.Color(255,255,255));
+        barcode_label.setBounds(10, 52, 100, 20);
+        labelSfondo.add(barcode_label);
 
         JTextArea barcode_textbox = new JTextArea();
         barcode_textbox.setBounds(10, 70, 150, 40);
-        window.add(barcode_textbox);
+        barcode_textbox.setFont(new Font("Courier", Font.PLAIN, 20));
+        barcode_textbox.setBackground(new java.awt.Color(203, 203, 146));
+        labelSfondo.add(barcode_textbox);
 
         JLabel descrizione_label = new JLabel("Descrizione");
-        descrizione_label.setFont(new Font("Courier", Font.PLAIN, 10));
-        descrizione_label.setBounds(170, 52, 70, 20);
-        window.add(descrizione_label);
+        descrizione_label.setFont(new Font("Courier", Font.PLAIN, 15));
+        descrizione_label.setBounds(170, 52, 150, 20);
+        descrizione_label.setForeground(new java.awt.Color(255,255,255));
+        labelSfondo.add(descrizione_label);
 
-        JLabel descrizione_textbox = new JLabel();
+        JTextArea descrizione_textbox = new JTextArea();
         descrizione_textbox.setBounds(170, 70, 290, 40);
-        window.add(descrizione_textbox);
+        descrizione_textbox.setFont(new Font("Courier", Font.PLAIN, 20));
+        descrizione_textbox.setBackground(new java.awt.Color(203, 203, 146));
+        labelSfondo.add(descrizione_textbox);
 
         JLabel quantita_label = new JLabel("Quant.");
-        quantita_label.setFont(new Font("Courier", Font.PLAIN, 10));
+        quantita_label.setFont(new Font("Courier", Font.PLAIN, 15));
         quantita_label.setBounds(470, 52, 50, 20);
-        window.add(quantita_label);
+        quantita_label.setForeground(new java.awt.Color(255,255,255));
+        labelSfondo.add(quantita_label);
 
         JTextArea quantita_textbox = new JTextArea("1");
         quantita_textbox.setBounds(470, 70, 60, 40);
-        window.add(quantita_textbox);
+        quantita_textbox.setFont(new Font("Courier", Font.PLAIN, 20));
+        quantita_textbox.setBackground(new java.awt.Color(203, 203, 146));
+        labelSfondo.add(quantita_textbox);
 
         JLabel peso_label = new JLabel("Peso");
-        peso_label.setFont(new Font("Courier", Font.PLAIN, 10));
+        peso_label.setFont(new Font("Courier", Font.PLAIN, 15));
         peso_label.setBounds(540, 52, 50, 20);
-        window.add(peso_label);
+        peso_label.setForeground(new java.awt.Color(255,255,255));
+        labelSfondo.add(peso_label);
 
-        JLabel peso_textbox = new JLabel();
+        JTextArea peso_textbox = new JTextArea();
         peso_textbox.setBounds(540, 70, 80, 40);
-        window.add(peso_textbox);
+        peso_textbox.setFont(new Font("Courier", Font.PLAIN, 20));
+        peso_textbox.setBackground(new java.awt.Color(203, 203, 146));
+        labelSfondo.add(peso_textbox);
 
         JLabel caratura_label = new JLabel("Carat.");
-        caratura_label.setFont(new Font("Courier", Font.PLAIN, 10));
+        caratura_label.setFont(new Font("Courier", Font.PLAIN, 15));
         caratura_label.setBounds(630, 52, 100, 20);
-        window.add(caratura_label);
+        caratura_label.setFont(new Font("Courier", Font.PLAIN, 20));
+        caratura_label.setForeground(new java.awt.Color(255,255,255));
+        labelSfondo.add(caratura_label);
 
-        JLabel caratura_textbox = new JLabel();
+        JTextArea caratura_textbox = new JTextArea();
         caratura_textbox.setBounds(630, 70, 100, 40);
-        window.add(caratura_textbox);
+        caratura_textbox.setFont(new Font("Courier", Font.PLAIN, 20));
+        caratura_textbox.setBackground(new java.awt.Color(203, 203, 146));
+        labelSfondo.add(caratura_textbox);
 
         JLabel prezzo_unitario_label = new JLabel("Pr.unit");
-        prezzo_unitario_label.setFont(new Font("Courier", Font.PLAIN, 10));
+        prezzo_unitario_label.setFont(new Font("Courier", Font.PLAIN, 15));
         prezzo_unitario_label.setBounds(740, 52, 100, 20);
-        window.add(prezzo_unitario_label);
+        prezzo_unitario_label.setForeground(new java.awt.Color(255,255,255));
+        labelSfondo.add(prezzo_unitario_label);
 
-        JLabel prezzo_unitario_textbox = new JLabel();
+        JTextArea prezzo_unitario_textbox = new JTextArea();
         prezzo_unitario_textbox.setBounds(740, 70, 100, 40);
-        window.add(prezzo_unitario_textbox);
+        prezzo_unitario_textbox.setFont(new Font("Courier", Font.PLAIN, 20));
+        prezzo_unitario_textbox.setBackground(new java.awt.Color(203, 203, 146));
+        labelSfondo.add(prezzo_unitario_textbox);
 
         JLabel tot_riga_label = new JLabel("Tot.riga");
-        tot_riga_label.setFont(new Font("Courier", Font.PLAIN, 10));
+        tot_riga_label.setFont(new Font("Courier", Font.PLAIN, 15));
         tot_riga_label.setBounds(850, 52, 100, 20);
-        window.add(tot_riga_label);
+        tot_riga_label.setForeground(new java.awt.Color(255,255,255));
+        labelSfondo.add(tot_riga_label);
 
-        JLabel tot_riga_textbox = new JLabel();
+        JTextArea tot_riga_textbox = new JTextArea();
         tot_riga_textbox.setBounds(850, 70, 100, 40);
-        window.add(tot_riga_textbox);
+        tot_riga_textbox.setFont(new Font("Courier", Font.PLAIN, 20));
+        tot_riga_textbox.setBackground(new java.awt.Color(203, 203, 146));
+        labelSfondo.add(tot_riga_textbox);
 
         JLabel sconto1_label = new JLabel("Sc.1");
-        sconto1_label.setFont(new Font("Courier", Font.PLAIN, 10));
+        sconto1_label.setFont(new Font("Courier", Font.PLAIN, 15));
         sconto1_label.setBounds(960, 52, 100, 20);
-        window.add(sconto1_label);
+        sconto1_label.setForeground(new java.awt.Color(255,255,255));
+        labelSfondo.add(sconto1_label);
 
-        JLabel sconto1_textbox = new JLabel();
+        JTextArea sconto1_textbox = new JTextArea();
         sconto1_textbox.setBounds(960, 70, 100, 40);
-        window.add(sconto1_textbox);
+        sconto1_textbox.setFont(new Font("Courier", Font.PLAIN, 20));
+        sconto1_textbox.setBackground(new java.awt.Color(203, 203, 146));
+        labelSfondo.add(sconto1_textbox);
 
         JLabel sconto2_label = new JLabel("Sc.2");
-        sconto2_label.setFont(new Font("Courier", Font.PLAIN, 10));
+        sconto2_label.setFont(new Font("Courier", Font.PLAIN, 15));
         sconto2_label.setBounds(1070, 52, 100, 20);
-        window.add(sconto2_label);
+        sconto2_label.setForeground(new java.awt.Color(255,255,255));
+        labelSfondo.add(sconto2_label);
 
-        JLabel sconto2_textbox = new JLabel();
+        JTextArea sconto2_textbox = new JTextArea();
         sconto2_textbox.setBounds(1070, 70, 100, 40);
-        window.add(sconto2_textbox);
+        sconto2_textbox.setFont(new Font("Courier", Font.PLAIN, 20));
+        sconto2_textbox.setBackground(new java.awt.Color(203, 203, 146));
+        labelSfondo.add(sconto2_textbox);
         
         JPanel panel = new JPanel();
         panel.setLayout(null);
         
-        JLabel tot_scontato_label = new JLabel("Tot.scont.");
-        tot_scontato_label.setFont(new Font("Courier", Font.PLAIN, 10));
-        tot_scontato_label.setBounds(905, 52, 60, 20);
-        panel.add(tot_scontato_label);
-        
-        JLabel tot_scontato_textbox = new JLabel();
-        tot_scontato_textbox.setBounds(905, 70, 100, 40);
-        panel.add(tot_scontato_textbox);
-        
         JPanel tablePanel = new JPanel();
         tablePanel.setLayout(null);
-        tablePanel.setBounds(10, 125, 1000, 200);
+        tablePanel.setBounds(10, 125, 1210, 200);
+        
 
         JScrollPane scrollPane = new JScrollPane();
-        scrollPane.setBounds(0, 0, 1000, 200);
+        scrollPane.setBounds(0, 0, 1210, 200);
 
         String[] columnNames = {"Barcode", "Descrizione", "Quant.", "Peso", "Carat.",
         		"Pr_unit", "Tot.Riga", "Sc.1", "Sc.2", "Tot.Scont."};
 
         DefaultTableModel model = new DefaultTableModel(columnNames, 0);
         JTable table = new JTable(model);
-        table.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
+        table.setAutoResizeMode(JTable.AUTO_RESIZE_ALL_COLUMNS);
         
         scrollPane.setViewportView(table);
         tablePanel.add(scrollPane);
-        window.add(tablePanel);
+        labelSfondo.add(tablePanel);
         
 		JButton cancella_riga_button = new JButton("Cancella Riga");
-		cancella_riga_button.setBounds(10, 340, 500, 20);
+		cancella_riga_button.setBounds(10, 330, 1210, 30);
 		cancella_riga_button.setVisible(true);
-		window.add(cancella_riga_button);
+		cancella_riga_button.setBackground(new java.awt.Color(152, 9, 3));
+		cancella_riga_button.setFont(new Font("Courier", Font.BOLD, 15));
+		cancella_riga_button.setForeground(new java.awt.Color(255,255,255));
+		labelSfondo.add(cancella_riga_button);
 		
 		JTextArea tessera_cliente_textbox = new JTextArea();
 		tessera_cliente_textbox.setBounds(10, 370, 120, 40);
 		tessera_cliente_textbox.setVisible(true);
-		window.add(tessera_cliente_textbox);
+		tessera_cliente_textbox.setFont(new Font("Courier", Font.PLAIN, 20));
+		tessera_cliente_textbox.setBackground(new java.awt.Color(210, 254, 132));
+		labelSfondo.add(tessera_cliente_textbox);
         
 		JTextArea nome_cliente_textbox = new JTextArea();
 		nome_cliente_textbox.setBounds(135, 370, 150, 40);
 		nome_cliente_textbox.setVisible(true);
-		window.add(nome_cliente_textbox);
+		nome_cliente_textbox.setFont(new Font("Courier", Font.PLAIN, 20));
+		nome_cliente_textbox.setBackground(new java.awt.Color(215, 193, 132));
+		labelSfondo.add(nome_cliente_textbox);
 		
 		JButton usa_punti_button = new JButton("Usa punti");
 		usa_punti_button.setBounds(365, 370, 100, 20);
 		usa_punti_button.setVisible(true);
-		window.add(usa_punti_button);
+		usa_punti_button.setBackground(new java.awt.Color(255, 249, 0));
+		labelSfondo.add(usa_punti_button);
 		
 		JButton parizale_giornaliero_button = new JButton("Parziale giornaliero");
 		parizale_giornaliero_button.setBounds(470, 370, 150, 20);
 		parizale_giornaliero_button.setVisible(true);
-		window.add(parizale_giornaliero_button);
+		parizale_giornaliero_button.setBackground(new java.awt.Color(0, 255, 255));
+		labelSfondo.add(parizale_giornaliero_button);
 		
-		JLabel punto_domanda_label = new JLabel("?");
+		JTextArea punto_domanda_label = new JTextArea("?");
 		punto_domanda_label.setFont(new Font("Courier", Font.PLAIN, 40));
-		punto_domanda_label.setBounds(10, 420, 275, 40);
+		punto_domanda_label.setBounds(10, 420, 275, 45);
 		punto_domanda_label.setVisible(true);
-		window.add(punto_domanda_label);
+		punto_domanda_label.setBackground(new java.awt.Color(106, 177, 24));
+		labelSfondo.add(punto_domanda_label);
 		
 		JLabel punti_prec_label = new JLabel("Punti prec.");
 		punti_prec_label.setFont(new Font("Courier", Font.PLAIN, 15));
 		punti_prec_label.setBounds(300, 400, 90, 20);
-        window.add(punti_prec_label);
+		punti_prec_label.setForeground(new java.awt.Color(255,255,255));
+		labelSfondo.add(punti_prec_label);
 		
         JTextArea punto_prec_textbox = new JTextArea();
         punto_prec_textbox.setBounds(300, 420, 80, 40);
         punto_prec_textbox.setVisible(true);
-		window.add(punto_prec_textbox);
+        punto_prec_textbox.setFont(new Font("Courier", Font.PLAIN, 20));
+        punto_prec_textbox.setBackground(new java.awt.Color(182, 210, 7));
+        labelSfondo.add(punto_prec_textbox);
         
 		JLabel val_in_euro_label = new JLabel("Val in €");
 		val_in_euro_label.setFont(new Font("Courier", Font.PLAIN, 15));
 		val_in_euro_label.setBounds(385, 400, 90, 20);
-        window.add(val_in_euro_label);
+		val_in_euro_label.setForeground(new java.awt.Color(255,255,255));
+		labelSfondo.add(val_in_euro_label);
 		
         JTextArea val_in_euro_textbox = new JTextArea();
         val_in_euro_textbox.setBounds(385, 420, 80, 40);
         val_in_euro_textbox.setVisible(true);
-		window.add(val_in_euro_textbox);
+        val_in_euro_textbox.setFont(new Font("Courier", Font.PLAIN, 20));
+        val_in_euro_textbox.setBackground(new java.awt.Color(182, 255, 255));
+        labelSfondo.add(val_in_euro_textbox);
 		
 		JLabel punti_scal_label = new JLabel("Punti scal.");
 		punti_scal_label.setFont(new Font("Courier", Font.PLAIN, 15));
 		punti_scal_label.setBounds(470, 400, 90, 20);
-        window.add(punti_scal_label);
+		punti_scal_label.setFont(new Font("Courier", Font.PLAIN, 20));
+		punti_scal_label.setForeground(new java.awt.Color(255,255,255));
+		labelSfondo.add(punti_scal_label);
 		
         JTextArea punti_scal_textbox = new JTextArea();
         punti_scal_textbox.setBounds(470, 420, 80, 40);
         punti_scal_textbox.setVisible(true);
-		window.add(punti_scal_textbox);
+        punti_scal_textbox.setFont(new Font("Courier", Font.PLAIN, 20));
+        punti_scal_textbox.setBackground(new java.awt.Color(182, 210, 7));
+        labelSfondo.add(punti_scal_textbox);
 		
 		JLabel val_buono_label = new JLabel("Val. Buono");
 		val_buono_label.setFont(new Font("Courier", Font.PLAIN, 15));
 		val_buono_label.setBounds(555, 400, 90, 20);
-        window.add(val_buono_label);
+		val_buono_label.setForeground(new java.awt.Color(255,255,255));
+		labelSfondo.add(val_buono_label);
 		
         JTextArea val_buono_textbox = new JTextArea();
         val_buono_textbox.setBounds(555, 420, 80, 40);
         val_buono_textbox.setVisible(true);
-		window.add(val_buono_textbox);
+        val_buono_textbox.setFont(new Font("Courier", Font.PLAIN, 20));
+        val_buono_textbox.setBackground(new java.awt.Color(182, 255, 255));
+        labelSfondo.add(val_buono_textbox);
 
 		JLabel numero_label = new JLabel("Numero");
 		numero_label.setFont(new Font("Courier", Font.PLAIN, 15));
 		numero_label.setBounds(640, 400, 90, 20);
-        window.add(numero_label);
+		numero_label.setForeground(new java.awt.Color(255,255,255));
+		labelSfondo.add(numero_label);
 		
         JTextArea numero_textbox = new JTextArea();
         numero_textbox.setBounds(640, 420, 80, 40);
         numero_textbox.setVisible(true);
-		window.add(numero_textbox);
+        numero_textbox.setFont(new Font("Courier", Font.PLAIN, 20));
+        numero_textbox.setBackground(new java.awt.Color(182, 210, 7));
+        labelSfondo.add(numero_textbox);
 		
 		JLabel data_label = new JLabel("Data");
 		data_label.setFont(new Font("Courier", Font.PLAIN, 15));
 		data_label.setBounds(725, 400, 90, 20);
-        window.add(data_label);
+		data_label.setForeground(new java.awt.Color(255,255,255));
+		labelSfondo.add(data_label);
         
         JTextArea data_textbox = new JTextArea();
         data_textbox.setBounds(725, 420, 150, 40);
         data_textbox.setVisible(true);
-		window.add(data_textbox);
+        data_textbox.setFont(new Font("Courier", Font.PLAIN, 20));
+        data_textbox.setBackground(new java.awt.Color(182, 210, 7));
+        labelSfondo.add(data_textbox);
         
         JLabel euro_label = new JLabel("€");
         euro_label.setFont(new Font("Courier", Font.PLAIN, 40));
         euro_label.setBounds(10, 470, 50, 50);
-        window.add(euro_label);
+        euro_label.setForeground(new java.awt.Color(255,255,255));
+        labelSfondo.add(euro_label);
 		
         JLabel totale_merce_label = new JLabel("Totale merce");
         totale_merce_label.setFont(new Font("Courier", Font.PLAIN, 15));
         totale_merce_label.setBounds(50, 460, 90, 20);
-        window.add(totale_merce_label);
+        totale_merce_label.setForeground(new java.awt.Color(255,255,255));
+        labelSfondo.add(totale_merce_label);
 		
         JTextArea totale_merce_textbox = new JTextArea();
         totale_merce_textbox.setBounds(50, 480, 110, 40);
         totale_merce_textbox.setVisible(true);
-		window.add(totale_merce_textbox);
+        totale_merce_textbox.setFont(new Font("Courier", Font.PLAIN, 20));
+        totale_merce_textbox.setBackground(new java.awt.Color(210, 254, 132));
+        labelSfondo.add(totale_merce_textbox);
 		
 		JLabel sconto_label = new JLabel("Sconto");
 		sconto_label.setFont(new Font("Courier", Font.PLAIN, 15));
 		sconto_label.setBounds(165, 460, 90, 20);
-        window.add(sconto_label);
+		sconto_label.setForeground(new java.awt.Color(255,255,255));
+		labelSfondo.add(sconto_label);
 		
         JTextArea sconto_textbox = new JTextArea();
         sconto_textbox.setBounds(165, 480, 110, 40);
         sconto_textbox.setVisible(true);
-		window.add(sconto_textbox);
+        sconto_textbox.setFont(new Font("Courier", Font.PLAIN, 20));
+        sconto_textbox.setBackground(new java.awt.Color(210, 254, 132));
+        labelSfondo.add(sconto_textbox);
 		
 		JLabel merce_scontata_label = new JLabel("Merce scontata");
 		merce_scontata_label.setFont(new Font("Courier", Font.PLAIN, 15));
 		merce_scontata_label.setBounds(280, 460, 110, 20);
-        window.add(merce_scontata_label);
+		merce_scontata_label.setForeground(new java.awt.Color(255,255,255));
+		labelSfondo.add(merce_scontata_label);
 		
         JTextArea merce_scontata_textbox = new JTextArea();
         merce_scontata_textbox.setBounds(280, 480, 140, 40);
         merce_scontata_textbox.setVisible(true);
-		window.add(merce_scontata_textbox);
+        merce_scontata_textbox.setFont(new Font("Courier", Font.PLAIN, 20));
+        merce_scontata_textbox.setBackground(new java.awt.Color(210, 254, 132));
+        labelSfondo.add(merce_scontata_textbox);
 		
 		JLabel totale_scontato_label = new JLabel("Totale scontato");
 		totale_scontato_label.setFont(new Font("Courier", Font.PLAIN, 15));
 		totale_scontato_label.setBounds(425, 460, 110, 20);
-        window.add(totale_scontato_label);
+		totale_scontato_label.setForeground(new java.awt.Color(255,255,255));
+		labelSfondo.add(totale_scontato_label);
 		
         JTextArea totale_scontato_textbox = new JTextArea();
         totale_scontato_textbox.setBounds(425, 480, 140, 40);
         totale_scontato_textbox.setVisible(true);
-		window.add(totale_scontato_textbox);
+        totale_scontato_textbox.setFont(new Font("Courier", Font.PLAIN, 20));
+        totale_scontato_textbox.setBackground(new java.awt.Color(210, 254, 132));
+        labelSfondo.add(totale_scontato_textbox);
 		
 		JLabel acconto_label = new JLabel("Acconto");
 		acconto_label.setFont(new Font("Courier", Font.PLAIN, 15));
 		acconto_label.setBounds(575, 460, 110, 20);
-        window.add(acconto_label);
+		acconto_label.setForeground(new java.awt.Color(255,255,255));
+		labelSfondo.add(acconto_label);
 		
         JTextArea acconto_textbox = new JTextArea();
         acconto_textbox.setBounds(575, 480, 140, 40);
         acconto_textbox.setVisible(true);
-		window.add(acconto_textbox);
+        acconto_textbox.setFont(new Font("Courier", Font.PLAIN, 20));
+        acconto_textbox.setBackground(new java.awt.Color(210, 254, 132));
+        labelSfondo.add(acconto_textbox);
 		
 		JLabel totale_saldo_label = new JLabel("Totale saldo");
 		totale_saldo_label.setFont(new Font("Courier", Font.PLAIN, 15));
 		totale_saldo_label.setBounds(725, 460, 110, 20);
-        window.add(totale_saldo_label);
+		totale_saldo_label.setForeground(new java.awt.Color(255,255,255));
+		labelSfondo.add(totale_saldo_label);
 		
         JTextArea totale_saldo_textbox = new JTextArea();
         totale_saldo_textbox.setBounds(725, 480, 140, 40);
         totale_saldo_textbox.setVisible(true);
-		window.add(totale_saldo_textbox);
+        totale_saldo_textbox.setFont(new Font("Courier", Font.PLAIN, 20));
+        totale_saldo_textbox.setBackground(new java.awt.Color(210, 254, 132));
+        labelSfondo.add(totale_saldo_textbox);
 		
 		JCheckBox contanti_button = new JCheckBox("Contanti");
-		contanti_button.setBounds(440, 538, 150, 20);
+		contanti_button.setBounds(10, 538, 150, 20);
 		contanti_button.setVisible(true);
-		window.add(contanti_button);
+		contanti_button.setOpaque(false);
+		contanti_button.setContentAreaFilled(false);
+		contanti_button.setBorderPainted(false);
+		contanti_button.setFont(new Font("Courier", Font.BOLD, 15));
+		contanti_button.setForeground(new java.awt.Color(255,255,255));
+		labelSfondo.add(contanti_button);
 		
 		JCheckBox carte_button = new JCheckBox("Carte");
-		carte_button.setBounds(595, 538, 150, 20);
+		carte_button.setBounds(170, 538, 150, 20);
 		carte_button.setVisible(true);
-		window.add(carte_button);
+		carte_button.setOpaque(false);
+		carte_button.setContentAreaFilled(false);
+		carte_button.setBorderPainted(false);
+		carte_button.setFont(new Font("Courier", Font.BOLD, 15));
+		carte_button.setForeground(new java.awt.Color(255,255,255));
+		labelSfondo.add(carte_button);
 		
 		JCheckBox bonifico_button = new JCheckBox("Bonifico");
-		bonifico_button.setBounds(750, 538, 150, 20);
+		bonifico_button.setBounds(330, 538, 150, 20);
 		bonifico_button.setVisible(true);
-		window.add(bonifico_button);
+		bonifico_button.setOpaque(false);
+		bonifico_button.setContentAreaFilled(false);
+		bonifico_button.setBorderPainted(false);
+		bonifico_button.setFont(new Font("Courier", Font.BOLD, 15));
+		bonifico_button.setForeground(new java.awt.Color(255,255,255));
+		labelSfondo.add(bonifico_button);
 		
 		JButton totale_pagamenti_button = new JButton("Totale pagamenti");
-		totale_pagamenti_button.setBounds(905, 538, 150, 20);
+		totale_pagamenti_button.setBounds(490, 538, 150, 20);
 		totale_pagamenti_button.setVisible(true);
-		window.add(totale_pagamenti_button);
+		totale_pagamenti_button.setBackground(new java.awt.Color(143, 134, 255));
+		labelSfondo.add(totale_pagamenti_button);
 		
 		JButton ristampa_distinta_button = new JButton("Ristampa distinta");
-		ristampa_distinta_button.setBounds(595, 562, 150, 20);
+		ristampa_distinta_button.setBounds(650, 538, 150, 20);
 		ristampa_distinta_button.setVisible(true);
-		window.add(ristampa_distinta_button);
+		ristampa_distinta_button.setBackground(new java.awt.Color(143, 216, 164));
+		labelSfondo.add(ristampa_distinta_button);
 		
 		JButton nuova_vendita_button = new JButton("Nuova vendita");
 		nuova_vendita_button.setBounds(10, 600, 130, 40);
 		nuova_vendita_button.setVisible(true);
-		window.add(nuova_vendita_button);
+		nuova_vendita_button.setBackground(new java.awt.Color(32, 198, 92));
+		labelSfondo.add(nuova_vendita_button);
 		
 		JButton nuovo_carico_button = new JButton("Nuovo carico");
-		nuovo_carico_button.setBounds(280, 600, 130, 40);
+		nuovo_carico_button.setBounds(150, 600, 130, 40);
 		nuovo_carico_button.setVisible(true);
-		window.add(nuovo_carico_button);
+		nuovo_carico_button.setBackground(new java.awt.Color(32, 198, 92));
+		labelSfondo.add(nuovo_carico_button);
 		
 		JButton annulla_vendita_button = new JButton("Annulla vendita");
-		annulla_vendita_button.setBounds(415, 600, 130, 40);
+		annulla_vendita_button.setBounds(290, 600, 130, 40);
 		annulla_vendita_button.setVisible(true);
-		window.add(annulla_vendita_button);	
+		annulla_vendita_button.setBackground(new java.awt.Color(231, 177, 181));
+		labelSfondo.add(annulla_vendita_button);	
 		
 		JButton annulla_carico_button = new JButton("Annulla carico");
-		annulla_carico_button.setBounds(550, 600, 130, 40);
+		annulla_carico_button.setBounds(430, 600, 130, 40);
 		annulla_carico_button.setVisible(true);
-		window.add(annulla_carico_button);	
+		annulla_carico_button.setBackground(new java.awt.Color(231, 177, 181));
+		labelSfondo.add(annulla_carico_button);	
 		
 		JButton memorizza_e_stampa_vendita_button = new JButton("<html>Memorizza e<br />Stampa Vendita</html>");
-		memorizza_e_stampa_vendita_button.setBounds(685, 600, 130, 40);
+		memorizza_e_stampa_vendita_button.setBounds(570, 600, 130, 40);
 		memorizza_e_stampa_vendita_button.setVisible(true);
-		window.add(memorizza_e_stampa_vendita_button);
+		memorizza_e_stampa_vendita_button.setBackground(new java.awt.Color(0,153,0));
+		labelSfondo.add(memorizza_e_stampa_vendita_button);
 		
 		JButton memorizza_carico_button = new JButton("<html>Memorizza<br />Carico</html>");
-		memorizza_carico_button.setBounds(820, 600, 130, 40);
+		memorizza_carico_button.setBounds(710, 600, 130, 40);
 		memorizza_carico_button.setVisible(true);
-		window.add(memorizza_carico_button);	
+		memorizza_carico_button.setBackground(new java.awt.Color(0,153,0));
+		labelSfondo.add(memorizza_carico_button);	
 		
 		JButton articoli_button = new JButton("Articoli");
-		articoli_button.setBounds(955, 600, 130, 40);
+		articoli_button.setBounds(850, 600, 130, 40);
 		articoli_button.setVisible(true);
-		window.add(articoli_button);
+		articoli_button.setBackground(new java.awt.Color(178,255,102));
+		labelSfondo.add(articoli_button);
 		
 		JButton clienti_button = new JButton("Clienti");
-		clienti_button.setBounds(1090, 600, 130, 40);
+		clienti_button.setBounds(990, 600, 130, 40);
 		clienti_button.setVisible(true);
-		window.add(clienti_button);
+		clienti_button.setBackground(new java.awt.Color(178,255,102));
+		labelSfondo.add(clienti_button);
 		
 		nuovo_carico_button.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
@@ -383,7 +498,7 @@ public class Distinte {
 		
 		aggiungi_valori_button.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-            	String barcode = barcode_textbox.getText();
+            	String barcode = barcode_textbox.getText().replaceAll("\\s", "");
         		final ArrayList<Articolo> articoli = articoliDaDb(barcode);
                 System.out.println(articoli);
                 double totaleScontato = totaleScontatoQuantita(articoli, quantita_textbox.getText());
@@ -400,7 +515,7 @@ public class Distinte {
 		
 		barcode_textbox.addKeyListener(new java.awt.event.KeyAdapter() {
 			  public void keyPressed (java.awt.event.KeyEvent evt){
-				String barcode = barcode_textbox.getText();
+				String barcode = barcode_textbox.getText().replaceAll("\\s", "");
 			  	Articolo articolo = articoliDaDbTab(barcode);
 			    System.out.println(articolo);
 			    if (evt.getKeyCode() == evt.VK_TAB) {
@@ -468,7 +583,7 @@ public class Distinte {
 		tessera_cliente_textbox.addKeyListener(new java.awt.event.KeyAdapter() {
 			  public void keyPressed (java.awt.event.KeyEvent evt){
 				  
-				  Cliente cliente = clienteDaDb(tessera_cliente_textbox.getText());
+				  Cliente cliente = clienteDaDb(tessera_cliente_textbox.getText().replaceAll("\\s", ""));
 				  if (evt.getKeyCode() == evt.VK_TAB) {
 					  nome_cliente_textbox.setText(cliente.getNome());
 					  punto_prec_textbox.setText(String.valueOf(cliente.getPunti()));
@@ -478,7 +593,7 @@ public class Distinte {
 					  System.out.println("Result: " + result);
 					  int numeroVendita = calcoloNumeroVendita(result);
 					  numero_textbox.setText(String.valueOf(numeroVendita));
-					  data_textbox.setText(String.valueOf(java.sql.Date.valueOf(java.time.LocalDate.now()))); 
+					  data_textbox.setText(String.valueOf(dateFormat.format(java.sql.Date.valueOf(java.time.LocalDate.now())))); 
 					  
 					  int [] tot_riga_tutte = new int[table.getRowCount()];
 					  int tot_merce = 0;
@@ -550,10 +665,10 @@ public class Distinte {
 		});
 		usa_punti_button.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-            	Cliente cliente = clienteDaDb(tessera_cliente_textbox.getText());
+            	Cliente cliente = clienteDaDb(tessera_cliente_textbox.getText().replaceAll("\\s", ""));
             	int puntiPrec = cliente.getPunti();
             	if((cliente.getPunti() - 25)>=0 ) {
-            		updatePunti(tessera_cliente_textbox.getText(), cliente.getPunti() - 25);
+            		updatePunti(tessera_cliente_textbox.getText().replaceAll("\\s", ""), cliente.getPunti() - 25);
             		int punti_scal = Integer.parseInt(punti_scal_textbox.getText()) + 25;
             		punti_scal_textbox.setText(String.valueOf(punti_scal));
             		double val_buono_punti = punti_scal * 0.4;
@@ -573,7 +688,7 @@ public class Distinte {
             		quantitaTabella[i] = Integer.parseInt( (String) table.getModel().getValueAt(i, 2));
                 }
             	int numeroVendita = Integer.parseInt(numero_textbox.getText());
-            	String tesseraCliente = tessera_cliente_textbox.getText();
+            	String tesseraCliente = tessera_cliente_textbox.getText().replaceAll("\\s", "");
             	String data = data_textbox.getText();
             	int totale_merce = Integer.parseInt(totale_merce_textbox.getText());
             	double sconto = Double.parseDouble(sconto_textbox.getText());
@@ -611,9 +726,9 @@ public class Distinte {
             	
             	System.out.println(arrayCompleto);
             	
-            	Report r = new Report();
+            	ReportDistinte r = new ReportDistinte();
             	try {
-					r.generaReport(arrayCompleto);
+					r.generaReport(numeroVendita);
 				} catch (JRException e1) {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
@@ -654,6 +769,12 @@ public class Distinte {
             		}
             	}
             	TotalePagamenti t = new TotalePagamenti(totale_contanti, totale_carte, totale_bonifici, java.sql.Date.valueOf(java.time.LocalDate.now()));
+            }
+		});
+		
+		articoli_button.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+            	Articoli a = new Articoli();
             }
 		});
 		
