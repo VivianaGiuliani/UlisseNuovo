@@ -276,7 +276,11 @@
 							<textField>
 								<reportElement x="0" y="0" width="40" height="30" uuid="b5b898c4-60cb-449f-ab60-7ae5016ebf6a"/>
 								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+<<<<<<< HEAD
 								<textFieldExpression><![CDATA[ String.format("%.2f",(double)($F{gcad}))]]></textFieldExpression>
+=======
+								<textFieldExpression><![CDATA[$F{gcad}]]></textFieldExpression>
+>>>>>>> 97d6a1e316ffb1793448fdb10739e9339f2b7ba9
 							</textField>
 						</jr:detailCell>
 					</jr:column>
@@ -292,7 +296,11 @@
 							<textField>
 								<reportElement x="0" y="0" width="50" height="30" uuid="cbe5e411-0b69-465b-8d53-1b87f69e2ff9"/>
 								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+<<<<<<< HEAD
 								<textFieldExpression><![CDATA[ String.format("%.2f",(double)($F{tot_peso}))]]></textFieldExpression>
+=======
+								<textFieldExpression><![CDATA[$F{tot_peso}]]></textFieldExpression>
+>>>>>>> 97d6a1e316ffb1793448fdb10739e9339f2b7ba9
 							</textField>
 						</jr:detailCell>
 					</jr:column>
@@ -308,7 +316,11 @@
 							<textField>
 								<reportElement x="0" y="0" width="50" height="30" uuid="1b94082d-b986-4ca5-b846-564f06f8d2cf"/>
 								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+<<<<<<< HEAD
 								<textFieldExpression><![CDATA[ String.format("%.2f",(double)($F{pr_unit}))]]></textFieldExpression>
+=======
+								<textFieldExpression><![CDATA[$F{pr_unit}]]></textFieldExpression>
+>>>>>>> 97d6a1e316ffb1793448fdb10739e9339f2b7ba9
 							</textField>
 						</jr:detailCell>
 					</jr:column>
@@ -324,7 +336,11 @@
 							<textField>
 								<reportElement x="0" y="0" width="45" height="30" uuid="bb9aea4b-307b-4af3-b6b0-d4b3d6cc42cd"/>
 								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+<<<<<<< HEAD
 								<textFieldExpression><![CDATA[String.format("%.2f",(double)($F{tot_riga} ))]]></textFieldExpression>
+=======
+								<textFieldExpression><![CDATA[$F{tot_riga}]]></textFieldExpression>
+>>>>>>> 97d6a1e316ffb1793448fdb10739e9339f2b7ba9
 							</textField>
 						</jr:detailCell>
 					</jr:column>

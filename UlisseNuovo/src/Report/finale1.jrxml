@@ -362,14 +362,20 @@
 						<jr:columnHeader style="Table_CH" height="30" rowSpan="1">
 							<staticText>
 								<reportElement x="0" y="0" width="60" height="30" uuid="e11f2bd4-fa4e-429d-9743-7886904a8b3d"/>
+<<<<<<< HEAD
 								<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None"/>
+=======
+>>>>>>> 97d6a1e316ffb1793448fdb10739e9339f2b7ba9
 								<text><![CDATA[Quantità]]></text>
 							</staticText>
 						</jr:columnHeader>
 						<jr:detailCell style="Table_TD" height="30">
 							<textField>
 								<reportElement x="0" y="0" width="60" height="30" uuid="a9071f9a-14ea-41cd-b7ac-82e53b566d67"/>
+<<<<<<< HEAD
 								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+=======
+>>>>>>> 97d6a1e316ffb1793448fdb10739e9339f2b7ba9
 								<textFieldExpression><![CDATA[$F{quantita}]]></textFieldExpression>
 							</textField>
 						</jr:detailCell>
@@ -379,14 +385,20 @@
 						<jr:columnHeader style="Table_CH" height="30" rowSpan="1">
 							<staticText>
 								<reportElement x="0" y="0" width="70" height="30" uuid="61e73dc3-b8f2-48e0-8d32-bd808325e4a2"/>
+<<<<<<< HEAD
 								<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None"/>
+=======
+>>>>>>> 97d6a1e316ffb1793448fdb10739e9339f2b7ba9
 								<text><![CDATA[Barcode]]></text>
 							</staticText>
 						</jr:columnHeader>
 						<jr:detailCell style="Table_TD" height="30">
 							<textField>
 								<reportElement x="0" y="0" width="70" height="30" uuid="ae5157f4-6a40-4f5f-b769-b0db166e0c24"/>
+<<<<<<< HEAD
 								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+=======
+>>>>>>> 97d6a1e316ffb1793448fdb10739e9339f2b7ba9
 								<textFieldExpression><![CDATA[$F{barcode}]]></textFieldExpression>
 							</textField>
 						</jr:detailCell>
@@ -396,14 +408,20 @@
 						<jr:columnHeader style="Table_CH" height="30" rowSpan="1">
 							<staticText>
 								<reportElement x="0" y="0" width="130" height="30" uuid="e2c5aaa7-b3f6-4d55-902d-8d9142175cf7"/>
+<<<<<<< HEAD
 								<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None"/>
+=======
+>>>>>>> 97d6a1e316ffb1793448fdb10739e9339f2b7ba9
 								<text><![CDATA[Descrizione]]></text>
 							</staticText>
 						</jr:columnHeader>
 						<jr:detailCell style="Table_TD" height="30">
 							<textField>
 								<reportElement x="0" y="0" width="130" height="30" uuid="169cf288-1396-4678-857c-6159766b5ed3"/>
+<<<<<<< HEAD
 								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+=======
+>>>>>>> 97d6a1e316ffb1793448fdb10739e9339f2b7ba9
 								<textFieldExpression><![CDATA[$F{descrizione}]]></textFieldExpression>
 							</textField>
 						</jr:detailCell>
@@ -413,15 +431,22 @@
 						<jr:columnHeader style="Table_CH" height="30" rowSpan="1">
 							<staticText>
 								<reportElement x="0" y="0" width="40" height="30" uuid="e0be6ade-d58b-4d50-b489-0f35513f02bd"/>
+<<<<<<< HEAD
 								<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None"/>
+=======
+>>>>>>> 97d6a1e316ffb1793448fdb10739e9339f2b7ba9
 								<text><![CDATA[Peso]]></text>
 							</staticText>
 						</jr:columnHeader>
 						<jr:detailCell style="Table_TD" height="30">
 							<textField>
 								<reportElement x="0" y="0" width="40" height="30" uuid="cdeb1e0a-7a6a-4e5b-a3d7-95c979b57bd8"/>
+<<<<<<< HEAD
 								<textElement textAlignment="Center" verticalAlignment="Middle"/>
 								<textFieldExpression><![CDATA[String.format("%.2f",(double)($F{peso}))]]></textFieldExpression>
+=======
+								<textFieldExpression><![CDATA[$F{peso}]]></textFieldExpression>
+>>>>>>> 97d6a1e316ffb1793448fdb10739e9339f2b7ba9
 							</textField>
 						</jr:detailCell>
 					</jr:column>
@@ -430,15 +455,22 @@
 						<jr:columnHeader style="Table_CH" height="30" rowSpan="1">
 							<staticText>
 								<reportElement x="0" y="0" width="60" height="30" uuid="d076a75f-4927-445f-89dc-9324ebcff553"/>
+<<<<<<< HEAD
 								<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None"/>
+=======
+>>>>>>> 97d6a1e316ffb1793448fdb10739e9339f2b7ba9
 								<text><![CDATA[Caratura]]></text>
 							</staticText>
 						</jr:columnHeader>
 						<jr:detailCell style="Table_TD" height="30">
 							<textField>
 								<reportElement x="0" y="0" width="60" height="30" uuid="0fc4d0c7-2d68-40fb-ba7c-a36c37877fe2"/>
+<<<<<<< HEAD
 								<textElement textAlignment="Center" verticalAlignment="Middle"/>
 								<textFieldExpression><![CDATA[String.format("%.2f",(double)($F{caratura}))]]></textFieldExpression>
+=======
+								<textFieldExpression><![CDATA[$F{caratura}]]></textFieldExpression>
+>>>>>>> 97d6a1e316ffb1793448fdb10739e9339f2b7ba9
 							</textField>
 						</jr:detailCell>
 					</jr:column>
@@ -447,15 +479,22 @@
 						<jr:columnHeader style="Table_CH" height="30" rowSpan="1">
 							<staticText>
 								<reportElement x="0" y="0" width="60" height="30" uuid="92c4829a-9bd3-4f55-b897-7c7422eafb21"/>
+<<<<<<< HEAD
 								<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None"/>
+=======
+>>>>>>> 97d6a1e316ffb1793448fdb10739e9339f2b7ba9
 								<text><![CDATA[Totale_riga]]></text>
 							</staticText>
 						</jr:columnHeader>
 						<jr:detailCell style="Table_TD" height="30">
 							<textField>
 								<reportElement x="0" y="0" width="60" height="30" uuid="8c0bb65b-30ab-4320-9926-641b1bbaf17b"/>
+<<<<<<< HEAD
 								<textElement textAlignment="Center" verticalAlignment="Middle"/>
 								<textFieldExpression><![CDATA[String.format("%.2f",(double)($F{totale_riga}))]]></textFieldExpression>
+=======
+								<textFieldExpression><![CDATA[$F{totale_riga}]]></textFieldExpression>
+>>>>>>> 97d6a1e316ffb1793448fdb10739e9339f2b7ba9
 							</textField>
 						</jr:detailCell>
 					</jr:column>
@@ -464,14 +503,21 @@
 						<jr:columnHeader style="Table_CH" height="30" rowSpan="1">
 							<staticText>
 								<reportElement x="0" y="0" width="40" height="30" uuid="172977bf-fcf6-42af-91be-da7500eef0b3"/>
+<<<<<<< HEAD
 								<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None"/>
 								<text><![CDATA[Sconto 1]]></text>
+=======
+								<text><![CDATA[Sc_1]]></text>
+>>>>>>> 97d6a1e316ffb1793448fdb10739e9339f2b7ba9
 							</staticText>
 						</jr:columnHeader>
 						<jr:detailCell style="Table_TD" height="30">
 							<textField>
 								<reportElement x="0" y="0" width="40" height="30" uuid="2d9d4773-096e-4f89-af6b-72b335424bec"/>
+<<<<<<< HEAD
 								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+=======
+>>>>>>> 97d6a1e316ffb1793448fdb10739e9339f2b7ba9
 								<textFieldExpression><![CDATA[$F{sc_1}]]></textFieldExpression>
 							</textField>
 						</jr:detailCell>
@@ -481,14 +527,21 @@
 						<jr:columnHeader style="Table_CH" height="30" rowSpan="1">
 							<staticText>
 								<reportElement x="0" y="0" width="40" height="30" uuid="2feaa5a5-262d-4d81-919b-2cf0e8f79f50"/>
+<<<<<<< HEAD
 								<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None"/>
 								<text><![CDATA[Sconto 2]]></text>
+=======
+								<text><![CDATA[Sc_2]]></text>
+>>>>>>> 97d6a1e316ffb1793448fdb10739e9339f2b7ba9
 							</staticText>
 						</jr:columnHeader>
 						<jr:detailCell style="Table_TD" height="30">
 							<textField>
 								<reportElement x="0" y="0" width="40" height="30" uuid="6d06df65-c4cc-466d-8ef4-9b6689f08818"/>
+<<<<<<< HEAD
 								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+=======
+>>>>>>> 97d6a1e316ffb1793448fdb10739e9339f2b7ba9
 								<textFieldExpression><![CDATA[$F{sc_2}]]></textFieldExpression>
 							</textField>
 						</jr:detailCell>
@@ -498,15 +551,22 @@
 						<jr:columnHeader style="Table_CH" height="30" rowSpan="1">
 							<staticText>
 								<reportElement x="0" y="0" width="55" height="30" uuid="74325400-8801-435a-95bd-32339b3ff029"/>
+<<<<<<< HEAD
 								<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None"/>
+=======
+>>>>>>> 97d6a1e316ffb1793448fdb10739e9339f2b7ba9
 								<text><![CDATA[Scontato]]></text>
 							</staticText>
 						</jr:columnHeader>
 						<jr:detailCell style="Table_TD" height="30">
 							<textField>
 								<reportElement x="0" y="0" width="55" height="30" uuid="e63efff4-7d52-44c5-a85f-f6152f25dd2e"/>
+<<<<<<< HEAD
 								<textElement textAlignment="Center" verticalAlignment="Middle"/>
 								<textFieldExpression><![CDATA[String.format("%.2f",(double)($F{scontato}))]]></textFieldExpression>
+=======
+								<textFieldExpression><![CDATA[$F{scontato}]]></textFieldExpression>
+>>>>>>> 97d6a1e316ffb1793448fdb10739e9339f2b7ba9
 							</textField>
 						</jr:detailCell>
 					</jr:column>
@@ -683,11 +743,21 @@
 				<text><![CDATA[Valore Buono]]></text>
 			</staticText>
 			<textField>
+<<<<<<< HEAD
+=======
+				<reportElement x="92" y="9" width="36" height="14" uuid="5f858117-6a10-4701-ab58-aa5249953139"/>
+				<textFieldExpression><![CDATA[$F{punti_precedenti}]]></textFieldExpression>
+			</textField>
+			<textField>
+>>>>>>> 97d6a1e316ffb1793448fdb10739e9339f2b7ba9
 				<reportElement x="90" y="30" width="36" height="14" uuid="70202430-a0d5-4bbd-b13e-349124f12d50">
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
+<<<<<<< HEAD
 				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+=======
+>>>>>>> 97d6a1e316ffb1793448fdb10739e9339f2b7ba9
 				<textFieldExpression><![CDATA[$F{punti_guadagnati}]]></textFieldExpression>
 			</textField>
 			<textField>
@@ -695,7 +765,10 @@
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
+<<<<<<< HEAD
 				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+=======
+>>>>>>> 97d6a1e316ffb1793448fdb10739e9339f2b7ba9
 				<textFieldExpression><![CDATA[$F{punti_totali}]]></textFieldExpression>
 			</textField>
 			<textField>
@@ -703,7 +776,10 @@
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
+<<<<<<< HEAD
 				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+=======
+>>>>>>> 97d6a1e316ffb1793448fdb10739e9339f2b7ba9
 				<textFieldExpression><![CDATA[$F{punti_usati}]]></textFieldExpression>
 			</textField>
 			<textField>
@@ -711,6 +787,7 @@
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
+<<<<<<< HEAD
 				<textElement textAlignment="Right" verticalAlignment="Middle"/>
 				<textFieldExpression><![CDATA[$F{punti_disponibili}]]></textFieldExpression>
 			</textField>
@@ -723,39 +800,76 @@
 			</textField>
 			<textField>
 				<reportElement x="455" y="31" width="94" height="16" uuid="b9ccceab-0b0b-4e36-b049-fa85bbc367f4">
+=======
+				<textFieldExpression><![CDATA[$F{punti_disponibili}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="460" y="9" width="94" height="16" uuid="ea5a2c6e-e4d1-47cf-92ce-2fab5319de93">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="d7b3653e-b0e6-4358-a7b0-c78bd23b2b16"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{totale_merce}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="460" y="31" width="94" height="16" uuid="b9ccceab-0b0b-4e36-b049-fa85bbc367f4">
+>>>>>>> 97d6a1e316ffb1793448fdb10739e9339f2b7ba9
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="64899f83-fc3d-434c-8cdd-1538ccce8ee9"/>
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
+<<<<<<< HEAD
 				<textElement textAlignment="Right" verticalAlignment="Middle"/>
 				<textFieldExpression><![CDATA[String.format("%.2f",(double)(FLOOR($F{sconto})))]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="455" y="53" width="94" height="16" uuid="1a9f4c92-e825-4caa-88b5-7db34d5e7b50">
+=======
+				<textFieldExpression><![CDATA[FLOOR($F{sconto})]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="460" y="53" width="94" height="16" uuid="1a9f4c92-e825-4caa-88b5-7db34d5e7b50">
+>>>>>>> 97d6a1e316ffb1793448fdb10739e9339f2b7ba9
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="8272acd2-ab4c-4e58-8124-ff139dd083b6"/>
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
+<<<<<<< HEAD
 				<textElement textAlignment="Right" verticalAlignment="Middle"/>
 				<textFieldExpression><![CDATA[String.format("%.2f",(double)($F{merce_scontata}))]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="455" y="75" width="94" height="16" uuid="a1cbc878-1455-4337-9759-7ec317cd82af">
+=======
+				<textFieldExpression><![CDATA[$F{merce_scontata}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="460" y="75" width="94" height="16" uuid="a1cbc878-1455-4337-9759-7ec317cd82af">
+>>>>>>> 97d6a1e316ffb1793448fdb10739e9339f2b7ba9
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="46deec92-0fb4-4831-9667-eb754b2889fc"/>
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
+<<<<<<< HEAD
 				<textElement textAlignment="Right" verticalAlignment="Middle"/>
 				<textFieldExpression><![CDATA[String.format("%.2f",(double)($F{valore_buono}))]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="455" y="97" width="94" height="16" uuid="e142f926-5a4c-47a7-b08c-c6932cc5533c">
+=======
+				<textFieldExpression><![CDATA[$F{valore_buono}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="460" y="97" width="94" height="16" uuid="e142f926-5a4c-47a7-b08c-c6932cc5533c">
+>>>>>>> 97d6a1e316ffb1793448fdb10739e9339f2b7ba9
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="f254102a-b76d-4140-8571-62057bd0882a"/>
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
+<<<<<<< HEAD
 				<textElement textAlignment="Right" verticalAlignment="Middle"/>
 				<textFieldExpression><![CDATA[String.format("%.2f",(double)($F{totale_scontato}))]]></textFieldExpression>
+=======
+				<textFieldExpression><![CDATA[$F{totale_scontato}]]></textFieldExpression>
+>>>>>>> 97d6a1e316ffb1793448fdb10739e9339f2b7ba9
 			</textField>
 			<textField>
 				<reportElement x="122" y="129" width="20" height="16" uuid="dbddd593-b89e-4ab6-82ef-1436e4e1d990">
@@ -794,6 +908,7 @@
 				</reportElement>
 				<textFieldExpression><![CDATA[$F{email_cliente}]]></textFieldExpression>
 			</textField>
+<<<<<<< HEAD
 			<textField>
 				<reportElement x="90" y="9" width="36" height="14" uuid="e9142451-c81e-4b3f-94d2-23834c20cbc0">
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
@@ -802,6 +917,8 @@
 				<textElement textAlignment="Right" verticalAlignment="Middle"/>
 				<textFieldExpression><![CDATA[$F{punti_precedenti}]]></textFieldExpression>
 			</textField>
+=======
+>>>>>>> 97d6a1e316ffb1793448fdb10739e9339f2b7ba9
 		</band>
 	</detail>
 </jasperReport>

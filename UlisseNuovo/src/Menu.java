@@ -181,7 +181,11 @@ public class Menu extends JFrame {
 		
 		
 		JButton costi_pulitura_trattamento_button = new JButton("Costi Pulitura e Trattamento");
+<<<<<<< HEAD
 		costi_pulitura_trattamento_button.setBounds(220, 450, 410, 40);
+=======
+		costi_pulitura_trattamento_button.setBounds(10, 495, 410, 40);
+>>>>>>> 97d6a1e316ffb1793448fdb10739e9339f2b7ba9
 		costi_pulitura_trattamento_button.setVisible(true);
 		costi_pulitura_trattamento_button.setBackground(new java.awt.Color(250,126,133));
 		costi_pulitura_trattamento_button.setFont(new Font("Courier", Font.PLAIN, 20));
@@ -189,40 +193,64 @@ public class Menu extends JFrame {
 		
 		JLabel listini_label = new JLabel("Listini");
 		listini_label.setFont(new Font("Courier", Font.PLAIN, 20));
+<<<<<<< HEAD
 		listini_label.setBounds(10, 495, 200, 30);
+=======
+		listini_label.setBounds(10, 550, 200, 30);
+>>>>>>> 97d6a1e316ffb1793448fdb10739e9339f2b7ba9
 		listini_label.setForeground(new java.awt.Color(255,255,255));
 		labelSfondo.add(listini_label);
         
         JButton riparazioni_argenteria_pubblico_button = new JButton("Rip. Arg. Pubblico");
+<<<<<<< HEAD
         riparazioni_argenteria_pubblico_button.setBounds(10, 535, 200, 40);
+=======
+        riparazioni_argenteria_pubblico_button.setBounds(10, 585, 200, 40);
+>>>>>>> 97d6a1e316ffb1793448fdb10739e9339f2b7ba9
         riparazioni_argenteria_pubblico_button.setVisible(true);
         riparazioni_argenteria_pubblico_button.setBackground(new java.awt.Color(250,126,133));
         riparazioni_argenteria_pubblico_button.setFont(new Font("Courier", Font.PLAIN, 20));
         labelSfondo.add(riparazioni_argenteria_pubblico_button);
 		
 		JButton riparazioni_argenteria_negozi_button = new JButton("Rip. Arg. Negozi");
+<<<<<<< HEAD
 		riparazioni_argenteria_negozi_button.setBounds(220, 535, 200, 40);
+=======
+		riparazioni_argenteria_negozi_button.setBounds(220, 585, 200, 40);
+>>>>>>> 97d6a1e316ffb1793448fdb10739e9339f2b7ba9
 		riparazioni_argenteria_negozi_button.setBackground(new java.awt.Color(250,126,133));
 		riparazioni_argenteria_negozi_button.setFont(new Font("Courier", Font.PLAIN, 20));
 		riparazioni_argenteria_negozi_button.setVisible(true);
 		labelSfondo.add(riparazioni_argenteria_negozi_button);
 		
 		JButton riparazioni_consigliati_negozi_button = new JButton("Rip. Cons. Negozi");
+<<<<<<< HEAD
 		riparazioni_consigliati_negozi_button.setBounds(430, 535, 200, 40);
+=======
+		riparazioni_consigliati_negozi_button.setBounds(430, 585, 200, 40);
+>>>>>>> 97d6a1e316ffb1793448fdb10739e9339f2b7ba9
 		riparazioni_consigliati_negozi_button.setVisible(true);
 		riparazioni_consigliati_negozi_button.setBackground(new java.awt.Color(250,126,133));
 		riparazioni_consigliati_negozi_button.setFont(new Font("Courier", Font.PLAIN, 20));
 		labelSfondo.add(riparazioni_consigliati_negozi_button);
 		
 		JButton riparazioni_oreficeria_pubblico_button = new JButton("Rip. Oref. Pubblico");
+<<<<<<< HEAD
 		riparazioni_oreficeria_pubblico_button.setBounds(10, 580, 200, 40);
+=======
+		riparazioni_oreficeria_pubblico_button.setBounds(10, 630, 200, 40);
+>>>>>>> 97d6a1e316ffb1793448fdb10739e9339f2b7ba9
 		riparazioni_oreficeria_pubblico_button.setVisible(true);
 		riparazioni_oreficeria_pubblico_button.setBackground(new java.awt.Color(250,126,133));
 		riparazioni_oreficeria_pubblico_button.setFont(new Font("Courier", Font.PLAIN, 20));
 		labelSfondo.add(riparazioni_oreficeria_pubblico_button);
 		
 		JButton riparazioni_oreficeria_negozi_button = new JButton("Rip. Oref. Negozi");
+<<<<<<< HEAD
 		riparazioni_oreficeria_negozi_button.setBounds(220, 580, 200, 40);
+=======
+		riparazioni_oreficeria_negozi_button.setBounds(220, 630, 200, 40);
+>>>>>>> 97d6a1e316ffb1793448fdb10739e9339f2b7ba9
 		riparazioni_oreficeria_negozi_button.setVisible(true);
 		riparazioni_oreficeria_negozi_button.setBackground(new java.awt.Color(250,126,133));
 		riparazioni_oreficeria_negozi_button.setFont(new Font("Courier", Font.PLAIN, 20));
@@ -378,6 +406,7 @@ public class Menu extends JFrame {
             }
 		});
 		
+<<<<<<< HEAD
 		listino_oralux_button.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
             	ListinoOralux o = new ListinoOralux();
@@ -389,6 +418,8 @@ public class Menu extends JFrame {
             	MagazzinoOralux o = new MagazzinoOralux();
             }
 		});
+=======
+>>>>>>> 97d6a1e316ffb1793448fdb10739e9339f2b7ba9
 		
 		
         window.setVisible(true);

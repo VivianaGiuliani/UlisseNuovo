@@ -127,7 +127,11 @@ public class Inventario {
 				  if (evt.getKeyCode() == evt.VK_TAB) {
 					  Articolo click = new Articolo();
 					  for(int i = 0; i < copiaI.size(); i++) {
+<<<<<<< HEAD
 						  if(copiaI.get(i).getBarcode().equals(codice_scalato_textbox.getText().replaceAll("\\s", ""))) {
+=======
+						  if(copiaI.get(i).getBarcode().equals(codice_scalato_textbox.getText())) {
+>>>>>>> 97d6a1e316ffb1793448fdb10739e9339f2b7ba9
 							  click = copiaI.get(i);
 						  }
 					  }

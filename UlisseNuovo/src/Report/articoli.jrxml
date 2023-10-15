@@ -312,7 +312,11 @@
 							<textField>
 								<reportElement x="0" y="0" width="50" height="30" uuid="05d6311d-5fd1-47ed-afbc-542dd0dfa671"/>
 								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+<<<<<<< HEAD
 								<textFieldExpression><![CDATA[String.format("%.2f",(double)($F{peso}))]]></textFieldExpression>
+=======
+								<textFieldExpression><![CDATA[$F{peso}]]></textFieldExpression>
+>>>>>>> 97d6a1e316ffb1793448fdb10739e9339f2b7ba9
 							</textField>
 						</jr:detailCell>
 					</jr:column>
@@ -329,7 +333,11 @@
 							<textField>
 								<reportElement x="0" y="0" width="60" height="30" uuid="906a517e-25eb-4aae-8b57-3d3e7fdec637"/>
 								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+<<<<<<< HEAD
 								<textFieldExpression><![CDATA[String.format("%.2f",(double)($F{pr_unit}))]]></textFieldExpression>
+=======
+								<textFieldExpression><![CDATA[$F{pr_unit}]]></textFieldExpression>
+>>>>>>> 97d6a1e316ffb1793448fdb10739e9339f2b7ba9
 							</textField>
 						</jr:detailCell>
 					</jr:column>
@@ -346,7 +354,11 @@
 							<textField>
 								<reportElement x="0" y="0" width="85" height="30" uuid="9bc53535-aa9d-47cf-bdee-3a8b0ee00989"/>
 								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+<<<<<<< HEAD
 								<textFieldExpression><![CDATA[String.format("%.2f",(double)($F{tot_giacenza}))]]></textFieldExpression>
+=======
+								<textFieldExpression><![CDATA[$F{tot_giacenza}]]></textFieldExpression>
+>>>>>>> 97d6a1e316ffb1793448fdb10739e9339f2b7ba9
 							</textField>
 						</jr:detailCell>
 					</jr:column>
