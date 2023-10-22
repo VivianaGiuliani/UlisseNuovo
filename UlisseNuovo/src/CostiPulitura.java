@@ -36,45 +36,72 @@ public class CostiPulitura {
 	       
 	    window.add(labelSfondo);
 
+<<<<<<< HEAD
         JLabel listinoCostoPulituraLabel = new JLabel("Listino Costo Pulitura e Trattamento");
         listinoCostoPulituraLabel.setFont(new Font("", Font.BOLD, 20));
         listinoCostoPulituraLabel.setBounds(10, 10, 400, 30);
+=======
+        JLabel listinoCostoPulituraLabel = new JLabel("Listino Costo Pulitura");
+        listinoCostoPulituraLabel.setFont(new Font("Courier", Font.BOLD, 20));
+        listinoCostoPulituraLabel.setBounds(10, 10, 300, 30);
+>>>>>>> 92ba0878318a769571cc1e9456393151517d6ac3
         listinoCostoPulituraLabel.setForeground(new java.awt.Color(255,255,255));
         labelSfondo.add(listinoCostoPulituraLabel);
 
         JLabel descrizione_label = new JLabel("Descrizione");
+<<<<<<< HEAD
         descrizione_label.setFont(new Font("", Font.PLAIN, 15));
+=======
+        descrizione_label.setFont(new Font("Courier", Font.PLAIN, 15));
+>>>>>>> 92ba0878318a769571cc1e9456393151517d6ac3
         descrizione_label.setBounds(10, 50, 100, 20);
         descrizione_label.setForeground(new java.awt.Color(255,255,255));
         labelSfondo.add(descrizione_label);
 
         JTextField descrizione_textbox = new JTextField();
         descrizione_textbox.setBounds(10, 70, 150, 40);
+<<<<<<< HEAD
         descrizione_textbox.setFont(new Font("", Font.PLAIN, 20));
+=======
+>>>>>>> 92ba0878318a769571cc1e9456393151517d6ac3
         descrizione_textbox.setBackground(new java.awt.Color(203, 203, 146));
         labelSfondo.add(descrizione_textbox);
         
         JLabel pulitura_label = new JLabel("Pulitura");
+<<<<<<< HEAD
         pulitura_label.setFont(new Font("", Font.PLAIN, 15));
+=======
+        pulitura_label.setFont(new Font("Courier", Font.PLAIN, 15));
+>>>>>>> 92ba0878318a769571cc1e9456393151517d6ac3
         pulitura_label.setBounds(170, 50, 50, 20);
         pulitura_label.setForeground(new java.awt.Color(255,255,255));
         labelSfondo.add(pulitura_label);
 
         JTextField pulitura_textbox = new JTextField();
         pulitura_textbox.setBounds(170, 70, 150, 40);
+<<<<<<< HEAD
         pulitura_textbox.setFont(new Font("", Font.PLAIN, 20));
+=======
+>>>>>>> 92ba0878318a769571cc1e9456393151517d6ac3
         pulitura_textbox.setBackground(new java.awt.Color(203, 203, 146));
         labelSfondo.add(pulitura_textbox);
         
         JLabel trattamento_label = new JLabel("Trattamento");
+<<<<<<< HEAD
         trattamento_label.setFont(new Font("", Font.PLAIN, 15));
+=======
+        trattamento_label.setFont(new Font("Courier", Font.PLAIN, 15));
+>>>>>>> 92ba0878318a769571cc1e9456393151517d6ac3
         trattamento_label.setBounds(330, 50, 100, 20);
         trattamento_label.setForeground(new java.awt.Color(255,255,255));
         labelSfondo.add(trattamento_label);
 
         JTextField trattamento_textbox = new JTextField();
         trattamento_textbox.setBounds(330, 70, 150, 40);
+<<<<<<< HEAD
         trattamento_textbox.setFont(new Font("", Font.PLAIN, 20));
+=======
+>>>>>>> 92ba0878318a769571cc1e9456393151517d6ac3
         trattamento_textbox.setBackground(new java.awt.Color(203, 203, 146));
         labelSfondo.add(trattamento_textbox);
         
@@ -90,7 +117,10 @@ public class CostiPulitura {
 
         JTextField aumento_pulitura_textbox = new JTextField();
         aumento_pulitura_textbox.setBounds(10, 120, 150, 40);
+<<<<<<< HEAD
         aumento_pulitura_textbox.setFont(new Font("", Font.PLAIN, 20));
+=======
+>>>>>>> 92ba0878318a769571cc1e9456393151517d6ac3
         aumento_pulitura_textbox.setBackground(new java.awt.Color(156, 191, 171));
         labelSfondo.add(aumento_pulitura_textbox);
         
@@ -101,7 +131,10 @@ public class CostiPulitura {
         
         JTextField aumento_trattamento_textbox = new JTextField();
         aumento_trattamento_textbox.setBounds(330, 120, 150, 40);
+<<<<<<< HEAD
         aumento_trattamento_textbox.setFont(new Font("", Font.PLAIN, 20));
+=======
+>>>>>>> 92ba0878318a769571cc1e9456393151517d6ac3
         aumento_trattamento_textbox.setBackground(new java.awt.Color(156, 191, 171));
         labelSfondo.add(aumento_trattamento_textbox);
         

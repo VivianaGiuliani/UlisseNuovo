@@ -36,13 +36,21 @@ public class TotaliMacrocategorie  {
 
 
         JLabel titoloLabel = new JLabel("Totali Macrocategorie");
+<<<<<<< HEAD
         titoloLabel.setFont(new Font("", Font.PLAIN, 20));
+=======
+        titoloLabel.setFont(new Font("Courier", Font.PLAIN, 20));
+>>>>>>> 92ba0878318a769571cc1e9456393151517d6ac3
         titoloLabel.setBounds(10, 10, 200, 30);
         titoloLabel.setForeground(new java.awt.Color(255,255,255));
         labelSfondo.add(titoloLabel);
 
         JLabel daCatLabel = new JLabel("Da Cat.");
+<<<<<<< HEAD
         daCatLabel.setFont(new Font("", Font.PLAIN, 12));
+=======
+        daCatLabel.setFont(new Font("Courier", Font.PLAIN, 12));
+>>>>>>> 92ba0878318a769571cc1e9456393151517d6ac3
         daCatLabel.setBounds(10, 50, 200, 20);
         daCatLabel.setForeground(new java.awt.Color(255,255,255));
         labelSfondo.add(daCatLabel);
@@ -52,7 +60,11 @@ public class TotaliMacrocategorie  {
         labelSfondo.add(daCatTextField);
 
         JLabel aCatLabel = new JLabel("A Cat.");
+<<<<<<< HEAD
         aCatLabel.setFont(new Font("", Font.PLAIN, 12));
+=======
+        aCatLabel.setFont(new Font("Courier", Font.PLAIN, 12));
+>>>>>>> 92ba0878318a769571cc1e9456393151517d6ac3
         aCatLabel.setBounds(170, 50, 200, 20);
         aCatLabel.setForeground(new java.awt.Color(255,255,255));
         labelSfondo.add(aCatLabel);

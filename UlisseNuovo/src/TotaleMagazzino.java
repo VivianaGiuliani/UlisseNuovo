@@ -34,13 +34,21 @@ public class TotaleMagazzino {
 	    window.add(labelSfondo);
 		
         JLabel titoloLabel = new JLabel("Totale Magazzino");
+<<<<<<< HEAD
         titoloLabel.setFont(new Font("", Font.BOLD, 20));
+=======
+        titoloLabel.setFont(new Font("Courier", Font.BOLD, 20));
+>>>>>>> 92ba0878318a769571cc1e9456393151517d6ac3
         titoloLabel.setBounds(150, 10, 200, 30);
         titoloLabel.setForeground(new java.awt.Color(255,255,255));
         labelSfondo.add(titoloLabel);
 
         JLabel totGiacFissoLabel = new JLabel("Totale Giacenza Fisso");
+<<<<<<< HEAD
         totGiacFissoLabel.setFont(new Font("", Font.BOLD, 12));
+=======
+        totGiacFissoLabel.setFont(new Font("Courier", Font.BOLD, 12));
+>>>>>>> 92ba0878318a769571cc1e9456393151517d6ac3
         totGiacFissoLabel.setBounds(10, 50, 200, 20);
         totGiacFissoLabel.setForeground(new java.awt.Color(255,255,255));
         labelSfondo.add(totGiacFissoLabel);
@@ -50,7 +58,11 @@ public class TotaleMagazzino {
         labelSfondo.add(totGiacFissoTextField);
 
         JLabel totGiacVarLabel = new JLabel("Totale Giacenza Variabile");
+<<<<<<< HEAD
         totGiacVarLabel.setFont(new Font("", Font.BOLD, 12));
+=======
+        totGiacVarLabel.setFont(new Font("Courier", Font.BOLD, 12));
+>>>>>>> 92ba0878318a769571cc1e9456393151517d6ac3
         totGiacVarLabel.setBounds(10, 90, 200, 20);
         totGiacVarLabel.setForeground(new java.awt.Color(255,255,255));
         labelSfondo.add(totGiacVarLabel);
@@ -60,7 +72,11 @@ public class TotaleMagazzino {
         labelSfondo.add(totGiacVarTextField);
 
         JLabel totGiacLabel = new JLabel("Totale Giacenza");
+<<<<<<< HEAD
         totGiacLabel.setFont(new Font("", Font.BOLD, 12));
+=======
+        totGiacLabel.setFont(new Font("Courier", Font.BOLD, 12));
+>>>>>>> 92ba0878318a769571cc1e9456393151517d6ac3
         totGiacLabel.setBounds(10, 130, 200, 20);
         totGiacLabel.setForeground(new java.awt.Color(255,255,255));
         labelSfondo.add(totGiacLabel);
@@ -70,7 +86,11 @@ public class TotaleMagazzino {
         labelSfondo.add(totGiacTextField);
 
         JLabel totCostoFissoLabel = new JLabel("Totale Costo Fisso");
+<<<<<<< HEAD
         totCostoFissoLabel.setFont(new Font("", Font.BOLD, 12));
+=======
+        totCostoFissoLabel.setFont(new Font("Courier", Font.BOLD, 12));
+>>>>>>> 92ba0878318a769571cc1e9456393151517d6ac3
         totCostoFissoLabel.setBounds(10, 170, 200, 20);
         totCostoFissoLabel.setForeground(new java.awt.Color(255,255,255));
         labelSfondo.add(totCostoFissoLabel);
@@ -80,7 +100,11 @@ public class TotaleMagazzino {
         labelSfondo.add(totCostoFissoTextField);
 
         JLabel totCostoVarLabel = new JLabel("Totale Costo Variabile");
+<<<<<<< HEAD
         totCostoVarLabel.setFont(new Font("", Font.BOLD, 12));
+=======
+        totCostoVarLabel.setFont(new Font("Courier", Font.BOLD, 12));
+>>>>>>> 92ba0878318a769571cc1e9456393151517d6ac3
         totCostoVarLabel.setBounds(10, 210, 200, 20);
         totCostoVarLabel.setForeground(new java.awt.Color(255,255,255));
         labelSfondo.add(totCostoVarLabel);
@@ -90,7 +114,11 @@ public class TotaleMagazzino {
         labelSfondo.add(totCostoVarTextField);
 
         JLabel totCostoLabel = new JLabel("Totale Costo");
+<<<<<<< HEAD
         totCostoLabel.setFont(new Font("", Font.BOLD, 12));
+=======
+        totCostoLabel.setFont(new Font("Courier", Font.BOLD, 12));
+>>>>>>> 92ba0878318a769571cc1e9456393151517d6ac3
         totCostoLabel.setBounds(10, 250, 200, 20);
         totCostoLabel.setForeground(new java.awt.Color(255,255,255));
         labelSfondo.add(totCostoLabel);

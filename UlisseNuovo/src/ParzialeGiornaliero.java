@@ -8,8 +8,11 @@ public class ParzialeGiornaliero {
 		private ImageIcon imageSfondo;
 		private JLabel labelSfondo;
     public ParzialeGiornaliero(int totaleScontato) {
+<<<<<<< HEAD
     	SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
     	
+=======
+>>>>>>> 92ba0878318a769571cc1e9456393151517d6ac3
     	window = new JFrame();
         window.setSize(300, 300);
         window.setTitle("Clienti");
@@ -46,9 +49,15 @@ public class ParzialeGiornaliero {
         euroLabel.setForeground(new java.awt.Color(255,255,255));
         labelSfondo.add(euroLabel);
 
+<<<<<<< HEAD
         JLabel incassoSoldiLabel = new JLabel("");
         incassoSoldiLabel.setFont(new Font("", Font.PLAIN, 40));
         incassoSoldiLabel.setBounds(160, 90, 300, 30);
+=======
+        JLabel incassoSoldiLabel = new JLabel();
+        incassoSoldiLabel.setFont(new Font("Courier", Font.PLAIN, 18));
+        incassoSoldiLabel.setBounds(160, 105, 50, 30);
+>>>>>>> 92ba0878318a769571cc1e9456393151517d6ac3
         incassoSoldiLabel.setForeground(new java.awt.Color(255,255,255));
         labelSfondo.add(incassoSoldiLabel);
         incassoSoldiLabel.setText(String.valueOf(totaleScontato));
