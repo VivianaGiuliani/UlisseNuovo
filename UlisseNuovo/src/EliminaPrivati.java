@@ -3,6 +3,8 @@ import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
+import javax.swing.JOptionPane;
+
 import Classi.Database;
 
 public class EliminaPrivati {
@@ -13,6 +15,7 @@ public class EliminaPrivati {
 		int annoCanc = annoInt - 5;
 		System.out.println(annoCanc);
 		eliminaRigaDb(String.valueOf(annoCanc));
+		JOptionPane.showMessageDialog(null, "Operazione eseguita", "InfoBox: Elimina Privati", JOptionPane.INFORMATION_MESSAGE);
 	}
 	
 	public static void eliminaRigaDb(String value) {
