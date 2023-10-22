@@ -2,8 +2,11 @@ import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 
 import Classi.Database;
+import Classi.ReportDistinte;
+import Classi.ReportRiparazioniArgenteriaNegozi;
 import Oggetti.Articolo;
 import Oggetti.CostoPulitura;
+import net.sf.jasperreports.engine.JRException;
 
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -16,28 +19,46 @@ import java.sql.Statement;
 import java.util.ArrayList;
 
 public class RiparazioniArgenteriaNegozi {
-    public static void main (String [] args) {
-    	JFrame window = new JFrame();
+		private JFrame window;
+		private ImageIcon imageSfondo;
+		private JLabel labelSfondo;
+    public RiparazioniArgenteriaNegozi() {
+    	window = new JFrame();
 		window.setSize(1220, 680);
 		window.setTitle("Riparazioni Argenteria Negozi");
 		window.setResizable(false);
+		
+		labelSfondo = new JLabel(imageSfondo);
+		labelSfondo.setSize(1400, 800);
+	        
+	    imageSfondo = new ImageIcon(this.getClass().getResource("/Images/background.png"));
+	    Image img = imageSfondo.getImage();
+	    Image imgScale = img.getScaledInstance(labelSfondo.getWidth(), labelSfondo.getHeight(), Image.SCALE_DEFAULT);
+	    ImageIcon scaledIcon = new ImageIcon(imgScale);
+	    labelSfondo.setIcon(scaledIcon);
+	       
+	    window.add(labelSfondo);
 
         JLabel listinoCostoPulituraLabel = new JLabel("Listino Prezzi ai Negozi Riparazioni Argenteria");
-        listinoCostoPulituraLabel.setFont(new Font("Courier", Font.BOLD, 20));
-        listinoCostoPulituraLabel.setBounds(30, 10, 500, 30);
-        window.add(listinoCostoPulituraLabel);
+        listinoCostoPulituraLabel.setFont(new Font("", Font.BOLD, 20));
+        listinoCostoPulituraLabel.setBounds(10, 10, 500, 30);
+        listinoCostoPulituraLabel.setForeground(new java.awt.Color(255,255,255));
+        labelSfondo.add(listinoCostoPulituraLabel);
         
         JButton ordine_codice_button = new JButton("Ordine per codice");
         ordine_codice_button.setBounds(10, 50, 150, 40);
-        window.add(ordine_codice_button);
+        ordine_codice_button.setBackground(new java.awt.Color(250,255,133));
+        labelSfondo.add(ordine_codice_button);
         
         JButton ordine_naturale_button = new JButton("Ordine naturale");
         ordine_naturale_button.setBounds(170, 50, 150, 40);
-        window.add(ordine_naturale_button);
+        ordine_naturale_button.setBackground(new java.awt.Color(250,255,133));
+        labelSfondo.add(ordine_naturale_button);
         
         JButton stampa_button = new JButton("Stampa");
         stampa_button.setBounds(330, 50, 150, 40);
-        window.add(stampa_button);
+        stampa_button.setBackground(new java.awt.Color(0, 255, 255));
+        labelSfondo.add(stampa_button);
         
         JPanel tablePanel = new JPanel();
         tablePanel.setLayout(null);
@@ -54,7 +75,7 @@ public class RiparazioniArgenteriaNegozi {
         
         scrollPane.setViewportView(table);
         tablePanel.add(scrollPane);
-        window.add(tablePanel);
+        labelSfondo.add(tablePanel);
         
 
         ArrayList<CostoPulitura> costiPulitura = costiPulituraDaDb();
@@ -83,6 +104,18 @@ public class RiparazioniArgenteriaNegozi {
             		model.addRow(new Object[] {costiPulitura.get(i).getCodice(), costiPulitura.get(i).getDescrizione(), costiPulitura.get(i).getPulitura(), 
             				costiPulitura.get(i).getTrattamento()});
             	}
+            }
+    	});
+    	
+    	stampa_button.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+            	ReportRiparazioniArgenteriaNegozi r = new ReportRiparazioniArgenteriaNegozi();
+            	try {
+					r.generaReport();
+				} catch (JRException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
             }
     	});
         

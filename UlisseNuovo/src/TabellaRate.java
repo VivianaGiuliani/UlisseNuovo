@@ -1,10 +1,12 @@
 import java.awt.Font;
+import java.awt.Image;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -17,16 +19,31 @@ import Classi.Database;
 import Oggetti.Articolo;
 
 public class TabellaRate {
+	private JFrame window;
+	private ImageIcon imageSfondo;
+	private JLabel labelSfondo;
 	public TabellaRate() {
-		 JFrame window = new JFrame();
-	        window.setSize(400, 700);
+		 	window = new JFrame();
+	        window.setSize(370, 700);
 	        window.setTitle("Tabella Rate");
 	        window.setResizable(false);
 	        
+	        labelSfondo = new JLabel(imageSfondo);
+			labelSfondo.setSize(1400, 800);
+		        
+		    imageSfondo = new ImageIcon(this.getClass().getResource("/Images/background.png"));
+		    Image img = imageSfondo.getImage();
+		    Image imgScale = img.getScaledInstance(labelSfondo.getWidth(), labelSfondo.getHeight(), Image.SCALE_DEFAULT);
+		    ImageIcon scaledIcon = new ImageIcon(imgScale);
+		    labelSfondo.setIcon(scaledIcon);
+		       
+		    window.add(labelSfondo);
+	        
 	        JLabel tabella_rate_label = new JLabel("Tabella Rate");
-	        tabella_rate_label.setFont(new Font("Courier", Font.BOLD, 20));
+	        tabella_rate_label.setFont(new Font("", Font.BOLD, 20));
 	        tabella_rate_label.setBounds(10, 10, 300, 30);
-	        window.add(tabella_rate_label);
+	        tabella_rate_label.setForeground(new java.awt.Color(255,255,255));
+	        labelSfondo.add(tabella_rate_label);
 	        
 	        
 	        JPanel tablePanel = new JPanel();
@@ -44,7 +61,7 @@ public class TabellaRate {
 	        
 	        scrollPane.setViewportView(table);
 	        tablePanel.add(scrollPane);
-	        window.add(tablePanel);
+	        labelSfondo.add(tablePanel);
 	        
 	        ArrayList<String> rate = rateNomeStr();
 	        

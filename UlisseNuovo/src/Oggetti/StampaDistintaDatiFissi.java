@@ -14,7 +14,7 @@ public class StampaDistintaDatiFissi {
 	private String da_titolo_cliente;
 	private String titolo_cliente;
 	private String nome_cliente;
-	private String codice_cliente;
+	private String codice_carta_cliente;
 	private String email_cliente;
 	
 	public StampaDistintaDatiFissi() {}
@@ -22,7 +22,7 @@ public class StampaDistintaDatiFissi {
 	public StampaDistintaDatiFissi(double totale_merce, double sconto, double merce_scontata, double valore_buono,
 			double totale_scontato, int punti_precedenti, int punti_guadagnati, int punti_totali, int punti_usati,
 			int punti_disponibili, String da_titolo_cliente, String titolo_cliente, String nome_cliente,
-			String codice_cliente, String email_cliente) {
+			String codice_carta_cliente, String email_cliente) {
 		super();
 		this.totale_merce = totale_merce;
 		this.sconto = sconto;
@@ -37,7 +37,7 @@ public class StampaDistintaDatiFissi {
 		this.da_titolo_cliente = da_titolo_cliente;
 		this.titolo_cliente = titolo_cliente;
 		this.nome_cliente = nome_cliente;
-		this.codice_cliente = codice_cliente;
+		this.codice_carta_cliente = codice_carta_cliente;
 		this.email_cliente = email_cliente;
 	}
 
@@ -145,12 +145,12 @@ public class StampaDistintaDatiFissi {
 		this.nome_cliente = nome_cliente;
 	}
 
-	public String getCodice_cliente() {
-		return codice_cliente;
+	public String getCodice_carta_cliente() {
+		return codice_carta_cliente;
 	}
 
-	public void setCodice_cliente(String codice_cliente) {
-		this.codice_cliente = codice_cliente;
+	public void setCodice_carta_cliente(String codice_carta_cliente) {
+		this.codice_carta_cliente = codice_carta_cliente;
 	}
 
 	public String getEmail_cliente() {
@@ -168,7 +168,7 @@ public class StampaDistintaDatiFissi {
 				+ ", punti_precedenti=" + punti_precedenti + ", punti_guadagnati=" + punti_guadagnati
 				+ ", punti_totali=" + punti_totali + ", punti_usati=" + punti_usati + ", punti_disponibili="
 				+ punti_disponibili + ", da_titolo_cliente=" + da_titolo_cliente + ", titolo_cliente=" + titolo_cliente
-				+ ", nome_cliente=" + nome_cliente + ", codice_cliente=" + codice_cliente + ", email_cliente="
+				+ ", nome_cliente=" + nome_cliente + ", codice_cliente=" + codice_carta_cliente + ", email_cliente="
 				+ email_cliente + "]";
 	}
 	

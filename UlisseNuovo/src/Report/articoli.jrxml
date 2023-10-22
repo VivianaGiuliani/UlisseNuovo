@@ -1,0 +1,357 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.20.6.final using JasperReports Library version 6.20.6-5c96b6aa8a39ac1dc6b6bea4b81168e16dd39231  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="articoli" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="28772385-ebe5-4755-89a0-7b511bb3b995">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Ulisse.jrdax"/>
+	<style name="Table_TH" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table_CH" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<subDataset name="Dataset1" uuid="554a3e2e-2b0b-4bd4-bb71-d03da3e910fd">
+		<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Ulisse.jrdax"/>
+		<queryString language="SQL">
+			<![CDATA[select * from sys.articoli;]]>
+		</queryString>
+		<field name="barcode" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="barcode"/>
+			<property name="com.jaspersoft.studio.field.label" value="barcode"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="articoli"/>
+		</field>
+		<field name="cfor" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="cfor"/>
+			<property name="com.jaspersoft.studio.field.label" value="cfor"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="articoli"/>
+		</field>
+		<field name="codfor" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.name" value="codfor"/>
+			<property name="com.jaspersoft.studio.field.label" value="codfor"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="articoli"/>
+		</field>
+		<field name="giacenza" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.name" value="giacenza"/>
+			<property name="com.jaspersoft.studio.field.label" value="giacenza"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="articoli"/>
+		</field>
+		<field name="descrizione" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="descrizione"/>
+			<property name="com.jaspersoft.studio.field.label" value="descrizione"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="articoli"/>
+		</field>
+		<field name="peso" class="java.lang.Double">
+			<property name="com.jaspersoft.studio.field.name" value="peso"/>
+			<property name="com.jaspersoft.studio.field.label" value="peso"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="articoli"/>
+		</field>
+		<field name="caratura" class="java.lang.Double">
+			<property name="com.jaspersoft.studio.field.name" value="caratura"/>
+			<property name="com.jaspersoft.studio.field.label" value="caratura"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="articoli"/>
+		</field>
+		<field name="pr_unit" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.name" value="pr_unit"/>
+			<property name="com.jaspersoft.studio.field.label" value="pr_unit"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="articoli"/>
+		</field>
+		<field name="tot_giacenza" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.name" value="tot_giacenza"/>
+			<property name="com.jaspersoft.studio.field.label" value="tot_giacenza"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="articoli"/>
+		</field>
+		<field name="sc_1" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.name" value="sc_1"/>
+			<property name="com.jaspersoft.studio.field.label" value="sc_1"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="articoli"/>
+		</field>
+		<field name="sc_2" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.name" value="sc_2"/>
+			<property name="com.jaspersoft.studio.field.label" value="sc_2"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="articoli"/>
+		</field>
+		<field name="costo" class="java.lang.Double">
+			<property name="com.jaspersoft.studio.field.name" value="costo"/>
+			<property name="com.jaspersoft.studio.field.label" value="costo"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="articoli"/>
+		</field>
+		<field name="fv" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="fv"/>
+			<property name="com.jaspersoft.studio.field.label" value="fv"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="articoli"/>
+		</field>
+		<field name="tot_peso" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.name" value="tot_peso"/>
+			<property name="com.jaspersoft.studio.field.label" value="tot_peso"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="articoli"/>
+		</field>
+		<field name="tot_inv" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.name" value="tot_inv"/>
+			<property name="com.jaspersoft.studio.field.label" value="tot_inv"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="articoli"/>
+		</field>
+		<field name="slot_costi" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.name" value="slot_costi"/>
+			<property name="com.jaspersoft.studio.field.label" value="slot_costi"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="articoli"/>
+		</field>
+		<field name="tot_costo" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.name" value="tot_costo"/>
+			<property name="com.jaspersoft.studio.field.label" value="tot_costo"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="articoli"/>
+		</field>
+		<field name="cod_categoria" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.name" value="cod_categoria"/>
+			<property name="com.jaspersoft.studio.field.label" value="cod_categoria"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="articoli"/>
+		</field>
+	</subDataset>
+	<queryString language="SQL">
+		<![CDATA[select * from sys.articoli;]]>
+	</queryString>
+	<field name="barcode" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="barcode"/>
+		<property name="com.jaspersoft.studio.field.label" value="barcode"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="articoli"/>
+	</field>
+	<field name="cfor" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="cfor"/>
+		<property name="com.jaspersoft.studio.field.label" value="cfor"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="articoli"/>
+	</field>
+	<field name="codfor" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="codfor"/>
+		<property name="com.jaspersoft.studio.field.label" value="codfor"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="articoli"/>
+	</field>
+	<field name="giacenza" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="giacenza"/>
+		<property name="com.jaspersoft.studio.field.label" value="giacenza"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="articoli"/>
+	</field>
+	<field name="descrizione" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="descrizione"/>
+		<property name="com.jaspersoft.studio.field.label" value="descrizione"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="articoli"/>
+	</field>
+	<field name="peso" class="java.lang.Double">
+		<property name="com.jaspersoft.studio.field.name" value="peso"/>
+		<property name="com.jaspersoft.studio.field.label" value="peso"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="articoli"/>
+	</field>
+	<field name="caratura" class="java.lang.Double">
+		<property name="com.jaspersoft.studio.field.name" value="caratura"/>
+		<property name="com.jaspersoft.studio.field.label" value="caratura"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="articoli"/>
+	</field>
+	<field name="pr_unit" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="pr_unit"/>
+		<property name="com.jaspersoft.studio.field.label" value="pr_unit"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="articoli"/>
+	</field>
+	<field name="tot_giacenza" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="tot_giacenza"/>
+		<property name="com.jaspersoft.studio.field.label" value="tot_giacenza"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="articoli"/>
+	</field>
+	<field name="sc_1" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="sc_1"/>
+		<property name="com.jaspersoft.studio.field.label" value="sc_1"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="articoli"/>
+	</field>
+	<field name="sc_2" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="sc_2"/>
+		<property name="com.jaspersoft.studio.field.label" value="sc_2"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="articoli"/>
+	</field>
+	<field name="costo" class="java.lang.Double">
+		<property name="com.jaspersoft.studio.field.name" value="costo"/>
+		<property name="com.jaspersoft.studio.field.label" value="costo"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="articoli"/>
+	</field>
+	<field name="fv" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="fv"/>
+		<property name="com.jaspersoft.studio.field.label" value="fv"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="articoli"/>
+	</field>
+	<field name="tot_peso" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="tot_peso"/>
+		<property name="com.jaspersoft.studio.field.label" value="tot_peso"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="articoli"/>
+	</field>
+	<field name="tot_inv" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="tot_inv"/>
+		<property name="com.jaspersoft.studio.field.label" value="tot_inv"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="articoli"/>
+	</field>
+	<field name="slot_costi" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="slot_costi"/>
+		<property name="com.jaspersoft.studio.field.label" value="slot_costi"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="articoli"/>
+	</field>
+	<field name="tot_costo" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="tot_costo"/>
+		<property name="com.jaspersoft.studio.field.label" value="tot_costo"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="articoli"/>
+	</field>
+	<field name="cod_categoria" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="cod_categoria"/>
+		<property name="com.jaspersoft.studio.field.label" value="cod_categoria"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="articoli"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="28" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<staticText>
+				<reportElement x="0" y="0" width="555" height="28" uuid="0fec2f95-bb32-4e83-97cc-a636e58a8145"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="18"/>
+				</textElement>
+				<text><![CDATA[Stampa Articoli]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="76" splitType="Stretch">
+			<componentElement>
+				<reportElement x="0" y="6" width="555" height="60" uuid="f2471f1e-c54c-4510-97f6-59a2d2e96752">
+					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
+					<property name="com.jaspersoft.studio.table.style.table_header" value="Table_TH"/>
+					<property name="com.jaspersoft.studio.table.style.column_header" value="Table_CH"/>
+					<property name="com.jaspersoft.studio.table.style.detail" value="Table_TD"/>
+				</reportElement>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="Dataset1" uuid="86945a78-61bb-45bc-aee4-47220d56e4aa">
+						<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					</datasetRun>
+					<jr:column width="80" uuid="e2af5cdb-dd77-465f-ac9f-f7b78bd54a87">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column1"/>
+						<jr:columnHeader style="Table_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="80" height="30" uuid="f0938871-a8b5-4c34-aa4e-7305c81bf567"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<text><![CDATA[Barcode]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="Table_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="80" height="30" uuid="23762f67-66b0-44ca-a060-c38b9262ad07"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<textFieldExpression><![CDATA[$F{barcode}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="50" uuid="8d5f2968-0e6f-42ec-86df-abffb2a72686">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column2"/>
+						<jr:columnHeader style="Table_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="50" height="30" uuid="2dd7b49a-a16c-4f32-a0e4-9326ab4e2865"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<text><![CDATA[Giacenza]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="Table_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="50" height="30" uuid="bcab5328-f5c6-411b-b127-78e3f322e47d"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<textFieldExpression><![CDATA[$F{giacenza}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="230" uuid="79465ed2-3a16-47c4-baf5-662e23b0c8dc">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column3"/>
+						<jr:columnHeader style="Table_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="230" height="30" uuid="27222b24-a8c5-4028-94b1-6606b3901eeb"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<text><![CDATA[Descrizione]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="Table_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="230" height="30" uuid="be45844a-2570-4a6a-998f-c8d07c772a0a"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<textFieldExpression><![CDATA[$F{descrizione}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="50" uuid="2781dd98-5d0c-4b2c-8add-8831d2d00c8f">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column4"/>
+						<jr:columnHeader style="Table_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="50" height="30" uuid="2c8e5467-6135-4047-8c3d-837340c9b3ce"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<text><![CDATA[Peso]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="Table_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="50" height="30" uuid="05d6311d-5fd1-47ed-afbc-542dd0dfa671"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<textFieldExpression><![CDATA[String.format("%.2f",(double)($F{peso}))]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="60" uuid="9d6941ad-2d39-42a3-b087-7540212064b2">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column5"/>
+						<jr:columnHeader style="Table_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="60" height="30" uuid="191fed7b-acca-45e6-99f4-004f077abd08"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<text><![CDATA[Pr_unit]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="Table_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="60" height="30" uuid="906a517e-25eb-4aae-8b57-3d3e7fdec637"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<textFieldExpression><![CDATA[String.format("%.2f",(double)($F{pr_unit}))]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="85" uuid="ce640a7c-57ea-430f-bd4f-90ce0c9b1a5e">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column6"/>
+						<jr:columnHeader style="Table_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="85" height="30" uuid="b48ecc6b-0a83-4dd5-aaef-0b29ac9e8a74"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<text><![CDATA[Tot_giacenza]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="Table_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="85" height="30" uuid="9bc53535-aa9d-47cf-bdee-3a8b0ee00989"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<textFieldExpression><![CDATA[String.format("%.2f",(double)($F{tot_giacenza}))]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+				</jr:table>
+			</componentElement>
+		</band>
+	</pageHeader>
+</jasperReport>

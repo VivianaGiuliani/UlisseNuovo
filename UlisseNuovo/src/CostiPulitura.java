@@ -16,79 +16,114 @@ import java.sql.Statement;
 import java.util.ArrayList;
 
 public class CostiPulitura {
-    public static void main (String [] args) {
+		private JFrame window;
+		private ImageIcon imageSfondo;
+		private JLabel labelSfondo;
+    public CostiPulitura() {
     	JFrame window = new JFrame();
 		window.setSize(1250, 700);
 		window.setTitle("Costi Pulitura e Trattamento");
 		window.setResizable(false);
+		
+		labelSfondo = new JLabel(imageSfondo);
+		labelSfondo.setSize(1400, 800);
+	        
+	    imageSfondo = new ImageIcon(this.getClass().getResource("/Images/background.png"));
+	    Image img = imageSfondo.getImage();
+	    Image imgScale = img.getScaledInstance(labelSfondo.getWidth(), labelSfondo.getHeight(), Image.SCALE_DEFAULT);
+	    ImageIcon scaledIcon = new ImageIcon(imgScale);
+	    labelSfondo.setIcon(scaledIcon);
+	       
+	    window.add(labelSfondo);
 
-        JLabel listinoCostoPulituraLabel = new JLabel("Listino Costo Pulitura");
-        listinoCostoPulituraLabel.setFont(new Font("Courier", Font.BOLD, 20));
-        listinoCostoPulituraLabel.setBounds(30, 10, 300, 30);
-        window.add(listinoCostoPulituraLabel);
+        JLabel listinoCostoPulituraLabel = new JLabel("Listino Costo Pulitura e Trattamento");
+        listinoCostoPulituraLabel.setFont(new Font("", Font.BOLD, 20));
+        listinoCostoPulituraLabel.setBounds(10, 10, 400, 30);
+        listinoCostoPulituraLabel.setForeground(new java.awt.Color(255,255,255));
+        labelSfondo.add(listinoCostoPulituraLabel);
 
         JLabel descrizione_label = new JLabel("Descrizione");
-        descrizione_label.setFont(new Font("Courier", Font.PLAIN, 10));
+        descrizione_label.setFont(new Font("", Font.PLAIN, 15));
         descrizione_label.setBounds(10, 50, 100, 20);
-        window.add(descrizione_label);
+        descrizione_label.setForeground(new java.awt.Color(255,255,255));
+        labelSfondo.add(descrizione_label);
 
-        JTextArea descrizione_textbox = new JTextArea();
+        JTextField descrizione_textbox = new JTextField();
         descrizione_textbox.setBounds(10, 70, 150, 40);
-        window.add(descrizione_textbox);
+        descrizione_textbox.setFont(new Font("", Font.PLAIN, 20));
+        descrizione_textbox.setBackground(new java.awt.Color(203, 203, 146));
+        labelSfondo.add(descrizione_textbox);
         
         JLabel pulitura_label = new JLabel("Pulitura");
-        pulitura_label.setFont(new Font("Courier", Font.PLAIN, 10));
+        pulitura_label.setFont(new Font("", Font.PLAIN, 15));
         pulitura_label.setBounds(170, 50, 50, 20);
-        window.add(pulitura_label);
+        pulitura_label.setForeground(new java.awt.Color(255,255,255));
+        labelSfondo.add(pulitura_label);
 
-        JTextArea pulitura_textbox = new JTextArea();
+        JTextField pulitura_textbox = new JTextField();
         pulitura_textbox.setBounds(170, 70, 150, 40);
-        window.add(pulitura_textbox);
+        pulitura_textbox.setFont(new Font("", Font.PLAIN, 20));
+        pulitura_textbox.setBackground(new java.awt.Color(203, 203, 146));
+        labelSfondo.add(pulitura_textbox);
         
         JLabel trattamento_label = new JLabel("Trattamento");
-        trattamento_label.setFont(new Font("Courier", Font.PLAIN, 10));
+        trattamento_label.setFont(new Font("", Font.PLAIN, 15));
         trattamento_label.setBounds(330, 50, 100, 20);
-        window.add(trattamento_label);
+        trattamento_label.setForeground(new java.awt.Color(255,255,255));
+        labelSfondo.add(trattamento_label);
 
-        JTextArea trattamento_textbox = new JTextArea();
+        JTextField trattamento_textbox = new JTextField();
         trattamento_textbox.setBounds(330, 70, 150, 40);
-        window.add(trattamento_textbox);
+        trattamento_textbox.setFont(new Font("", Font.PLAIN, 20));
+        trattamento_textbox.setBackground(new java.awt.Color(203, 203, 146));
+        labelSfondo.add(trattamento_textbox);
         
         JButton inserisci_costo_button = new JButton("Inserisci costo");
         inserisci_costo_button.setBounds(490, 70, 130, 40);
-        window.add(inserisci_costo_button);
+        inserisci_costo_button.setBackground(new java.awt.Color(255,209,110));
+        labelSfondo.add(inserisci_costo_button);
 
         JButton elimina_costo_button = new JButton("Elimina costo");
         elimina_costo_button.setBounds(630, 70, 130, 40);
-        window.add(elimina_costo_button);
+        elimina_costo_button.setBackground(new java.awt.Color(255,209,110));
+        labelSfondo.add(elimina_costo_button);
 
-        JTextArea aumento_pulitura_textbox = new JTextArea();
+        JTextField aumento_pulitura_textbox = new JTextField();
         aumento_pulitura_textbox.setBounds(10, 120, 150, 40);
-        window.add(aumento_pulitura_textbox);
+        aumento_pulitura_textbox.setFont(new Font("", Font.PLAIN, 20));
+        aumento_pulitura_textbox.setBackground(new java.awt.Color(156, 191, 171));
+        labelSfondo.add(aumento_pulitura_textbox);
         
         JButton aumento_pulitura_button = new JButton("Aumento pulitura");
         aumento_pulitura_button.setBounds(170, 120, 150, 40);
-        window.add(aumento_pulitura_button);
+        aumento_pulitura_button.setBackground(new java.awt.Color(0, 255, 255));
+        labelSfondo.add(aumento_pulitura_button);
         
-        JTextArea aumento_trattamento_textbox = new JTextArea();
+        JTextField aumento_trattamento_textbox = new JTextField();
         aumento_trattamento_textbox.setBounds(330, 120, 150, 40);
-        window.add(aumento_trattamento_textbox);
+        aumento_trattamento_textbox.setFont(new Font("", Font.PLAIN, 20));
+        aumento_trattamento_textbox.setBackground(new java.awt.Color(156, 191, 171));
+        labelSfondo.add(aumento_trattamento_textbox);
         
         JButton aumento_trattamento_button = new JButton("Aumento trattamento");
         aumento_trattamento_button.setBounds(490, 120, 170, 40);
-        window.add(aumento_trattamento_button);
+        aumento_trattamento_button.setBackground(new java.awt.Color(0, 255, 255));
+        labelSfondo.add(aumento_trattamento_button);
         
         JButton ordine_codice_button = new JButton("Ordine per codice");
         ordine_codice_button.setBounds(1000, 10, 150, 40);
-        window.add(ordine_codice_button);
+        ordine_codice_button.setBackground(new java.awt.Color(250,255,133));
+        labelSfondo.add(ordine_codice_button);
         
         JButton ordine_naturale_button = new JButton("Ordine naturale");
         ordine_naturale_button.setBounds(1000, 60, 150, 40);
-        window.add(ordine_naturale_button);
+        ordine_naturale_button.setBackground(new java.awt.Color(250,255,133));
+        labelSfondo.add(ordine_naturale_button);
         
         JButton stampa_button = new JButton("Stampa");
         stampa_button.setBounds(1000, 110, 150, 40);
-        window.add(stampa_button);
+        stampa_button.setBackground(new java.awt.Color(46, 255, 171));
+        labelSfondo.add(stampa_button);
         
         JPanel tablePanel = new JPanel();
         tablePanel.setLayout(null);
@@ -105,7 +140,7 @@ public class CostiPulitura {
         
         scrollPane.setViewportView(table);
         tablePanel.add(scrollPane);
-        window.add(tablePanel);
+        labelSfondo.add(tablePanel);
         
 
         ArrayList<CostoPulitura> costiPulitura = costiPulituraDaDb();
@@ -119,9 +154,9 @@ public class CostiPulitura {
             public void actionPerformed(ActionEvent e) {
             	int aumento = Integer.parseInt(aumento_pulitura_textbox.getText());
             	
-            	for(int i=0; i < costiPulitura.size(); i++) {
-            		modificaPulituraDb(costiPulitura.get(i), aumento);
-               	}
+            	
+            	modificaPulituraDb(costiPulitura, aumento);
+               	
                	model.setRowCount(0);
                 ArrayList<CostoPulitura> costiPulitura = costiPulituraDaDb();
                   	
@@ -138,9 +173,9 @@ public class CostiPulitura {
             public void actionPerformed(ActionEvent e) {
             	int aumento = Integer.parseInt(aumento_trattamento_textbox.getText());
             	
-            	for(int i=0; i < costiPulitura.size(); i++) {
-            		modificaTrattamentoDb(costiPulitura.get(i), aumento);
-               	}
+            	
+            	modificaTrattamentoDb(costiPulitura, aumento);
+               	
                	model.setRowCount(0);
                 ArrayList<CostoPulitura> costiPulitura = costiPulituraDaDb();
                   	
@@ -428,19 +463,24 @@ public class CostiPulitura {
 		
     }
     
-    public static void modificaPulituraDb(CostoPulitura costoPulitura, int aumento){
+    public static void modificaPulituraDb(ArrayList<CostoPulitura> costiPulitura, int aumento){
 		PreparedStatement st = null;
     	Connection con  = Database.connect();
-    	double pulitura = costoPulitura.getPulitura();
-    	double perc = pulitura;
-    	double oper = (((perc/100)* aumento )+perc);
-    	System.out.println("oper: " + oper);
-    	
     	try {
-            st = con.prepareStatement("UPDATE sys.costi_pulitura SET pulitura = ?;");
-            st.setDouble(1, oper);
-            st.executeUpdate();
-            con.close();
+	    	 for(int i = 0; i < costiPulitura.size(); i++) {
+	 			
+	 			double vendita = costiPulitura.get(i).getPulitura();
+	 	    	double perc = vendita;
+	 	    	double oper = (((perc/100)* aumento )+perc);
+	 	    	oper = Math.ceil(oper);
+	 			st = con.prepareStatement("UPDATE sys.costi_pulitura SET pulitura = ? WHERE codice = ?;");
+	             st.setDouble(1, oper);
+	             st.setString(2, costiPulitura.get(i).getCodice());
+	             st.executeUpdate();
+	 		}
+ 		
+         
+         con.close();
             
         } catch (SQLException ex) {
         	ex.printStackTrace();
@@ -462,18 +502,24 @@ public class CostiPulitura {
 		
     }
     
-    public static void modificaTrattamentoDb(CostoPulitura costoPulitura, int aumento){
+    public static void modificaTrattamentoDb(ArrayList<CostoPulitura> costiPulitura, int aumento){
 		PreparedStatement st = null;
     	Connection con  = Database.connect();
-    	double pulitura = costoPulitura.getTrattamento();
-    	double perc = pulitura;
-    	double oper = (((perc/100)* aumento )+perc);
-    	System.out.println("oper: " + oper);
     	
     	try {
-            st = con.prepareStatement("UPDATE sys.costi_pulitura SET trattamento = ?;");
-            st.setDouble(1, oper);
-            st.executeUpdate();
+            for(int i = 0; i < costiPulitura.size(); i++) {
+    			
+    			double vendita = costiPulitura.get(i).getTrattamento();
+    	    	double perc = vendita;
+    	    	double oper = (((perc/100)* aumento )+perc);
+    	    	oper = Math.ceil(oper);
+    			st = con.prepareStatement("UPDATE sys.costi_pulitura SET trattamento = ? WHERE codice = ?;");
+                st.setDouble(1, oper);
+                st.setString(2, costiPulitura.get(i).getCodice());
+                st.executeUpdate();
+    		}
+    		
+            
             con.close();
             
         } catch (SQLException ex) {

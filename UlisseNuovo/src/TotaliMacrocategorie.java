@@ -14,38 +14,57 @@ import java.sql.Statement;
 import java.util.ArrayList;
 
 public class TotaliMacrocategorie  {
+		private JFrame window;
+		private ImageIcon imageSfondo;
+		private JLabel labelSfondo;
     public TotaliMacrocategorie(){
     	JFrame window = new JFrame();
 		window.setSize(700, 700);
 		window.setTitle("Totali Macrocategorie");
 		window.setResizable(false);
+		
+		labelSfondo = new JLabel(imageSfondo);
+		labelSfondo.setSize(1400, 800);
+	        
+	    imageSfondo = new ImageIcon(this.getClass().getResource("/Images/background.png"));
+	    Image img = imageSfondo.getImage();
+	    Image imgScale = img.getScaledInstance(labelSfondo.getWidth(), labelSfondo.getHeight(), Image.SCALE_DEFAULT);
+	    ImageIcon scaledIcon = new ImageIcon(imgScale);
+	    labelSfondo.setIcon(scaledIcon);
+	       
+	    window.add(labelSfondo);
+
 
         JLabel titoloLabel = new JLabel("Totali Macrocategorie");
-        titoloLabel.setFont(new Font("Courier", Font.PLAIN, 15));
-        titoloLabel.setBounds(10, 10, 200, 20);
-        window.add(titoloLabel);
+        titoloLabel.setFont(new Font("", Font.PLAIN, 20));
+        titoloLabel.setBounds(10, 10, 200, 30);
+        titoloLabel.setForeground(new java.awt.Color(255,255,255));
+        labelSfondo.add(titoloLabel);
 
         JLabel daCatLabel = new JLabel("Da Cat.");
-        daCatLabel.setFont(new Font("Courier", Font.PLAIN, 12));
-        daCatLabel.setBounds(10, 40, 200, 20);
-        window.add(daCatLabel);
+        daCatLabel.setFont(new Font("", Font.PLAIN, 12));
+        daCatLabel.setBounds(10, 50, 200, 20);
+        daCatLabel.setForeground(new java.awt.Color(255,255,255));
+        labelSfondo.add(daCatLabel);
 
         JTextField daCatTextField = new JTextField();
         daCatTextField.setBounds(10, 70, 150, 30);
-        window.add(daCatTextField);
+        labelSfondo.add(daCatTextField);
 
         JLabel aCatLabel = new JLabel("A Cat.");
-        aCatLabel.setFont(new Font("Courier", Font.PLAIN, 12));
-        aCatLabel.setBounds(180, 40, 200, 20);
-        window.add(aCatLabel);
+        aCatLabel.setFont(new Font("", Font.PLAIN, 12));
+        aCatLabel.setBounds(170, 50, 200, 20);
+        aCatLabel.setForeground(new java.awt.Color(255,255,255));
+        labelSfondo.add(aCatLabel);
 
         JTextField aCatTextField = new JTextField();
-        aCatTextField.setBounds(180, 70, 150, 30);
-        window.add(aCatTextField);
+        aCatTextField.setBounds(170, 70, 150, 30);
+        labelSfondo.add(aCatTextField);
 
         JButton elaborazioneButton = new JButton("Elaborazione");
         elaborazioneButton.setBounds(330, 68, 150, 35);
-        window.add(elaborazioneButton);
+        elaborazioneButton.setBackground(new java.awt.Color(132, 249, 58));
+        labelSfondo.add(elaborazioneButton);
 
         JPanel tablePanel = new JPanel();
         tablePanel.setLayout(null);
@@ -60,7 +79,7 @@ public class TotaliMacrocategorie  {
         
         scrollPane.setViewportView(table);
         tablePanel.add(scrollPane);
-        window.add(tablePanel);
+        labelSfondo.add(tablePanel);
         elaborazioneButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
             	int partenza = Integer.parseInt(daCatTextField.getText());

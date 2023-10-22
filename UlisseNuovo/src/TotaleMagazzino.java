@@ -13,79 +13,101 @@ import java.sql.Statement;
 import java.util.ArrayList;
 
 public class TotaleMagazzino {
-
+		private JFrame window;
+		private ImageIcon imageSfondo;
+		private JLabel labelSfondo;
     public TotaleMagazzino() {
-    	JFrame window = new JFrame();
+    	window = new JFrame();
 		window.setSize(500, 400);
 		window.setTitle("Totale Magazzino");
 		window.setResizable(false);
 		
+		labelSfondo = new JLabel(imageSfondo);
+		labelSfondo.setSize(1400, 800);
+	        
+	    imageSfondo = new ImageIcon(this.getClass().getResource("/Images/background.png"));
+	    Image img = imageSfondo.getImage();
+	    Image imgScale = img.getScaledInstance(labelSfondo.getWidth(), labelSfondo.getHeight(), Image.SCALE_DEFAULT);
+	    ImageIcon scaledIcon = new ImageIcon(imgScale);
+	    labelSfondo.setIcon(scaledIcon);
+	       
+	    window.add(labelSfondo);
+		
         JLabel titoloLabel = new JLabel("Totale Magazzino");
-        titoloLabel.setFont(new Font("Courier", Font.PLAIN, 15));
-        titoloLabel.setBounds(150, 10, 200, 20);
-        window.add(titoloLabel);
+        titoloLabel.setFont(new Font("", Font.BOLD, 20));
+        titoloLabel.setBounds(150, 10, 200, 30);
+        titoloLabel.setForeground(new java.awt.Color(255,255,255));
+        labelSfondo.add(titoloLabel);
 
         JLabel totGiacFissoLabel = new JLabel("Totale Giacenza Fisso");
-        totGiacFissoLabel.setFont(new Font("Courier", Font.PLAIN, 12));
+        totGiacFissoLabel.setFont(new Font("", Font.BOLD, 12));
         totGiacFissoLabel.setBounds(10, 50, 200, 20);
-        window.add(totGiacFissoLabel);
+        totGiacFissoLabel.setForeground(new java.awt.Color(255,255,255));
+        labelSfondo.add(totGiacFissoLabel);
 
         JTextField totGiacFissoTextField = new JTextField();
         totGiacFissoTextField.setBounds(300, 50, 150, 30);
-        window.add(totGiacFissoTextField);
+        labelSfondo.add(totGiacFissoTextField);
 
         JLabel totGiacVarLabel = new JLabel("Totale Giacenza Variabile");
-        totGiacVarLabel.setFont(new Font("Courier", Font.PLAIN, 12));
+        totGiacVarLabel.setFont(new Font("", Font.BOLD, 12));
         totGiacVarLabel.setBounds(10, 90, 200, 20);
-        window.add(totGiacVarLabel);
+        totGiacVarLabel.setForeground(new java.awt.Color(255,255,255));
+        labelSfondo.add(totGiacVarLabel);
 
         JTextField totGiacVarTextField = new JTextField();
         totGiacVarTextField.setBounds(300, 90, 150, 30);
-        window.add(totGiacVarTextField);
+        labelSfondo.add(totGiacVarTextField);
 
         JLabel totGiacLabel = new JLabel("Totale Giacenza");
-        totGiacLabel.setFont(new Font("Courier", Font.PLAIN, 12));
+        totGiacLabel.setFont(new Font("", Font.BOLD, 12));
         totGiacLabel.setBounds(10, 130, 200, 20);
-        window.add(totGiacLabel);
+        totGiacLabel.setForeground(new java.awt.Color(255,255,255));
+        labelSfondo.add(totGiacLabel);
 
         JTextField totGiacTextField = new JTextField();
         totGiacTextField.setBounds(300, 130, 150, 30);
-        window.add(totGiacTextField);
+        labelSfondo.add(totGiacTextField);
 
         JLabel totCostoFissoLabel = new JLabel("Totale Costo Fisso");
-        totCostoFissoLabel.setFont(new Font("Courier", Font.PLAIN, 12));
+        totCostoFissoLabel.setFont(new Font("", Font.BOLD, 12));
         totCostoFissoLabel.setBounds(10, 170, 200, 20);
-        window.add(totCostoFissoLabel);
+        totCostoFissoLabel.setForeground(new java.awt.Color(255,255,255));
+        labelSfondo.add(totCostoFissoLabel);
 
         JTextField totCostoFissoTextField = new JTextField();
         totCostoFissoTextField.setBounds(300, 170, 150, 30);
-        window.add(totCostoFissoTextField);
+        labelSfondo.add(totCostoFissoTextField);
 
         JLabel totCostoVarLabel = new JLabel("Totale Costo Variabile");
-        totCostoVarLabel.setFont(new Font("Courier", Font.PLAIN, 12));
+        totCostoVarLabel.setFont(new Font("", Font.BOLD, 12));
         totCostoVarLabel.setBounds(10, 210, 200, 20);
-        window.add(totCostoVarLabel);
+        totCostoVarLabel.setForeground(new java.awt.Color(255,255,255));
+        labelSfondo.add(totCostoVarLabel);
 
         JTextField totCostoVarTextField = new JTextField();
         totCostoVarTextField.setBounds(300, 210, 150, 30);
-        window.add(totCostoVarTextField);
+        labelSfondo.add(totCostoVarTextField);
 
         JLabel totCostoLabel = new JLabel("Totale Costo");
-        totCostoLabel.setFont(new Font("Courier", Font.PLAIN, 12));
+        totCostoLabel.setFont(new Font("", Font.BOLD, 12));
         totCostoLabel.setBounds(10, 250, 200, 20);
-        window.add(totCostoLabel);
+        totCostoLabel.setForeground(new java.awt.Color(255,255,255));
+        labelSfondo.add(totCostoLabel);
 
         JTextField totCostoTextField = new JTextField();
         totCostoTextField.setBounds(300, 250, 150, 30);
-        window.add(totCostoTextField);
+        labelSfondo.add(totCostoTextField);
 
         JButton stampaSaldiButton = new JButton("Stampa Saldi");
         stampaSaldiButton.setBounds(10, 300, 150, 35);
-        window.add(stampaSaldiButton);
+        stampaSaldiButton.setBackground(new java.awt.Color(132, 249, 58));
+        labelSfondo.add(stampaSaldiButton);
 
         JButton stampaDettaglioButton = new JButton("Stampa Dettaglio");
         stampaDettaglioButton.setBounds(170, 300, 150, 35);
-        window.add(stampaDettaglioButton);
+        stampaDettaglioButton.setBackground(new java.awt.Color(132, 249, 58));
+        labelSfondo.add(stampaDettaglioButton);
         
         ArrayList<Integer> valoriF = valoriArticoliDaDb("F");
         int valoreF = 0;

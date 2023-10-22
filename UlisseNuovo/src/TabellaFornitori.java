@@ -2,9 +2,12 @@ import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 
 import Classi.Database;
+import Classi.ReportCategorie;
+import Classi.ReportFornitori;
 import Oggetti.Articolo;
 import Oggetti.Categoria;
 import Oggetti.Fornitore;
+import net.sf.jasperreports.engine.JRException;
 
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -18,39 +21,63 @@ import java.util.ArrayList;
 import java.util.Vector;
 
 public class TabellaFornitori{
-
+		private JFrame window;
+		private ImageIcon imageSfondo;
+		private JLabel labelSfondo;
     public TabellaFornitori(){
-    	JFrame window = new JFrame();
+    	window = new JFrame();
         window.setSize(600, 700);
         window.setTitle("Tabella Fornitori");
         window.setResizable(false);
         
+        labelSfondo = new JLabel(imageSfondo);
+		labelSfondo.setSize(1400, 800);
+	        
+	    imageSfondo = new ImageIcon(this.getClass().getResource("/Images/background.png"));
+	    Image img = imageSfondo.getImage();
+	    Image imgScale = img.getScaledInstance(labelSfondo.getWidth(), labelSfondo.getHeight(), Image.SCALE_DEFAULT);
+	    ImageIcon scaledIcon = new ImageIcon(imgScale);
+	    labelSfondo.setIcon(scaledIcon);
+	       
+	    window.add(labelSfondo);
+        
         JButton inserisci_fornitore_button = new JButton("Inserisci fornitore");
         inserisci_fornitore_button.setBounds(10, 20, 150, 40);
-        window.add(inserisci_fornitore_button);
+        inserisci_fornitore_button.setBackground(new java.awt.Color(132, 249, 58));
+        labelSfondo.add(inserisci_fornitore_button);
      
 
         JButton elimina_fornitore_button = new JButton("Elimina fornitore");
         elimina_fornitore_button.setBounds(170, 20, 150, 40);
-        window.add(elimina_fornitore_button);
+        elimina_fornitore_button.setBackground(new java.awt.Color(132, 249, 58));
+        labelSfondo.add(elimina_fornitore_button);
+        
+        JButton stampa_fornitore_button = new JButton("Stampa fornitori");
+        stampa_fornitore_button.setBounds(340, 20, 150, 40);
+        stampa_fornitore_button.setBackground(new java.awt.Color(203, 203, 146));
+        labelSfondo.add(stampa_fornitore_button);
         
         JLabel codice_label = new JLabel("Codice");
-        codice_label.setFont(new Font("Courier", Font.PLAIN, 15));
+        codice_label.setFont(new Font("", Font.PLAIN, 15));
         codice_label.setBounds(10, 70, 100, 20);
-        window.add(codice_label);
+        codice_label.setForeground(new java.awt.Color(255,255,255));
+        labelSfondo.add(codice_label);
 
-        JTextArea codice_textbox = new JTextArea();
+        JTextField codice_textbox = new JTextField();
         codice_textbox.setBounds(10, 95, 100, 30);
-        window.add(codice_textbox);
+        codice_textbox.setBackground(new java.awt.Color(203, 203, 146));
+        labelSfondo.add(codice_textbox);
         
         JLabel nome_label = new JLabel("Nome");
-        nome_label.setFont(new Font("Courier", Font.PLAIN, 15));
+        nome_label.setFont(new Font("", Font.PLAIN, 15));
         nome_label.setBounds(120, 70, 100, 20);
-        window.add(nome_label);
+        nome_label.setForeground(new java.awt.Color(255,255,255));
+        labelSfondo.add(nome_label);
 
-        JTextArea nome_textbox = new JTextArea();
+        JTextField nome_textbox = new JTextField();
         nome_textbox.setBounds(120, 95, 300, 30);
-        window.add(nome_textbox);
+        nome_textbox.setBackground(new java.awt.Color(203, 203, 146));
+        labelSfondo.add(nome_textbox);
 
         JPanel tablePanel = new JPanel();
         tablePanel.setLayout(null);
@@ -67,7 +94,7 @@ public class TabellaFornitori{
         
         scrollPane.setViewportView(table);
         tablePanel.add(scrollPane);
-        window.add(tablePanel);
+        labelSfondo.add(tablePanel);
         
         ArrayList<Fornitore> fornitori = fornitoriDaDb();
     	
@@ -86,6 +113,9 @@ public class TabellaFornitori{
             	
             	inserisciFornitoreDb(fornitore);
             	
+            	codice_textbox.setText(null);
+            	nome_textbox.setText(null);
+            	
             }
         });
         
@@ -99,6 +129,18 @@ public class TabellaFornitori{
             	
             }
         });
+        
+        stampa_fornitore_button.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+            	ReportFornitori r = new ReportFornitori();
+            	try {
+					r.generaReport();
+				} catch (JRException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+            }
+    	});
     	
     }
     
