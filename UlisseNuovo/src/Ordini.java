@@ -18,14 +18,24 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.JTextArea;
+<<<<<<< HEAD
 import javax.swing.table.DefaultTableCellRenderer;
+=======
+>>>>>>> b3f423dce0bf0d73c6a9c24aaf71265d864d2beb
 import javax.swing.table.DefaultTableModel;
 
 import Classi.Database;
 import Classi.ReportArticoli;
 import Classi.ReportOrdini;
 import Oggetti.Articolo;
+<<<<<<< HEAD
 import Oggetti.Oralux;
+=======
+<<<<<<< HEAD
+import Oggetti.Oralux;
+=======
+>>>>>>> 92ba0878318a769571cc1e9456393151517d6ac3
+>>>>>>> b3f423dce0bf0d73c6a9c24aaf71265d864d2beb
 import Oggetti.Ordine;
 import net.sf.jasperreports.engine.JRException;
 
@@ -33,12 +43,30 @@ public class Ordini {
 	private JFrame window;
 	private ImageIcon imageSfondo;
 	private JLabel labelSfondo;
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> b3f423dce0bf0d73c6a9c24aaf71265d864d2beb
 	double tot_peso = 0.0;
   	double tot_ordine = 0.0;
 	public Ordini() {
 		window = new JFrame();
 		window.setSize(1250, 750);
 		window.setTitle("Ordini");
+<<<<<<< HEAD
+=======
+=======
+	
+	public Ordini() {
+		window = new JFrame();
+		window.setSize(1250, 750);
+<<<<<<< HEAD
+		window.setTitle("Ordini");
+=======
+		window.setTitle("Distinte");
+>>>>>>> 97d6a1e316ffb1793448fdb10739e9339f2b7ba9
+>>>>>>> 92ba0878318a769571cc1e9456393151517d6ac3
+>>>>>>> b3f423dce0bf0d73c6a9c24aaf71265d864d2beb
 		window.setResizable(false);
 		
 		labelSfondo = new JLabel(imageSfondo);
@@ -53,44 +81,100 @@ public class Ordini {
 	    window.add(labelSfondo);
 	    
 	    JLabel ordini_label = new JLabel("Ordini");
+<<<<<<< HEAD
 	    ordini_label.setFont(new Font("", Font.PLAIN, 30));
+=======
+<<<<<<< HEAD
+	    ordini_label.setFont(new Font("", Font.PLAIN, 30));
+=======
+	    ordini_label.setFont(new Font("Courier", Font.PLAIN, 30));
+>>>>>>> 92ba0878318a769571cc1e9456393151517d6ac3
+>>>>>>> b3f423dce0bf0d73c6a9c24aaf71265d864d2beb
 	    ordini_label.setBounds(10, 10, 400, 40);
 	    ordini_label.setForeground(new java.awt.Color(255,255,255));
         labelSfondo.add(ordini_label);
 	    
 	    JLabel n_ordine_label = new JLabel("N° Ordine");
+<<<<<<< HEAD
 	    n_ordine_label.setFont(new Font("", Font.PLAIN, 15));
+=======
+<<<<<<< HEAD
+	    n_ordine_label.setFont(new Font("", Font.PLAIN, 15));
+=======
+	    n_ordine_label.setFont(new Font("Courier", Font.PLAIN, 15));
+>>>>>>> 92ba0878318a769571cc1e9456393151517d6ac3
+>>>>>>> b3f423dce0bf0d73c6a9c24aaf71265d864d2beb
 	    n_ordine_label.setForeground(new java.awt.Color(255,255,255));
 	    n_ordine_label.setBounds(10, 50, 100, 20);
         labelSfondo.add(n_ordine_label);
 
         JTextArea n_ordine_textbox = new JTextArea();
         n_ordine_textbox.setBounds(10, 70, 150, 40);
+<<<<<<< HEAD
         n_ordine_textbox.setFont(new Font("", Font.PLAIN, 20));
+=======
+<<<<<<< HEAD
+        n_ordine_textbox.setFont(new Font("", Font.PLAIN, 20));
+=======
+        n_ordine_textbox.setFont(new Font("Courier", Font.PLAIN, 20));
+>>>>>>> 92ba0878318a769571cc1e9456393151517d6ac3
+>>>>>>> b3f423dce0bf0d73c6a9c24aaf71265d864d2beb
         n_ordine_textbox.setBackground(new java.awt.Color(203, 203, 146));
         labelSfondo.add(n_ordine_textbox);
         
         JLabel data_label = new JLabel("Data");
+<<<<<<< HEAD
         data_label.setFont(new Font("", Font.PLAIN, 15));
+=======
+<<<<<<< HEAD
+        data_label.setFont(new Font("", Font.PLAIN, 15));
+=======
+        data_label.setFont(new Font("Courier", Font.PLAIN, 15));
+>>>>>>> 92ba0878318a769571cc1e9456393151517d6ac3
+>>>>>>> b3f423dce0bf0d73c6a9c24aaf71265d864d2beb
         data_label.setForeground(new java.awt.Color(255,255,255));
         data_label.setBounds(170, 50, 100, 20);
         labelSfondo.add(data_label);
 
         JTextArea data_textbox = new JTextArea();
         data_textbox.setBounds(170, 70, 150, 40);
+<<<<<<< HEAD
         data_textbox.setFont(new Font("", Font.PLAIN, 20));
+=======
+<<<<<<< HEAD
+        data_textbox.setFont(new Font("", Font.PLAIN, 20));
+=======
+        data_textbox.setFont(new Font("Courier", Font.PLAIN, 20));
+>>>>>>> 92ba0878318a769571cc1e9456393151517d6ac3
+>>>>>>> b3f423dce0bf0d73c6a9c24aaf71265d864d2beb
         data_textbox.setBackground(new java.awt.Color(203, 203, 146));
         labelSfondo.add(data_textbox);
         
         JLabel fornitore_label = new JLabel("Fornitore");
+<<<<<<< HEAD
         fornitore_label.setFont(new Font("", Font.PLAIN, 15));
+=======
+<<<<<<< HEAD
+        fornitore_label.setFont(new Font("", Font.PLAIN, 15));
+=======
+        fornitore_label.setFont(new Font("Courier", Font.PLAIN, 15));
+>>>>>>> 92ba0878318a769571cc1e9456393151517d6ac3
+>>>>>>> b3f423dce0bf0d73c6a9c24aaf71265d864d2beb
         fornitore_label.setForeground(new java.awt.Color(255,255,255));
         fornitore_label.setBounds(330, 50, 100, 20);
         labelSfondo.add(fornitore_label);
 
         JTextArea fornitore_textbox = new JTextArea();
         fornitore_textbox.setBounds(330, 70, 250, 40);
+<<<<<<< HEAD
         fornitore_textbox.setFont(new Font("", Font.PLAIN, 20));
+=======
+<<<<<<< HEAD
+        fornitore_textbox.setFont(new Font("", Font.PLAIN, 20));
+=======
+        fornitore_textbox.setFont(new Font("Courier", Font.PLAIN, 20));
+>>>>>>> 92ba0878318a769571cc1e9456393151517d6ac3
+>>>>>>> b3f423dce0bf0d73c6a9c24aaf71265d864d2beb
         fornitore_textbox.setBackground(new java.awt.Color(203, 203, 146));
         labelSfondo.add(fornitore_textbox);
         
@@ -107,12 +191,21 @@ public class Ordini {
 		elimina_riga_button.setBackground(new java.awt.Color(178,255,102));
 		labelSfondo.add(elimina_riga_button);
 		
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> b3f423dce0bf0d73c6a9c24aaf71265d864d2beb
 		JButton aggiorna_button = new JButton("Aggiorna Tabella");
 		aggiorna_button.setBounds(330, 120, 150, 40);
 		aggiorna_button.setVisible(true);
 		aggiorna_button.setBackground(new java.awt.Color(178,255,102));
 		labelSfondo.add(aggiorna_button);
 		
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 92ba0878318a769571cc1e9456393151517d6ac3
+>>>>>>> b3f423dce0bf0d73c6a9c24aaf71265d864d2beb
 		JButton stampa_button = new JButton("Stampa");
 		stampa_button.setBounds(600, 120, 150, 40);
 		stampa_button.setVisible(true);
@@ -132,6 +225,7 @@ public class Ordini {
 	    JTable table = new JTable(model);
 	    table.setAutoResizeMode(JTable.AUTO_RESIZE_ALL_COLUMNS);
 	    
+<<<<<<< HEAD
 	    DefaultTableCellRenderer rightRenderer = new DefaultTableCellRenderer();
         rightRenderer.setHorizontalAlignment(JLabel.RIGHT);
         table.getColumnModel().getColumn(0).setCellRenderer(rightRenderer);
@@ -140,37 +234,75 @@ public class Ordini {
         table.getColumnModel().getColumn(5).setCellRenderer(rightRenderer);
         table.getColumnModel().getColumn(6).setCellRenderer(rightRenderer);
 	    
+=======
+>>>>>>> b3f423dce0bf0d73c6a9c24aaf71265d864d2beb
 	    scrollPane.setViewportView(table);
 	    tablePanel.add(scrollPane);
 	    labelSfondo.add(tablePanel);
 	    
 	    JLabel totale_peso_label = new JLabel("Totale Peso");
+<<<<<<< HEAD
 	    totale_peso_label.setFont(new Font("", Font.PLAIN, 15));
+=======
+<<<<<<< HEAD
+	    totale_peso_label.setFont(new Font("", Font.PLAIN, 15));
+=======
+	    totale_peso_label.setFont(new Font("Courier", Font.PLAIN, 15));
+>>>>>>> 92ba0878318a769571cc1e9456393151517d6ac3
+>>>>>>> b3f423dce0bf0d73c6a9c24aaf71265d864d2beb
 	    totale_peso_label.setForeground(new java.awt.Color(255,255,255));
 	    totale_peso_label.setBounds(860, 100, 100, 20);
         labelSfondo.add(totale_peso_label);
 
         JTextArea totale_peso_textbox = new JTextArea();
         totale_peso_textbox.setBounds(860, 120, 150, 40);
+<<<<<<< HEAD
         totale_peso_textbox.setFont(new Font("", Font.PLAIN, 20));
+=======
+<<<<<<< HEAD
+        totale_peso_textbox.setFont(new Font("", Font.PLAIN, 20));
+=======
+        totale_peso_textbox.setFont(new Font("Courier", Font.PLAIN, 20));
+>>>>>>> 92ba0878318a769571cc1e9456393151517d6ac3
+>>>>>>> b3f423dce0bf0d73c6a9c24aaf71265d864d2beb
         totale_peso_textbox.setBackground(new java.awt.Color(203, 203, 146));
         labelSfondo.add(totale_peso_textbox);
         
         JLabel totale_ordine_label = new JLabel("Totale Ordine €");
+<<<<<<< HEAD
         totale_ordine_label.setFont(new Font("", Font.PLAIN, 15));
+=======
+<<<<<<< HEAD
+        totale_ordine_label.setFont(new Font("", Font.PLAIN, 15));
+=======
+        totale_ordine_label.setFont(new Font("Courier", Font.PLAIN, 15));
+>>>>>>> 92ba0878318a769571cc1e9456393151517d6ac3
+>>>>>>> b3f423dce0bf0d73c6a9c24aaf71265d864d2beb
         totale_ordine_label.setForeground(new java.awt.Color(255,255,255));
         totale_ordine_label.setBounds(1020, 100, 100, 20);
         labelSfondo.add(totale_ordine_label);
 
         JTextArea totale_ordine_textbox = new JTextArea();
         totale_ordine_textbox.setBounds(1020, 120, 150, 40);
+<<<<<<< HEAD
         totale_ordine_textbox.setFont(new Font("", Font.PLAIN, 20));
+=======
+<<<<<<< HEAD
+        totale_ordine_textbox.setFont(new Font("", Font.PLAIN, 20));
+=======
+        totale_ordine_textbox.setFont(new Font("Courier", Font.PLAIN, 20));
+>>>>>>> 92ba0878318a769571cc1e9456393151517d6ac3
+>>>>>>> b3f423dce0bf0d73c6a9c24aaf71265d864d2beb
         totale_ordine_textbox.setBackground(new java.awt.Color(203, 203, 146));
         labelSfondo.add(totale_ordine_textbox);
 	    
 	    window.setLayout(null);
         window.setVisible(true);
         
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> b3f423dce0bf0d73c6a9c24aaf71265d864d2beb
         ArrayList<Ordine> ordini = ordiniDaDb();
         model.setRowCount(0);
         for(int i=0; i < ordini.size(); i++) {
@@ -204,6 +336,18 @@ public class Ordini {
         });
         
         
+<<<<<<< HEAD
+=======
+=======
+        
+        inserisci_riga_button.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+            	InserisciOrdine i = new InserisciOrdine();
+            }
+        });
+        
+>>>>>>> 92ba0878318a769571cc1e9456393151517d6ac3
+>>>>>>> b3f423dce0bf0d73c6a9c24aaf71265d864d2beb
         elimina_riga_button.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
             	int row = table.getSelectedRow();
@@ -224,7 +368,14 @@ public class Ordini {
 			    	ArrayList<Ordine> ordini = ordineDaDb(n_ordine);
 				    data_textbox.setText(ordini.get(0).getData());
 				    fornitore_textbox.setText(ordini.get(0).getCodice_fornitore());
+<<<<<<< HEAD
 				    model.setRowCount(0);
+=======
+<<<<<<< HEAD
+				    model.setRowCount(0);
+=======
+>>>>>>> 92ba0878318a769571cc1e9456393151517d6ac3
+>>>>>>> b3f423dce0bf0d73c6a9c24aaf71265d864d2beb
 				    for(int i=0; i < ordini.size(); i++) {
 				    		model.addRow(new Object[] {ordini.get(i).getQuantita(), ordini.get(i).getBarcode(), 
 		            				ordini.get(i).getDescrizione(), ordini.get(i).getGcad(), ordini.get(i).getTot_peso(),
@@ -307,6 +458,10 @@ public class Ordini {
 		
     }
 	
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> b3f423dce0bf0d73c6a9c24aaf71265d864d2beb
 	public static ArrayList<Ordine> ordiniDaDb(){
     	Statement st = null;
         ResultSet rs = null;
@@ -361,6 +516,11 @@ public class Ordini {
 		
     }
 	
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 92ba0878318a769571cc1e9456393151517d6ac3
+>>>>>>> b3f423dce0bf0d73c6a9c24aaf71265d864d2beb
 	public static void eliminaRigaDb(String value) {
     	String SQL = "DELETE FROM sys.ordini WHERE barcode = ? ;";
     	PreparedStatement pstmt = null;

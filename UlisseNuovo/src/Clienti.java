@@ -44,6 +44,10 @@ public class Clienti {
         window.add(labelSfondo);
 
         JLabel titolo_label = new JLabel("Titolo");
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> b3f423dce0bf0d73c6a9c24aaf71265d864d2beb
         titolo_label.setFont(new Font("", Font.PLAIN, 15));
         titolo_label.setBounds(10, 20, 70, 20);
         titolo_label.setForeground(new java.awt.Color(255,255,255));
@@ -53,30 +57,89 @@ public class Clienti {
         JComboBox<String> titolo_combobox = new JComboBox<>(titolo_values);
         titolo_combobox.setBounds(10, 40, 100, 40);
         labelSfondo.add(titolo_combobox);
+<<<<<<< HEAD
 
         JLabel nome_label = new JLabel("Nome");
         nome_label.setFont(new Font("", Font.PLAIN, 15));
+=======
+
+        JLabel nome_label = new JLabel("Nome");
+        nome_label.setFont(new Font("", Font.PLAIN, 15));
+=======
+        titolo_label.setFont(new Font("Courier", Font.PLAIN, 15));
+        titolo_label.setBounds(10, 20, 70, 20);
+        titolo_label.setForeground(new java.awt.Color(255,255,255));
+        labelSfondo.add(titolo_label);
+
+        JTextArea titolo_textbox = new JTextArea();
+        titolo_textbox.setBounds(10, 40, 100, 40);
+        titolo_textbox.setBackground(new java.awt.Color(203, 203, 146));
+        labelSfondo.add(titolo_textbox);
+
+        JLabel nome_label = new JLabel("Nome");
+        nome_label.setFont(new Font("Courier", Font.PLAIN, 15));
+>>>>>>> 92ba0878318a769571cc1e9456393151517d6ac3
+>>>>>>> b3f423dce0bf0d73c6a9c24aaf71265d864d2beb
         nome_label.setBounds(120, 20, 50, 20);
         nome_label.setForeground(new java.awt.Color(255,255,255));
         labelSfondo.add(nome_label);
 
         JTextField nome_textbox = new JTextField();
         nome_textbox.setBounds(120, 40, 200, 40);
+<<<<<<< HEAD
         nome_textbox.setFont(new Font("", Font.PLAIN, 20));
+=======
+<<<<<<< HEAD
+        nome_textbox.setFont(new Font("", Font.PLAIN, 20));
+=======
+>>>>>>> 92ba0878318a769571cc1e9456393151517d6ac3
+>>>>>>> b3f423dce0bf0d73c6a9c24aaf71265d864d2beb
         nome_textbox.setBackground(new java.awt.Color(203, 203, 146));
         labelSfondo.add(nome_textbox);
 
         JLabel codice_barre_label = new JLabel("Codice a Barre");
+<<<<<<< HEAD
         codice_barre_label.setFont(new Font("", Font.PLAIN, 15));
+=======
+<<<<<<< HEAD
+        codice_barre_label.setFont(new Font("", Font.PLAIN, 15));
+=======
+        codice_barre_label.setFont(new Font("Courier", Font.PLAIN, 15));
+>>>>>>> 92ba0878318a769571cc1e9456393151517d6ac3
+>>>>>>> b3f423dce0bf0d73c6a9c24aaf71265d864d2beb
         codice_barre_label.setBounds(330, 20, 150, 20);
         codice_barre_label.setForeground(new java.awt.Color(255,255,255));
         labelSfondo.add(codice_barre_label);
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> b3f423dce0bf0d73c6a9c24aaf71265d864d2beb
         JTextField codice_barre_textbox = new JTextField();
         codice_barre_textbox.setBounds(330, 40, 150, 40);
         codice_barre_textbox.setFont(new Font("", Font.PLAIN, 20));
         codice_barre_textbox.setBackground(new java.awt.Color(203, 203, 146));
         labelSfondo.add(codice_barre_textbox);
+<<<<<<< HEAD
+=======
+=======
+        JTextArea codice_barre_textbox = new JTextArea();
+        codice_barre_textbox.setBounds(330, 40, 150, 40);
+        codice_barre_textbox.setBackground(new java.awt.Color(203, 203, 146));
+        labelSfondo.add(codice_barre_textbox);
+        
+        JLabel punti_label = new JLabel("Punti");
+        punti_label.setFont(new Font("Courier", Font.PLAIN, 15));
+        punti_label.setBounds(490, 20, 100, 20);
+        punti_label.setForeground(new java.awt.Color(255,255,255));
+        labelSfondo.add(punti_label);
+
+        JTextArea punti_textbox = new JTextArea();
+        punti_textbox.setBounds(490, 40, 100, 40);
+        punti_textbox.setBackground(new java.awt.Color(203, 203, 146));
+        labelSfondo.add(punti_textbox);
+>>>>>>> 92ba0878318a769571cc1e9456393151517d6ac3
+>>>>>>> b3f423dce0bf0d73c6a9c24aaf71265d864d2beb
 
         JButton modifica_button = new JButton("Modifica");
         modifica_button.setBounds(730, 10, 150, 30);
@@ -89,7 +152,15 @@ public class Clienti {
         labelSfondo.add(stampa_button);
 
         JLabel ordinamento_label = new JLabel("Ordinamento");
+<<<<<<< HEAD
         ordinamento_label.setFont(new Font("", Font.PLAIN, 15));
+=======
+<<<<<<< HEAD
+        ordinamento_label.setFont(new Font("", Font.PLAIN, 15));
+=======
+        ordinamento_label.setFont(new Font("Courier", Font.PLAIN, 15));
+>>>>>>> 92ba0878318a769571cc1e9456393151517d6ac3
+>>>>>>> b3f423dce0bf0d73c6a9c24aaf71265d864d2beb
         ordinamento_label.setBounds(860, 40, 100, 20);
         ordinamento_label.setForeground(new java.awt.Color(255,255,255));
         labelSfondo.add(ordinamento_label);
@@ -110,86 +181,195 @@ public class Clienti {
         labelSfondo.add(naturale_button);
 
         JLabel indirizzo_label = new JLabel("Indirizzo");
+<<<<<<< HEAD
         indirizzo_label.setFont(new Font("", Font.PLAIN, 15));
+=======
+<<<<<<< HEAD
+        indirizzo_label.setFont(new Font("", Font.PLAIN, 15));
+=======
+        indirizzo_label.setFont(new Font("Courier", Font.PLAIN, 15));
+>>>>>>> 92ba0878318a769571cc1e9456393151517d6ac3
+>>>>>>> b3f423dce0bf0d73c6a9c24aaf71265d864d2beb
         indirizzo_label.setBounds(10, 80, 100, 20);
         indirizzo_label.setForeground(new java.awt.Color(255,255,255));
         labelSfondo.add(indirizzo_label);
 
         JTextField indirizzo_textbox = new JTextField();
         indirizzo_textbox.setBounds(10, 100, 200, 40);
+<<<<<<< HEAD
         indirizzo_textbox.setFont(new Font("", Font.PLAIN, 20));
+=======
+<<<<<<< HEAD
+        indirizzo_textbox.setFont(new Font("", Font.PLAIN, 20));
+=======
+>>>>>>> 92ba0878318a769571cc1e9456393151517d6ac3
+>>>>>>> b3f423dce0bf0d73c6a9c24aaf71265d864d2beb
         indirizzo_textbox.setBackground(new java.awt.Color(203, 203, 146));
         labelSfondo.add(indirizzo_textbox);
 
         JLabel cap_label = new JLabel("CAP");
+<<<<<<< HEAD
         cap_label.setFont(new Font("", Font.PLAIN, 15));
+=======
+<<<<<<< HEAD
+        cap_label.setFont(new Font("", Font.PLAIN, 15));
+=======
+        cap_label.setFont(new Font("Courier", Font.PLAIN, 15));
+>>>>>>> 92ba0878318a769571cc1e9456393151517d6ac3
+>>>>>>> b3f423dce0bf0d73c6a9c24aaf71265d864d2beb
         cap_label.setBounds(220, 80, 100, 20);
         cap_label.setForeground(new java.awt.Color(255,255,255));
         labelSfondo.add(cap_label);
         
         JTextField cap_textbox = new JTextField();
         cap_textbox.setBounds(220, 100, 120, 40);
+<<<<<<< HEAD
         cap_textbox.setFont(new Font("", Font.PLAIN, 20));
+=======
+<<<<<<< HEAD
+        cap_textbox.setFont(new Font("", Font.PLAIN, 20));
+=======
+>>>>>>> 92ba0878318a769571cc1e9456393151517d6ac3
+>>>>>>> b3f423dce0bf0d73c6a9c24aaf71265d864d2beb
         cap_textbox.setBackground(new java.awt.Color(203, 203, 146));
         labelSfondo.add(cap_textbox);
         
         JLabel citta_label = new JLabel("Città");
+<<<<<<< HEAD
         citta_label.setFont(new Font("", Font.PLAIN, 15));
+=======
+<<<<<<< HEAD
+        citta_label.setFont(new Font("", Font.PLAIN, 15));
+=======
+        citta_label.setFont(new Font("Courier", Font.PLAIN, 15));
+>>>>>>> 92ba0878318a769571cc1e9456393151517d6ac3
+>>>>>>> b3f423dce0bf0d73c6a9c24aaf71265d864d2beb
         citta_label.setBounds(350, 80, 100, 20);
         citta_label.setForeground(new java.awt.Color(255,255,255));
         labelSfondo.add(citta_label);
         
         JTextField citta_textbox = new JTextField();
         citta_textbox.setBounds(350, 100, 200, 40);
+<<<<<<< HEAD
         citta_textbox.setFont(new Font("", Font.PLAIN, 20));
+=======
+<<<<<<< HEAD
+        citta_textbox.setFont(new Font("", Font.PLAIN, 20));
+=======
+>>>>>>> 92ba0878318a769571cc1e9456393151517d6ac3
+>>>>>>> b3f423dce0bf0d73c6a9c24aaf71265d864d2beb
         citta_textbox.setBackground(new java.awt.Color(203, 203, 146));
         labelSfondo.add(citta_textbox);
         
         JLabel provincia_label = new JLabel("Provincia");
+<<<<<<< HEAD
         provincia_label.setFont(new Font("", Font.PLAIN, 15));
+=======
+<<<<<<< HEAD
+        provincia_label.setFont(new Font("", Font.PLAIN, 15));
+=======
+        provincia_label.setFont(new Font("Courier", Font.PLAIN, 15));
+>>>>>>> 92ba0878318a769571cc1e9456393151517d6ac3
+>>>>>>> b3f423dce0bf0d73c6a9c24aaf71265d864d2beb
         provincia_label.setBounds(560, 80, 100, 20);
         provincia_label.setForeground(new java.awt.Color(255,255,255));
         labelSfondo.add(provincia_label);
         
+<<<<<<< HEAD
         JTextField provincia_textbox = new JTextField();
         provincia_textbox.setBounds(560, 100, 100, 40);
         provincia_textbox.setFont(new Font("", Font.PLAIN, 20));
+=======
+<<<<<<< HEAD
+        JTextField provincia_textbox = new JTextField();
+        provincia_textbox.setBounds(560, 100, 100, 40);
+        provincia_textbox.setFont(new Font("", Font.PLAIN, 20));
+=======
+        JTextArea provincia_textbox = new JTextArea();
+        provincia_textbox.setBounds(560, 100, 100, 40);
+>>>>>>> 92ba0878318a769571cc1e9456393151517d6ac3
+>>>>>>> b3f423dce0bf0d73c6a9c24aaf71265d864d2beb
         provincia_textbox.setBackground(new java.awt.Color(203, 203, 146));
         labelSfondo.add(provincia_textbox);
         
         JLabel telefono_label = new JLabel("Telefono");
+<<<<<<< HEAD
         telefono_label.setFont(new Font("", Font.PLAIN, 15));
+=======
+<<<<<<< HEAD
+        telefono_label.setFont(new Font("", Font.PLAIN, 15));
+=======
+        telefono_label.setFont(new Font("Courier", Font.PLAIN, 15));
+>>>>>>> 92ba0878318a769571cc1e9456393151517d6ac3
+>>>>>>> b3f423dce0bf0d73c6a9c24aaf71265d864d2beb
         telefono_label.setBounds(10, 140, 100, 20);
         telefono_label.setForeground(new java.awt.Color(255,255,255));
         labelSfondo.add(telefono_label);
         
         JTextField telefono_textbox = new JTextField();
         telefono_textbox.setBounds(10, 160, 120, 40);
+<<<<<<< HEAD
         telefono_textbox.setFont(new Font("", Font.PLAIN, 20));
+=======
+<<<<<<< HEAD
+        telefono_textbox.setFont(new Font("", Font.PLAIN, 20));
+=======
+>>>>>>> 92ba0878318a769571cc1e9456393151517d6ac3
+>>>>>>> b3f423dce0bf0d73c6a9c24aaf71265d864d2beb
         telefono_textbox.setBackground(new java.awt.Color(203, 203, 146));
         labelSfondo.add(telefono_textbox);
         
         JLabel note_label = new JLabel("Note");
+<<<<<<< HEAD
         note_label.setFont(new Font("", Font.PLAIN, 15));
+=======
+<<<<<<< HEAD
+        note_label.setFont(new Font("", Font.PLAIN, 15));
+=======
+        note_label.setFont(new Font("Courier", Font.PLAIN, 15));
+>>>>>>> 92ba0878318a769571cc1e9456393151517d6ac3
+>>>>>>> b3f423dce0bf0d73c6a9c24aaf71265d864d2beb
         note_label.setBounds(140, 140, 100, 20);
         note_label.setForeground(new java.awt.Color(255,255,255));
         labelSfondo.add(note_label);
         
         JTextField note_textbox = new JTextField();
         note_textbox.setBounds(140, 160, 400, 40);
+<<<<<<< HEAD
         note_textbox.setFont(new Font("", Font.PLAIN, 20));
+=======
+<<<<<<< HEAD
+        note_textbox.setFont(new Font("", Font.PLAIN, 20));
+=======
+>>>>>>> 92ba0878318a769571cc1e9456393151517d6ac3
+>>>>>>> b3f423dce0bf0d73c6a9c24aaf71265d864d2beb
         note_textbox.setBackground(new java.awt.Color(203, 203, 146));
         labelSfondo.add(note_textbox);
         
         JLabel email_label = new JLabel("Email");
+<<<<<<< HEAD
         email_label.setFont(new Font("", Font.PLAIN, 15));
+=======
+<<<<<<< HEAD
+        email_label.setFont(new Font("", Font.PLAIN, 15));
+=======
+        email_label.setFont(new Font("Courier", Font.PLAIN, 15));
+>>>>>>> 92ba0878318a769571cc1e9456393151517d6ac3
+>>>>>>> b3f423dce0bf0d73c6a9c24aaf71265d864d2beb
         email_label.setBounds(550, 140, 100, 20);
         email_label.setForeground(new java.awt.Color(255,255,255));
         labelSfondo.add(email_label);
         
         JTextField email_textbox = new JTextField();
         email_textbox.setBounds(550, 160, 170, 40);
+<<<<<<< HEAD
         email_textbox.setFont(new Font("", Font.PLAIN, 20));
+=======
+<<<<<<< HEAD
+        email_textbox.setFont(new Font("", Font.PLAIN, 20));
+=======
+>>>>>>> 92ba0878318a769571cc1e9456393151517d6ac3
+>>>>>>> b3f423dce0bf0d73c6a9c24aaf71265d864d2beb
         email_textbox.setBackground(new java.awt.Color(203, 203, 146));
         labelSfondo.add(email_textbox);
         
@@ -220,7 +400,7 @@ public class Clienti {
         
         DefaultTableModel model = new DefaultTableModel(columnNames, 0);
         JTable table = new JTable(model);
-        table.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
+        table.setAutoResizeMode(JTable.AUTO_RESIZE_ALL_COLUMNS);
         
         table.getColumnModel().getColumn(1).setPreferredWidth(100);
         table.getColumnModel().getColumn(2).setPreferredWidth(150);

@@ -41,7 +41,15 @@ public class RiparazioniArgenteriaNegozi {
 	    window.add(labelSfondo);
 
         JLabel listinoCostoPulituraLabel = new JLabel("Listino Prezzi ai Negozi Riparazioni Argenteria");
+<<<<<<< HEAD
         listinoCostoPulituraLabel.setFont(new Font("", Font.BOLD, 20));
+=======
+<<<<<<< HEAD
+        listinoCostoPulituraLabel.setFont(new Font("", Font.BOLD, 20));
+=======
+        listinoCostoPulituraLabel.setFont(new Font("Courier", Font.BOLD, 20));
+>>>>>>> 92ba0878318a769571cc1e9456393151517d6ac3
+>>>>>>> b3f423dce0bf0d73c6a9c24aaf71265d864d2beb
         listinoCostoPulituraLabel.setBounds(10, 10, 500, 30);
         listinoCostoPulituraLabel.setForeground(new java.awt.Color(255,255,255));
         labelSfondo.add(listinoCostoPulituraLabel);

@@ -30,7 +30,19 @@ public class InserisciOrdine {
 		
 		window = new JFrame();
 		window.setSize(900, 270);
+<<<<<<< HEAD
 		window.setTitle("Inserisci Ordini");
+=======
+<<<<<<< HEAD
+		window.setTitle("Inserisci Ordini");
+=======
+<<<<<<< HEAD
+		window.setTitle("Inserisci Ordini");
+=======
+		window.setTitle("Distinte");
+>>>>>>> 97d6a1e316ffb1793448fdb10739e9339f2b7ba9
+>>>>>>> 92ba0878318a769571cc1e9456393151517d6ac3
+>>>>>>> b3f423dce0bf0d73c6a9c24aaf71265d864d2beb
 		window.setResizable(false);
 		
 		labelSfondo = new JLabel(imageSfondo);

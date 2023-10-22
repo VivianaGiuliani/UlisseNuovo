@@ -39,7 +39,15 @@ public class TotalePagamenti {
         labelSfondo.add(totale_contanti_label);
         
         JTextField totale_contanti_textbox = new JTextField();
+<<<<<<< HEAD
         totale_contanti_textbox.setFont(new Font("", Font.PLAIN, 30));
+=======
+<<<<<<< HEAD
+        totale_contanti_textbox.setFont(new Font("", Font.PLAIN, 30));
+=======
+        totale_contanti_textbox.setFont(new Font("Courier", Font.PLAIN, 30));
+>>>>>>> 92ba0878318a769571cc1e9456393151517d6ac3
+>>>>>>> b3f423dce0bf0d73c6a9c24aaf71265d864d2beb
         totale_contanti_textbox.setBounds(170, 70, 100, 30);
         totale_contanti_textbox.setBackground(new java.awt.Color(203, 203, 146));
         labelSfondo.add(totale_contanti_textbox);
@@ -51,7 +59,15 @@ public class TotalePagamenti {
         labelSfondo.add(totale_carte_label);
         
         JTextField totale_carte_textbox = new JTextField();
+<<<<<<< HEAD
         totale_carte_textbox.setFont(new Font("", Font.PLAIN, 30));
+=======
+<<<<<<< HEAD
+        totale_carte_textbox.setFont(new Font("", Font.PLAIN, 30));
+=======
+        totale_carte_textbox.setFont(new Font("Courier", Font.PLAIN, 30));
+>>>>>>> 92ba0878318a769571cc1e9456393151517d6ac3
+>>>>>>> b3f423dce0bf0d73c6a9c24aaf71265d864d2beb
         totale_carte_textbox.setBounds(170, 140, 100, 30);
         totale_carte_textbox.setBackground(new java.awt.Color(203, 203, 146));
         labelSfondo.add(totale_carte_textbox);
@@ -63,7 +79,15 @@ public class TotalePagamenti {
         labelSfondo.add(totale_bonifico_label);
         
         JTextField totale_bonifico_textbox = new JTextField();
+<<<<<<< HEAD
         totale_bonifico_textbox.setFont(new Font("", Font.PLAIN, 30));
+=======
+<<<<<<< HEAD
+        totale_bonifico_textbox.setFont(new Font("", Font.PLAIN, 30));
+=======
+        totale_bonifico_textbox.setFont(new Font("Courier", Font.PLAIN, 30));
+>>>>>>> 92ba0878318a769571cc1e9456393151517d6ac3
+>>>>>>> b3f423dce0bf0d73c6a9c24aaf71265d864d2beb
         totale_bonifico_textbox.setBounds(170, 210, 100, 30);
         totale_bonifico_textbox.setBackground(new java.awt.Color(203, 203, 146));
         labelSfondo.add(totale_bonifico_textbox);
@@ -75,7 +99,15 @@ public class TotalePagamenti {
         labelSfondo.add(data_label);
         
         JTextField data_textbox = new JTextField();
+<<<<<<< HEAD
         data_textbox.setFont(new Font("", Font.PLAIN, 30));
+=======
+<<<<<<< HEAD
+        data_textbox.setFont(new Font("", Font.PLAIN, 30));
+=======
+        data_textbox.setFont(new Font("Courier", Font.PLAIN, 30));
+>>>>>>> 92ba0878318a769571cc1e9456393151517d6ac3
+>>>>>>> b3f423dce0bf0d73c6a9c24aaf71265d864d2beb
         data_textbox.setBounds(170, 280, 100, 30);
         data_textbox.setBackground(new java.awt.Color(203, 203, 146));
         labelSfondo.add(data_textbox);

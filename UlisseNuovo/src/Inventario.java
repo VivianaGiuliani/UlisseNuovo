@@ -17,7 +17,10 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.JTextArea;
+<<<<<<< HEAD
 import javax.swing.table.DefaultTableCellRenderer;
+=======
+>>>>>>> b3f423dce0bf0d73c6a9c24aaf71265d864d2beb
 import javax.swing.table.DefaultTableModel;
 
 import Classi.Database;
@@ -45,19 +48,43 @@ public class Inventario {
 	    window.add(labelSfondo);
 	    
 	    JLabel inventario_label = new JLabel("Inventario");
+<<<<<<< HEAD
 	    inventario_label.setFont(new Font("", Font.PLAIN, 30));
+=======
+<<<<<<< HEAD
+	    inventario_label.setFont(new Font("", Font.PLAIN, 30));
+=======
+	    inventario_label.setFont(new Font("Courier", Font.PLAIN, 30));
+>>>>>>> 92ba0878318a769571cc1e9456393151517d6ac3
+>>>>>>> b3f423dce0bf0d73c6a9c24aaf71265d864d2beb
 	    inventario_label.setBounds(10, 15, 400, 40);
 	    inventario_label.setForeground(new java.awt.Color(255,255,255));
         labelSfondo.add(inventario_label);
         
         JLabel codice_scalato_label = new JLabel("Codice Scalato:");
+<<<<<<< HEAD
         codice_scalato_label.setFont(new Font("", Font.PLAIN, 20));
+=======
+<<<<<<< HEAD
+        codice_scalato_label.setFont(new Font("", Font.PLAIN, 20));
+=======
+        codice_scalato_label.setFont(new Font("Courier", Font.PLAIN, 20));
+>>>>>>> 92ba0878318a769571cc1e9456393151517d6ac3
+>>>>>>> b3f423dce0bf0d73c6a9c24aaf71265d864d2beb
         codice_scalato_label.setBounds(10, 55, 220, 40);
         codice_scalato_label.setForeground(new java.awt.Color(255,255,255));
         labelSfondo.add(codice_scalato_label);
         
         JTextArea codice_scalato_textbox = new JTextArea();
+<<<<<<< HEAD
         codice_scalato_textbox.setFont(new Font("", Font.PLAIN, 20));
+=======
+<<<<<<< HEAD
+        codice_scalato_textbox.setFont(new Font("", Font.PLAIN, 20));
+=======
+        codice_scalato_textbox.setFont(new Font("Courier", Font.PLAIN, 20));
+>>>>>>> 92ba0878318a769571cc1e9456393151517d6ac3
+>>>>>>> b3f423dce0bf0d73c6a9c24aaf71265d864d2beb
         codice_scalato_textbox.setBounds(160, 60, 150, 30);
         codice_scalato_textbox.setBackground(new java.awt.Color(203, 203, 146));
         labelSfondo.add(codice_scalato_textbox);
@@ -92,6 +119,7 @@ public class Inventario {
         
         DefaultTableModel model = new DefaultTableModel(columnNames, 0);
         JTable table = new JTable(model);
+<<<<<<< HEAD
         table.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
         
         table.getColumnModel().getColumn(11).setMinWidth(0);
@@ -113,6 +141,9 @@ public class Inventario {
         table.getColumnModel().getColumn(10).setCellRenderer(rightRenderer);
         table.getColumnModel().getColumn(11).setCellRenderer(rightRenderer);
         table.getColumnModel().getColumn(12).setCellRenderer(rightRenderer);
+=======
+        table.setAutoResizeMode(JTable.AUTO_RESIZE_ALL_COLUMNS);
+>>>>>>> b3f423dce0bf0d73c6a9c24aaf71265d864d2beb
         
         scrollPane.setViewportView(table);
         tablePanel.add(scrollPane);
@@ -125,7 +156,15 @@ public class Inventario {
                 inserisciArticoliDb(copiaA);
                 ArrayList<Articolo> copia = inventarioDaDb();
                 for(int i=0; i < copia.size(); i++) {
+<<<<<<< HEAD
             		model.addRow(new Object[] {copia.get(i).getBarcode(), copia.get(i).getCfor(), copia.get(i).getCod_for(), 
+=======
+<<<<<<< HEAD
+            		model.addRow(new Object[] {copia.get(i).getBarcode(), copia.get(i).getCfor(), copia.get(i).getCod_for(), 
+=======
+            		model.addRow(new Object[] {copia.get(i).getBarcode(), copia.get(i).getFornitore(), copia.get(i).getCod_for(), 
+>>>>>>> 92ba0878318a769571cc1e9456393151517d6ac3
+>>>>>>> b3f423dce0bf0d73c6a9c24aaf71265d864d2beb
             				copia.get(i).getGiacenza(), copia.get(i).getDescrizione(), copia.get(i).getPeso(), copia.get(i).getCaratura(), 
             				copia.get(i).getPr_unit(), copia.get(i).getTot_giac(), copia.get(i).getSconto1(), copia.get(i).getSconto2(),
             				copia.get(i).getCosto(), copia.get(i).getFv()});
@@ -148,7 +187,19 @@ public class Inventario {
 				  if (evt.getKeyCode() == evt.VK_TAB) {
 					  Articolo click = new Articolo();
 					  for(int i = 0; i < copiaI.size(); i++) {
+<<<<<<< HEAD
 						  if(copiaI.get(i).getBarcode().equals(codice_scalato_textbox.getText().replaceAll("\\s", ""))) {
+=======
+<<<<<<< HEAD
+						  if(copiaI.get(i).getBarcode().equals(codice_scalato_textbox.getText().replaceAll("\\s", ""))) {
+=======
+<<<<<<< HEAD
+						  if(copiaI.get(i).getBarcode().equals(codice_scalato_textbox.getText().replaceAll("\\s", ""))) {
+=======
+						  if(copiaI.get(i).getBarcode().equals(codice_scalato_textbox.getText())) {
+>>>>>>> 97d6a1e316ffb1793448fdb10739e9339f2b7ba9
+>>>>>>> 92ba0878318a769571cc1e9456393151517d6ac3
+>>>>>>> b3f423dce0bf0d73c6a9c24aaf71265d864d2beb
 							  click = copiaI.get(i);
 						  }
 					  }
@@ -156,7 +207,15 @@ public class Inventario {
 					  model.setRowCount(0);
 					  ArrayList<Articolo> copia = inventarioDaDb();
 					  for(int i=0; i < copia.size(); i++) {
+<<<<<<< HEAD
 		            		model.addRow(new Object[] {copia.get(i).getBarcode(), copia.get(i).getCfor(), copia.get(i).getCod_for(), 
+=======
+<<<<<<< HEAD
+		            		model.addRow(new Object[] {copia.get(i).getBarcode(), copia.get(i).getCfor(), copia.get(i).getCod_for(), 
+=======
+		            		model.addRow(new Object[] {copia.get(i).getBarcode(), copia.get(i).getFornitore(), copia.get(i).getCod_for(), 
+>>>>>>> 92ba0878318a769571cc1e9456393151517d6ac3
+>>>>>>> b3f423dce0bf0d73c6a9c24aaf71265d864d2beb
 		            				copia.get(i).getGiacenza(), copia.get(i).getDescrizione(), copia.get(i).getPeso(), copia.get(i).getCaratura(), 
 		            				copia.get(i).getPr_unit(), copia.get(i).getTot_giac(), copia.get(i).getSconto1(), copia.get(i).getSconto2(),
 		            				copia.get(i).getCosto(), copia.get(i).getFv()});
@@ -170,7 +229,15 @@ public class Inventario {
             	 ArrayList<Articolo> resoconto = inventarioResoconto();
             	 model.setRowCount(0);
             	 for(int i=0; i < resoconto.size(); i++) {
+<<<<<<< HEAD
 	            		model.addRow(new Object[] {resoconto.get(i).getBarcode(), resoconto.get(i).getCfor(), resoconto.get(i).getCod_for(), 
+=======
+<<<<<<< HEAD
+	            		model.addRow(new Object[] {resoconto.get(i).getBarcode(), resoconto.get(i).getCfor(), resoconto.get(i).getCod_for(), 
+=======
+	            		model.addRow(new Object[] {resoconto.get(i).getBarcode(), resoconto.get(i).getFornitore(), resoconto.get(i).getCod_for(), 
+>>>>>>> 92ba0878318a769571cc1e9456393151517d6ac3
+>>>>>>> b3f423dce0bf0d73c6a9c24aaf71265d864d2beb
 	            				resoconto.get(i).getGiacenza(), resoconto.get(i).getDescrizione(), resoconto.get(i).getPeso(), resoconto.get(i).getCaratura(), 
 	            				resoconto.get(i).getPr_unit(), resoconto.get(i).getTot_giac(), resoconto.get(i).getSconto1(), resoconto.get(i).getSconto2(),
 	            				resoconto.get(i).getCosto(), resoconto.get(i).getFv()});
@@ -227,8 +294,18 @@ public class Inventario {
             	Articolo articolo = new Articolo();
             	
             	articolo.setBarcode(rs.getString("barcode"));
+<<<<<<< HEAD
             	articolo.setCfor(rs.getString("cfor"));
             	articolo.setCod_for(rs.getString("codfor"));
+=======
+<<<<<<< HEAD
+            	articolo.setCfor(rs.getString("cfor"));
+            	articolo.setCod_for(rs.getString("codfor"));
+=======
+            	articolo.setFornitore(rs.getString("cfor"));
+            	articolo.setCod_for(rs.getLong("codfor"));
+>>>>>>> 92ba0878318a769571cc1e9456393151517d6ac3
+>>>>>>> b3f423dce0bf0d73c6a9c24aaf71265d864d2beb
             	articolo.setGiacenza(rs.getInt("giacenza")); 
             	articolo.setDescrizione(rs.getString("descrizione"));
             	articolo.setPeso(rs.getDouble("peso"));
@@ -279,8 +356,18 @@ public class Inventario {
             	Articolo articolo = new Articolo();
             	
             	articolo.setBarcode(rs.getString("barcode"));
+<<<<<<< HEAD
             	articolo.setCfor(rs.getString("cfor"));
             	articolo.setCod_for(rs.getString("codfor"));
+=======
+<<<<<<< HEAD
+            	articolo.setCfor(rs.getString("cfor"));
+            	articolo.setCod_for(rs.getString("codfor"));
+=======
+            	articolo.setFornitore(rs.getString("cfor"));
+            	articolo.setCod_for(rs.getLong("codfor"));
+>>>>>>> 92ba0878318a769571cc1e9456393151517d6ac3
+>>>>>>> b3f423dce0bf0d73c6a9c24aaf71265d864d2beb
             	articolo.setGiacenza(rs.getInt("giacenza")); 
             	articolo.setDescrizione(rs.getString("descrizione"));
             	articolo.setPeso(rs.getDouble("peso"));
@@ -331,8 +418,18 @@ public class Inventario {
             	Articolo articolo = new Articolo();
             	
             	articolo.setBarcode(rs.getString("barcode"));
+<<<<<<< HEAD
             	articolo.setCfor(rs.getString("cfor"));
             	articolo.setCod_for(rs.getString("codfor"));
+=======
+<<<<<<< HEAD
+            	articolo.setCfor(rs.getString("cfor"));
+            	articolo.setCod_for(rs.getString("codfor"));
+=======
+            	articolo.setFornitore(rs.getString("cfor"));
+            	articolo.setCod_for(rs.getLong("codfor"));
+>>>>>>> 92ba0878318a769571cc1e9456393151517d6ac3
+>>>>>>> b3f423dce0bf0d73c6a9c24aaf71265d864d2beb
             	articolo.setGiacenza(rs.getInt("giacenza")); 
             	articolo.setDescrizione(rs.getString("descrizione"));
             	articolo.setPeso(rs.getDouble("peso"));
@@ -382,13 +479,31 @@ public class Inventario {
         				+ "descrizione, peso, caratura, pr_unit, tot_giacenza, sc_1, sc_2, costo, tot_peso, tot_inv, fv, slot_costi, tot_costo, cod_categoria) VALUE \r\n"
         				+ "        (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
         		pstmt.setString(1, copia.get(i).getBarcode());
+<<<<<<< HEAD
         		pstmt.setString(2, copia.get(i).getCfor());
         		pstmt.setString(3, copia.get(i).getCod_for());
+=======
+<<<<<<< HEAD
+        		pstmt.setString(2, copia.get(i).getCfor());
+        		pstmt.setString(3, copia.get(i).getCod_for());
+=======
+        		pstmt.setString(2, copia.get(i).getFornitore());
+        		pstmt.setLong(3, copia.get(i).getCod_for());
+>>>>>>> 92ba0878318a769571cc1e9456393151517d6ac3
+>>>>>>> b3f423dce0bf0d73c6a9c24aaf71265d864d2beb
         		pstmt.setInt(4, copia.get(i).getGiacenza());
         		pstmt.setString(5, copia.get(i).getDescrizione());
         		pstmt.setDouble(6, copia.get(i).getPeso());
         		pstmt.setDouble(7, copia.get(i).getCaratura());
+<<<<<<< HEAD
         		pstmt.setDouble(8, copia.get(i).getPr_unit());
+=======
+<<<<<<< HEAD
+        		pstmt.setDouble(8, copia.get(i).getPr_unit());
+=======
+        		pstmt.setInt(8, copia.get(i).getPr_unit());
+>>>>>>> 92ba0878318a769571cc1e9456393151517d6ac3
+>>>>>>> b3f423dce0bf0d73c6a9c24aaf71265d864d2beb
         		pstmt.setInt(9, copia.get(i).getTot_giac());
         		pstmt.setInt(10, copia.get(i).getSconto1());
         		pstmt.setInt(11, copia.get(i).getSconto2());
@@ -397,7 +512,15 @@ public class Inventario {
         		pstmt.setInt(14, 0);
         		pstmt.setString(15, copia.get(i).getFv());
         		pstmt.setInt(16, 0);
+<<<<<<< HEAD
         		pstmt.setDouble(17, copia.get(i).getPr_unit()*copia.get(i).getGiacenza());
+=======
+<<<<<<< HEAD
+        		pstmt.setDouble(17, copia.get(i).getPr_unit()*copia.get(i).getGiacenza());
+=======
+        		pstmt.setInt(17, copia.get(i).getPr_unit()*copia.get(i).getGiacenza());
+>>>>>>> 92ba0878318a769571cc1e9456393151517d6ac3
+>>>>>>> b3f423dce0bf0d73c6a9c24aaf71265d864d2beb
         		pstmt.setInt(18, copia.get(i).getCod_categoria());
         		
         		pstmt.executeUpdate(); 

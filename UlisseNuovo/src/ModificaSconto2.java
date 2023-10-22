@@ -39,7 +39,15 @@ public class ModificaSconto2 {
 	    window.add(labelSfondo);
         
 	    JLabel categoria_label = new JLabel("Inserisci categoria");
+<<<<<<< HEAD
         categoria_label.setFont(new Font("", Font.PLAIN,20));
+=======
+<<<<<<< HEAD
+        categoria_label.setFont(new Font("", Font.PLAIN,20));
+=======
+        categoria_label.setFont(new Font("Courier", Font.PLAIN,20));
+>>>>>>> 92ba0878318a769571cc1e9456393151517d6ac3
+>>>>>>> b3f423dce0bf0d73c6a9c24aaf71265d864d2beb
         categoria_label.setBounds(10, 20, 200, 30);
         categoria_label.setForeground(new java.awt.Color(255,255,255));
         labelSfondo.add(categoria_label);

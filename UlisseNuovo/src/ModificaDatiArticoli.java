@@ -17,7 +17,10 @@ import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
+<<<<<<< HEAD
 import javax.swing.table.DefaultTableCellRenderer;
+=======
+>>>>>>> b3f423dce0bf0d73c6a9c24aaf71265d864d2beb
 import javax.swing.table.DefaultTableModel;
 
 import Classi.Database;
@@ -200,6 +203,7 @@ public class ModificaDatiArticoli {
                 "Caratura", "Pr_unit", "Tot_Giac", "Sc.1", "Sc.2", "Costo", "F/V"};
 	    
 	    DefaultTableModel model = new DefaultTableModel(columnNames, 0);
+<<<<<<< HEAD
         JTable table = new JTable(model);
         table.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
         
@@ -222,6 +226,10 @@ public class ModificaDatiArticoli {
         table.getColumnModel().getColumn(10).setCellRenderer(rightRenderer);
         table.getColumnModel().getColumn(11).setCellRenderer(rightRenderer);
         table.getColumnModel().getColumn(12).setCellRenderer(rightRenderer);
+=======
+	    JTable table = new JTable(model);
+	    table.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
+>>>>>>> b3f423dce0bf0d73c6a9c24aaf71265d864d2beb
 	    
 	    scrollPane.setViewportView(table);
 	    tablePanel.add(scrollPane);
@@ -250,7 +258,11 @@ public class ModificaDatiArticoli {
         
         codice_modifica_textbox.addKeyListener(new java.awt.event.KeyAdapter() {
 			  public void keyPressed (java.awt.event.KeyEvent evt){
+<<<<<<< HEAD
 				  Articolo articolo = articoloDaDb(codice_modifica_textbox.getText().replaceAll("\\s", ""));
+=======
+				  Articolo articolo = articoloDaDb(codice_modifica_textbox.getText());
+>>>>>>> b3f423dce0bf0d73c6a9c24aaf71265d864d2beb
 				  if (evt.getKeyCode() == evt.VK_TAB) {
 					  cfor_textbox.setText(articolo.getCfor());
 					  cod_for_textbox.setText(articolo.getCod_for());
@@ -277,10 +289,16 @@ public class ModificaDatiArticoli {
         modifica_button.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
             	Articolo articolo = new Articolo();
+<<<<<<< HEAD
             	articolo.setBarcode(codice_modifica_textbox.getText().replaceAll("\\s", ""));
             	articolo.setCfor(cfor_textbox.getText());
             	articolo.setCod_for(cod_for_textbox.getText());
             	articolo.setGiacenza(Integer.parseInt(giacenza_textbox.getText()));
+=======
+            	articolo.setCfor(cfor_textbox.getText());
+            	articolo.setCod_for(cod_for_textbox.getText());
+            	articolo.setCod_for(giacenza_textbox.getText());
+>>>>>>> b3f423dce0bf0d73c6a9c24aaf71265d864d2beb
             	articolo.setDescrizione(descrizione_textbox.getText());
             	articolo.setPeso(Double.parseDouble(peso_textbox.getText()));
             	articolo.setCaratura(Double.parseDouble(caratura_textbox.getText()));
@@ -293,7 +311,11 @@ public class ModificaDatiArticoli {
             	aggiornaArticolo(articolo);
             	
             	model.setRowCount(0);
+<<<<<<< HEAD
             	articolo = articoloDaDb(codice_modifica_textbox.getText().replaceAll("\\s", ""));
+=======
+            	articolo = articoloDaDb(codice_modifica_textbox.getText());
+>>>>>>> b3f423dce0bf0d73c6a9c24aaf71265d864d2beb
             	model.addRow(new Object[] {articolo.getBarcode(), articolo.getCfor(), articolo.getCod_for(), 
             			articolo.getGiacenza(), articolo.getDescrizione(), articolo.getPeso(), articolo.getCaratura(), 
             			articolo.getPr_unit(), articolo.getTot_giac(), articolo.getSconto1(), articolo.getSconto2(),
@@ -368,7 +390,10 @@ public class ModificaDatiArticoli {
     	int giacenza, tot_giac, sconto1, sconto2;
     	double peso, caratura, pr_unit, costo;
     	
+<<<<<<< HEAD
     	System.out.println("Aggiorna Articolo: " + articolo.toString());    	
+=======
+>>>>>>> b3f423dce0bf0d73c6a9c24aaf71265d864d2beb
     	cfor = articolo.getCfor();
     	cod_for = articolo.getCod_for();
     	descrizione = articolo.getDescrizione();
