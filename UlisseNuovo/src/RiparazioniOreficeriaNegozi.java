@@ -42,13 +42,37 @@ public class RiparazioniOreficeriaNegozi {
 	    window.add(labelSfondo);
 
         JLabel listinoCostoPulituraLabel = new JLabel("Listino Riparazioni Oreficeria Privati");
+<<<<<<< HEAD
         listinoCostoPulituraLabel.setFont(new Font("", Font.BOLD, 20));
+=======
+<<<<<<< HEAD
+        listinoCostoPulituraLabel.setFont(new Font("", Font.BOLD, 20));
+=======
+<<<<<<< HEAD
+        listinoCostoPulituraLabel.setFont(new Font("", Font.BOLD, 20));
+=======
+        listinoCostoPulituraLabel.setFont(new Font("Courier", Font.BOLD, 20));
+>>>>>>> 92ba0878318a769571cc1e9456393151517d6ac3
+>>>>>>> b3f423dce0bf0d73c6a9c24aaf71265d864d2beb
+>>>>>>> b164b6b180cf8b5232bb561dff47f01e24120b2b
         listinoCostoPulituraLabel.setBounds(30, 10, 400, 30);
         listinoCostoPulituraLabel.setForeground(new java.awt.Color(255,255,255));
         labelSfondo.add(listinoCostoPulituraLabel);
 
         JLabel descrizione_label = new JLabel("Descrizione");
+<<<<<<< HEAD
         descrizione_label.setFont(new Font("", Font.PLAIN, 15));
+=======
+<<<<<<< HEAD
+        descrizione_label.setFont(new Font("", Font.PLAIN, 15));
+=======
+<<<<<<< HEAD
+        descrizione_label.setFont(new Font("", Font.PLAIN, 15));
+=======
+        descrizione_label.setFont(new Font("Courier", Font.PLAIN, 15));
+>>>>>>> 92ba0878318a769571cc1e9456393151517d6ac3
+>>>>>>> b3f423dce0bf0d73c6a9c24aaf71265d864d2beb
+>>>>>>> b164b6b180cf8b5232bb561dff47f01e24120b2b
         descrizione_label.setBounds(10, 50, 100, 20);
         descrizione_label.setForeground(new java.awt.Color(255,255,255));
         labelSfondo.add(descrizione_label);
@@ -58,7 +82,19 @@ public class RiparazioniOreficeriaNegozi {
         labelSfondo.add(descrizione_textbox);
         
         JLabel prezzo_label = new JLabel("Prezzo");
+<<<<<<< HEAD
         prezzo_label.setFont(new Font("", Font.PLAIN, 15));
+=======
+<<<<<<< HEAD
+        prezzo_label.setFont(new Font("", Font.PLAIN, 15));
+=======
+<<<<<<< HEAD
+        prezzo_label.setFont(new Font("", Font.PLAIN, 15));
+=======
+        prezzo_label.setFont(new Font("Courier", Font.PLAIN, 15));
+>>>>>>> 92ba0878318a769571cc1e9456393151517d6ac3
+>>>>>>> b3f423dce0bf0d73c6a9c24aaf71265d864d2beb
+>>>>>>> b164b6b180cf8b5232bb561dff47f01e24120b2b
         prezzo_label.setBounds(170, 50, 50, 20);
         prezzo_label.setForeground(new java.awt.Color(255,255,255));
         labelSfondo.add(prezzo_label);

@@ -37,7 +37,19 @@ public class SaldiCategoria {
 	    window.add(labelSfondo);
 
 		JLabel saldi_categoria_label = new JLabel("Saldi Categoria");
+<<<<<<< HEAD
 		saldi_categoria_label.setFont(new Font("", Font.BOLD, 20));
+=======
+<<<<<<< HEAD
+		saldi_categoria_label.setFont(new Font("", Font.BOLD, 20));
+=======
+<<<<<<< HEAD
+		saldi_categoria_label.setFont(new Font("", Font.BOLD, 20));
+=======
+		saldi_categoria_label.setFont(new Font("Courier", Font.BOLD, 20));
+>>>>>>> 92ba0878318a769571cc1e9456393151517d6ac3
+>>>>>>> b3f423dce0bf0d73c6a9c24aaf71265d864d2beb
+>>>>>>> b164b6b180cf8b5232bb561dff47f01e24120b2b
 		saldi_categoria_label.setBounds(10, 20, 180, 40);
 		saldi_categoria_label.setForeground(new java.awt.Color(255,255,255));
         labelSfondo.add(saldi_categoria_label);

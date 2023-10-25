@@ -16,8 +16,21 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
+<<<<<<< HEAD
 import javax.swing.JTextField;
 import javax.swing.table.DefaultTableCellRenderer;
+=======
+<<<<<<< HEAD
+import javax.swing.JTextField;
+import javax.swing.table.DefaultTableCellRenderer;
+=======
+<<<<<<< HEAD
+import javax.swing.JTextField;
+=======
+import javax.swing.JTextArea;
+>>>>>>> 92ba0878318a769571cc1e9456393151517d6ac3
+>>>>>>> b3f423dce0bf0d73c6a9c24aaf71265d864d2beb
+>>>>>>> b164b6b180cf8b5232bb561dff47f01e24120b2b
 import javax.swing.table.DefaultTableModel;
 
 import Classi.Database;
@@ -52,68 +65,230 @@ public class ListinoOralux {
 	    
 	    
 	    JLabel listino_oralux_label = new JLabel("Listino Oralux");
+<<<<<<< HEAD
 	    listino_oralux_label.setFont(new Font("", Font.PLAIN, 30));
+=======
+<<<<<<< HEAD
+	    listino_oralux_label.setFont(new Font("", Font.PLAIN, 30));
+=======
+<<<<<<< HEAD
+	    listino_oralux_label.setFont(new Font("", Font.PLAIN, 30));
+=======
+	    listino_oralux_label.setFont(new Font("Courier", Font.PLAIN, 30));
+>>>>>>> 92ba0878318a769571cc1e9456393151517d6ac3
+>>>>>>> b3f423dce0bf0d73c6a9c24aaf71265d864d2beb
+>>>>>>> b164b6b180cf8b5232bb561dff47f01e24120b2b
 	    listino_oralux_label.setBounds(10, 10, 400, 40);
 	    listino_oralux_label.setForeground(new java.awt.Color(255,255,255));
         labelSfondo.add(listino_oralux_label);
         
         JLabel barcode_label = new JLabel("Barcode");
+<<<<<<< HEAD
         barcode_label.setFont(new Font("", Font.PLAIN, 15));
+=======
+<<<<<<< HEAD
+        barcode_label.setFont(new Font("", Font.PLAIN, 15));
+=======
+<<<<<<< HEAD
+        barcode_label.setFont(new Font("", Font.PLAIN, 15));
+=======
+        barcode_label.setFont(new Font("Courier", Font.PLAIN, 15));
+>>>>>>> 92ba0878318a769571cc1e9456393151517d6ac3
+>>>>>>> b3f423dce0bf0d73c6a9c24aaf71265d864d2beb
+>>>>>>> b164b6b180cf8b5232bb561dff47f01e24120b2b
         barcode_label.setForeground(new java.awt.Color(255,255,255));
         barcode_label.setBounds(10, 50, 100, 20);
         labelSfondo.add(barcode_label);
 
+<<<<<<< HEAD
         JTextField barcode_textbox = new JTextField();
         barcode_textbox.setBounds(10, 70, 150, 40);
         barcode_textbox.setFont(new Font("", Font.PLAIN, 20));
+=======
+<<<<<<< HEAD
+        JTextField barcode_textbox = new JTextField();
+        barcode_textbox.setBounds(10, 70, 150, 40);
+        barcode_textbox.setFont(new Font("", Font.PLAIN, 20));
+=======
+<<<<<<< HEAD
+        JTextField barcode_textbox = new JTextField();
+        barcode_textbox.setBounds(10, 70, 150, 40);
+        barcode_textbox.setFont(new Font("", Font.PLAIN, 20));
+=======
+        JTextArea barcode_textbox = new JTextArea();
+        barcode_textbox.setBounds(10, 70, 150, 40);
+        barcode_textbox.setFont(new Font("Courier", Font.PLAIN, 20));
+>>>>>>> 92ba0878318a769571cc1e9456393151517d6ac3
+>>>>>>> b3f423dce0bf0d73c6a9c24aaf71265d864d2beb
+>>>>>>> b164b6b180cf8b5232bb561dff47f01e24120b2b
         barcode_textbox.setBackground(new java.awt.Color(203, 203, 146));
         labelSfondo.add(barcode_textbox);
         
         JLabel cod_art_label = new JLabel("Codice articolo");
+<<<<<<< HEAD
         cod_art_label.setFont(new Font("", Font.PLAIN, 15));
+=======
+<<<<<<< HEAD
+        cod_art_label.setFont(new Font("", Font.PLAIN, 15));
+=======
+<<<<<<< HEAD
+        cod_art_label.setFont(new Font("", Font.PLAIN, 15));
+=======
+        cod_art_label.setFont(new Font("Courier", Font.PLAIN, 15));
+>>>>>>> 92ba0878318a769571cc1e9456393151517d6ac3
+>>>>>>> b3f423dce0bf0d73c6a9c24aaf71265d864d2beb
+>>>>>>> b164b6b180cf8b5232bb561dff47f01e24120b2b
         cod_art_label.setForeground(new java.awt.Color(255,255,255));
         cod_art_label.setBounds(170, 50, 100, 20);
         labelSfondo.add(cod_art_label);
 
+<<<<<<< HEAD
         JTextField cod_art_textbox = new JTextField();
         cod_art_textbox.setBounds(170, 70, 150, 40);
         cod_art_textbox.setFont(new Font("", Font.PLAIN, 20));
+=======
+<<<<<<< HEAD
+        JTextField cod_art_textbox = new JTextField();
+        cod_art_textbox.setBounds(170, 70, 150, 40);
+        cod_art_textbox.setFont(new Font("", Font.PLAIN, 20));
+=======
+<<<<<<< HEAD
+        JTextField cod_art_textbox = new JTextField();
+        cod_art_textbox.setBounds(170, 70, 150, 40);
+        cod_art_textbox.setFont(new Font("", Font.PLAIN, 20));
+=======
+        JTextArea cod_art_textbox = new JTextArea();
+        cod_art_textbox.setBounds(170, 70, 150, 40);
+        cod_art_textbox.setFont(new Font("Courier", Font.PLAIN, 20));
+>>>>>>> 92ba0878318a769571cc1e9456393151517d6ac3
+>>>>>>> b3f423dce0bf0d73c6a9c24aaf71265d864d2beb
+>>>>>>> b164b6b180cf8b5232bb561dff47f01e24120b2b
         cod_art_textbox.setBackground(new java.awt.Color(203, 203, 146));
         labelSfondo.add(cod_art_textbox);
 
         JLabel nome_label = new JLabel("Nome");
+<<<<<<< HEAD
         nome_label.setFont(new Font("", Font.PLAIN, 15));
+=======
+<<<<<<< HEAD
+        nome_label.setFont(new Font("", Font.PLAIN, 15));
+=======
+<<<<<<< HEAD
+        nome_label.setFont(new Font("", Font.PLAIN, 15));
+=======
+        nome_label.setFont(new Font("Courier", Font.PLAIN, 15));
+>>>>>>> 92ba0878318a769571cc1e9456393151517d6ac3
+>>>>>>> b3f423dce0bf0d73c6a9c24aaf71265d864d2beb
+>>>>>>> b164b6b180cf8b5232bb561dff47f01e24120b2b
         nome_label.setForeground(new java.awt.Color(255,255,255));
         nome_label.setBounds(330, 50, 100, 20);
         labelSfondo.add(nome_label);
 
+<<<<<<< HEAD
         JTextField nome_textbox = new JTextField();
         nome_textbox.setBounds(330, 70, 450, 40);
         nome_textbox.setFont(new Font("", Font.PLAIN, 20));
+=======
+<<<<<<< HEAD
+        JTextField nome_textbox = new JTextField();
+        nome_textbox.setBounds(330, 70, 450, 40);
+        nome_textbox.setFont(new Font("", Font.PLAIN, 20));
+=======
+<<<<<<< HEAD
+        JTextField nome_textbox = new JTextField();
+        nome_textbox.setBounds(330, 70, 450, 40);
+        nome_textbox.setFont(new Font("", Font.PLAIN, 20));
+=======
+        JTextArea nome_textbox = new JTextArea();
+        nome_textbox.setBounds(330, 70, 450, 40);
+        nome_textbox.setFont(new Font("Courier", Font.PLAIN, 20));
+>>>>>>> 92ba0878318a769571cc1e9456393151517d6ac3
+>>>>>>> b3f423dce0bf0d73c6a9c24aaf71265d864d2beb
+>>>>>>> b164b6b180cf8b5232bb561dff47f01e24120b2b
         nome_textbox.setBackground(new java.awt.Color(203, 203, 146));
         labelSfondo.add(nome_textbox);
         
         JLabel vendita_label = new JLabel("Vendita");
+<<<<<<< HEAD
         vendita_label.setFont(new Font("", Font.PLAIN, 15));
+=======
+<<<<<<< HEAD
+        vendita_label.setFont(new Font("", Font.PLAIN, 15));
+=======
+<<<<<<< HEAD
+        vendita_label.setFont(new Font("", Font.PLAIN, 15));
+=======
+        vendita_label.setFont(new Font("Courier", Font.PLAIN, 15));
+>>>>>>> 92ba0878318a769571cc1e9456393151517d6ac3
+>>>>>>> b3f423dce0bf0d73c6a9c24aaf71265d864d2beb
+>>>>>>> b164b6b180cf8b5232bb561dff47f01e24120b2b
         vendita_label.setForeground(new java.awt.Color(255,255,255));
         vendita_label.setBounds(790, 50, 100, 20);
         labelSfondo.add(vendita_label);
 
+<<<<<<< HEAD
         JTextField vendita_textbox = new JTextField();
         vendita_textbox.setBounds(790, 70, 100, 40);
         vendita_textbox.setFont(new Font("", Font.PLAIN, 20));
+=======
+<<<<<<< HEAD
+        JTextField vendita_textbox = new JTextField();
+        vendita_textbox.setBounds(790, 70, 100, 40);
+        vendita_textbox.setFont(new Font("", Font.PLAIN, 20));
+=======
+<<<<<<< HEAD
+        JTextField vendita_textbox = new JTextField();
+        vendita_textbox.setBounds(790, 70, 100, 40);
+        vendita_textbox.setFont(new Font("", Font.PLAIN, 20));
+=======
+        JTextArea vendita_textbox = new JTextArea();
+        vendita_textbox.setBounds(790, 70, 100, 40);
+        vendita_textbox.setFont(new Font("Courier", Font.PLAIN, 20));
+>>>>>>> 92ba0878318a769571cc1e9456393151517d6ac3
+>>>>>>> b3f423dce0bf0d73c6a9c24aaf71265d864d2beb
+>>>>>>> b164b6b180cf8b5232bb561dff47f01e24120b2b
         vendita_textbox.setBackground(new java.awt.Color(203, 203, 146));
         labelSfondo.add(vendita_textbox);
         
         JLabel quantita_label = new JLabel("Quantità");
+<<<<<<< HEAD
         quantita_label.setFont(new Font("", Font.PLAIN, 15));
+=======
+<<<<<<< HEAD
+        quantita_label.setFont(new Font("", Font.PLAIN, 15));
+=======
+<<<<<<< HEAD
+        quantita_label.setFont(new Font("", Font.PLAIN, 15));
+=======
+        quantita_label.setFont(new Font("Courier", Font.PLAIN, 15));
+>>>>>>> 92ba0878318a769571cc1e9456393151517d6ac3
+>>>>>>> b3f423dce0bf0d73c6a9c24aaf71265d864d2beb
+>>>>>>> b164b6b180cf8b5232bb561dff47f01e24120b2b
         quantita_label.setForeground(new java.awt.Color(255,255,255));
         quantita_label.setBounds(900, 50, 100, 20);
         labelSfondo.add(quantita_label);
 
+<<<<<<< HEAD
         JTextField quantita_textbox = new JTextField();
         quantita_textbox.setBounds(900, 70, 100, 40);
         quantita_textbox.setFont(new Font("", Font.PLAIN, 20));
+=======
+<<<<<<< HEAD
+        JTextField quantita_textbox = new JTextField();
+        quantita_textbox.setBounds(900, 70, 100, 40);
+        quantita_textbox.setFont(new Font("", Font.PLAIN, 20));
+=======
+<<<<<<< HEAD
+        JTextField quantita_textbox = new JTextField();
+        quantita_textbox.setBounds(900, 70, 100, 40);
+        quantita_textbox.setFont(new Font("", Font.PLAIN, 20));
+=======
+        JTextArea quantita_textbox = new JTextArea();
+        quantita_textbox.setBounds(900, 70, 100, 40);
+        quantita_textbox.setFont(new Font("Courier", Font.PLAIN, 20));
+>>>>>>> 92ba0878318a769571cc1e9456393151517d6ac3
+>>>>>>> b3f423dce0bf0d73c6a9c24aaf71265d864d2beb
+>>>>>>> b164b6b180cf8b5232bb561dff47f01e24120b2b
         quantita_textbox.setBackground(new java.awt.Color(203, 203, 146));
         labelSfondo.add(quantita_textbox);
         
@@ -141,9 +316,27 @@ public class ListinoOralux {
 		aumento_listino_button.setBackground(new java.awt.Color(178,255,102));
 		labelSfondo.add(aumento_listino_button);
 		
+<<<<<<< HEAD
 		JTextField aumento_listino_textbox = new JTextField();
 		aumento_listino_textbox.setBounds(490, 140, 100, 40);
 		aumento_listino_textbox.setFont(new Font("", Font.PLAIN, 20));
+=======
+<<<<<<< HEAD
+		JTextField aumento_listino_textbox = new JTextField();
+		aumento_listino_textbox.setBounds(490, 140, 100, 40);
+		aumento_listino_textbox.setFont(new Font("", Font.PLAIN, 20));
+=======
+<<<<<<< HEAD
+		JTextField aumento_listino_textbox = new JTextField();
+		aumento_listino_textbox.setBounds(490, 140, 100, 40);
+		aumento_listino_textbox.setFont(new Font("", Font.PLAIN, 20));
+=======
+		JTextArea aumento_listino_textbox = new JTextArea();
+		aumento_listino_textbox.setBounds(490, 140, 100, 40);
+		aumento_listino_textbox.setFont(new Font("Courier", Font.PLAIN, 20));
+>>>>>>> 92ba0878318a769571cc1e9456393151517d6ac3
+>>>>>>> b3f423dce0bf0d73c6a9c24aaf71265d864d2beb
+>>>>>>> b164b6b180cf8b5232bb561dff47f01e24120b2b
 		aumento_listino_textbox.setBackground(new java.awt.Color(203, 203, 146));
         labelSfondo.add(aumento_listino_textbox);
         
@@ -154,16 +347,37 @@ public class ListinoOralux {
 	    JScrollPane scrollPane = new JScrollPane();
 	    scrollPane.setBounds(0, 0, 1200, 600);
 
+<<<<<<< HEAD
 	    String[] columnNames = {"Barcode", "Codice Articolo", "Nome", "Vendita"};
+=======
+<<<<<<< HEAD
+	    String[] columnNames = {"Barcode", "Codice Articolo", "Nome", "Vendita"};
+=======
+<<<<<<< HEAD
+	    String[] columnNames = {"Barcode", "Codice Articolo", "Nome", "Vendita"};
+=======
+	    String[] columnNames = {"Barcode", "Cod_art", "Nome", "Vendita"};
+>>>>>>> 92ba0878318a769571cc1e9456393151517d6ac3
+>>>>>>> b3f423dce0bf0d73c6a9c24aaf71265d864d2beb
+>>>>>>> b164b6b180cf8b5232bb561dff47f01e24120b2b
 	        
 	    DefaultTableModel model = new DefaultTableModel(columnNames, 0);
 	    JTable table = new JTable(model);
 	    table.setAutoResizeMode(JTable.AUTO_RESIZE_ALL_COLUMNS);
 	    
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> b164b6b180cf8b5232bb561dff47f01e24120b2b
 	    DefaultTableCellRenderer rightRenderer = new DefaultTableCellRenderer();
         rightRenderer.setHorizontalAlignment(JLabel.RIGHT);
         table.getColumnModel().getColumn(3).setCellRenderer(rightRenderer);
         
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> b3f423dce0bf0d73c6a9c24aaf71265d864d2beb
+>>>>>>> b164b6b180cf8b5232bb561dff47f01e24120b2b
 	    scrollPane.setViewportView(table);
 	    tablePanel.add(scrollPane);
 	    labelSfondo.add(tablePanel);
@@ -471,10 +685,28 @@ public class ListinoOralux {
     			double vendita = oraluxi.get(i).getVendita();
     	    	double perc = vendita;
     	    	double oper = (((perc/100)* aumento )+perc);
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> b3f423dce0bf0d73c6a9c24aaf71265d864d2beb
+>>>>>>> b164b6b180cf8b5232bb561dff47f01e24120b2b
     	    	oper = Math.ceil(oper);
     			st = con.prepareStatement("UPDATE sys.oralux SET vendita = ? WHERE barcode = ?;");
                 st.setDouble(1, oper);
                 st.setString(2, oraluxi.get(i).getBarcode());
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+=======
+    	    	oper = Math.floor(oper);
+    			st = con.prepareStatement("UPDATE sys.oralux SET vendita = ? ;");
+                st.setDouble(1, oper);
+>>>>>>> 92ba0878318a769571cc1e9456393151517d6ac3
+>>>>>>> b3f423dce0bf0d73c6a9c24aaf71265d864d2beb
+>>>>>>> b164b6b180cf8b5232bb561dff47f01e24120b2b
                 st.executeUpdate();
     		}
     		
