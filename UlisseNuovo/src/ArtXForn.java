@@ -1,4 +1,5 @@
 import java.awt.Font;
+import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.Connection;
@@ -8,6 +9,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
@@ -15,29 +17,45 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
+import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
 
 import Classi.Database;
 import Oggetti.Articolo;
 
 public class ArtXForn {
+		private JFrame window;
+		private ImageIcon imageSfondo;
+		private JLabel labelSfondo;
 	public ArtXForn(){
 		JFrame window = new JFrame();
         window.setSize(1050, 700);
         window.setTitle("Articoli x Fornitori");
         window.setResizable(false);
         
+        labelSfondo = new JLabel(imageSfondo);
+		labelSfondo.setSize(1400, 800);
+	        
+	    imageSfondo = new ImageIcon(this.getClass().getResource("/Images/background.png"));
+	    Image img = imageSfondo.getImage();
+	    Image imgScale = img.getScaledInstance(labelSfondo.getWidth(), labelSfondo.getHeight(), Image.SCALE_DEFAULT);
+	    ImageIcon scaledIcon = new ImageIcon(imgScale);
+	    labelSfondo.setIcon(scaledIcon);
+	       
+	    window.add(labelSfondo);
+        
         JLabel artxforn_label = new JLabel("Articoli x Fornitori");
-        artxforn_label.setFont(new Font("Courier", Font.PLAIN, 20));
+        artxforn_label.setFont(new Font("", Font.PLAIN, 20));
         artxforn_label.setBounds(10, 10, 300, 20);
-        window.add(artxforn_label);
+        artxforn_label.setForeground(new java.awt.Color(255,255,255));
+        labelSfondo.add(artxforn_label);
         
         ArrayList<String> risultatoFornitori = fornitoriStr();
         String[] fornitori_values = new String[risultatoFornitori.size()];
         fornitori_values = risultatoFornitori.toArray(fornitori_values);
         JComboBox<String> fornitori_combobox = new JComboBox<>(fornitori_values);
         fornitori_combobox.setBounds(10, 50, 150, 40);
-        window.add(fornitori_combobox);
+        labelSfondo.add(fornitori_combobox);
         
         JPanel tablePanel = new JPanel();
         tablePanel.setLayout(null);
@@ -54,14 +72,31 @@ public class ArtXForn {
         JTable table = new JTable(model);
         table.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
         
+        DefaultTableCellRenderer rightRenderer = new DefaultTableCellRenderer();
+        rightRenderer.setHorizontalAlignment(JLabel.RIGHT);
+        table.getColumnModel().getColumn(0).setCellRenderer(rightRenderer);
+        table.getColumnModel().getColumn(1).setCellRenderer(rightRenderer);
+        table.getColumnModel().getColumn(2).setCellRenderer(rightRenderer);
+        table.getColumnModel().getColumn(3).setCellRenderer(rightRenderer);
+        table.getColumnModel().getColumn(5).setCellRenderer(rightRenderer);
+        table.getColumnModel().getColumn(6).setCellRenderer(rightRenderer);
+        table.getColumnModel().getColumn(7).setCellRenderer(rightRenderer);
+        table.getColumnModel().getColumn(8).setCellRenderer(rightRenderer);
+        table.getColumnModel().getColumn(9).setCellRenderer(rightRenderer);
+        table.getColumnModel().getColumn(10).setCellRenderer(rightRenderer);
+        table.getColumnModel().getColumn(11).setCellRenderer(rightRenderer);
+        table.getColumnModel().getColumn(12).setCellRenderer(rightRenderer);
+        
+        
         
         scrollPane.setViewportView(table);
         tablePanel.add(scrollPane);
-        window.add(tablePanel);
+        labelSfondo.add(tablePanel);
         
         JButton cerca_button = new JButton("Cerca");
         cerca_button.setBounds(200, 10, 150, 40);
-        window.add(cerca_button);
+        cerca_button.setBackground(new java.awt.Color(255,209,110));
+        labelSfondo.add(cerca_button);
         
         cerca_button.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
@@ -69,7 +104,7 @@ public class ArtXForn {
             	String sel = (String) fornitori_combobox.getSelectedItem();
             	ArrayList<Articolo> articoli = articoliDaDb(sel);
             	for(int i=0; i < articoli.size(); i++) {
-            		model.addRow(new Object[] {articoli.get(i).getCod_for(), articoli.get(i).getBarcode(), articoli.get(i).getFornitore(),  
+            		model.addRow(new Object[] {articoli.get(i).getCod_for(), articoli.get(i).getBarcode(), articoli.get(i).getCfor(),  
             				articoli.get(i).getGiacenza(), articoli.get(i).getDescrizione(), articoli.get(i).getPeso(), articoli.get(i).getCaratura(), 
                 			articoli.get(i).getPr_unit(), articoli.get(i).getTot_giac(), articoli.get(i).getSconto1(), articoli.get(i).getSconto2(),
                 			articoli.get(i).getCosto(), articoli.get(i).getFv()});
@@ -97,8 +132,8 @@ public class ArtXForn {
             	Articolo articolo = new Articolo();
             	
             	articolo.setBarcode(rs.getString("barcode"));
-            	articolo.setFornitore(rs.getString("cfor"));
-            	articolo.setCod_for(rs.getLong("codfor"));
+            	articolo.setCfor(rs.getString("cfor"));
+            	articolo.setCod_for(rs.getString("codfor"));
             	articolo.setGiacenza(rs.getInt("giacenza")); 
             	articolo.setDescrizione(rs.getString("descrizione"));
             	articolo.setPeso(rs.getDouble("peso"));

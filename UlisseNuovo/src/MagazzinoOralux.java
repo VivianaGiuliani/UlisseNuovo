@@ -1,107 +1,176 @@
-import javax.swing.*;
+import java.awt.Font;
+import java.awt.Image;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+import javax.swing.JTextArea;
+import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
-import java.awt.*;
 
-public class MagazzinoOralux extends JFrame {
+import Classi.Database;
+import Classi.ReportListinoOralux;
+import Classi.ReportMagazzinoOralux;
+import Oggetti.Oralux;
+import net.sf.jasperreports.engine.JRException;
 
-    private JTable table;
-    private DefaultTableModel tableModel;
+public class MagazzinoOralux {
+	private JFrame window;
+	private ImageIcon imageSfondo;
+	private JLabel labelSfondo;
+	
+	public MagazzinoOralux() {
+		window = new JFrame();
+		window.setSize(1250, 750);
+		window.setTitle("Magazzino Oralux");
+		window.setResizable(false);
+		
+		labelSfondo = new JLabel(imageSfondo);
+		labelSfondo.setSize(1400, 800);
+	        
+	    imageSfondo = new ImageIcon(this.getClass().getResource("/Images/background.png"));
+	    Image img = imageSfondo.getImage();
+	    Image imgScale = img.getScaledInstance(labelSfondo.getWidth(), labelSfondo.getHeight(), Image.SCALE_DEFAULT);
+	    ImageIcon scaledIcon = new ImageIcon(imgScale);
+	    labelSfondo.setIcon(scaledIcon);
+	       
+	    window.add(labelSfondo);
+	    
+	    
+	    JLabel magazzino_oralux_label = new JLabel("Magazzino Oralux");
+	    magazzino_oralux_label.setFont(new Font("Courier", Font.PLAIN, 30));
+	    magazzino_oralux_label.setBounds(10, 10, 400, 40);
+	    magazzino_oralux_label.setForeground(new java.awt.Color(255,255,255));
+        labelSfondo.add(magazzino_oralux_label);
+        
+       
+		JButton calcolo_totale_button = new JButton("Calcolo Totale");
+		calcolo_totale_button.setBounds(10, 70, 150, 40);
+		calcolo_totale_button.setVisible(true);
+		calcolo_totale_button.setBackground(new java.awt.Color(178,255,102));
+		labelSfondo.add(calcolo_totale_button);
+		
+		JTextArea calcolo_totale_textbox = new JTextArea();
+		calcolo_totale_textbox.setBounds(170, 70, 150, 40);
+		calcolo_totale_textbox.setFont(new Font("Courier", Font.PLAIN, 20));
+		calcolo_totale_textbox.setBackground(new java.awt.Color(203, 203, 146));
+        labelSfondo.add(calcolo_totale_textbox);
+        
+        JButton stampa_button = new JButton("Stampa");
+        stampa_button.setBounds(350, 70, 100, 40);
+        stampa_button.setVisible(true);
+        stampa_button.setBackground(new java.awt.Color(178,255,102));
+		labelSfondo.add(stampa_button);
+        
+        JPanel tablePanel = new JPanel();
+	    tablePanel.setLayout(null);
+	    tablePanel.setBounds(10, 140, 1200, 500);
 
-    public MagazzinoOralux() {
-        initializeUI();
-        populateTable();
-    }
+	    JScrollPane scrollPane = new JScrollPane();
+	    scrollPane.setBounds(0, 0, 1200, 600);
 
-    private void initializeUI() {
-        this.setSize(1120, 600);
-        this.setTitle("Magazzino Oralux");
-        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        this.setResizable(false);
-        this.setLayout(null);
+	    String[] columnNames = {"Quantità", "Barcode", "Cod_art", "Nome"};
+	        
+	    DefaultTableModel model = new DefaultTableModel(columnNames, 0);
+	    JTable table = new JTable(model);
+	    table.setAutoResizeMode(JTable.AUTO_RESIZE_ALL_COLUMNS);
+	    
+	    DefaultTableCellRenderer rightRenderer = new DefaultTableCellRenderer();
+        rightRenderer.setHorizontalAlignment(JLabel.RIGHT);
+        table.getColumnModel().getColumn(0).setCellRenderer(rightRenderer);
+       
+	    
+	    scrollPane.setViewportView(table);
+	    tablePanel.add(scrollPane);
+	    labelSfondo.add(tablePanel);
+	    
+	    ArrayList<Oralux> oraluxi = oraluxDaDb();
+    	for(int i=0; i < oraluxi.size(); i++) {
+    		model.addRow(new Object[] {oraluxi.get(i).getQuantita(), oraluxi.get(i).getBarcode(), oraluxi.get(i).getCod_art(), oraluxi.get(i).getNome()});
+    	}
+    	
+    	
+    	
+    	calcolo_totale_button.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				double totale = 0.0;
+				for(int i = 0; i < oraluxi.size(); i++) {
+					totale = totale + (oraluxi.get(i).getQuantita() * oraluxi.get(i).getVendita());
+				}
+				calcolo_totale_textbox.setText(String.valueOf(totale));
+			}
+    	});
+    	
+    	stampa_button.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				ReportMagazzinoOralux r = new ReportMagazzinoOralux();
+            	try {
+					r.generaReport();
+				} catch (JRException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+			}
+	    });
+	    
+	    window.setLayout(null);
+        window.setVisible(true);
+	}
+	
+	
+	public static ArrayList<Oralux> oraluxDaDb(){
+    	Statement st = null;
+        ResultSet rs = null;
+    	Connection con  = Database.connect();
+    	ArrayList<Oralux> oraluxi = new ArrayList<Oralux>(); 
+    	try {
+            st = con.createStatement();
+            rs = st.executeQuery("SELECT * FROM sys.oralux ORDER BY barcode ASC;");                 
+            System.out.println("query eseguita oralux da db");
+            while (rs.next()) {
+            	Oralux oralux = new Oralux();
+            	
+            	oralux.setBarcode(rs.getString("barcode"));
+            	oralux.setCod_art(rs.getString("cod_art"));
+            	oralux.setNome(rs.getString("nome"));
+            	oralux.setVendita(rs.getDouble("vendita")); 
+            	oralux.setQuantita(rs.getInt("quantita"));
+            	
+            	oraluxi.add(oralux);
+            }
+            
+            
+        } catch (SQLException ex) {
+        	ex.printStackTrace();
 
-        // Label
-        JLabel magazzinoArgenteriaLabel = new JLabel("Magazzino Oralux");
-        magazzinoArgenteriaLabel.setFont(new Font("Courier", Font.BOLD, 15));
-        magazzinoArgenteriaLabel.setBounds(10, 10, 200, 30);
-        this.add(magazzinoArgenteriaLabel);
+        } finally {
+            try {
+                if (rs != null) {
+                    rs.close();
+                }
+                if (st != null) {
+                    st.close();
+                }
+                if (con != null) {
+                    con.close();
+                }
 
-        // Buttons
-        JButton calcolaTotaleButton = new JButton("Calcola Totale");
-        calcolaTotaleButton.setBounds(10, 50, 140, 40);
-        this.add(calcolaTotaleButton);
-
-        // Textbox
-        JTextField calcolaTotaleTextBox = new JTextField();
-        calcolaTotaleTextBox.setBounds(130, 52, 200, 30);
-        this.add(calcolaTotaleTextBox);
-
-        JButton stampaButton = new JButton("Stampa");
-        stampaButton.setBounds(300, 50, 140, 40);
-        this.add(stampaButton);
-
-        JButton inizioButton = new JButton("|<");
-        inizioButton.setBounds(530, 50, 60, 40);
-        this.add(inizioButton);
-
-        JButton indietroButton = new JButton("<");
-        indietroButton.setBounds(585, 50, 60, 40);
-        this.add(indietroButton);
-
-        JButton avantiButton = new JButton(">");
-        avantiButton.setBounds(640, 50, 60, 40);
-        this.add(avantiButton);
-
-        JButton fineButton = new JButton(">|");
-        fineButton.setBounds(695, 50, 60, 40);
-        this.add(fineButton);
-
-        JButton aggiungiRigaButton = new JButton("AR");
-        aggiungiRigaButton.setBounds(770, 50, 60, 40);
-        this.add(aggiungiRigaButton);
-
-        JButton eliminaRigaButton = new JButton("ER");
-        eliminaRigaButton.setBounds(825, 50, 60, 40);
-        this.add(eliminaRigaButton);
-
-        JButton salvaRigaButton = new JButton("SR");
-        salvaRigaButton.setBounds(880, 50, 60, 40);
-        this.add(salvaRigaButton);
-
-        JButton abbandonaRigaButton = new JButton("ABR");
-        abbandonaRigaButton.setBounds(935, 50, 60, 40);
-        this.add(abbandonaRigaButton);
-
-        JButton filtraRowsetButton = new JButton("FR");
-        filtraRowsetButton.setBounds(990, 50, 60, 40);
-        this.add(filtraRowsetButton);
-
-        JButton trovaRigaButton = new JButton("TR");
-        trovaRigaButton.setBounds(1045, 50, 60, 40);
-        this.add(trovaRigaButton);
-
-        // Table
-        tableModel = new DefaultTableModel(new Object[]{"Quantità", "Barcode", "Cod_Art", "Nome_Art"}, 0);
-        table = new JTable(tableModel);
-        JScrollPane tableScrollPane = new JScrollPane(table);
-        tableScrollPane.setBounds(30, 110, 1060, 480);
-        this.add(tableScrollPane);
-
-        this.setVisible(true);
-    }
-
-    private void populateTable() {
-        // Here, you can add data to the table from your data source.
-        // You can use tableModel.addRow(Vector) or tableModel.addRow(Object[])
-        // to add rows to the table.
-        // Example:
-        tableModel.addRow(new Object[]{"10", "Barcode1", "Cod_Art1", "Nome_Art1"});
-        tableModel.addRow(new Object[]{"15", "Barcode2", "Cod_Art2", "Nome_Art2"});
-        // Add more rows as needed...
-    }
-
-    public static void main(String[] args) {
-        SwingUtilities.invokeLater(() -> {
-            new MagazzinoOralux();
-        });
+            } catch (SQLException ex) {
+               ex.printStackTrace();
+            }
+        }
+		return oraluxi;
+		
     }
 }

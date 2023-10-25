@@ -16,272 +16,360 @@ import java.sql.Statement;
 import java.util.ArrayList;
 
 public class AnagraficheAziende {
+		private JFrame window;
+		private ImageIcon imageSfondo;
+		private JLabel labelSfondo;
     public AnagraficheAziende(){
-    	JFrame window = new JFrame();
+    	window = new JFrame();
         window.setSize(1300, 1000);
         window.setTitle("Anagrafiche Azienda");
         window.setResizable(false);
         
+        labelSfondo = new JLabel(imageSfondo);
+		labelSfondo.setSize(1400, 800);
+	        
+	    imageSfondo = new ImageIcon(this.getClass().getResource("/Images/background.png"));
+	    Image img = imageSfondo.getImage();
+	    Image imgScale = img.getScaledInstance(labelSfondo.getWidth(), labelSfondo.getHeight(), Image.SCALE_DEFAULT);
+	    ImageIcon scaledIcon = new ImageIcon(imgScale);
+	    labelSfondo.setIcon(scaledIcon);
+	       
+	    window.add(labelSfondo);
+        
         JLabel anagrafiche_clienti_label = new JLabel("Anagrafiche Aziende");
-        anagrafiche_clienti_label.setFont(new Font("Courier", Font.BOLD, 20));
+        anagrafiche_clienti_label.setFont(new Font("", Font.BOLD, 20));
         anagrafiche_clienti_label.setBounds(10, 10, 300, 30);
-        window.add(anagrafiche_clienti_label);
+        anagrafiche_clienti_label.setForeground(new java.awt.Color(255,255,255));
+        labelSfondo.add(anagrafiche_clienti_label);
         
         JLabel cf_label = new JLabel("C/F");
-        cf_label.setFont(new Font("Courier", Font.PLAIN, 10));
+        cf_label.setFont(new Font("", Font.PLAIN, 15));
         cf_label.setBounds(10, 40, 70, 20);
-        window.add(cf_label);
+        cf_label.setForeground(new java.awt.Color(255,255,255));
+        labelSfondo.add(cf_label);
 
-        JTextArea cf_textbox = new JTextArea();
+        JTextField cf_textbox = new JTextField();
         cf_textbox.setBounds(10, 60, 100, 40);
-        window.add(cf_textbox);
+        cf_textbox.setBackground(new java.awt.Color(203, 203, 146));
+        labelSfondo.add(cf_textbox);
 
         JLabel nome_label = new JLabel("Nome");
-        nome_label.setFont(new Font("Courier", Font.PLAIN, 10));
+        nome_label.setFont(new Font("", Font.PLAIN, 15));
         nome_label.setBounds(120, 40, 50, 20);
-        window.add(nome_label);
+        nome_label.setForeground(new java.awt.Color(255,255,255));
+        labelSfondo.add(nome_label);
 
-        JTextArea nome_textbox = new JTextArea();
+        JTextField nome_textbox = new JTextField();
         nome_textbox.setBounds(120, 60, 200, 40);
-        window.add(nome_textbox);
+        nome_textbox.setBackground(new java.awt.Color(203, 203, 146));
+        labelSfondo.add(nome_textbox);
 
         JLabel indirizzo_label = new JLabel("Indirizzo");
-        indirizzo_label.setFont(new Font("Courier", Font.PLAIN, 10));
+        indirizzo_label.setFont(new Font("", Font.PLAIN, 15));
         indirizzo_label.setBounds(340, 40, 90, 20);
-        window.add(indirizzo_label);
+        indirizzo_label.setForeground(new java.awt.Color(255,255,255));
+        labelSfondo.add(indirizzo_label);
 
-        JTextArea indirizzo_textbox = new JTextArea();
+        JTextField indirizzo_textbox = new JTextField();
         indirizzo_textbox.setBounds(340, 60, 180, 40);
-        window.add(indirizzo_textbox);
+        indirizzo_textbox.setBackground(new java.awt.Color(203, 203, 146));
+        labelSfondo.add(indirizzo_textbox);
         
         JLabel cap_label = new JLabel("Cap");
-        cap_label.setFont(new Font("Courier", Font.PLAIN, 10));
+        cap_label.setFont(new Font("", Font.PLAIN, 15));
         cap_label.setBounds(540, 40, 100, 20);
-        window.add(cap_label);
+        cap_label.setForeground(new java.awt.Color(255,255,255));
+        labelSfondo.add(cap_label);
 
-        JTextArea cap_textbox = new JTextArea();
+        JTextField cap_textbox = new JTextField();
         cap_textbox.setBounds(540, 60, 100, 40);
-        window.add(cap_textbox);
+        cap_textbox.setBackground(new java.awt.Color(203, 203, 146));
+        labelSfondo.add(cap_textbox);
 
         
         JLabel citta_label = new JLabel("Citta");
-        citta_label.setFont(new Font("Courier", Font.PLAIN, 10));
+        citta_label.setFont(new Font("", Font.PLAIN, 15));
         citta_label.setBounds(650, 40, 100, 20);
-        window.add(citta_label);
+        citta_label.setForeground(new java.awt.Color(255,255,255));
+        labelSfondo.add(citta_label);
 
-        JTextArea citta_textbox = new JTextArea();
+        JTextField citta_textbox = new JTextField();
         citta_textbox.setBounds(650, 60, 200, 40);
-        window.add(citta_textbox);
+        citta_textbox.setBackground(new java.awt.Color(203, 203, 146));
+        labelSfondo.add(citta_textbox);
 
         JLabel provincia_label = new JLabel("Provincia");
-        provincia_label.setFont(new Font("Courier", Font.PLAIN, 10));
+        provincia_label.setFont(new Font("", Font.PLAIN, 15));
         provincia_label.setBounds(860, 40, 100, 20);
-        window.add(provincia_label);
+        provincia_label.setForeground(new java.awt.Color(255,255,255));
+        labelSfondo.add(provincia_label);
         
-        JTextArea provincia_textbox = new JTextArea();
+        JTextField provincia_textbox = new JTextField();
         provincia_textbox.setBounds(860, 60, 120, 40);
-        window.add(provincia_textbox);
+        provincia_textbox.setBackground(new java.awt.Color(203, 203, 146));
+        labelSfondo.add(provincia_textbox);
         
         JLabel nome_dest_label = new JLabel("Nome_dest");
-        nome_dest_label.setFont(new Font("Courier", Font.PLAIN, 10));
+        nome_dest_label.setFont(new Font("", Font.PLAIN, 15));
         nome_dest_label.setBounds(990, 40, 100, 20);
-        window.add(nome_dest_label);
+        nome_dest_label.setForeground(new java.awt.Color(255,255,255));
+        labelSfondo.add(nome_dest_label);
         
-        JTextArea nome_dest_textbox = new JTextArea();
+        JTextField nome_dest_textbox = new JTextField();
         nome_dest_textbox.setBounds(990, 60, 200, 40);
-        window.add(nome_dest_textbox);
+        nome_dest_textbox.setBackground(new java.awt.Color(203, 203, 146));
+        labelSfondo.add(nome_dest_textbox);
         
         JLabel cap_dest_label = new JLabel("Cap_dest");
-        cap_dest_label.setFont(new Font("Courier", Font.PLAIN, 10));
+        cap_dest_label.setFont(new Font("", Font.PLAIN, 15));
         cap_dest_label.setBounds(10, 100, 100, 20);
-        window.add(cap_dest_label);
+        cap_dest_label.setForeground(new java.awt.Color(255,255,255));
+        labelSfondo.add(cap_dest_label);
         
-        JTextArea cap_dest_textbox = new JTextArea();
+        JTextField cap_dest_textbox = new JTextField();
         cap_dest_textbox.setBounds(10, 120, 120, 40);
-        window.add(cap_dest_textbox);
+        cap_dest_textbox.setBackground(new java.awt.Color(203, 203, 146));
+        labelSfondo.add(cap_dest_textbox);
         
         JLabel ind_dest_label = new JLabel("Ind_dest");
-        ind_dest_label.setFont(new Font("Courier", Font.PLAIN, 10));
+        ind_dest_label.setFont(new Font("", Font.PLAIN, 15));
         ind_dest_label.setBounds(140, 100, 100, 20);
-        window.add(ind_dest_label);
+        ind_dest_label.setForeground(new java.awt.Color(255,255,255));
+        labelSfondo.add(ind_dest_label);
         
-        JTextArea ind_dest_textbox = new JTextArea();
+        JTextField ind_dest_textbox = new JTextField();
         ind_dest_textbox.setBounds(140, 120, 120, 40);
-        window.add(ind_dest_textbox);
+        ind_dest_textbox.setBackground(new java.awt.Color(203, 203, 146));
+        labelSfondo.add(ind_dest_textbox);
         
         JLabel cit_dest_label = new JLabel("Cit_dest");
-        cit_dest_label.setFont(new Font("Courier", Font.PLAIN, 10));
+        cit_dest_label.setFont(new Font("", Font.PLAIN, 15));
         cit_dest_label.setBounds(270, 100, 100, 20);
-        window.add(cit_dest_label);
+        cit_dest_label.setForeground(new java.awt.Color(255,255,255));
+        labelSfondo.add(cit_dest_label);
         
-        JTextArea cit_dest_textbox = new JTextArea();
+        JTextField cit_dest_textbox = new JTextField();
         cit_dest_textbox.setBounds(270, 120, 120, 40);
-        window.add(cit_dest_textbox);
+        cit_dest_textbox.setBackground(new java.awt.Color(203, 203, 146));
+        labelSfondo.add(cit_dest_textbox);
         
         JLabel prov_dest_label = new JLabel("Prov_dest");
-        prov_dest_label.setFont(new Font("Courier", Font.PLAIN, 10));
+        prov_dest_label.setFont(new Font("", Font.PLAIN, 15));
         prov_dest_label.setBounds(400, 100, 100, 20);
-        window.add(prov_dest_label);
+        prov_dest_label.setForeground(new java.awt.Color(255,255,255));
+        labelSfondo.add(prov_dest_label);
         
-        JTextArea prov_dest_textbox = new JTextArea();
-        prov_dest_textbox.setBounds(400, 120, 50, 40);
-        window.add(prov_dest_textbox);
+        JTextField prov_dest_textbox = new JTextField();
+        prov_dest_textbox.setBounds(400, 120, 70, 40);
+        prov_dest_textbox.setBackground(new java.awt.Color(203, 203, 146));
+        labelSfondo.add(prov_dest_textbox);
         
         JLabel p_iva_label = new JLabel("P_iva");
-        p_iva_label.setFont(new Font("Courier", Font.PLAIN, 10));
-        p_iva_label.setBounds(460, 100, 100, 20);
-        window.add(p_iva_label);
+        p_iva_label.setFont(new Font("", Font.PLAIN, 15));
+        p_iva_label.setBounds(480, 100, 100, 20);
+        p_iva_label.setForeground(new java.awt.Color(255,255,255));
+        labelSfondo.add(p_iva_label);
         
-        JTextArea p_iva_textbox = new JTextArea();
-        p_iva_textbox.setBounds(460, 120, 170, 40);
-        window.add(p_iva_textbox);
+        JTextField p_iva_textbox = new JTextField();
+        p_iva_textbox.setBounds(480, 120, 150, 40);
+        p_iva_textbox.setBackground(new java.awt.Color(203, 203, 146));
+        labelSfondo.add(p_iva_textbox);
         
         JLabel cod_fisc_label = new JLabel("Cod_fisc");
-        cod_fisc_label.setFont(new Font("Courier", Font.PLAIN, 10));
+        cod_fisc_label.setFont(new Font("", Font.PLAIN, 15));
         cod_fisc_label.setBounds(640, 100, 100, 20);
-        window.add(cod_fisc_label);
+        cod_fisc_label.setForeground(new java.awt.Color(255,255,255));
+        labelSfondo.add(cod_fisc_label);
         
-        JTextArea cod_fisc_textbox = new JTextArea();
+        JTextField cod_fisc_textbox = new JTextField();
         cod_fisc_textbox.setBounds(640, 120, 150, 40);
-        window.add(cod_fisc_textbox);
+        cod_fisc_textbox.setBackground(new java.awt.Color(203, 203, 146));
+        labelSfondo.add(cod_fisc_textbox);
         
         JLabel pagamento_label = new JLabel("Pagamento");
-        pagamento_label.setFont(new Font("Courier", Font.PLAIN, 10));
+        pagamento_label.setFont(new Font("", Font.PLAIN, 15));
         pagamento_label.setBounds(800, 100, 100, 20);
-        window.add(pagamento_label);
+        pagamento_label.setForeground(new java.awt.Color(255,255,255));
+        labelSfondo.add(pagamento_label);
         
-        JTextArea pagamento_textbox = new JTextArea();
+        JTextField pagamento_textbox = new JTextField();
         pagamento_textbox.setBounds(800, 120, 150, 40);
-        window.add(pagamento_textbox);
+        pagamento_textbox.setBackground(new java.awt.Color(203, 203, 146));
+        labelSfondo.add(pagamento_textbox);
         
         JLabel pag_immediato_label = new JLabel("Pag_immediato");
-        pag_immediato_label.setFont(new Font("Courier", Font.PLAIN, 10));
-        pag_immediato_label.setBounds(960, 100, 100, 20);
-        window.add(pag_immediato_label);
+        pag_immediato_label.setFont(new Font("", Font.PLAIN, 15));
+        pag_immediato_label.setBounds(960, 100, 170, 20);
+        pag_immediato_label.setForeground(new java.awt.Color(255,255,255));
+        labelSfondo.add(pag_immediato_label);
         
-        JTextArea pag_immediato_textbox = new JTextArea();
+        JTextField pag_immediato_textbox = new JTextField();
         pag_immediato_textbox.setBounds(960, 120, 150, 40);
-        window.add(pag_immediato_textbox);
+        pag_immediato_textbox.setBackground(new java.awt.Color(203, 203, 146));
+        labelSfondo.add(pag_immediato_textbox);
         
         JLabel scad_gg_label = new JLabel("Scad_gg");
-        scad_gg_label.setFont(new Font("Courier", Font.PLAIN, 10));
+        scad_gg_label.setFont(new Font("", Font.PLAIN, 15));
         scad_gg_label.setBounds(1120, 100, 100, 20);
-        window.add(scad_gg_label);
+        scad_gg_label.setForeground(new java.awt.Color(255,255,255));
+        labelSfondo.add(scad_gg_label);
         
-        JTextArea scad_gg_textbox = new JTextArea();
+        JTextField scad_gg_textbox = new JTextField();
         scad_gg_textbox.setBounds(1120, 120, 100, 40);
-        window.add(scad_gg_textbox);
+        scad_gg_textbox.setBackground(new java.awt.Color(203, 203, 146));
+        labelSfondo.add(scad_gg_textbox);
         
         JLabel scad_mesi_label = new JLabel("Scad_mesi");
-        scad_mesi_label.setFont(new Font("Courier", Font.PLAIN, 10));
+        scad_mesi_label.setFont(new Font("", Font.PLAIN, 15));
         scad_mesi_label.setBounds(10, 160, 100, 20);
-        window.add(scad_mesi_label);
+        scad_mesi_label.setForeground(new java.awt.Color(255,255,255));
+        labelSfondo.add(scad_mesi_label);
         
-        JTextArea scad_mesi_textbox = new JTextArea();
+        JTextField scad_mesi_textbox = new JTextField();
         scad_mesi_textbox.setBounds(10, 180, 100, 40);
-        window.add(scad_mesi_textbox);
+        scad_mesi_textbox.setBackground(new java.awt.Color(203, 203, 146));
+        labelSfondo.add(scad_mesi_textbox);
         
         JLabel n_rate_label = new JLabel("N_rate");
-        n_rate_label.setFont(new Font("Courier", Font.PLAIN, 10));
+        n_rate_label.setFont(new Font("", Font.PLAIN, 15));
         n_rate_label.setBounds(120, 160, 100, 20);
-        window.add(n_rate_label);
+        n_rate_label.setForeground(new java.awt.Color(255,255,255));
+        labelSfondo.add(n_rate_label);
         
-        JTextArea n_rate_textbox = new JTextArea();
+        JTextField n_rate_textbox = new JTextField();
         n_rate_textbox.setBounds(120, 180, 100, 40);
-        window.add(n_rate_textbox);
+        n_rate_textbox.setBackground(new java.awt.Color(203, 203, 146));
+        labelSfondo.add(n_rate_textbox);
         
         JLabel banca_label = new JLabel("Banca");
-        banca_label.setFont(new Font("Courier", Font.PLAIN, 10));
+        banca_label.setFont(new Font("", Font.PLAIN, 15));
         banca_label.setBounds(230, 160, 100, 20);
-        window.add(banca_label);
+        banca_label.setForeground(new java.awt.Color(255,255,255));
+        labelSfondo.add(banca_label);
         
-        JTextArea banca_textbox = new JTextArea();
+        JTextField banca_textbox = new JTextField();
         banca_textbox.setBounds(230, 180, 150, 40);
-        window.add(banca_textbox);
+        banca_textbox.setBackground(new java.awt.Color(203, 203, 146));
+        labelSfondo.add(banca_textbox);
         
         JLabel cab_label = new JLabel("Cab");
-        cab_label.setFont(new Font("Courier", Font.PLAIN, 10));
+        cab_label.setFont(new Font("", Font.PLAIN, 15));
         cab_label.setBounds(390, 160, 100, 20);
-        window.add(cab_label);
+        cab_label.setForeground(new java.awt.Color(255,255,255));
+        labelSfondo.add(cab_label);
         
-        JTextArea cab_textbox = new JTextArea();
+        JTextField cab_textbox = new JTextField();
         cab_textbox.setBounds(390, 180, 100, 40);
-        window.add(cab_textbox);
+        cab_textbox.setBackground(new java.awt.Color(203, 203, 146));
+        labelSfondo.add(cab_textbox);
         
         JLabel abi_label = new JLabel("Abi");
-        abi_label.setFont(new Font("Courier", Font.PLAIN, 10));
+        abi_label.setFont(new Font("", Font.PLAIN, 15));
         abi_label.setBounds(500, 160, 100, 20);
-        window.add(abi_label);
+        abi_label.setForeground(new java.awt.Color(255,255,255));
+        labelSfondo.add(abi_label);
         
-        JTextArea abi_textbox = new JTextArea();
+        JTextField abi_textbox = new JTextField();
         abi_textbox.setBounds(500, 180, 100, 40);
-        window.add(abi_textbox);
+        abi_textbox.setBackground(new java.awt.Color(203, 203, 146));
+        labelSfondo.add(abi_textbox);
         
         JLabel telefono_label = new JLabel("Telefono");
-        telefono_label.setFont(new Font("Courier", Font.PLAIN, 10));
+        telefono_label.setFont(new Font("", Font.PLAIN, 15));
         telefono_label.setBounds(610, 160, 100, 20);
-        window.add(telefono_label);
+        telefono_label.setForeground(new java.awt.Color(255,255,255));
+        labelSfondo.add(telefono_label);
         
-        JTextArea telefono_textbox = new JTextArea();
+        JTextField telefono_textbox = new JTextField();
         telefono_textbox.setBounds(610, 180, 120, 40);
-        window.add(telefono_textbox);
+        telefono_textbox.setBackground(new java.awt.Color(203, 203, 146));
+        labelSfondo.add(telefono_textbox);
         
         JLabel email_label = new JLabel("Email");
-        email_label.setFont(new Font("Courier", Font.PLAIN, 10));
+        email_label.setFont(new Font("", Font.PLAIN, 15));
         email_label.setBounds(740, 160, 100, 20);
-        window.add(email_label);
+        email_label.setForeground(new java.awt.Color(255,255,255));
+        labelSfondo.add(email_label);
         
-        JTextArea email_textbox = new JTextArea();
+        JTextField email_textbox = new JTextField();
         email_textbox.setBounds(740, 180, 120, 40);
-        window.add(email_textbox);
+        email_textbox.setBackground(new java.awt.Color(203, 203, 146));
+        labelSfondo.add(email_textbox);
+        
+        JLabel nome_stampa_label = new JLabel("Nome da Stampa");
+        nome_stampa_label.setFont(new Font("", Font.PLAIN, 15));
+        nome_stampa_label.setBounds(870, 160, 180, 20);
+        nome_stampa_label.setForeground(new java.awt.Color(255,255,255));
+        labelSfondo.add(nome_stampa_label);
+        
+        JTextField nome_stampa_textbox = new JTextField();
+        nome_stampa_textbox.setBounds(870, 180, 180, 40);
+        nome_stampa_textbox.setBackground(new java.awt.Color(203, 203, 146));
+        labelSfondo.add(nome_stampa_textbox);
         
         JLabel note_1_label = new JLabel("Note_1");
-        note_1_label.setFont(new Font("Courier", Font.PLAIN, 10));
+        note_1_label.setFont(new Font("", Font.PLAIN, 15));
         note_1_label.setBounds(10, 220, 100 , 20);
-        window.add(note_1_label);
+        note_1_label.setForeground(new java.awt.Color(255,255,255));
+        labelSfondo.add(note_1_label);
         
-        JTextArea note_1_textbox = new JTextArea();
+        JTextField note_1_textbox = new JTextField();
         note_1_textbox.setBounds(10, 240, 1250, 40);
-        window.add(note_1_textbox);
+        note_1_textbox.setBackground(new java.awt.Color(203, 203, 146));
+        labelSfondo.add(note_1_textbox);
         
         JLabel note_2_label = new JLabel("Note_2");
-        note_2_label.setFont(new Font("Courier", Font.PLAIN, 10));
+        note_2_label.setFont(new Font("", Font.PLAIN, 15));
         note_2_label.setBounds(10, 280, 100 , 20);
-        window.add(note_2_label);
+        note_2_label.setForeground(new java.awt.Color(255,255,255));
+        labelSfondo.add(note_2_label);
         
-        JTextArea note_2_textbox = new JTextArea();
+        JTextField note_2_textbox = new JTextField();
         note_2_textbox.setBounds(10, 300, 1250, 40);
-        window.add(note_2_textbox);
+        note_2_textbox.setBackground(new java.awt.Color(203, 203, 146));
+        labelSfondo.add(note_2_textbox);
         
         JLabel note_3_label = new JLabel("Note_3");
-        note_3_label.setFont(new Font("Courier", Font.PLAIN, 10));
+        note_3_label.setFont(new Font("", Font.PLAIN, 15));
         note_3_label.setBounds(10, 340, 100 , 20);
-        window.add(note_3_label);
+        note_3_label.setForeground(new java.awt.Color(255,255,255));
+        labelSfondo.add(note_3_label);
         
-        JTextArea note_3_textbox = new JTextArea();
+        JTextField note_3_textbox = new JTextField();
         note_3_textbox.setBounds(10, 360, 1250, 40);
-        window.add(note_3_textbox);
+        note_3_textbox.setBackground(new java.awt.Color(203, 203, 146));
+        labelSfondo.add(note_3_textbox);
         
         JButton modifica_button = new JButton("Modifica");
         modifica_button.setBounds(10, 430, 200, 30);
-        window.add(modifica_button);
+        modifica_button.setBackground(new java.awt.Color(250,255,133));
+        labelSfondo.add(modifica_button);
 
         JButton alfabetico_button = new JButton("Alfabetico");
         alfabetico_button.setBounds(220, 430, 100, 40);
-        window.add(alfabetico_button);
+        alfabetico_button.setBackground(new java.awt.Color(0,153,0));
+        labelSfondo.add(alfabetico_button);
 
         JButton naturale_button = new JButton("Naturale");
         naturale_button.setBounds(330, 430, 100, 40);
-        window.add(naturale_button);
+        naturale_button.setBackground(new java.awt.Color(0,153,0));
+        labelSfondo.add(naturale_button);
 
         
         JButton aggiungi_button = new JButton("Aggiungi");
         aggiungi_button.setBounds(440, 430, 100, 40);
-        window.add(aggiungi_button);
+        aggiungi_button.setBackground(new java.awt.Color(255,209,110));
+        labelSfondo.add(aggiungi_button);
 
         JButton elimina_button = new JButton("Elimina");
         elimina_button.setBounds(550, 430, 100, 40);
-        window.add(elimina_button);
+        elimina_button.setBackground(new java.awt.Color(255,209,110));
+        labelSfondo.add(elimina_button);
+        
+        JButton stampa_button = new JButton("Stampa");
+        stampa_button.setBounds(660, 430, 100, 40);
+        stampa_button.setBackground(new java.awt.Color(255,209,110));
+        labelSfondo.add(stampa_button);
         
         JPanel tablePanel = new JPanel();
         tablePanel.setLayout(null);
@@ -295,11 +383,27 @@ public class AnagraficheAziende {
 
         DefaultTableModel model = new DefaultTableModel(columnNames, 0);
         JTable table = new JTable(model);
-        table.setAutoResizeMode(JTable.WIDTH);
+        table.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
+        
+        for(int i = 0; i < 26; i++) {
+        	table.getColumnModel().getColumn(i).setPreferredWidth(100);
+        }
         
         scrollPane.setViewportView(table);
         tablePanel.add(scrollPane);
-        window.add(tablePanel);
+        labelSfondo.add(tablePanel);
+        
+        stampa_button.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+            	/*ReportFornitori r = new ReportFornitori();
+            	try {
+					r.generaReport();
+				} catch (JRException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}*/
+            }
+    	});
         
         alfabetico_button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -342,7 +446,7 @@ public class AnagraficheAziende {
 						citta_textbox.getText(), provincia_textbox.getText(), nome_dest_textbox.getText(), ind_dest_textbox.getText(), cap_dest_textbox.getText(), cit_dest_textbox.getText(),
 						prov_dest_textbox.getText(), p_iva_textbox.getText(), cod_fisc_textbox.getText(), pagamento_textbox.getText(), pag_immediato_textbox.getText(), scad_gg_textbox.getText(),
 						scad_mesi_textbox.getText(), n_rate_textbox.getText(), banca_textbox.getText(), cab_textbox.getText(), abi_textbox.getText(), telefono_textbox.getText(), email_textbox.getText(),
-						note_1_textbox.getText(), note_2_textbox.getText(), note_3_textbox.getText());
+						nome_stampa_textbox.getText(), note_1_textbox.getText(), note_2_textbox.getText(), note_3_textbox.getText());
 			
 				
 				model.addRow(new Object[] {anagraficaAzienda.getCf(), anagraficaAzienda.getCodice(), anagraficaAzienda.getNome(), 
@@ -380,6 +484,7 @@ public class AnagraficheAziende {
 				note_1_textbox.setText(null);
 				note_2_textbox.setText(null);
 				note_3_textbox.setText(null);
+				nome_stampa_textbox.setText(null);
 			}
         });
         
@@ -404,6 +509,12 @@ public class AnagraficheAziende {
     				anagraficheAziende.get(i).getBanca(), anagraficheAziende.get(i).getCab(), anagraficheAziende.get(i).getAbi(), anagraficheAziende.get(i).getTelefono(), 
     				anagraficheAziende.get(i).getEmail(), anagraficheAziende.get(i).getNote_1(), anagraficheAziende.get(i).getNote_2(), anagraficheAziende.get(i).getNote_3()});
     	}
+    	
+    	modifica_button.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				ModificaDatiAnagraficaAzienda m = new ModificaDatiAnagraficaAzienda();
+			}
+    	});
         
         window.setLayout(null);
         window.setVisible(true);
@@ -470,6 +581,7 @@ public class AnagraficheAziende {
     	String abi = anagraficaAzienda.getCod_fisc();
     	String telefono = anagraficaAzienda.getCod_fisc();
     	String email = anagraficaAzienda.getCod_fisc();
+    	String nome_stampa = anagraficaAzienda.getNome_stampa();
     	String note_1 = anagraficaAzienda.getNote_1();
     	String note_2 = anagraficaAzienda.getNote_2();
     	String note_3 = anagraficaAzienda.getNote_3();
@@ -477,8 +589,8 @@ public class AnagraficheAziende {
     	try { 
     		PreparedStatement pstmt = con.prepareStatement("INSERT INTO sys.anagrafica_aziende (cf, codice, nome, indirizzo, cap, citta, provincia, "
     				+ "nome_dest, ind_dest, cap_dest, cit_dest, prov_dest, p_iva, cod_fisc, pagamento, pag_immediato, scad_gg, scad_mesi, n_rate, banca,"
-    				+ "cab, abi, telefono, email, note_1, note_2, note_3) VALUE \r\n"
-    				+ "        (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
+    				+ "cab, abi, telefono, email, nome_stampa, note_1, note_2, note_3) VALUE \r\n"
+    				+ "        (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
     		pstmt.setString(1, cf);
     		pstmt.setInt(2, codice);
     		pstmt.setString(3, nome);
@@ -503,9 +615,10 @@ public class AnagraficheAziende {
     		pstmt.setString(22, abi);
     		pstmt.setString(23, telefono);
     		pstmt.setString(24, email);
-    		pstmt.setString(25, note_1);
-    		pstmt.setString(26, note_2);
-    		pstmt.setString(27, note_3);
+    		pstmt.setString(25, nome_stampa);
+    		pstmt.setString(26, note_1);
+    		pstmt.setString(27, note_2);
+    		pstmt.setString(28, note_3);
     		
     		
     		
