@@ -1,10 +1,14 @@
 import javax.swing.*;
+import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
 
 import Classi.Database;
+import Classi.ReportRiparazioniArgenteriaPubblico;
+import Classi.ReportRiparazioniOreficeriaNegozi;
 import Oggetti.Articolo;
 import Oggetti.CostoPulitura;
 import Oggetti.RiparazioniOreficeria;
+import net.sf.jasperreports.engine.JRException;
 
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -17,54 +21,76 @@ import java.sql.Statement;
 import java.util.ArrayList;
 
 public class RiparazioniOreficeriaNegozi {
-    public static void main (String [] args) {
-    	JFrame window = new JFrame();
+		private JFrame window;
+		private ImageIcon imageSfondo;
+		private JLabel labelSfondo;
+    public RiparazioniOreficeriaNegozi() {
+    	window = new JFrame();
 		window.setSize(1250, 700);
 		window.setTitle("Riparazioni oreficeria negozi");
 		window.setResizable(false);
+		
+		labelSfondo = new JLabel(imageSfondo);
+		labelSfondo.setSize(1400, 800);
+	        
+	    imageSfondo = new ImageIcon(this.getClass().getResource("/Images/background.png"));
+	    Image img = imageSfondo.getImage();
+	    Image imgScale = img.getScaledInstance(labelSfondo.getWidth(), labelSfondo.getHeight(), Image.SCALE_DEFAULT);
+	    ImageIcon scaledIcon = new ImageIcon(imgScale);
+	    labelSfondo.setIcon(scaledIcon);
+	       
+	    window.add(labelSfondo);
 
         JLabel listinoCostoPulituraLabel = new JLabel("Listino Riparazioni Oreficeria Privati");
-        listinoCostoPulituraLabel.setFont(new Font("Courier", Font.BOLD, 20));
-        listinoCostoPulituraLabel.setBounds(30, 10, 300, 30);
-        window.add(listinoCostoPulituraLabel);
+        listinoCostoPulituraLabel.setFont(new Font("", Font.BOLD, 20));
+        listinoCostoPulituraLabel.setBounds(30, 10, 400, 30);
+        listinoCostoPulituraLabel.setForeground(new java.awt.Color(255,255,255));
+        labelSfondo.add(listinoCostoPulituraLabel);
 
         JLabel descrizione_label = new JLabel("Descrizione");
-        descrizione_label.setFont(new Font("Courier", Font.PLAIN, 10));
+        descrizione_label.setFont(new Font("", Font.PLAIN, 15));
         descrizione_label.setBounds(10, 50, 100, 20);
-        window.add(descrizione_label);
+        descrizione_label.setForeground(new java.awt.Color(255,255,255));
+        labelSfondo.add(descrizione_label);
 
-        JTextArea descrizione_textbox = new JTextArea();
+        JTextField descrizione_textbox = new JTextField();
         descrizione_textbox.setBounds(10, 70, 150, 40);
-        window.add(descrizione_textbox);
+        labelSfondo.add(descrizione_textbox);
         
         JLabel prezzo_label = new JLabel("Prezzo");
-        prezzo_label.setFont(new Font("Courier", Font.PLAIN, 10));
+        prezzo_label.setFont(new Font("", Font.PLAIN, 15));
         prezzo_label.setBounds(170, 50, 50, 20);
-        window.add(prezzo_label);
+        prezzo_label.setForeground(new java.awt.Color(255,255,255));
+        labelSfondo.add(prezzo_label);
 
-        JTextArea prezzo_textbox = new JTextArea();
+        JTextField prezzo_textbox = new JTextField();
         prezzo_textbox.setBounds(170, 70, 150, 40);
-        window.add(prezzo_textbox);
+        labelSfondo.add(prezzo_textbox);
         
         JButton inserisci_costo_button = new JButton("Inserisci costo");
         inserisci_costo_button.setBounds(490, 70, 130, 40);
-        window.add(inserisci_costo_button);
+        inserisci_costo_button.setBackground(new java.awt.Color(255,209,110));
+        labelSfondo.add(inserisci_costo_button);
 
         JButton elimina_costo_button = new JButton("Elimina costo");
         elimina_costo_button.setBounds(630, 70, 130, 40);
-        window.add(elimina_costo_button);
+        elimina_costo_button.setBackground(new java.awt.Color(255,209,110));
+        labelSfondo.add(elimina_costo_button);
         
         JButton ordine_codice_button = new JButton("Ordine per codice");
         ordine_codice_button.setBounds(1000, 10, 150, 40);
-        window.add(ordine_codice_button);
+        ordine_codice_button.setBackground(new java.awt.Color(250,255,133));
+        labelSfondo.add(ordine_codice_button);
         
         JButton ordine_naturale_button = new JButton("Ordine naturale");
         ordine_naturale_button.setBounds(1000, 60, 150, 40);
-        window.add(ordine_naturale_button);
+        ordine_naturale_button.setBackground(new java.awt.Color(250,255,133));
+        labelSfondo.add(ordine_naturale_button);
         
         JButton stampa_button = new JButton("Stampa");
         stampa_button.setBounds(1000, 110, 150, 40);
-        window.add(stampa_button);
+        stampa_button.setBackground(new java.awt.Color(0, 255, 255));
+        labelSfondo.add(stampa_button);
         
         JPanel tablePanel = new JPanel();
         tablePanel.setLayout(null);
@@ -79,9 +105,14 @@ public class RiparazioniOreficeriaNegozi {
         JTable table = new JTable(model);
         table.setAutoResizeMode(JTable.WIDTH);
         
+        DefaultTableCellRenderer rightRenderer = new DefaultTableCellRenderer();
+        rightRenderer.setHorizontalAlignment(JLabel.RIGHT);
+        table.getColumnModel().getColumn(2).setCellRenderer(rightRenderer);
+        
+        
         scrollPane.setViewportView(table);
         tablePanel.add(scrollPane);
-        window.add(tablePanel);
+        labelSfondo.add(tablePanel);
         
 
         ArrayList<RiparazioniOreficeria> riparazioniOreficeria = riparazioniOreficeriaDaDb();
@@ -133,6 +164,18 @@ public class RiparazioniOreficeriaNegozi {
 	           	
 	           	descrizione_textbox.setText(null);
 	           	prezzo_textbox.setText(null);
+            }
+    	});
+    	
+    	stampa_button.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+            	ReportRiparazioniOreficeriaNegozi r = new ReportRiparazioniOreficeriaNegozi();
+            	try {
+					r.generaReport();
+				} catch (JRException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
             }
     	});
         

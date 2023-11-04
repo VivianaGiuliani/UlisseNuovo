@@ -25,15 +25,18 @@ public class AnagraficaAzienda {
 	private String abi;
 	private String telefono;
 	private String email;
+	private String nome_stampa;
 	private String note_1;
 	private String note_2;
 	private String note_3;
+	
 	public AnagraficaAzienda() {}
+
 	public AnagraficaAzienda(String cf, int codice, String nome, String indirizzo, String cap, String citta,
 			String provincia, String nome_dest, String ind_dest, String cap_dest, String cit_dest, String prov_dest,
 			String p_iva, String cod_fisc, String pagamento, String pag_immediato, String scad_gg, String scad_mesi,
-			String n_rate, String banca, String cab, String abi, String telefono, String email, String note_1,
-			String note_2, String note_3) {
+			String n_rate, String banca, String cab, String abi, String telefono, String email, String nome_stampa,
+			String note_1, String note_2, String note_3) {
 		super();
 		this.cf = cf;
 		this.codice = codice;
@@ -59,6 +62,7 @@ public class AnagraficaAzienda {
 		this.abi = abi;
 		this.telefono = telefono;
 		this.email = email;
+		this.nome_stampa = nome_stampa;
 		this.note_1 = note_1;
 		this.note_2 = note_2;
 		this.note_3 = note_3;
@@ -256,6 +260,14 @@ public class AnagraficaAzienda {
 		this.email = email;
 	}
 
+	public String getNome_stampa() {
+		return nome_stampa;
+	}
+
+	public void setNome_stampa(String nome_stampa) {
+		this.nome_stampa = nome_stampa;
+	}
+
 	public String getNote_1() {
 		return note_1;
 	}
@@ -288,8 +300,11 @@ public class AnagraficaAzienda {
 				+ prov_dest + ", p_iva=" + p_iva + ", cod_fisc=" + cod_fisc + ", pagamento=" + pagamento
 				+ ", pag_immediato=" + pag_immediato + ", scad_gg=" + scad_gg + ", scad_mesi=" + scad_mesi + ", n_rate="
 				+ n_rate + ", banca=" + banca + ", cab=" + cab + ", abi=" + abi + ", telefono=" + telefono + ", email="
-				+ email + ", note_1=" + note_1 + ", note_2=" + note_2 + ", note_3=" + note_3 + "]";
+				+ email + ", nome_stampa=" + nome_stampa + ", note_1=" + note_1 + ", note_2=" + note_2 + ", note_3="
+				+ note_3 + "]";
 	}
+	
+	
 	
 	
 }

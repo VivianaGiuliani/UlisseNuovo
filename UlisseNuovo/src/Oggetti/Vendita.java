@@ -6,7 +6,7 @@ import javax.xml.crypto.Data;
 
 public class Vendita {
 	private int numeroVendita;
-	private Date data;
+	private String data;
 	private int totaleMerce;
 	private double sconto;
 	private double merceScontata;
@@ -17,7 +17,7 @@ public class Vendita {
 	
 	public Vendita() {}
 
-	public Vendita(int numeroVendita, Date data, int totaleMerce, double sconto, double merceScontata,
+	public Vendita(int numeroVendita, String data, int totaleMerce, double sconto, double merceScontata,
 			int totaleScontato, int acconto, int totaleSaldo, String metodoPagamento) {
 		super();
 		this.numeroVendita = numeroVendita;
@@ -39,11 +39,11 @@ public class Vendita {
 		this.numeroVendita = numeroVendita;
 	}
 
-	public Date getData() {
+	public String getData() {
 		return data;
 	}
 
-	public void setData(Date data) {
+	public void setData(String data) {
 		this.data = data;
 	}
 

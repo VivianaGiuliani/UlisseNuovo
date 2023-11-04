@@ -26,6 +26,7 @@ public class StampaDistintaDatiVendita {
 	private String nome_cliente;
 	private String codice_carta_cliente;
 	private String email_cliente;
+	private double acconto;
 	
 	public StampaDistintaDatiVendita() {}
 
@@ -33,7 +34,8 @@ public class StampaDistintaDatiVendita {
 			double caratura, double totale_riga, int sc_1, int sc_2, double scontato, double totale_merce,
 			double sconto, double merce_scontata, double valore_buono, double totale_scontato, int punti_precedenti,
 			int punti_guadagnati, int punti_totali, int punti_usati, int punti_disponibili, String da_titolo_cliente,
-			String titolo_cliente, String nome_cliente, String codice_carta_cliente, String email_cliente) {
+			String titolo_cliente, String nome_cliente, String codice_carta_cliente, String email_cliente,
+			double acconto) {
 		super();
 		this.numero_vendita = numero_vendita;
 		this.quantita = quantita;
@@ -60,6 +62,7 @@ public class StampaDistintaDatiVendita {
 		this.nome_cliente = nome_cliente;
 		this.codice_carta_cliente = codice_carta_cliente;
 		this.email_cliente = email_cliente;
+		this.acconto = acconto;
 	}
 
 	public int getNumero_vendita() {
@@ -262,6 +265,14 @@ public class StampaDistintaDatiVendita {
 		this.email_cliente = email_cliente;
 	}
 
+	public double getAcconto() {
+		return acconto;
+	}
+
+	public void setAcconto(double acconto) {
+		this.acconto = acconto;
+	}
+
 	@Override
 	public String toString() {
 		return "StampaDistintaDatiVendita [numero_vendita=" + numero_vendita + ", quantita=" + quantita + ", barcode="
@@ -272,7 +283,10 @@ public class StampaDistintaDatiVendita {
 				+ punti_precedenti + ", punti_guadagnati=" + punti_guadagnati + ", punti_totali=" + punti_totali
 				+ ", punti_usati=" + punti_usati + ", punti_disponibili=" + punti_disponibili + ", da_titolo_cliente="
 				+ da_titolo_cliente + ", titolo_cliente=" + titolo_cliente + ", nome_cliente=" + nome_cliente
-				+ ", codice_carta_cliente=" + codice_carta_cliente + ", email_cliente=" + email_cliente + "]";
+				+ ", codice_carta_cliente=" + codice_carta_cliente + ", email_cliente=" + email_cliente + ", acconto="
+				+ acconto + "]";
 	}
+
+	
 
 }

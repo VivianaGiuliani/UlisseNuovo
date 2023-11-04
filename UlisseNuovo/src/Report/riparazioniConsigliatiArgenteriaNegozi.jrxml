@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.20.6.final utlizzo versione della libreria JasperReports6.20.6-5c96b6aa8a39ac1dc6b6bea4b81168e16dd39231  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="riparazioniConsigliatiArgenteriaNegozi" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="7f43cc3e-472b-43de-bcca-8d26dd73e76b">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Ulisse.jrdax"/>
+	<style name="Table_TH" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table_CH" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<subDataset name="Dataset1" uuid="dc4d6c09-b431-4569-b694-2c521c79d478">
+		<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Ulisse.jrdax"/>
+		<queryString language="SQL">
+			<![CDATA[select * from sys.costi_pulitura;]]>
+		</queryString>
+		<field name="codice" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="codice"/>
+			<property name="com.jaspersoft.studio.field.label" value="codice"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="costi_pulitura"/>
+		</field>
+		<field name="descrizione" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="descrizione"/>
+			<property name="com.jaspersoft.studio.field.label" value="descrizione"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="costi_pulitura"/>
+		</field>
+		<field name="pulitura" class="java.lang.Double">
+			<property name="com.jaspersoft.studio.field.name" value="pulitura"/>
+			<property name="com.jaspersoft.studio.field.label" value="pulitura"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="costi_pulitura"/>
+		</field>
+		<field name="trattamento" class="java.lang.Double">
+			<property name="com.jaspersoft.studio.field.name" value="trattamento"/>
+			<property name="com.jaspersoft.studio.field.label" value="trattamento"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="costi_pulitura"/>
+		</field>
+	</subDataset>
+	<queryString language="SQL">
+		<![CDATA[select * from sys.costi_pulitura;]]>
+	</queryString>
+	<field name="codice" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="codice"/>
+		<property name="com.jaspersoft.studio.field.label" value="codice"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="costi_pulitura"/>
+	</field>
+	<field name="descrizione" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="descrizione"/>
+		<property name="com.jaspersoft.studio.field.label" value="descrizione"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="costi_pulitura"/>
+	</field>
+	<field name="pulitura" class="java.lang.Double">
+		<property name="com.jaspersoft.studio.field.name" value="pulitura"/>
+		<property name="com.jaspersoft.studio.field.label" value="pulitura"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="costi_pulitura"/>
+	</field>
+	<field name="trattamento" class="java.lang.Double">
+		<property name="com.jaspersoft.studio.field.name" value="trattamento"/>
+		<property name="com.jaspersoft.studio.field.label" value="trattamento"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="costi_pulitura"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="28" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<staticText>
+				<reportElement x="0" y="0" width="555" height="28" uuid="177e281f-ed9d-48df-af7e-227dfad89bfb"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="18"/>
+				</textElement>
+				<text><![CDATA[Listino Riparazioni Consigliati Argenteria Ai Negozi 2024]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="92" splitType="Stretch">
+			<componentElement>
+				<reportElement x="0" y="12" width="555" height="60" uuid="81266a32-a550-4562-b342-ab6131f1e06b">
+					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
+					<property name="com.jaspersoft.studio.table.style.table_header" value="Table_TH"/>
+					<property name="com.jaspersoft.studio.table.style.column_header" value="Table_CH"/>
+					<property name="com.jaspersoft.studio.table.style.detail" value="Table_TD"/>
+				</reportElement>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="Dataset1" uuid="418985e7-eae3-4fd5-818f-c444866f9029">
+						<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					</datasetRun>
+					<jr:column width="290" uuid="5087e778-2f06-47e2-949f-77cb1e599cb9">
+						<jr:columnHeader style="Table_CH" height="30">
+							<staticText>
+								<reportElement x="0" y="0" width="290" height="30" uuid="67f04858-5cbe-4cb7-a1b5-14db0b8e5366"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<text><![CDATA[Descrizione]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="Table_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="290" height="30" uuid="41f6851b-e84c-4935-a10c-657689f4b102"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<textFieldExpression><![CDATA[$F{descrizione}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="140" uuid="708015e9-1631-4fe2-af0f-7e73ae703295">
+						<jr:columnHeader style="Table_CH" height="30">
+							<staticText>
+								<reportElement x="0" y="0" width="140" height="30" uuid="c288e914-787b-4606-b6ba-4f14d919bf2d"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<text><![CDATA[Pulitura]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="Table_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="140" height="30" uuid="6c4f0e31-7e4b-42b4-8168-7cfb1cdc5cd2"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<textFieldExpression><![CDATA[FLOOR( PRODUCT($F{pulitura},4))]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="125" uuid="5a0e34ab-8943-4904-89b0-961407d4fa31">
+						<jr:columnHeader style="Table_CH" height="30">
+							<staticText>
+								<reportElement x="0" y="0" width="125" height="30" uuid="cf1f679f-1267-4af9-bcb2-b17bf81ecfd5"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<text><![CDATA[Trattamento]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="Table_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="125" height="30" uuid="ac6e363e-e8e4-4145-b6b3-8ae4951dfa16"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<textFieldExpression><![CDATA[FLOOR( PRODUCT($F{trattamento},4))]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+				</jr:table>
+			</componentElement>
+		</band>
+	</pageHeader>
+</jasperReport>

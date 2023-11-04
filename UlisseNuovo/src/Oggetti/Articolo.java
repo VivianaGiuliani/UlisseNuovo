@@ -5,13 +5,13 @@ import java.util.*;
 public class Articolo {
 
 	private String barcode;
-	private String fornitore;
-	private long cod_for;
+	private String cfor;
+	private String cod_for;
 	private int giacenza;
 	private String descrizione;
 	private double peso;
 	private double caratura;
-	private int pr_unit;
+	private double pr_unit;
 	private int tot_giac;
 	private int sconto1;
 	private int sconto2;
@@ -22,11 +22,11 @@ public class Articolo {
 	public Articolo() {
 	}
 	
-	public Articolo(String barcode, String fornitore, long cod_for, int giacenza, String descrizione, double peso,
+	public Articolo(String barcode, String cfor, String cod_for, int giacenza, String descrizione, double peso,
 			double caratura, int pr_unit, int tot_giac, int sconto1, int sconto2, double costo, String fv, int cod_categoria) {
 		super();
 		this.barcode = barcode;
-		this.fornitore = fornitore;
+		this.cfor = cfor;
 		this.cod_for = cod_for;
 		this.giacenza = giacenza;
 		this.descrizione = descrizione;
@@ -50,19 +50,19 @@ public class Articolo {
 		this.barcode = barcode;
 	}
 
-	public String getFornitore() {
-		return fornitore;
+	public String getCfor() {
+		return cfor;
 	}
 
-	public void setFornitore(String fornitore) {
-		this.fornitore = fornitore;
+	public void setCfor(String cfor) {
+		this.cfor = cfor;
 	}
 
-	public long getCod_for() {
+	public String getCod_for() {
 		return cod_for;
 	}
 
-	public void setCod_for(long cod_for) {
+	public void setCod_for(String cod_for) {
 		this.cod_for = cod_for;
 	}
 
@@ -98,11 +98,11 @@ public class Articolo {
 		this.caratura = caratura;
 	}
 
-	public int getPr_unit() {
+	public double getPr_unit() {
 		return pr_unit;
 	}
 
-	public void setPr_unit(int pr_unit) {
+	public void setPr_unit(double pr_unit) {
 		this.pr_unit = pr_unit;
 	}
 
@@ -158,7 +158,7 @@ public class Articolo {
 
 	@Override
 	public String toString() {
-		return "Articolo [barcode=" + barcode + ", fornitore=" + fornitore + ", cod_for=" + cod_for + ", giacenza="
+		return "Articolo [barcode=" + barcode + ", cfor=" + cfor + ", cod_for=" + cod_for + ", giacenza="
 				+ giacenza + ", descrizione=" + descrizione + ", peso=" + peso + ", caratura=" + caratura + ", pr_unit="
 				+ pr_unit + ", tot_giac=" + tot_giac + ", sconto1=" + sconto1 + ", sconto2=" + sconto2 + ", costo="
 				+ costo + ", fv=" + fv + ", cod_categoria=" + cod_categoria + "]";

@@ -1,0 +1,334 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.20.6.final using JasperReports Library version 6.20.6-5c96b6aa8a39ac1dc6b6bea4b81168e16dd39231  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="printOrdini" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="cfb0fd7b-d151-4492-bebe-a824ad5d8819">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Ulisse.jrdax"/>
+	<style name="Table_TH" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table_CH" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<subDataset name="Dataset1" uuid="607122b0-7294-45a1-b2d6-18c2b29d68e5">
+		<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Ulisse.jrdax"/>
+		<queryString language="SQL">
+			<![CDATA[select * from sys.ordini_stampa]]>
+		</queryString>
+		<field name="n_ordine" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.name" value="n_ordine"/>
+			<property name="com.jaspersoft.studio.field.label" value="n_ordine"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="ordini_stampa"/>
+		</field>
+		<field name="codice_fornitore" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="codice_fornitore"/>
+			<property name="com.jaspersoft.studio.field.label" value="codice_fornitore"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="ordini_stampa"/>
+		</field>
+		<field name="data" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="data"/>
+			<property name="com.jaspersoft.studio.field.label" value="data"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="ordini_stampa"/>
+		</field>
+		<field name="quantita" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.name" value="quantita"/>
+			<property name="com.jaspersoft.studio.field.label" value="quantita"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="ordini_stampa"/>
+		</field>
+		<field name="barcode" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="barcode"/>
+			<property name="com.jaspersoft.studio.field.label" value="barcode"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="ordini_stampa"/>
+		</field>
+		<field name="descrizione" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="descrizione"/>
+			<property name="com.jaspersoft.studio.field.label" value="descrizione"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="ordini_stampa"/>
+		</field>
+		<field name="gcad" class="java.lang.Double">
+			<property name="com.jaspersoft.studio.field.name" value="gcad"/>
+			<property name="com.jaspersoft.studio.field.label" value="gcad"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="ordini_stampa"/>
+		</field>
+		<field name="tot_peso" class="java.lang.Double">
+			<property name="com.jaspersoft.studio.field.name" value="tot_peso"/>
+			<property name="com.jaspersoft.studio.field.label" value="tot_peso"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="ordini_stampa"/>
+		</field>
+		<field name="pr_unit" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.name" value="pr_unit"/>
+			<property name="com.jaspersoft.studio.field.label" value="pr_unit"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="ordini_stampa"/>
+		</field>
+		<field name="tot_riga" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.name" value="tot_riga"/>
+			<property name="com.jaspersoft.studio.field.label" value="tot_riga"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="ordini_stampa"/>
+		</field>
+	</subDataset>
+	<queryString language="SQL">
+		<![CDATA[select * from sys.ordini_stampa]]>
+	</queryString>
+	<field name="n_ordine" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="n_ordine"/>
+		<property name="com.jaspersoft.studio.field.label" value="n_ordine"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="ordini_stampa"/>
+	</field>
+	<field name="codice_fornitore" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="codice_fornitore"/>
+		<property name="com.jaspersoft.studio.field.label" value="codice_fornitore"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="ordini_stampa"/>
+	</field>
+	<field name="data" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="data"/>
+		<property name="com.jaspersoft.studio.field.label" value="data"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="ordini_stampa"/>
+	</field>
+	<field name="quantita" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="quantita"/>
+		<property name="com.jaspersoft.studio.field.label" value="quantita"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="ordini_stampa"/>
+	</field>
+	<field name="barcode" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="barcode"/>
+		<property name="com.jaspersoft.studio.field.label" value="barcode"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="ordini_stampa"/>
+	</field>
+	<field name="descrizione" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="descrizione"/>
+		<property name="com.jaspersoft.studio.field.label" value="descrizione"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="ordini_stampa"/>
+	</field>
+	<field name="gcad" class="java.lang.Double">
+		<property name="com.jaspersoft.studio.field.name" value="gcad"/>
+		<property name="com.jaspersoft.studio.field.label" value="gcad"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="ordini_stampa"/>
+	</field>
+	<field name="tot_peso" class="java.lang.Double">
+		<property name="com.jaspersoft.studio.field.name" value="tot_peso"/>
+		<property name="com.jaspersoft.studio.field.label" value="tot_peso"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="ordini_stampa"/>
+	</field>
+	<field name="pr_unit" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="pr_unit"/>
+		<property name="com.jaspersoft.studio.field.label" value="pr_unit"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="ordini_stampa"/>
+	</field>
+	<field name="tot_riga" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="tot_riga"/>
+		<property name="com.jaspersoft.studio.field.label" value="tot_riga"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="ordini_stampa"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="29" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="555" height="28" uuid="20b27db6-e234-4412-bdfb-d695cc95a9d4"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="18"/>
+				</textElement>
+				<text><![CDATA[Stampa Ordini]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="81" splitType="Stretch">
+			<componentElement>
+				<reportElement x="0" y="10" width="555" height="60" uuid="36fb6cba-77b8-4345-8c2c-fef6927dc55b">
+					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
+					<property name="com.jaspersoft.studio.table.style.table_header" value="Table_TH"/>
+					<property name="com.jaspersoft.studio.table.style.column_header" value="Table_CH"/>
+					<property name="com.jaspersoft.studio.table.style.detail" value="Table_TD"/>
+				</reportElement>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="Dataset1" uuid="2bb01a39-da4b-4080-a9e2-77d37a1247db">
+						<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					</datasetRun>
+					<jr:column width="50" uuid="e3a02337-70d7-4ce7-b765-4927c0ed1ea3">
+						<jr:columnHeader style="Table_CH" height="30">
+							<staticText>
+								<reportElement x="0" y="0" width="50" height="30" uuid="27c12fa6-3d35-43cf-8e4c-a4c4ea97417b"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<text><![CDATA[N Ordine]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="Table_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="50" height="30" uuid="e2f1dbc2-ca39-405d-82fa-0e971105e6c7"/>
+								<textElement verticalAlignment="Middle"/>
+								<textFieldExpression><![CDATA[$F{n_ordine}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="90" uuid="f1854e72-0d0d-41e6-a711-a8ecb107d326">
+						<jr:columnHeader style="Table_CH" height="30">
+							<staticText>
+								<reportElement x="0" y="0" width="90" height="30" uuid="a849f262-e8fa-4387-aebf-97115ad286f2"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<text><![CDATA[Cod. Fornitore]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="Table_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="90" height="30" uuid="52d8455e-a096-4d64-988d-65f9ff1a1e16"/>
+								<textElement verticalAlignment="Middle"/>
+								<textFieldExpression><![CDATA[$F{codice_fornitore}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="60" uuid="56dbfe38-df8a-4539-819c-71c3b6e61199">
+						<jr:columnHeader style="Table_CH" height="30">
+							<staticText>
+								<reportElement x="0" y="0" width="60" height="30" uuid="35aa0aca-5e01-40f0-aae4-168374ddc2c2"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<text><![CDATA[Data]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="Table_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="60" height="30" uuid="a30a22e3-5cfa-428e-8cad-924909655d95"/>
+								<textElement verticalAlignment="Middle"/>
+								<textFieldExpression><![CDATA[$F{data}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="40" uuid="a94c296b-3d96-4587-b882-c0a537859992">
+						<jr:columnHeader style="Table_CH" height="30">
+							<staticText>
+								<reportElement x="0" y="0" width="40" height="30" uuid="67d3c2cb-90e4-4903-a39f-764d11c09c7b"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<text><![CDATA[Quantita]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="Table_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="40" height="30" uuid="818b9d1c-6e43-4aac-a0e7-dcb0b5c613a9"/>
+								<textElement verticalAlignment="Middle"/>
+								<textFieldExpression><![CDATA[$F{quantita}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="40" uuid="b53bf245-b884-4cfe-9b12-3670f39a62d5">
+						<jr:columnHeader style="Table_CH" height="30">
+							<staticText>
+								<reportElement x="0" y="0" width="40" height="30" uuid="db359d1f-6744-49ac-aa0e-467fc3c82c1b"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<text><![CDATA[Barcode]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="Table_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="40" height="30" uuid="c174c361-c217-4b29-a507-b881199bf37f"/>
+								<textElement verticalAlignment="Middle"/>
+								<textFieldExpression><![CDATA[$F{barcode}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="110" uuid="bf17135f-46df-4935-b7a9-0e52f8809b41">
+						<jr:columnHeader style="Table_CH" height="30">
+							<staticText>
+								<reportElement x="0" y="0" width="110" height="30" uuid="4d9923c1-e49d-4b0d-99e4-f66935907b43"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<text><![CDATA[Descrizione]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="Table_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="110" height="30" uuid="3adcd001-bed5-4db6-911a-0d8032dff4bb"/>
+								<textElement verticalAlignment="Middle"/>
+								<textFieldExpression><![CDATA[$F{descrizione}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="40" uuid="ba3ef6e2-c833-4ee9-b41c-836b09ffcb6e">
+						<jr:columnHeader style="Table_CH" height="30">
+							<staticText>
+								<reportElement x="0" y="0" width="40" height="30" uuid="28384173-80ff-456e-938a-2f0ebce64857"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<text><![CDATA[G.Cad]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="Table_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="40" height="30" uuid="49c1ca1f-2566-45b7-a667-30d5f231538a"/>
+								<textElement textAlignment="Right" verticalAlignment="Middle"/>
+								<textFieldExpression><![CDATA[$F{gcad}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="40" uuid="dea49f98-3759-4978-8c9b-1aa496b8ac4a">
+						<jr:columnHeader style="Table_CH" height="30">
+							<staticText>
+								<reportElement x="0" y="0" width="40" height="30" uuid="a7fa2ed2-9279-48bc-b2d1-2fc2bed0dd99"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<text><![CDATA[Tot Peso]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="Table_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="40" height="30" uuid="0fa34fa8-460d-4bd3-8a5a-f801d752a31b"/>
+								<textElement textAlignment="Right" verticalAlignment="Middle"/>
+								<textFieldExpression><![CDATA[$F{tot_peso}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="40" uuid="cf27abf5-b837-478e-b374-759a726df349">
+						<jr:columnHeader style="Table_CH" height="30">
+							<staticText>
+								<reportElement x="0" y="0" width="40" height="30" uuid="058d7dac-938b-4158-9bba-defbe8fdef19"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<text><![CDATA[Pr.unit]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="Table_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="40" height="30" uuid="58277376-9b93-4a1b-b85e-8a633c1d1c98"/>
+								<textElement textAlignment="Right" verticalAlignment="Middle"/>
+								<textFieldExpression><![CDATA[$F{pr_unit}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="45" uuid="5344a66a-55da-4dfb-9e1d-80d8792d596d">
+						<jr:columnHeader style="Table_CH" height="30">
+							<staticText>
+								<reportElement x="0" y="0" width="45" height="30" uuid="c607f1e9-f0c2-4753-817f-693e330bcae7"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<text><![CDATA[Tot Riga]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="Table_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="45" height="30" uuid="48de0c5c-8bde-4343-a2c2-f83638096de5"/>
+								<textElement textAlignment="Right" verticalAlignment="Middle"/>
+								<textFieldExpression><![CDATA[$F{tot_riga}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+				</jr:table>
+			</componentElement>
+		</band>
+	</pageHeader>
+</jasperReport>
