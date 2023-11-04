@@ -36,13 +36,45 @@ public class TotaliMacrocategorie  {
 
 
         JLabel titoloLabel = new JLabel("Totali Macrocategorie");
+<<<<<<< HEAD
         titoloLabel.setFont(new Font("", Font.PLAIN, 20));
+=======
+<<<<<<< HEAD
+        titoloLabel.setFont(new Font("", Font.PLAIN, 20));
+=======
+<<<<<<< HEAD
+        titoloLabel.setFont(new Font("", Font.PLAIN, 20));
+=======
+<<<<<<< HEAD
+        titoloLabel.setFont(new Font("", Font.PLAIN, 20));
+=======
+        titoloLabel.setFont(new Font("Courier", Font.PLAIN, 20));
+>>>>>>> 92ba0878318a769571cc1e9456393151517d6ac3
+>>>>>>> b3f423dce0bf0d73c6a9c24aaf71265d864d2beb
+>>>>>>> b164b6b180cf8b5232bb561dff47f01e24120b2b
+>>>>>>> 3f256a41156cb108967f500bddb2e616b7b7d81d
         titoloLabel.setBounds(10, 10, 200, 30);
         titoloLabel.setForeground(new java.awt.Color(255,255,255));
         labelSfondo.add(titoloLabel);
 
         JLabel daCatLabel = new JLabel("Da Cat.");
+<<<<<<< HEAD
         daCatLabel.setFont(new Font("", Font.PLAIN, 12));
+=======
+<<<<<<< HEAD
+        daCatLabel.setFont(new Font("", Font.PLAIN, 12));
+=======
+<<<<<<< HEAD
+        daCatLabel.setFont(new Font("", Font.PLAIN, 12));
+=======
+<<<<<<< HEAD
+        daCatLabel.setFont(new Font("", Font.PLAIN, 12));
+=======
+        daCatLabel.setFont(new Font("Courier", Font.PLAIN, 12));
+>>>>>>> 92ba0878318a769571cc1e9456393151517d6ac3
+>>>>>>> b3f423dce0bf0d73c6a9c24aaf71265d864d2beb
+>>>>>>> b164b6b180cf8b5232bb561dff47f01e24120b2b
+>>>>>>> 3f256a41156cb108967f500bddb2e616b7b7d81d
         daCatLabel.setBounds(10, 50, 200, 20);
         daCatLabel.setForeground(new java.awt.Color(255,255,255));
         labelSfondo.add(daCatLabel);
@@ -52,7 +84,23 @@ public class TotaliMacrocategorie  {
         labelSfondo.add(daCatTextField);
 
         JLabel aCatLabel = new JLabel("A Cat.");
+<<<<<<< HEAD
         aCatLabel.setFont(new Font("", Font.PLAIN, 12));
+=======
+<<<<<<< HEAD
+        aCatLabel.setFont(new Font("", Font.PLAIN, 12));
+=======
+<<<<<<< HEAD
+        aCatLabel.setFont(new Font("", Font.PLAIN, 12));
+=======
+<<<<<<< HEAD
+        aCatLabel.setFont(new Font("", Font.PLAIN, 12));
+=======
+        aCatLabel.setFont(new Font("Courier", Font.PLAIN, 12));
+>>>>>>> 92ba0878318a769571cc1e9456393151517d6ac3
+>>>>>>> b3f423dce0bf0d73c6a9c24aaf71265d864d2beb
+>>>>>>> b164b6b180cf8b5232bb561dff47f01e24120b2b
+>>>>>>> 3f256a41156cb108967f500bddb2e616b7b7d81d
         aCatLabel.setBounds(170, 50, 200, 20);
         aCatLabel.setForeground(new java.awt.Color(255,255,255));
         labelSfondo.add(aCatLabel);

@@ -1,5 +1,11 @@
 import java.awt.Font;
+<<<<<<< HEAD
 
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> b164b6b180cf8b5232bb561dff47f01e24120b2b
+>>>>>>> 3f256a41156cb108967f500bddb2e616b7b7d81d
 import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -74,7 +80,23 @@ public class Scadenze {
 	    labelSfondo.add(rate_button);
 	    
 	    JLabel nomeLabel = new JLabel("Nome");
+<<<<<<< HEAD
 	    nomeLabel.setFont(new Font("", Font.PLAIN, 15));
+=======
+<<<<<<< HEAD
+	    nomeLabel.setFont(new Font("", Font.PLAIN, 15));
+=======
+<<<<<<< HEAD
+	    nomeLabel.setFont(new Font("", Font.PLAIN, 15));
+=======
+<<<<<<< HEAD
+	    nomeLabel.setFont(new Font("", Font.PLAIN, 15));
+=======
+	    nomeLabel.setFont(new Font("Courier", Font.PLAIN, 15));
+>>>>>>> 92ba0878318a769571cc1e9456393151517d6ac3
+>>>>>>> b3f423dce0bf0d73c6a9c24aaf71265d864d2beb
+>>>>>>> b164b6b180cf8b5232bb561dff47f01e24120b2b
+>>>>>>> 3f256a41156cb108967f500bddb2e616b7b7d81d
 	    nomeLabel.setBounds(10, 60, 60, 20);
 	    nomeLabel.setForeground(new java.awt.Color(255,255,255));
         labelSfondo.add(nomeLabel);
@@ -87,7 +109,23 @@ public class Scadenze {
         labelSfondo.add(nomeComboBox);
 
         JLabel docNumLabel = new JLabel("Doc.Num.");
+<<<<<<< HEAD
         docNumLabel.setFont(new Font("", Font.PLAIN, 15));
+=======
+<<<<<<< HEAD
+        docNumLabel.setFont(new Font("", Font.PLAIN, 15));
+=======
+<<<<<<< HEAD
+        docNumLabel.setFont(new Font("", Font.PLAIN, 15));
+=======
+<<<<<<< HEAD
+        docNumLabel.setFont(new Font("", Font.PLAIN, 15));
+=======
+        docNumLabel.setFont(new Font("Courier", Font.PLAIN, 15));
+>>>>>>> 92ba0878318a769571cc1e9456393151517d6ac3
+>>>>>>> b3f423dce0bf0d73c6a9c24aaf71265d864d2beb
+>>>>>>> b164b6b180cf8b5232bb561dff47f01e24120b2b
+>>>>>>> 3f256a41156cb108967f500bddb2e616b7b7d81d
         docNumLabel.setBounds(455, 60, 100, 20);
         docNumLabel.setForeground(new java.awt.Color(255,255,255));
         labelSfondo.add(docNumLabel);
@@ -98,7 +136,23 @@ public class Scadenze {
         labelSfondo.add(docNumTextField);
 
         JLabel dataDocLabel = new JLabel("Data Doc.");
+<<<<<<< HEAD
         dataDocLabel.setFont(new Font("", Font.PLAIN, 15));
+=======
+<<<<<<< HEAD
+        dataDocLabel.setFont(new Font("", Font.PLAIN, 15));
+=======
+<<<<<<< HEAD
+        dataDocLabel.setFont(new Font("", Font.PLAIN, 15));
+=======
+<<<<<<< HEAD
+        dataDocLabel.setFont(new Font("", Font.PLAIN, 15));
+=======
+        dataDocLabel.setFont(new Font("Courier", Font.PLAIN, 15));
+>>>>>>> 92ba0878318a769571cc1e9456393151517d6ac3
+>>>>>>> b3f423dce0bf0d73c6a9c24aaf71265d864d2beb
+>>>>>>> b164b6b180cf8b5232bb561dff47f01e24120b2b
+>>>>>>> 3f256a41156cb108967f500bddb2e616b7b7d81d
         dataDocLabel.setBounds(540, 60, 100, 20);
         dataDocLabel.setForeground(new java.awt.Color(255,255,255));
         labelSfondo.add(dataDocLabel);
@@ -109,7 +163,23 @@ public class Scadenze {
         labelSfondo.add(dataDocTextField);
 
         JLabel imponibileLabel = new JLabel("Imponibile");
+<<<<<<< HEAD
         imponibileLabel.setFont(new Font("", Font.PLAIN, 15));
+=======
+<<<<<<< HEAD
+        imponibileLabel.setFont(new Font("", Font.PLAIN, 15));
+=======
+<<<<<<< HEAD
+        imponibileLabel.setFont(new Font("", Font.PLAIN, 15));
+=======
+<<<<<<< HEAD
+        imponibileLabel.setFont(new Font("", Font.PLAIN, 15));
+=======
+        imponibileLabel.setFont(new Font("Courier", Font.PLAIN, 15));
+>>>>>>> 92ba0878318a769571cc1e9456393151517d6ac3
+>>>>>>> b3f423dce0bf0d73c6a9c24aaf71265d864d2beb
+>>>>>>> b164b6b180cf8b5232bb561dff47f01e24120b2b
+>>>>>>> 3f256a41156cb108967f500bddb2e616b7b7d81d
         imponibileLabel.setBounds(625, 60, 100, 20);
         imponibileLabel.setForeground(new java.awt.Color(255,255,255));
         labelSfondo.add(imponibileLabel);
@@ -120,7 +190,23 @@ public class Scadenze {
         labelSfondo.add(imponibileTextField);
 
         JLabel ivaLabel = new JLabel("IVA");
+<<<<<<< HEAD
         ivaLabel.setFont(new Font("", Font.PLAIN, 15));
+=======
+<<<<<<< HEAD
+        ivaLabel.setFont(new Font("", Font.PLAIN, 15));
+=======
+<<<<<<< HEAD
+        ivaLabel.setFont(new Font("", Font.PLAIN, 15));
+=======
+<<<<<<< HEAD
+        ivaLabel.setFont(new Font("", Font.PLAIN, 15));
+=======
+        ivaLabel.setFont(new Font("Courier", Font.PLAIN, 15));
+>>>>>>> 92ba0878318a769571cc1e9456393151517d6ac3
+>>>>>>> b3f423dce0bf0d73c6a9c24aaf71265d864d2beb
+>>>>>>> b164b6b180cf8b5232bb561dff47f01e24120b2b
+>>>>>>> 3f256a41156cb108967f500bddb2e616b7b7d81d
         ivaLabel.setBounds(725, 60, 40, 20);
         ivaLabel.setForeground(new java.awt.Color(255,255,255));
         labelSfondo.add(ivaLabel);
@@ -131,7 +217,23 @@ public class Scadenze {
         labelSfondo.add(ivaTextField);
 
         JLabel totaleRataLabel = new JLabel("Totale Rata");
+<<<<<<< HEAD
         totaleRataLabel.setFont(new Font("", Font.PLAIN, 15));
+=======
+<<<<<<< HEAD
+        totaleRataLabel.setFont(new Font("", Font.PLAIN, 15));
+=======
+<<<<<<< HEAD
+        totaleRataLabel.setFont(new Font("", Font.PLAIN, 15));
+=======
+<<<<<<< HEAD
+        totaleRataLabel.setFont(new Font("", Font.PLAIN, 15));
+=======
+        totaleRataLabel.setFont(new Font("Courier", Font.PLAIN, 15));
+>>>>>>> 92ba0878318a769571cc1e9456393151517d6ac3
+>>>>>>> b3f423dce0bf0d73c6a9c24aaf71265d864d2beb
+>>>>>>> b164b6b180cf8b5232bb561dff47f01e24120b2b
+>>>>>>> 3f256a41156cb108967f500bddb2e616b7b7d81d
         totaleRataLabel.setBounds(810, 60, 100, 20);
         totaleRataLabel.setForeground(new java.awt.Color(255,255,255));
         labelSfondo.add(totaleRataLabel);
@@ -142,7 +244,23 @@ public class Scadenze {
         labelSfondo.add(totaleRataTextField);
 
         JLabel bancaLabel = new JLabel("Banca");
+<<<<<<< HEAD
         bancaLabel.setFont(new Font("", Font.PLAIN, 15));
+=======
+<<<<<<< HEAD
+        bancaLabel.setFont(new Font("", Font.PLAIN, 15));
+=======
+<<<<<<< HEAD
+        bancaLabel.setFont(new Font("", Font.PLAIN, 15));
+=======
+<<<<<<< HEAD
+        bancaLabel.setFont(new Font("", Font.PLAIN, 15));
+=======
+        bancaLabel.setFont(new Font("Courier", Font.PLAIN, 15));
+>>>>>>> 92ba0878318a769571cc1e9456393151517d6ac3
+>>>>>>> b3f423dce0bf0d73c6a9c24aaf71265d864d2beb
+>>>>>>> b164b6b180cf8b5232bb561dff47f01e24120b2b
+>>>>>>> 3f256a41156cb108967f500bddb2e616b7b7d81d
         bancaLabel.setBounds(925, 60, 100, 20);
         bancaLabel.setForeground(new java.awt.Color(255,255,255));
         labelSfondo.add(bancaLabel);
@@ -155,7 +273,23 @@ public class Scadenze {
         labelSfondo.add(bancaComboBox);
 
         JLabel scadenzaLabel = new JLabel("Scadenza");
+<<<<<<< HEAD
         scadenzaLabel.setFont(new Font("", Font.PLAIN, 15));
+=======
+<<<<<<< HEAD
+        scadenzaLabel.setFont(new Font("", Font.PLAIN, 15));
+=======
+<<<<<<< HEAD
+        scadenzaLabel.setFont(new Font("", Font.PLAIN, 15));
+=======
+<<<<<<< HEAD
+        scadenzaLabel.setFont(new Font("", Font.PLAIN, 15));
+=======
+        scadenzaLabel.setFont(new Font("Courier", Font.PLAIN, 15));
+>>>>>>> 92ba0878318a769571cc1e9456393151517d6ac3
+>>>>>>> b3f423dce0bf0d73c6a9c24aaf71265d864d2beb
+>>>>>>> b164b6b180cf8b5232bb561dff47f01e24120b2b
+>>>>>>> 3f256a41156cb108967f500bddb2e616b7b7d81d
         scadenzaLabel.setBounds(1050, 60, 100, 20);
         scadenzaLabel.setForeground(new java.awt.Color(255,255,255));
         labelSfondo.add(scadenzaLabel);
@@ -166,7 +300,23 @@ public class Scadenze {
         labelSfondo.add(scadenzaTextField);
 
         JLabel rataNumLabel = new JLabel("Rata Num.");
+<<<<<<< HEAD
         rataNumLabel.setFont(new Font("", Font.PLAIN, 15));
+=======
+<<<<<<< HEAD
+        rataNumLabel.setFont(new Font("", Font.PLAIN, 15));
+=======
+<<<<<<< HEAD
+        rataNumLabel.setFont(new Font("", Font.PLAIN, 15));
+=======
+<<<<<<< HEAD
+        rataNumLabel.setFont(new Font("", Font.PLAIN, 15));
+=======
+        rataNumLabel.setFont(new Font("Courier", Font.PLAIN, 15));
+>>>>>>> 92ba0878318a769571cc1e9456393151517d6ac3
+>>>>>>> b3f423dce0bf0d73c6a9c24aaf71265d864d2beb
+>>>>>>> b164b6b180cf8b5232bb561dff47f01e24120b2b
+>>>>>>> 3f256a41156cb108967f500bddb2e616b7b7d81d
         rataNumLabel.setBounds(1175, 60, 100, 20);
         rataNumLabel.setForeground(new java.awt.Color(255,255,255));
         labelSfondo.add(rataNumLabel);
@@ -212,7 +362,23 @@ public class Scadenze {
         labelSfondo.add(tablePanel);
         
         JLabel categoriaLabel = new JLabel("Categoria");
+<<<<<<< HEAD
         categoriaLabel.setFont(new Font("", Font.PLAIN, 15));
+=======
+<<<<<<< HEAD
+        categoriaLabel.setFont(new Font("", Font.PLAIN, 15));
+=======
+<<<<<<< HEAD
+        categoriaLabel.setFont(new Font("", Font.PLAIN, 15));
+=======
+<<<<<<< HEAD
+        categoriaLabel.setFont(new Font("", Font.PLAIN, 15));
+=======
+        categoriaLabel.setFont(new Font("Courier", Font.PLAIN, 15));
+>>>>>>> 92ba0878318a769571cc1e9456393151517d6ac3
+>>>>>>> b3f423dce0bf0d73c6a9c24aaf71265d864d2beb
+>>>>>>> b164b6b180cf8b5232bb561dff47f01e24120b2b
+>>>>>>> 3f256a41156cb108967f500bddb2e616b7b7d81d
         categoriaLabel.setBounds(10, 620, 100, 20);
         categoriaLabel.setForeground(new java.awt.Color(255,255,255));
         labelSfondo.add(categoriaLabel);
@@ -223,7 +389,23 @@ public class Scadenze {
         labelSfondo.add(categoriaComboBox);
         
         JLabel annoLabel = new JLabel("Anno");
+<<<<<<< HEAD
         annoLabel.setFont(new Font("", Font.PLAIN, 15));
+=======
+<<<<<<< HEAD
+        annoLabel.setFont(new Font("", Font.PLAIN, 15));
+=======
+<<<<<<< HEAD
+        annoLabel.setFont(new Font("", Font.PLAIN, 15));
+=======
+<<<<<<< HEAD
+        annoLabel.setFont(new Font("", Font.PLAIN, 15));
+=======
+        annoLabel.setFont(new Font("Courier", Font.PLAIN, 15));
+>>>>>>> 92ba0878318a769571cc1e9456393151517d6ac3
+>>>>>>> b3f423dce0bf0d73c6a9c24aaf71265d864d2beb
+>>>>>>> b164b6b180cf8b5232bb561dff47f01e24120b2b
+>>>>>>> 3f256a41156cb108967f500bddb2e616b7b7d81d
         annoLabel.setBounds(120, 620, 100, 20);
         annoLabel.setForeground(new java.awt.Color(255,255,255));
         labelSfondo.add(annoLabel);
@@ -236,7 +418,23 @@ public class Scadenze {
         labelSfondo.add(annoComboBox);
         
         JLabel meseLabel = new JLabel("Mese");
+<<<<<<< HEAD
         meseLabel.setFont(new Font("", Font.PLAIN, 15));
+=======
+<<<<<<< HEAD
+        meseLabel.setFont(new Font("", Font.PLAIN, 15));
+=======
+<<<<<<< HEAD
+        meseLabel.setFont(new Font("", Font.PLAIN, 15));
+=======
+<<<<<<< HEAD
+        meseLabel.setFont(new Font("", Font.PLAIN, 15));
+=======
+        meseLabel.setFont(new Font("Courier", Font.PLAIN, 15));
+>>>>>>> 92ba0878318a769571cc1e9456393151517d6ac3
+>>>>>>> b3f423dce0bf0d73c6a9c24aaf71265d864d2beb
+>>>>>>> b164b6b180cf8b5232bb561dff47f01e24120b2b
+>>>>>>> 3f256a41156cb108967f500bddb2e616b7b7d81d
         meseLabel.setBounds(230, 620, 100, 20);
         meseLabel.setForeground(new java.awt.Color(255,255,255));
         labelSfondo.add(meseLabel);
@@ -247,7 +445,23 @@ public class Scadenze {
         labelSfondo.add(meseComboBox);
         
         JLabel mfMeseLabel = new JLabel("M/F Mese");
+<<<<<<< HEAD
         mfMeseLabel.setFont(new Font("", Font.PLAIN, 15));
+=======
+<<<<<<< HEAD
+        mfMeseLabel.setFont(new Font("", Font.PLAIN, 15));
+=======
+<<<<<<< HEAD
+        mfMeseLabel.setFont(new Font("", Font.PLAIN, 15));
+=======
+<<<<<<< HEAD
+        mfMeseLabel.setFont(new Font("", Font.PLAIN, 15));
+=======
+        mfMeseLabel.setFont(new Font("Courier", Font.PLAIN, 15));
+>>>>>>> 92ba0878318a769571cc1e9456393151517d6ac3
+>>>>>>> b3f423dce0bf0d73c6a9c24aaf71265d864d2beb
+>>>>>>> b164b6b180cf8b5232bb561dff47f01e24120b2b
+>>>>>>> 3f256a41156cb108967f500bddb2e616b7b7d81d
         mfMeseLabel.setBounds(340, 620, 100, 20);
         mfMeseLabel.setForeground(new java.awt.Color(255,255,255));
         labelSfondo.add(mfMeseLabel);
@@ -266,6 +480,7 @@ public class Scadenze {
         disattivaFiltroButton.setBounds(575, 640, 120, 20);
         disattivaFiltroButton.setBackground(new java.awt.Color(0, 255, 255));
         labelSfondo.add(disattivaFiltroButton);
+<<<<<<< HEAD
         
         JButton eliminaPeriodoButton = new JButton("Elimina periodo");
         eliminaPeriodoButton.setBounds(705, 640, 150, 20);
@@ -282,6 +497,66 @@ public class Scadenze {
         totalePeriodoTextField.setBounds(865, 640, 120, 20);
         totalePeriodoTextField.setBackground(new java.awt.Color(203, 203, 146));
         labelSfondo.add(totalePeriodoTextField);
+=======
+<<<<<<< HEAD
+        
+        JButton eliminaPeriodoButton = new JButton("Elimina periodo");
+        eliminaPeriodoButton.setBounds(705, 640, 150, 20);
+        eliminaPeriodoButton.setBackground(new java.awt.Color(77, 191, 171));
+        labelSfondo.add(eliminaPeriodoButton);
+        
+        JLabel totalePeriodoLabel = new JLabel("Totale Periodo");
+        totalePeriodoLabel.setFont(new Font("", Font.PLAIN, 15));
+        totalePeriodoLabel.setBounds(865, 620, 120, 20);
+        totalePeriodoLabel.setForeground(new java.awt.Color(255,255,255));
+        labelSfondo.add(totalePeriodoLabel);
+
+        JTextField totalePeriodoTextField = new JTextField();
+        totalePeriodoTextField.setBounds(865, 640, 120, 20);
+        totalePeriodoTextField.setBackground(new java.awt.Color(203, 203, 146));
+        labelSfondo.add(totalePeriodoTextField);
+=======
+        
+        JButton selezionaTuttiButton = new JButton("Seleziona tutti");
+        selezionaTuttiButton.setBounds(700, 640, 120, 20);
+        selezionaTuttiButton.setBackground(new java.awt.Color(77, 191, 171));
+        labelSfondo.add(selezionaTuttiButton);
+        
+        JButton deselezionaTuttiButton = new JButton("Deseleziona tutti");
+        deselezionaTuttiButton.setBounds(825, 640, 120, 20);
+        deselezionaTuttiButton.setBackground(new java.awt.Color(77, 191, 171));
+        labelSfondo.add(deselezionaTuttiButton);
+        
+        JButton eliminaPeriodoButton = new JButton("Elimina periodo");
+        eliminaPeriodoButton.setBounds(950, 640, 120, 20);
+        eliminaPeriodoButton.setBackground(new java.awt.Color(77, 191, 171));
+        labelSfondo.add(eliminaPeriodoButton);
+
+        JButton calcoloTotaleButton = new JButton("Calcolo totale");
+        calcoloTotaleButton.setBounds(1075, 640, 120, 20);
+        calcoloTotaleButton.setBackground(new java.awt.Color(77, 191, 171));
+        labelSfondo.add(calcoloTotaleButton);
+        
+        JLabel totoalePeriodoLabel = new JLabel("Totale Periodo");
+<<<<<<< HEAD
+        totoalePeriodoLabel.setFont(new Font("", Font.PLAIN, 15));
+=======
+<<<<<<< HEAD
+        totoalePeriodoLabel.setFont(new Font("", Font.PLAIN, 15));
+=======
+        totoalePeriodoLabel.setFont(new Font("Courier", Font.PLAIN, 15));
+>>>>>>> 92ba0878318a769571cc1e9456393151517d6ac3
+>>>>>>> b3f423dce0bf0d73c6a9c24aaf71265d864d2beb
+        totoalePeriodoLabel.setBounds(1200, 620, 120, 20);
+        totoalePeriodoLabel.setForeground(new java.awt.Color(255,255,255));
+        labelSfondo.add(totoalePeriodoLabel);
+
+        JTextField totoalePeriodoTextField = new JTextField();
+        totoalePeriodoTextField.setBounds(1200, 640, 120, 20);
+        totoalePeriodoTextField.setBackground(new java.awt.Color(203, 203, 146));
+        labelSfondo.add(totoalePeriodoTextField);
+>>>>>>> b164b6b180cf8b5232bb561dff47f01e24120b2b
+>>>>>>> 3f256a41156cb108967f500bddb2e616b7b7d81d
         
         JButton stampaScadenzeButton = new JButton("Stampa scadenze");
         stampaScadenzeButton.setBounds(1150, 20, 150, 35);

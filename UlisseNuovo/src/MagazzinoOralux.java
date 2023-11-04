@@ -16,7 +16,18 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.JTextArea;
+<<<<<<< HEAD
 import javax.swing.table.DefaultTableCellRenderer;
+=======
+<<<<<<< HEAD
+import javax.swing.table.DefaultTableCellRenderer;
+=======
+<<<<<<< HEAD
+import javax.swing.table.DefaultTableCellRenderer;
+=======
+>>>>>>> b3f423dce0bf0d73c6a9c24aaf71265d864d2beb
+>>>>>>> b164b6b180cf8b5232bb561dff47f01e24120b2b
+>>>>>>> 3f256a41156cb108967f500bddb2e616b7b7d81d
 import javax.swing.table.DefaultTableModel;
 
 import Classi.Database;
@@ -86,11 +97,26 @@ public class MagazzinoOralux {
 	    JTable table = new JTable(model);
 	    table.setAutoResizeMode(JTable.AUTO_RESIZE_ALL_COLUMNS);
 	    
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> b164b6b180cf8b5232bb561dff47f01e24120b2b
+>>>>>>> 3f256a41156cb108967f500bddb2e616b7b7d81d
 	    DefaultTableCellRenderer rightRenderer = new DefaultTableCellRenderer();
         rightRenderer.setHorizontalAlignment(JLabel.RIGHT);
         table.getColumnModel().getColumn(0).setCellRenderer(rightRenderer);
        
 	    
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> b3f423dce0bf0d73c6a9c24aaf71265d864d2beb
+>>>>>>> b164b6b180cf8b5232bb561dff47f01e24120b2b
+>>>>>>> 3f256a41156cb108967f500bddb2e616b7b7d81d
 	    scrollPane.setViewportView(table);
 	    tablePanel.add(scrollPane);
 	    labelSfondo.add(tablePanel);

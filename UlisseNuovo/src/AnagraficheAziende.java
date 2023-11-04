@@ -43,7 +43,23 @@ public class AnagraficheAziende {
         labelSfondo.add(anagrafiche_clienti_label);
         
         JLabel cf_label = new JLabel("C/F");
+<<<<<<< HEAD
         cf_label.setFont(new Font("", Font.PLAIN, 15));
+=======
+<<<<<<< HEAD
+        cf_label.setFont(new Font("", Font.PLAIN, 15));
+=======
+<<<<<<< HEAD
+        cf_label.setFont(new Font("", Font.PLAIN, 15));
+=======
+<<<<<<< HEAD
+        cf_label.setFont(new Font("", Font.PLAIN, 15));
+=======
+        cf_label.setFont(new Font("Courier", Font.PLAIN, 15));
+>>>>>>> 92ba0878318a769571cc1e9456393151517d6ac3
+>>>>>>> b3f423dce0bf0d73c6a9c24aaf71265d864d2beb
+>>>>>>> b164b6b180cf8b5232bb561dff47f01e24120b2b
+>>>>>>> 3f256a41156cb108967f500bddb2e616b7b7d81d
         cf_label.setBounds(10, 40, 70, 20);
         cf_label.setForeground(new java.awt.Color(255,255,255));
         labelSfondo.add(cf_label);
@@ -54,7 +70,23 @@ public class AnagraficheAziende {
         labelSfondo.add(cf_textbox);
 
         JLabel nome_label = new JLabel("Nome");
+<<<<<<< HEAD
         nome_label.setFont(new Font("", Font.PLAIN, 15));
+=======
+<<<<<<< HEAD
+        nome_label.setFont(new Font("", Font.PLAIN, 15));
+=======
+<<<<<<< HEAD
+        nome_label.setFont(new Font("", Font.PLAIN, 15));
+=======
+<<<<<<< HEAD
+        nome_label.setFont(new Font("", Font.PLAIN, 15));
+=======
+        nome_label.setFont(new Font("Courier", Font.PLAIN, 15));
+>>>>>>> 92ba0878318a769571cc1e9456393151517d6ac3
+>>>>>>> b3f423dce0bf0d73c6a9c24aaf71265d864d2beb
+>>>>>>> b164b6b180cf8b5232bb561dff47f01e24120b2b
+>>>>>>> 3f256a41156cb108967f500bddb2e616b7b7d81d
         nome_label.setBounds(120, 40, 50, 20);
         nome_label.setForeground(new java.awt.Color(255,255,255));
         labelSfondo.add(nome_label);
@@ -65,7 +97,23 @@ public class AnagraficheAziende {
         labelSfondo.add(nome_textbox);
 
         JLabel indirizzo_label = new JLabel("Indirizzo");
+<<<<<<< HEAD
         indirizzo_label.setFont(new Font("", Font.PLAIN, 15));
+=======
+<<<<<<< HEAD
+        indirizzo_label.setFont(new Font("", Font.PLAIN, 15));
+=======
+<<<<<<< HEAD
+        indirizzo_label.setFont(new Font("", Font.PLAIN, 15));
+=======
+<<<<<<< HEAD
+        indirizzo_label.setFont(new Font("", Font.PLAIN, 15));
+=======
+        indirizzo_label.setFont(new Font("Courier", Font.PLAIN, 15));
+>>>>>>> 92ba0878318a769571cc1e9456393151517d6ac3
+>>>>>>> b3f423dce0bf0d73c6a9c24aaf71265d864d2beb
+>>>>>>> b164b6b180cf8b5232bb561dff47f01e24120b2b
+>>>>>>> 3f256a41156cb108967f500bddb2e616b7b7d81d
         indirizzo_label.setBounds(340, 40, 90, 20);
         indirizzo_label.setForeground(new java.awt.Color(255,255,255));
         labelSfondo.add(indirizzo_label);
@@ -76,7 +124,23 @@ public class AnagraficheAziende {
         labelSfondo.add(indirizzo_textbox);
         
         JLabel cap_label = new JLabel("Cap");
+<<<<<<< HEAD
         cap_label.setFont(new Font("", Font.PLAIN, 15));
+=======
+<<<<<<< HEAD
+        cap_label.setFont(new Font("", Font.PLAIN, 15));
+=======
+<<<<<<< HEAD
+        cap_label.setFont(new Font("", Font.PLAIN, 15));
+=======
+<<<<<<< HEAD
+        cap_label.setFont(new Font("", Font.PLAIN, 15));
+=======
+        cap_label.setFont(new Font("Courier", Font.PLAIN, 15));
+>>>>>>> 92ba0878318a769571cc1e9456393151517d6ac3
+>>>>>>> b3f423dce0bf0d73c6a9c24aaf71265d864d2beb
+>>>>>>> b164b6b180cf8b5232bb561dff47f01e24120b2b
+>>>>>>> 3f256a41156cb108967f500bddb2e616b7b7d81d
         cap_label.setBounds(540, 40, 100, 20);
         cap_label.setForeground(new java.awt.Color(255,255,255));
         labelSfondo.add(cap_label);
@@ -88,7 +152,23 @@ public class AnagraficheAziende {
 
         
         JLabel citta_label = new JLabel("Citta");
+<<<<<<< HEAD
         citta_label.setFont(new Font("", Font.PLAIN, 15));
+=======
+<<<<<<< HEAD
+        citta_label.setFont(new Font("", Font.PLAIN, 15));
+=======
+<<<<<<< HEAD
+        citta_label.setFont(new Font("", Font.PLAIN, 15));
+=======
+<<<<<<< HEAD
+        citta_label.setFont(new Font("", Font.PLAIN, 15));
+=======
+        citta_label.setFont(new Font("Courier", Font.PLAIN, 15));
+>>>>>>> 92ba0878318a769571cc1e9456393151517d6ac3
+>>>>>>> b3f423dce0bf0d73c6a9c24aaf71265d864d2beb
+>>>>>>> b164b6b180cf8b5232bb561dff47f01e24120b2b
+>>>>>>> 3f256a41156cb108967f500bddb2e616b7b7d81d
         citta_label.setBounds(650, 40, 100, 20);
         citta_label.setForeground(new java.awt.Color(255,255,255));
         labelSfondo.add(citta_label);
@@ -99,7 +179,23 @@ public class AnagraficheAziende {
         labelSfondo.add(citta_textbox);
 
         JLabel provincia_label = new JLabel("Provincia");
+<<<<<<< HEAD
         provincia_label.setFont(new Font("", Font.PLAIN, 15));
+=======
+<<<<<<< HEAD
+        provincia_label.setFont(new Font("", Font.PLAIN, 15));
+=======
+<<<<<<< HEAD
+        provincia_label.setFont(new Font("", Font.PLAIN, 15));
+=======
+<<<<<<< HEAD
+        provincia_label.setFont(new Font("", Font.PLAIN, 15));
+=======
+        provincia_label.setFont(new Font("Courier", Font.PLAIN, 15));
+>>>>>>> 92ba0878318a769571cc1e9456393151517d6ac3
+>>>>>>> b3f423dce0bf0d73c6a9c24aaf71265d864d2beb
+>>>>>>> b164b6b180cf8b5232bb561dff47f01e24120b2b
+>>>>>>> 3f256a41156cb108967f500bddb2e616b7b7d81d
         provincia_label.setBounds(860, 40, 100, 20);
         provincia_label.setForeground(new java.awt.Color(255,255,255));
         labelSfondo.add(provincia_label);
@@ -110,7 +206,23 @@ public class AnagraficheAziende {
         labelSfondo.add(provincia_textbox);
         
         JLabel nome_dest_label = new JLabel("Nome_dest");
+<<<<<<< HEAD
         nome_dest_label.setFont(new Font("", Font.PLAIN, 15));
+=======
+<<<<<<< HEAD
+        nome_dest_label.setFont(new Font("", Font.PLAIN, 15));
+=======
+<<<<<<< HEAD
+        nome_dest_label.setFont(new Font("", Font.PLAIN, 15));
+=======
+<<<<<<< HEAD
+        nome_dest_label.setFont(new Font("", Font.PLAIN, 15));
+=======
+        nome_dest_label.setFont(new Font("Courier", Font.PLAIN, 15));
+>>>>>>> 92ba0878318a769571cc1e9456393151517d6ac3
+>>>>>>> b3f423dce0bf0d73c6a9c24aaf71265d864d2beb
+>>>>>>> b164b6b180cf8b5232bb561dff47f01e24120b2b
+>>>>>>> 3f256a41156cb108967f500bddb2e616b7b7d81d
         nome_dest_label.setBounds(990, 40, 100, 20);
         nome_dest_label.setForeground(new java.awt.Color(255,255,255));
         labelSfondo.add(nome_dest_label);
@@ -121,7 +233,23 @@ public class AnagraficheAziende {
         labelSfondo.add(nome_dest_textbox);
         
         JLabel cap_dest_label = new JLabel("Cap_dest");
+<<<<<<< HEAD
         cap_dest_label.setFont(new Font("", Font.PLAIN, 15));
+=======
+<<<<<<< HEAD
+        cap_dest_label.setFont(new Font("", Font.PLAIN, 15));
+=======
+<<<<<<< HEAD
+        cap_dest_label.setFont(new Font("", Font.PLAIN, 15));
+=======
+<<<<<<< HEAD
+        cap_dest_label.setFont(new Font("", Font.PLAIN, 15));
+=======
+        cap_dest_label.setFont(new Font("Courier", Font.PLAIN, 15));
+>>>>>>> 92ba0878318a769571cc1e9456393151517d6ac3
+>>>>>>> b3f423dce0bf0d73c6a9c24aaf71265d864d2beb
+>>>>>>> b164b6b180cf8b5232bb561dff47f01e24120b2b
+>>>>>>> 3f256a41156cb108967f500bddb2e616b7b7d81d
         cap_dest_label.setBounds(10, 100, 100, 20);
         cap_dest_label.setForeground(new java.awt.Color(255,255,255));
         labelSfondo.add(cap_dest_label);
@@ -132,7 +260,23 @@ public class AnagraficheAziende {
         labelSfondo.add(cap_dest_textbox);
         
         JLabel ind_dest_label = new JLabel("Ind_dest");
+<<<<<<< HEAD
         ind_dest_label.setFont(new Font("", Font.PLAIN, 15));
+=======
+<<<<<<< HEAD
+        ind_dest_label.setFont(new Font("", Font.PLAIN, 15));
+=======
+<<<<<<< HEAD
+        ind_dest_label.setFont(new Font("", Font.PLAIN, 15));
+=======
+<<<<<<< HEAD
+        ind_dest_label.setFont(new Font("", Font.PLAIN, 15));
+=======
+        ind_dest_label.setFont(new Font("Courier", Font.PLAIN, 15));
+>>>>>>> 92ba0878318a769571cc1e9456393151517d6ac3
+>>>>>>> b3f423dce0bf0d73c6a9c24aaf71265d864d2beb
+>>>>>>> b164b6b180cf8b5232bb561dff47f01e24120b2b
+>>>>>>> 3f256a41156cb108967f500bddb2e616b7b7d81d
         ind_dest_label.setBounds(140, 100, 100, 20);
         ind_dest_label.setForeground(new java.awt.Color(255,255,255));
         labelSfondo.add(ind_dest_label);
@@ -143,7 +287,23 @@ public class AnagraficheAziende {
         labelSfondo.add(ind_dest_textbox);
         
         JLabel cit_dest_label = new JLabel("Cit_dest");
+<<<<<<< HEAD
         cit_dest_label.setFont(new Font("", Font.PLAIN, 15));
+=======
+<<<<<<< HEAD
+        cit_dest_label.setFont(new Font("", Font.PLAIN, 15));
+=======
+<<<<<<< HEAD
+        cit_dest_label.setFont(new Font("", Font.PLAIN, 15));
+=======
+<<<<<<< HEAD
+        cit_dest_label.setFont(new Font("", Font.PLAIN, 15));
+=======
+        cit_dest_label.setFont(new Font("Courier", Font.PLAIN, 15));
+>>>>>>> 92ba0878318a769571cc1e9456393151517d6ac3
+>>>>>>> b3f423dce0bf0d73c6a9c24aaf71265d864d2beb
+>>>>>>> b164b6b180cf8b5232bb561dff47f01e24120b2b
+>>>>>>> 3f256a41156cb108967f500bddb2e616b7b7d81d
         cit_dest_label.setBounds(270, 100, 100, 20);
         cit_dest_label.setForeground(new java.awt.Color(255,255,255));
         labelSfondo.add(cit_dest_label);
@@ -154,7 +314,23 @@ public class AnagraficheAziende {
         labelSfondo.add(cit_dest_textbox);
         
         JLabel prov_dest_label = new JLabel("Prov_dest");
+<<<<<<< HEAD
         prov_dest_label.setFont(new Font("", Font.PLAIN, 15));
+=======
+<<<<<<< HEAD
+        prov_dest_label.setFont(new Font("", Font.PLAIN, 15));
+=======
+<<<<<<< HEAD
+        prov_dest_label.setFont(new Font("", Font.PLAIN, 15));
+=======
+<<<<<<< HEAD
+        prov_dest_label.setFont(new Font("", Font.PLAIN, 15));
+=======
+        prov_dest_label.setFont(new Font("Courier", Font.PLAIN, 15));
+>>>>>>> 92ba0878318a769571cc1e9456393151517d6ac3
+>>>>>>> b3f423dce0bf0d73c6a9c24aaf71265d864d2beb
+>>>>>>> b164b6b180cf8b5232bb561dff47f01e24120b2b
+>>>>>>> 3f256a41156cb108967f500bddb2e616b7b7d81d
         prov_dest_label.setBounds(400, 100, 100, 20);
         prov_dest_label.setForeground(new java.awt.Color(255,255,255));
         labelSfondo.add(prov_dest_label);
@@ -165,7 +341,23 @@ public class AnagraficheAziende {
         labelSfondo.add(prov_dest_textbox);
         
         JLabel p_iva_label = new JLabel("P_iva");
+<<<<<<< HEAD
         p_iva_label.setFont(new Font("", Font.PLAIN, 15));
+=======
+<<<<<<< HEAD
+        p_iva_label.setFont(new Font("", Font.PLAIN, 15));
+=======
+<<<<<<< HEAD
+        p_iva_label.setFont(new Font("", Font.PLAIN, 15));
+=======
+<<<<<<< HEAD
+        p_iva_label.setFont(new Font("", Font.PLAIN, 15));
+=======
+        p_iva_label.setFont(new Font("Courier", Font.PLAIN, 15));
+>>>>>>> 92ba0878318a769571cc1e9456393151517d6ac3
+>>>>>>> b3f423dce0bf0d73c6a9c24aaf71265d864d2beb
+>>>>>>> b164b6b180cf8b5232bb561dff47f01e24120b2b
+>>>>>>> 3f256a41156cb108967f500bddb2e616b7b7d81d
         p_iva_label.setBounds(480, 100, 100, 20);
         p_iva_label.setForeground(new java.awt.Color(255,255,255));
         labelSfondo.add(p_iva_label);
@@ -176,7 +368,23 @@ public class AnagraficheAziende {
         labelSfondo.add(p_iva_textbox);
         
         JLabel cod_fisc_label = new JLabel("Cod_fisc");
+<<<<<<< HEAD
         cod_fisc_label.setFont(new Font("", Font.PLAIN, 15));
+=======
+<<<<<<< HEAD
+        cod_fisc_label.setFont(new Font("", Font.PLAIN, 15));
+=======
+<<<<<<< HEAD
+        cod_fisc_label.setFont(new Font("", Font.PLAIN, 15));
+=======
+<<<<<<< HEAD
+        cod_fisc_label.setFont(new Font("", Font.PLAIN, 15));
+=======
+        cod_fisc_label.setFont(new Font("Courier", Font.PLAIN, 15));
+>>>>>>> 92ba0878318a769571cc1e9456393151517d6ac3
+>>>>>>> b3f423dce0bf0d73c6a9c24aaf71265d864d2beb
+>>>>>>> b164b6b180cf8b5232bb561dff47f01e24120b2b
+>>>>>>> 3f256a41156cb108967f500bddb2e616b7b7d81d
         cod_fisc_label.setBounds(640, 100, 100, 20);
         cod_fisc_label.setForeground(new java.awt.Color(255,255,255));
         labelSfondo.add(cod_fisc_label);
@@ -187,7 +395,23 @@ public class AnagraficheAziende {
         labelSfondo.add(cod_fisc_textbox);
         
         JLabel pagamento_label = new JLabel("Pagamento");
+<<<<<<< HEAD
         pagamento_label.setFont(new Font("", Font.PLAIN, 15));
+=======
+<<<<<<< HEAD
+        pagamento_label.setFont(new Font("", Font.PLAIN, 15));
+=======
+<<<<<<< HEAD
+        pagamento_label.setFont(new Font("", Font.PLAIN, 15));
+=======
+<<<<<<< HEAD
+        pagamento_label.setFont(new Font("", Font.PLAIN, 15));
+=======
+        pagamento_label.setFont(new Font("Courier", Font.PLAIN, 15));
+>>>>>>> 92ba0878318a769571cc1e9456393151517d6ac3
+>>>>>>> b3f423dce0bf0d73c6a9c24aaf71265d864d2beb
+>>>>>>> b164b6b180cf8b5232bb561dff47f01e24120b2b
+>>>>>>> 3f256a41156cb108967f500bddb2e616b7b7d81d
         pagamento_label.setBounds(800, 100, 100, 20);
         pagamento_label.setForeground(new java.awt.Color(255,255,255));
         labelSfondo.add(pagamento_label);
@@ -198,8 +422,26 @@ public class AnagraficheAziende {
         labelSfondo.add(pagamento_textbox);
         
         JLabel pag_immediato_label = new JLabel("Pag_immediato");
+<<<<<<< HEAD
         pag_immediato_label.setFont(new Font("", Font.PLAIN, 15));
         pag_immediato_label.setBounds(960, 100, 170, 20);
+=======
+<<<<<<< HEAD
+        pag_immediato_label.setFont(new Font("", Font.PLAIN, 15));
+        pag_immediato_label.setBounds(960, 100, 170, 20);
+=======
+<<<<<<< HEAD
+        pag_immediato_label.setFont(new Font("", Font.PLAIN, 15));
+=======
+<<<<<<< HEAD
+        pag_immediato_label.setFont(new Font("", Font.PLAIN, 15));
+=======
+        pag_immediato_label.setFont(new Font("Courier", Font.PLAIN, 15));
+>>>>>>> 92ba0878318a769571cc1e9456393151517d6ac3
+>>>>>>> b3f423dce0bf0d73c6a9c24aaf71265d864d2beb
+        pag_immediato_label.setBounds(960, 100, 100, 20);
+>>>>>>> b164b6b180cf8b5232bb561dff47f01e24120b2b
+>>>>>>> 3f256a41156cb108967f500bddb2e616b7b7d81d
         pag_immediato_label.setForeground(new java.awt.Color(255,255,255));
         labelSfondo.add(pag_immediato_label);
         
@@ -209,7 +451,23 @@ public class AnagraficheAziende {
         labelSfondo.add(pag_immediato_textbox);
         
         JLabel scad_gg_label = new JLabel("Scad_gg");
+<<<<<<< HEAD
         scad_gg_label.setFont(new Font("", Font.PLAIN, 15));
+=======
+<<<<<<< HEAD
+        scad_gg_label.setFont(new Font("", Font.PLAIN, 15));
+=======
+<<<<<<< HEAD
+        scad_gg_label.setFont(new Font("", Font.PLAIN, 15));
+=======
+<<<<<<< HEAD
+        scad_gg_label.setFont(new Font("", Font.PLAIN, 15));
+=======
+        scad_gg_label.setFont(new Font("Courier", Font.PLAIN, 15));
+>>>>>>> 92ba0878318a769571cc1e9456393151517d6ac3
+>>>>>>> b3f423dce0bf0d73c6a9c24aaf71265d864d2beb
+>>>>>>> b164b6b180cf8b5232bb561dff47f01e24120b2b
+>>>>>>> 3f256a41156cb108967f500bddb2e616b7b7d81d
         scad_gg_label.setBounds(1120, 100, 100, 20);
         scad_gg_label.setForeground(new java.awt.Color(255,255,255));
         labelSfondo.add(scad_gg_label);
@@ -220,7 +478,23 @@ public class AnagraficheAziende {
         labelSfondo.add(scad_gg_textbox);
         
         JLabel scad_mesi_label = new JLabel("Scad_mesi");
+<<<<<<< HEAD
         scad_mesi_label.setFont(new Font("", Font.PLAIN, 15));
+=======
+<<<<<<< HEAD
+        scad_mesi_label.setFont(new Font("", Font.PLAIN, 15));
+=======
+<<<<<<< HEAD
+        scad_mesi_label.setFont(new Font("", Font.PLAIN, 15));
+=======
+<<<<<<< HEAD
+        scad_mesi_label.setFont(new Font("", Font.PLAIN, 15));
+=======
+        scad_mesi_label.setFont(new Font("Courier", Font.PLAIN, 15));
+>>>>>>> 92ba0878318a769571cc1e9456393151517d6ac3
+>>>>>>> b3f423dce0bf0d73c6a9c24aaf71265d864d2beb
+>>>>>>> b164b6b180cf8b5232bb561dff47f01e24120b2b
+>>>>>>> 3f256a41156cb108967f500bddb2e616b7b7d81d
         scad_mesi_label.setBounds(10, 160, 100, 20);
         scad_mesi_label.setForeground(new java.awt.Color(255,255,255));
         labelSfondo.add(scad_mesi_label);
@@ -231,7 +505,23 @@ public class AnagraficheAziende {
         labelSfondo.add(scad_mesi_textbox);
         
         JLabel n_rate_label = new JLabel("N_rate");
+<<<<<<< HEAD
         n_rate_label.setFont(new Font("", Font.PLAIN, 15));
+=======
+<<<<<<< HEAD
+        n_rate_label.setFont(new Font("", Font.PLAIN, 15));
+=======
+<<<<<<< HEAD
+        n_rate_label.setFont(new Font("", Font.PLAIN, 15));
+=======
+<<<<<<< HEAD
+        n_rate_label.setFont(new Font("", Font.PLAIN, 15));
+=======
+        n_rate_label.setFont(new Font("Courier", Font.PLAIN, 15));
+>>>>>>> 92ba0878318a769571cc1e9456393151517d6ac3
+>>>>>>> b3f423dce0bf0d73c6a9c24aaf71265d864d2beb
+>>>>>>> b164b6b180cf8b5232bb561dff47f01e24120b2b
+>>>>>>> 3f256a41156cb108967f500bddb2e616b7b7d81d
         n_rate_label.setBounds(120, 160, 100, 20);
         n_rate_label.setForeground(new java.awt.Color(255,255,255));
         labelSfondo.add(n_rate_label);
@@ -242,7 +532,23 @@ public class AnagraficheAziende {
         labelSfondo.add(n_rate_textbox);
         
         JLabel banca_label = new JLabel("Banca");
+<<<<<<< HEAD
         banca_label.setFont(new Font("", Font.PLAIN, 15));
+=======
+<<<<<<< HEAD
+        banca_label.setFont(new Font("", Font.PLAIN, 15));
+=======
+<<<<<<< HEAD
+        banca_label.setFont(new Font("", Font.PLAIN, 15));
+=======
+<<<<<<< HEAD
+        banca_label.setFont(new Font("", Font.PLAIN, 15));
+=======
+        banca_label.setFont(new Font("Courier", Font.PLAIN, 15));
+>>>>>>> 92ba0878318a769571cc1e9456393151517d6ac3
+>>>>>>> b3f423dce0bf0d73c6a9c24aaf71265d864d2beb
+>>>>>>> b164b6b180cf8b5232bb561dff47f01e24120b2b
+>>>>>>> 3f256a41156cb108967f500bddb2e616b7b7d81d
         banca_label.setBounds(230, 160, 100, 20);
         banca_label.setForeground(new java.awt.Color(255,255,255));
         labelSfondo.add(banca_label);
@@ -253,7 +559,23 @@ public class AnagraficheAziende {
         labelSfondo.add(banca_textbox);
         
         JLabel cab_label = new JLabel("Cab");
+<<<<<<< HEAD
         cab_label.setFont(new Font("", Font.PLAIN, 15));
+=======
+<<<<<<< HEAD
+        cab_label.setFont(new Font("", Font.PLAIN, 15));
+=======
+<<<<<<< HEAD
+        cab_label.setFont(new Font("", Font.PLAIN, 15));
+=======
+<<<<<<< HEAD
+        cab_label.setFont(new Font("", Font.PLAIN, 15));
+=======
+        cab_label.setFont(new Font("Courier", Font.PLAIN, 15));
+>>>>>>> 92ba0878318a769571cc1e9456393151517d6ac3
+>>>>>>> b3f423dce0bf0d73c6a9c24aaf71265d864d2beb
+>>>>>>> b164b6b180cf8b5232bb561dff47f01e24120b2b
+>>>>>>> 3f256a41156cb108967f500bddb2e616b7b7d81d
         cab_label.setBounds(390, 160, 100, 20);
         cab_label.setForeground(new java.awt.Color(255,255,255));
         labelSfondo.add(cab_label);
@@ -264,7 +586,23 @@ public class AnagraficheAziende {
         labelSfondo.add(cab_textbox);
         
         JLabel abi_label = new JLabel("Abi");
+<<<<<<< HEAD
         abi_label.setFont(new Font("", Font.PLAIN, 15));
+=======
+<<<<<<< HEAD
+        abi_label.setFont(new Font("", Font.PLAIN, 15));
+=======
+<<<<<<< HEAD
+        abi_label.setFont(new Font("", Font.PLAIN, 15));
+=======
+<<<<<<< HEAD
+        abi_label.setFont(new Font("", Font.PLAIN, 15));
+=======
+        abi_label.setFont(new Font("Courier", Font.PLAIN, 15));
+>>>>>>> 92ba0878318a769571cc1e9456393151517d6ac3
+>>>>>>> b3f423dce0bf0d73c6a9c24aaf71265d864d2beb
+>>>>>>> b164b6b180cf8b5232bb561dff47f01e24120b2b
+>>>>>>> 3f256a41156cb108967f500bddb2e616b7b7d81d
         abi_label.setBounds(500, 160, 100, 20);
         abi_label.setForeground(new java.awt.Color(255,255,255));
         labelSfondo.add(abi_label);
@@ -275,7 +613,23 @@ public class AnagraficheAziende {
         labelSfondo.add(abi_textbox);
         
         JLabel telefono_label = new JLabel("Telefono");
+<<<<<<< HEAD
         telefono_label.setFont(new Font("", Font.PLAIN, 15));
+=======
+<<<<<<< HEAD
+        telefono_label.setFont(new Font("", Font.PLAIN, 15));
+=======
+<<<<<<< HEAD
+        telefono_label.setFont(new Font("", Font.PLAIN, 15));
+=======
+<<<<<<< HEAD
+        telefono_label.setFont(new Font("", Font.PLAIN, 15));
+=======
+        telefono_label.setFont(new Font("Courier", Font.PLAIN, 15));
+>>>>>>> 92ba0878318a769571cc1e9456393151517d6ac3
+>>>>>>> b3f423dce0bf0d73c6a9c24aaf71265d864d2beb
+>>>>>>> b164b6b180cf8b5232bb561dff47f01e24120b2b
+>>>>>>> 3f256a41156cb108967f500bddb2e616b7b7d81d
         telefono_label.setBounds(610, 160, 100, 20);
         telefono_label.setForeground(new java.awt.Color(255,255,255));
         labelSfondo.add(telefono_label);
@@ -286,7 +640,23 @@ public class AnagraficheAziende {
         labelSfondo.add(telefono_textbox);
         
         JLabel email_label = new JLabel("Email");
+<<<<<<< HEAD
         email_label.setFont(new Font("", Font.PLAIN, 15));
+=======
+<<<<<<< HEAD
+        email_label.setFont(new Font("", Font.PLAIN, 15));
+=======
+<<<<<<< HEAD
+        email_label.setFont(new Font("", Font.PLAIN, 15));
+=======
+<<<<<<< HEAD
+        email_label.setFont(new Font("", Font.PLAIN, 15));
+=======
+        email_label.setFont(new Font("Courier", Font.PLAIN, 15));
+>>>>>>> 92ba0878318a769571cc1e9456393151517d6ac3
+>>>>>>> b3f423dce0bf0d73c6a9c24aaf71265d864d2beb
+>>>>>>> b164b6b180cf8b5232bb561dff47f01e24120b2b
+>>>>>>> 3f256a41156cb108967f500bddb2e616b7b7d81d
         email_label.setBounds(740, 160, 100, 20);
         email_label.setForeground(new java.awt.Color(255,255,255));
         labelSfondo.add(email_label);
@@ -295,6 +665,10 @@ public class AnagraficheAziende {
         email_textbox.setBounds(740, 180, 120, 40);
         email_textbox.setBackground(new java.awt.Color(203, 203, 146));
         labelSfondo.add(email_textbox);
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 3f256a41156cb108967f500bddb2e616b7b7d81d
         
         JLabel nome_stampa_label = new JLabel("Nome da Stampa");
         nome_stampa_label.setFont(new Font("", Font.PLAIN, 15));
@@ -309,17 +683,53 @@ public class AnagraficheAziende {
         
         JLabel note_1_label = new JLabel("Note_1");
         note_1_label.setFont(new Font("", Font.PLAIN, 15));
+<<<<<<< HEAD
         note_1_label.setBounds(10, 220, 100 , 20);
         note_1_label.setForeground(new java.awt.Color(255,255,255));
         labelSfondo.add(note_1_label);
         
+=======
+=======
+        
+        JLabel note_1_label = new JLabel("Note_1");
+<<<<<<< HEAD
+        note_1_label.setFont(new Font("", Font.PLAIN, 15));
+=======
+<<<<<<< HEAD
+        note_1_label.setFont(new Font("", Font.PLAIN, 15));
+=======
+        note_1_label.setFont(new Font("Courier", Font.PLAIN, 15));
+>>>>>>> 92ba0878318a769571cc1e9456393151517d6ac3
+>>>>>>> b3f423dce0bf0d73c6a9c24aaf71265d864d2beb
+>>>>>>> b164b6b180cf8b5232bb561dff47f01e24120b2b
+        note_1_label.setBounds(10, 220, 100 , 20);
+        note_1_label.setForeground(new java.awt.Color(255,255,255));
+        labelSfondo.add(note_1_label);
+        
+>>>>>>> 3f256a41156cb108967f500bddb2e616b7b7d81d
         JTextField note_1_textbox = new JTextField();
         note_1_textbox.setBounds(10, 240, 1250, 40);
         note_1_textbox.setBackground(new java.awt.Color(203, 203, 146));
         labelSfondo.add(note_1_textbox);
         
         JLabel note_2_label = new JLabel("Note_2");
+<<<<<<< HEAD
         note_2_label.setFont(new Font("", Font.PLAIN, 15));
+=======
+<<<<<<< HEAD
+        note_2_label.setFont(new Font("", Font.PLAIN, 15));
+=======
+<<<<<<< HEAD
+        note_2_label.setFont(new Font("", Font.PLAIN, 15));
+=======
+<<<<<<< HEAD
+        note_2_label.setFont(new Font("", Font.PLAIN, 15));
+=======
+        note_2_label.setFont(new Font("Courier", Font.PLAIN, 15));
+>>>>>>> 92ba0878318a769571cc1e9456393151517d6ac3
+>>>>>>> b3f423dce0bf0d73c6a9c24aaf71265d864d2beb
+>>>>>>> b164b6b180cf8b5232bb561dff47f01e24120b2b
+>>>>>>> 3f256a41156cb108967f500bddb2e616b7b7d81d
         note_2_label.setBounds(10, 280, 100 , 20);
         note_2_label.setForeground(new java.awt.Color(255,255,255));
         labelSfondo.add(note_2_label);
@@ -330,7 +740,23 @@ public class AnagraficheAziende {
         labelSfondo.add(note_2_textbox);
         
         JLabel note_3_label = new JLabel("Note_3");
+<<<<<<< HEAD
         note_3_label.setFont(new Font("", Font.PLAIN, 15));
+=======
+<<<<<<< HEAD
+        note_3_label.setFont(new Font("", Font.PLAIN, 15));
+=======
+<<<<<<< HEAD
+        note_3_label.setFont(new Font("", Font.PLAIN, 15));
+=======
+<<<<<<< HEAD
+        note_3_label.setFont(new Font("", Font.PLAIN, 15));
+=======
+        note_3_label.setFont(new Font("Courier", Font.PLAIN, 15));
+>>>>>>> 92ba0878318a769571cc1e9456393151517d6ac3
+>>>>>>> b3f423dce0bf0d73c6a9c24aaf71265d864d2beb
+>>>>>>> b164b6b180cf8b5232bb561dff47f01e24120b2b
+>>>>>>> 3f256a41156cb108967f500bddb2e616b7b7d81d
         note_3_label.setBounds(10, 340, 100 , 20);
         note_3_label.setForeground(new java.awt.Color(255,255,255));
         labelSfondo.add(note_3_label);
@@ -365,11 +791,20 @@ public class AnagraficheAziende {
         elimina_button.setBounds(550, 430, 100, 40);
         elimina_button.setBackground(new java.awt.Color(255,209,110));
         labelSfondo.add(elimina_button);
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 3f256a41156cb108967f500bddb2e616b7b7d81d
         
         JButton stampa_button = new JButton("Stampa");
         stampa_button.setBounds(660, 430, 100, 40);
         stampa_button.setBackground(new java.awt.Color(255,209,110));
         labelSfondo.add(stampa_button);
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> b164b6b180cf8b5232bb561dff47f01e24120b2b
+>>>>>>> 3f256a41156cb108967f500bddb2e616b7b7d81d
         
         JPanel tablePanel = new JPanel();
         tablePanel.setLayout(null);
@@ -392,6 +827,10 @@ public class AnagraficheAziende {
         scrollPane.setViewportView(table);
         tablePanel.add(scrollPane);
         labelSfondo.add(tablePanel);
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 3f256a41156cb108967f500bddb2e616b7b7d81d
         
         stampa_button.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
@@ -404,6 +843,11 @@ public class AnagraficheAziende {
 				}*/
             }
     	});
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> b164b6b180cf8b5232bb561dff47f01e24120b2b
+>>>>>>> 3f256a41156cb108967f500bddb2e616b7b7d81d
         
         alfabetico_button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
